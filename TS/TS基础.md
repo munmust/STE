@@ -30,6 +30,30 @@
 *是其他任意类型的子类型的类型被称为底部类型*
 - 表示那些在正常执行流程中永远不会返回的值的类型。它在类型系统中的作用是帮助开发者进行全面性的类型检查，确保代码的覆盖性和错误处理的完整性
 - never 类型便为空类型和底部类型；never 类型的变量无法被赋值，与其他类型求交集为自身，求并集不参与运算
+##### 出现情况
+- 函数抛出异常
+- 函数无法正常返回
+- 类型保护的 exhaustive check
+``` typescript
+function throwError(message: string): never {
+  throw new Error(message);
+}
+function infiniteLoop(): never {
+  while (true) {
+    // 无限循环
+  }
+}
+type Foo = { type: 'foo', data: number };
+type Bar = { type: 'bar', data: string };
+type Baz = { type: 'baz', data: boolean };
+type MyType = Foo | Bar | Baz;
+
+function processMyType(obj: MyType): never {
+  // 当所有可能的类型都被处理时，触发错误
+  throw new Error('Unhandled type: ' + obj.type);
+}
+
+```
 ##### 应用
 ######  联合类型中的过滤
 ``` typescript
@@ -54,9 +78,54 @@ type FunctionPropNames = GetKeyByValueType<SomeProps, Function>; // 'c'|'d'
 
 ```
 ######  防御性编程
-``` ty
+``` typescript
+interface Foo {   type: 'foo' } 
+interface Bar {   type: 'bar' } 
+type All = Foo | Bar
+function handleValue(val: All) {
+  switch (val.type) {
+    case 'foo':
+      // 这里 val 被收窄为 Foo
+      break
+    case 'bar':
+      // val 在这里是 Bar
+      break
+    default:
+      // val 在这里是 never
+      const exhaustiveCheck: never = val // 
+      break
+  }
+}
+// 在 default 里面我们把被收窄为 never 的 val 赋值给一个显式声明为 never 的变量
+// 改了 All 的类型：`type All = Foo | Bar | Baz`;忘记了在 handleValue 里面加上针对 Baz 的处理逻辑，这个时候在 default branch 里面 val 会被收窄为 Baz，导致无法赋值给 never，产生一个编译错误。所以通过这个办法，你可以确保 handleValue 总是穷尽 (exhaust) 了所有 All 的可能类型
 ```
 
+######  与`void` 的差异
+`void` 表示没有任何类型，`never` 表示永远不存在的值的类型；当一个函数返回空值时，它的返回值为 void 类型，但是，当一个函数永不返回时（或者总是抛出错误），它的返回值为 never 类型。void 类型可以被赋值（在 strictNullChecking 为 false 时），但是除了 never 本身以外，其他任何类型不能赋值给 never
+#### unknown
+unknown指的是**不可预先定义的类型**，在很多场景下，它可以替代any的功能同时保留静态检查的能力。
+可以把它转化成任何类型，不同的地方是，在静态编译的时候，unknown不能调用任何方法，而any可以
+``` typescript
+const num: number = 10;
+(num as unknown as string).split(''); // 和any一样完全可以通过静态检查
+
+const foo: unknown = 'string';
+foo.substr(1);           // Error: 静态检查不通过报错
+const bar: any = 10;
+bar.substr(1); 
+
+```
+##### 场景
+###### 避免使用any作为函数的参数类型而导致的静态类型检查
+``` typescript
+function test(input: unknown): number {
+  if (Array.isArray(input)) {
+    return input.length;  // Pass: 这个代码块中，类型守卫已经将input识别为array类型
+  }
+  return input.length; // Error: 这里的input还是unknown类型，静态检查报错。如果入参是any，则会放弃检查直接成功，带来报错风险
+}
+
+```
 ### 操作
 #### & 和 | 操作符
 `|`表示满足任意一个契约即可 
