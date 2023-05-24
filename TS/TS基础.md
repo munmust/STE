@@ -9,6 +9,12 @@
 ### 基础类型
 
 
+![typescript类型关系](/assest/img/typescript_type.png "typescript 类型关系")
+
+> 类型之间的并集（`|`）会向上取顶部的类型。即`never | 'a' => 'a'`，`unknown | 'a' => 'unknown'` 
+
+> 类型之间的交集（`&`）会向下取底部的类型。即`never & 'a' = never`，`unknown & 'a' => 'a'`
+
 - 布尔：`boolean`
 - 数字：`number`
 - 字符串：`string`
@@ -20,6 +26,8 @@
 - `null`、`undefined`
 - `never`
 - `object`
+
+#### never
 
 ### 操作
 #### & 和 | 操作符
