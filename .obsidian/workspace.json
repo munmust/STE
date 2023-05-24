@@ -15,11 +15,27 @@
               "state": {
                 "file": "TS/TS基础.md",
                 "mode": "source",
-                "source": true
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "887c35dcca6010d3",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "未命名.canvas",
+                "viewState": {
+                  "x": -77.5,
+                  "y": 38,
+                  "zoom": 0
+                }
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TS/TS基础.md",
+                "file": "未命名.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TS/TS基础.md",
+                "file": "未命名.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TS/TS基础.md"
+                "file": "未命名.canvas"
               }
             }
           }
@@ -148,10 +164,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8287892ac038dd8a",
+  "active": "887c35dcca6010d3",
   "lastOpenFiles": [
-    "readme.md",
     "TS/TS基础.md",
+    "未命名.canvas",
+    "readme.md",
     "2023-05-24.md",
     "TS"
   ]

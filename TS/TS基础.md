@@ -7,6 +7,8 @@
 
 ## TS语法
 ### 基础类型
+
+
 - 布尔：`boolean`
 - 数字：`number`
 - 字符串：`string`
@@ -21,6 +23,18 @@
 
 ### 操作
 #### & 和 | 操作符
-> \ 类型之间的并集（`|`）会向上取顶部的类型。即`never | 'a' => 'a'`，`unknown | 'a' => 'unknown'` 
+`|`表示满足任意一个契约即可 
+`&`表示必须同时满足多个契约
 
-> 类型之间的交集（`&`）会向下取底部的类型。即`never & 'a' = never`，`unknown & 'a' => 'a'`
+``` javascript
+interface IA {
+	a: string;
+	b: number;
+};
+type TB = { 
+	b: number; 
+	c: number[]; 
+};
+type TC = IA | TB; // TC类型的变量的键只需包含ab或bc即可，当然也可以abc都有
+type TD = IA & TB; // TD类型的变量的键必需包含abc
+```

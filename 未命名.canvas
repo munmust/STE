@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"e2b97f8b1a55f934","x":-11,"y":34,"width":102,"height":60,"type":"text","text":"object"},
+		{"type":"text","text":"unknown","id":"815014c15261fe66","x":-146,"y":-280,"width":120,"height":50},
+		{"id":"22e418f2c031ddb8","x":-107,"y":-26,"width":69,"height":60,"type":"text","text":"{}"},
+		{"type":"text","text":"never","id":"80f57ce16c39101c","x":-165,"y":300,"width":93,"height":56},
+		{"type":"text","text":"any","id":"bde40ff4918c38a5","x":-560,"y":4,"width":80,"height":60},
+		{"type":"text","text":"null","id":"e6c19afa6297359a","x":-440,"y":4,"width":93,"height":60},
+		{"type":"text","text":"undefined","id":"845465668e10cdbf","x":-251,"y":94,"width":133,"height":60},
+		{"type":"text","text":"void","id":"c3dfe23a3932a72b","x":-231,"y":-56,"width":93,"height":60},
+		{"type":"text","text":"boolean、number、string、symbol、bigint","id":"7f10402fed14a772","x":-72,"y":154,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"7ece16568d4b1a27","fromNode":"815014c15261fe66","fromSide":"left","toNode":"bde40ff4918c38a5","toSide":"top"},
+		{"id":"4f3c1337fe892b89","fromNode":"bde40ff4918c38a5","fromSide":"bottom","toNode":"80f57ce16c39101c","toSide":"left"},
+		{"id":"d6a1e5742b2db932","fromNode":"80f57ce16c39101c","fromSide":"top","toNode":"e6c19afa6297359a","toSide":"bottom"},
+		{"id":"803743d778802841","fromNode":"80f57ce16c39101c","fromSide":"top","toNode":"845465668e10cdbf","toSide":"bottom"},
+		{"id":"51b7e678a7c82187","fromNode":"845465668e10cdbf","fromSide":"top","toNode":"c3dfe23a3932a72b","toSide":"bottom"},
+		{"id":"ef6ab6e11c94e111","fromNode":"e6c19afa6297359a","fromSide":"top","toNode":"815014c15261fe66","toSide":"bottom"},
+		{"id":"c1f901fe0157534a","fromNode":"c3dfe23a3932a72b","fromSide":"top","toNode":"815014c15261fe66","toSide":"bottom"}
+	]
+}
