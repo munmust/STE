@@ -149,6 +149,29 @@ function resultValueBySome(val:unknown) {
   // ...
 }
 ```
+
+### 类型的父子关系
+1. 具体值是基础类型的子类型
+``` typescript
+const a: 1 = 1;
+const b: number = a; // ok 1是number的子类型
+
+const c: true = true;
+const d: boolean = c; // ok true是boolean的子类型
+```
+2. 联合类型中的部分是整体的子类型
+``` typescript
+const a: nummber = 1;
+const a: number | string = a;
+```
+4. `never` 类型是所有类型的子类型
+``` typescript
+function foo(): never {
+  throw new Error()
+}
+const a: 1 = foo(); // 可以赋值，类型不会报错就证明了 never 类型是 1 的子类型
+```
+
 ### 操作
 #### & 和 | 操作符
 `|`表示满足任意一个契约即可 
