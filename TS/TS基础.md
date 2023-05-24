@@ -6,8 +6,7 @@
 - 始终与 ESMAScript 语言标准一致 (stage 3语法)
 
 ## TS语法
-### 基础类型
-
+### 类型
 
 ![typescript类型关系](/assest/img/typescript_type.png "typescript 类型关系")
 
@@ -28,6 +27,10 @@
 - `object`
 
 #### never
+*是其他任意类型的子类型的类型被称为底部类型*
+在 TypeScript 中，never 类型便为空类型和底部类型。never 类型的变量无法被赋值，与其他类型求交集为自身，求并集不参与运算
+
+
 
 ### 操作
 #### & 和 | 操作符

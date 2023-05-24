@@ -20,24 +20,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "0837d236fef91faf",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "e150bce3ead953fc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TS/TS基础.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -166,7 +148,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e150bce3ead953fc",
+  "active": "89e37502073f3fc0",
   "lastOpenFiles": [
     "assest/img/typescript_type.png",
     "readme.md",
