@@ -28,8 +28,34 @@
 
 #### never
 *是其他任意类型的子类型的类型被称为底部类型*
-在 TypeScript 中，never 类型便为空类型和底部类型。never 类型的变量无法被赋值，与其他类型求交集为自身，求并集不参与运算
-- 一个从来不会有返回值的函数
+- 表示那些在正常执行流程中永远不会返回的值的类型。它在类型系统中的作用是帮助开发者进行全面性的类型检查，确保代码的覆盖性和错误处理的完整性
+- never 类型便为空类型和底部类型；never 类型的变量无法被赋值，与其他类型求交集为自身，求并集不参与运算
+##### 应用
+######  联合类型中的过滤
+``` typescript
+type Exclude<T, U> = T extends U ? never : T;
+// 相当于: type A = 'a'
+type A = Exclude<'x' | 'a', 'x' | 'y' | 'z'>
+T | never // 结果为T
+T & never // 结果为never
+
+interface SomeProps {
+    a: string
+    b: number
+    c: (e: MouseEvent) => void
+    d: (e: TouchEvent) => void
+}
+// 如何得到 'c' | 'd' ？ 
+type GetKeyByValueType<T, Condition> = {
+    [K in keyof T]: T[K] extends Condition ? K : never
+} [keyof T];
+
+type FunctionPropNames = GetKeyByValueType<SomeProps, Function>; // 'c'|'d'
+
+```
+######  防御性编程
+``` ty
+```
 
 ### 操作
 #### & 和 | 操作符
