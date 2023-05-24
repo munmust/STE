@@ -6,8 +6,15 @@
 - 始终与 ESMAScript 语言标准一致 (stage 3语法)
 
 ## TS语法
-### 类型
+### 类型变量定义
+类型变量的方式有三种，分别为 `type`、`interface`、`enum`，他们都相当于 JS 中的 `const`，**一旦定义就不可改变**，三者的区别是：
 
+- `enum`：仅用来定义枚举类型；
+- `interface`：可以用来定义函数、对象、类；
+- `type`：使用绝大多数类型，例如普通的值、对象、函数、数组、元组等。
+Ï
+### 类型
+**JS 中合法的值，在 TS 类型中同样合法，也就是 _TS 类型的值 = TS 基础类型 + JS 值_，并且可以混用。**
 ![typescript类型关系](/assest/img/typescript_type.png "typescript 类型关系")
 
 > 类型之间的并集（`|`）会向上取顶部的类型。即`never | 'a' => 'a'`，`unknown | 'a' => 'unknown'` 
@@ -125,6 +132,22 @@ function test(input: unknown): number {
   return input.length; // Error: 这里的input还是unknown类型，静态检查报错。如果入参是any，则会放弃检查直接成功，带来报错风险
 }
 
+```
+###### 不确定函数参数的类型时
+``` typescript
+// 在不确定函数参数的类型时
+// 将函数的参数声明为unknown类型而非any
+// TS同样会对于unknown进行类型检测，而any就不会
+function resultValueBySome(val:unknown) { 
+  if (typeof val === 'string') {  
+    // 此时 val 是string类型   
+    // do someThing 
+  } else if (typeof val === 'number') { 
+    // 此时 val 是number类型   
+    // do someThing  
+  } 
+  // ...
+}
 ```
 ### 操作
 #### & 和 | 操作符
