@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "95e9dc7f6b8a9d03",
+        "id": "376fa3a3f7908d36",
         "type": "tabs",
         "children": [
           {
-            "id": "b9f0de6610c3d73e",
+            "id": "8bd9fa8c5f87b752",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readme.md",
+                "file": "javascript/内存/内存.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "readme.md",
+                "file": "javascript/内存/内存.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "readme.md",
+                "file": "javascript/内存/内存.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "readme.md"
+                "file": "javascript/内存/内存.md"
               }
             }
           }
@@ -146,9 +146,13 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b9f0de6610c3d73e",
+  "active": "8bd9fa8c5f87b752",
   "lastOpenFiles": [
+    "javascript/内存/inc-gc.png",
     "javascript/内存/内存.md",
+    "javascript/内存/old-space-bad.png",
+    "javascript/内存/gc_space.png",
+    "readme.md",
     "conflict-files-obsidian-git.md",
     "TS/assest/img/typescript_type.png",
     "TS/assest/img",
@@ -159,7 +163,6 @@
     "javascript/内存/zclean.png",
     "javascript/内存/tag-clear.webp",
     "javascript/内存/GCspace.png",
-    "readme.md",
     "javascript/内存",
     "Pasted image 20230711232218.png.md",
     "Pasted image 20230711232218.png",
