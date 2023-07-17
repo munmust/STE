@@ -1,0 +1,164 @@
+{
+  "main": {
+    "id": "2caeea5c2d746e24",
+    "type": "split",
+    "children": [
+      {
+        "id": "95e9dc7f6b8a9d03",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b9f0de6610c3d73e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "javascript/内存/内存.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "de7721f849d4694b",
+    "type": "split",
+    "children": [
+      {
+        "id": "99374b19cfea9215",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cc3abf5cd8048194",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "af37d742d1dbc4f5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c8d1ff9d8bc856fa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "89bc55f51c1eea53",
+    "type": "split",
+    "children": [
+      {
+        "id": "1f329b5a34fb44a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a42ddbd07b713c4b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "javascript/内存/内存.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ba2d94da79961e87",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "javascript/内存/内存.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "467a3f55564c35d1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "50f8e0d9b44ca721",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "javascript/内存/内存.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "b9f0de6610c3d73e",
+  "lastOpenFiles": [
+    "javascript/内存/zclean.png",
+    "javascript/内存/tag-clear.webp",
+    "javascript/内存/GCspace.png",
+    "javascript/内存/内存.md",
+    "readme.md",
+    "javascript/内存",
+    "Pasted image 20230711232218.png.md",
+    "Pasted image 20230711232218.png",
+    "assests",
+    "2023-06-25.md",
+    "杂",
+    "javascript"
+  ]
+}
