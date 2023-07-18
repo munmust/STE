@@ -1,9 +1,15 @@
 {
   "commitMessage": "vault backup: {{date}}",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
+<<<<<<< HEAD
+  "autoSaveInterval": 30000,
+  "autoPushInterval": 0,
+  "autoPullInterval": 0,
+=======
   "autoSaveInterval": 10,
   "autoPushInterval": 0,
   "autoPullInterval": 30,
+>>>>>>> origin/main
   "autoPullOnBoot": false,
   "disablePush": false,
   "pullBeforePush": true,
@@ -26,6 +32,8 @@
   "submoduleRecurseCheckout": false,
   "gitDir": "",
   "showFileMenu": true,
+<<<<<<< HEAD
+=======
   "lineAuthor": {
     "show": false,
     "followMovement": "inactive",
@@ -51,5 +59,6 @@
     "lastShownAuthorDisplay": "initials",
     "lastShownDateTimeFormatOptions": "date"
   },
+>>>>>>> origin/main
   "autoCommitMessage": "vault backup: {{date}}"
 }

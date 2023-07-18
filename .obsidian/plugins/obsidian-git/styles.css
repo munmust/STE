@@ -484,6 +484,9 @@
 
 .workspace-leaf-content[data-type="diff-view"] .d2h-moved-tag {
     border: 1px solid #3572b0;
+<<<<<<< HEAD
+}
+=======
 }
 
 /* ====================== Line Authoring Information ====================== */
@@ -505,3 +508,4 @@
     padding: 0px 6px 0px 6px;
     white-space: pre; /* Keep spaces and do not collapse them. */
 }
+>>>>>>> origin/main
