@@ -9,6 +9,7 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __defNormalProp = (obj, key2, value) => key2 in obj ? __defProp(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __esm = (fn, res) => function __init() {
   return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
 };
@@ -36,24 +37,19 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __publicField = (obj, key2, value) => {
+  __defNormalProp(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
+  return value;
+};
 
 // node_modules/.pnpm/base64-js@1.5.1/node_modules/base64-js/index.js
 var require_base64_js = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/base64-js@1.5.1/node_modules/base64-js/index.js"(exports) {
-    "use strict";
-    init_polyfill_buffer();
-    exports.byteLength = byteLength;
-    exports.toByteArray = toByteArray;
-    exports.fromByteArray = fromByteArray;
-=======
   "node_modules/.pnpm/base64-js@1.5.1/node_modules/base64-js/index.js"(exports2) {
     "use strict";
     init_polyfill_buffer();
     exports2.byteLength = byteLength;
     exports2.toByteArray = toByteArray;
     exports2.fromByteArray = fromByteArray;
->>>>>>> origin/main
     var lookup = [];
     var revLookup = [];
     var Arr = typeof Uint8Array !== "undefined" ? Uint8Array : Array;
@@ -151,15 +147,9 @@ var require_base64_js = __commonJS({
 
 // node_modules/.pnpm/ieee754@1.2.1/node_modules/ieee754/index.js
 var require_ieee754 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/ieee754@1.2.1/node_modules/ieee754/index.js"(exports) {
-    init_polyfill_buffer();
-    exports.read = function(buffer2, offset, isLE, mLen, nBytes) {
-=======
   "node_modules/.pnpm/ieee754@1.2.1/node_modules/ieee754/index.js"(exports2) {
     init_polyfill_buffer();
     exports2.read = function(buffer2, offset, isLE, mLen, nBytes) {
->>>>>>> origin/main
       var e, m;
       var eLen = nBytes * 8 - mLen - 1;
       var eMax = (1 << eLen) - 1;
@@ -189,11 +179,7 @@ var require_ieee754 = __commonJS({
       }
       return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
     };
-<<<<<<< HEAD
-    exports.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
-=======
     exports2.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
->>>>>>> origin/main
       var e, m, c;
       var eLen = nBytes * 8 - mLen - 1;
       var eMax = (1 << eLen) - 1;
@@ -245,25 +231,12 @@ var require_ieee754 = __commonJS({
 
 // node_modules/.pnpm/buffer@6.0.3/node_modules/buffer/index.js
 var require_buffer = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/buffer@6.0.3/node_modules/buffer/index.js"(exports) {
-=======
   "node_modules/.pnpm/buffer@6.0.3/node_modules/buffer/index.js"(exports2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var base64 = require_base64_js();
     var ieee754 = require_ieee754();
     var customInspectSymbol = typeof Symbol === "function" && typeof Symbol["for"] === "function" ? Symbol["for"]("nodejs.util.inspect.custom") : null;
-<<<<<<< HEAD
-    exports.Buffer = Buffer3;
-    exports.SlowBuffer = SlowBuffer;
-    exports.INSPECT_MAX_BYTES = 50;
-    var K_MAX_LENGTH = 2147483647;
-    exports.kMaxLength = K_MAX_LENGTH;
-    Buffer3.TYPED_ARRAY_SUPPORT = typedArraySupport();
-    if (!Buffer3.TYPED_ARRAY_SUPPORT && typeof console !== "undefined" && typeof console.error === "function") {
-=======
     exports2.Buffer = Buffer2;
     exports2.SlowBuffer = SlowBuffer;
     exports2.INSPECT_MAX_BYTES = 50;
@@ -271,7 +244,6 @@ var require_buffer = __commonJS({
     exports2.kMaxLength = K_MAX_LENGTH;
     Buffer2.TYPED_ARRAY_SUPPORT = typedArraySupport();
     if (!Buffer2.TYPED_ARRAY_SUPPORT && typeof console !== "undefined" && typeof console.error === "function") {
->>>>>>> origin/main
       console.error(
         "This browser lacks typed array (Uint8Array) support which is required by `buffer` v5.x. Use `buffer` v4.x if you require old browser support."
       );
@@ -289,32 +261,18 @@ var require_buffer = __commonJS({
         return false;
       }
     }
-<<<<<<< HEAD
-    Object.defineProperty(Buffer3.prototype, "parent", {
-      enumerable: true,
-      get: function() {
-        if (!Buffer3.isBuffer(this))
-=======
     Object.defineProperty(Buffer2.prototype, "parent", {
       enumerable: true,
       get: function() {
         if (!Buffer2.isBuffer(this))
->>>>>>> origin/main
           return void 0;
         return this.buffer;
       }
     });
-<<<<<<< HEAD
-    Object.defineProperty(Buffer3.prototype, "offset", {
-      enumerable: true,
-      get: function() {
-        if (!Buffer3.isBuffer(this))
-=======
     Object.defineProperty(Buffer2.prototype, "offset", {
       enumerable: true,
       get: function() {
         if (!Buffer2.isBuffer(this))
->>>>>>> origin/main
           return void 0;
         return this.byteOffset;
       }
@@ -324,17 +282,10 @@ var require_buffer = __commonJS({
         throw new RangeError('The value "' + length + '" is invalid for option "size"');
       }
       const buf = new Uint8Array(length);
-<<<<<<< HEAD
-      Object.setPrototypeOf(buf, Buffer3.prototype);
-      return buf;
-    }
-    function Buffer3(arg, encodingOrOffset, length) {
-=======
       Object.setPrototypeOf(buf, Buffer2.prototype);
       return buf;
     }
     function Buffer2(arg, encodingOrOffset, length) {
->>>>>>> origin/main
       if (typeof arg === "number") {
         if (typeof encodingOrOffset === "string") {
           throw new TypeError(
@@ -345,17 +296,10 @@ var require_buffer = __commonJS({
       }
       return from(arg, encodingOrOffset, length);
     }
-<<<<<<< HEAD
-    Buffer3.poolSize = 8192;
-    function from(value, encodingOrOffset, length) {
-      if (typeof value === "string") {
-        return fromString(value, encodingOrOffset);
-=======
     Buffer2.poolSize = 8192;
     function from(value, encodingOrOffset, length) {
       if (typeof value === "string") {
         return fromString2(value, encodingOrOffset);
->>>>>>> origin/main
       }
       if (ArrayBuffer.isView(value)) {
         return fromArrayView(value);
@@ -378,39 +322,23 @@ var require_buffer = __commonJS({
       }
       const valueOf = value.valueOf && value.valueOf();
       if (valueOf != null && valueOf !== value) {
-<<<<<<< HEAD
-        return Buffer3.from(valueOf, encodingOrOffset, length);
-=======
         return Buffer2.from(valueOf, encodingOrOffset, length);
->>>>>>> origin/main
       }
       const b = fromObject(value);
       if (b)
         return b;
       if (typeof Symbol !== "undefined" && Symbol.toPrimitive != null && typeof value[Symbol.toPrimitive] === "function") {
-<<<<<<< HEAD
-        return Buffer3.from(value[Symbol.toPrimitive]("string"), encodingOrOffset, length);
-=======
         return Buffer2.from(value[Symbol.toPrimitive]("string"), encodingOrOffset, length);
->>>>>>> origin/main
       }
       throw new TypeError(
         "The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type " + typeof value
       );
     }
-<<<<<<< HEAD
-    Buffer3.from = function(value, encodingOrOffset, length) {
-      return from(value, encodingOrOffset, length);
-    };
-    Object.setPrototypeOf(Buffer3.prototype, Uint8Array.prototype);
-    Object.setPrototypeOf(Buffer3, Uint8Array);
-=======
     Buffer2.from = function(value, encodingOrOffset, length) {
       return from(value, encodingOrOffset, length);
     };
     Object.setPrototypeOf(Buffer2.prototype, Uint8Array.prototype);
     Object.setPrototypeOf(Buffer2, Uint8Array);
->>>>>>> origin/main
     function assertSize(size) {
       if (typeof size !== "number") {
         throw new TypeError('"size" argument must be of type number');
@@ -428,30 +356,13 @@ var require_buffer = __commonJS({
       }
       return createBuffer(size);
     }
-<<<<<<< HEAD
-    Buffer3.alloc = function(size, fill, encoding) {
-=======
     Buffer2.alloc = function(size, fill, encoding) {
->>>>>>> origin/main
       return alloc(size, fill, encoding);
     };
     function allocUnsafe(size) {
       assertSize(size);
       return createBuffer(size < 0 ? 0 : checked(size) | 0);
     }
-<<<<<<< HEAD
-    Buffer3.allocUnsafe = function(size) {
-      return allocUnsafe(size);
-    };
-    Buffer3.allocUnsafeSlow = function(size) {
-      return allocUnsafe(size);
-    };
-    function fromString(string, encoding) {
-      if (typeof encoding !== "string" || encoding === "") {
-        encoding = "utf8";
-      }
-      if (!Buffer3.isEncoding(encoding)) {
-=======
     Buffer2.allocUnsafe = function(size) {
       return allocUnsafe(size);
     };
@@ -463,7 +374,6 @@ var require_buffer = __commonJS({
         encoding = "utf8";
       }
       if (!Buffer2.isEncoding(encoding)) {
->>>>>>> origin/main
         throw new TypeError("Unknown encoding: " + encoding);
       }
       const length = byteLength(string, encoding) | 0;
@@ -504,19 +414,11 @@ var require_buffer = __commonJS({
       } else {
         buf = new Uint8Array(array, byteOffset, length);
       }
-<<<<<<< HEAD
-      Object.setPrototypeOf(buf, Buffer3.prototype);
-      return buf;
-    }
-    function fromObject(obj) {
-      if (Buffer3.isBuffer(obj)) {
-=======
       Object.setPrototypeOf(buf, Buffer2.prototype);
       return buf;
     }
     function fromObject(obj) {
       if (Buffer2.isBuffer(obj)) {
->>>>>>> origin/main
         const len = checked(obj.length) | 0;
         const buf = createBuffer(len);
         if (buf.length === 0) {
@@ -545,19 +447,6 @@ var require_buffer = __commonJS({
       if (+length != length) {
         length = 0;
       }
-<<<<<<< HEAD
-      return Buffer3.alloc(+length);
-    }
-    Buffer3.isBuffer = function isBuffer(b) {
-      return b != null && b._isBuffer === true && b !== Buffer3.prototype;
-    };
-    Buffer3.compare = function compare(a, b) {
-      if (isInstance(a, Uint8Array))
-        a = Buffer3.from(a, a.offset, a.byteLength);
-      if (isInstance(b, Uint8Array))
-        b = Buffer3.from(b, b.offset, b.byteLength);
-      if (!Buffer3.isBuffer(a) || !Buffer3.isBuffer(b)) {
-=======
       return Buffer2.alloc(+length);
     }
     Buffer2.isBuffer = function isBuffer(b) {
@@ -569,7 +458,6 @@ var require_buffer = __commonJS({
       if (isInstance(b, Uint8Array))
         b = Buffer2.from(b, b.offset, b.byteLength);
       if (!Buffer2.isBuffer(a) || !Buffer2.isBuffer(b)) {
->>>>>>> origin/main
         throw new TypeError(
           'The "buf1", "buf2" arguments must be one of type Buffer or Uint8Array'
         );
@@ -591,11 +479,7 @@ var require_buffer = __commonJS({
         return 1;
       return 0;
     };
-<<<<<<< HEAD
-    Buffer3.isEncoding = function isEncoding(encoding) {
-=======
     Buffer2.isEncoding = function isEncoding(encoding) {
->>>>>>> origin/main
       switch (String(encoding).toLowerCase()) {
         case "hex":
         case "utf8":
@@ -613,20 +497,12 @@ var require_buffer = __commonJS({
           return false;
       }
     };
-<<<<<<< HEAD
-    Buffer3.concat = function concat(list, length) {
-=======
     Buffer2.concat = function concat(list, length) {
->>>>>>> origin/main
       if (!Array.isArray(list)) {
         throw new TypeError('"list" argument must be an Array of Buffers');
       }
       if (list.length === 0) {
-<<<<<<< HEAD
-        return Buffer3.alloc(0);
-=======
         return Buffer2.alloc(0);
->>>>>>> origin/main
       }
       let i;
       if (length === void 0) {
@@ -635,23 +511,14 @@ var require_buffer = __commonJS({
           length += list[i].length;
         }
       }
-<<<<<<< HEAD
-      const buffer2 = Buffer3.allocUnsafe(length);
-=======
       const buffer2 = Buffer2.allocUnsafe(length);
->>>>>>> origin/main
       let pos = 0;
       for (i = 0; i < list.length; ++i) {
         let buf = list[i];
         if (isInstance(buf, Uint8Array)) {
           if (pos + buf.length > buffer2.length) {
-<<<<<<< HEAD
-            if (!Buffer3.isBuffer(buf))
-              buf = Buffer3.from(buf);
-=======
             if (!Buffer2.isBuffer(buf))
               buf = Buffer2.from(buf);
->>>>>>> origin/main
             buf.copy(buffer2, pos);
           } else {
             Uint8Array.prototype.set.call(
@@ -660,11 +527,7 @@ var require_buffer = __commonJS({
               pos
             );
           }
-<<<<<<< HEAD
-        } else if (!Buffer3.isBuffer(buf)) {
-=======
         } else if (!Buffer2.isBuffer(buf)) {
->>>>>>> origin/main
           throw new TypeError('"list" argument must be an Array of Buffers');
         } else {
           buf.copy(buffer2, pos);
@@ -674,11 +537,7 @@ var require_buffer = __commonJS({
       return buffer2;
     };
     function byteLength(string, encoding) {
-<<<<<<< HEAD
-      if (Buffer3.isBuffer(string)) {
-=======
       if (Buffer2.isBuffer(string)) {
->>>>>>> origin/main
         return string.length;
       }
       if (ArrayBuffer.isView(string) || isInstance(string, ArrayBuffer)) {
@@ -721,11 +580,7 @@ var require_buffer = __commonJS({
         }
       }
     }
-<<<<<<< HEAD
-    Buffer3.byteLength = byteLength;
-=======
     Buffer2.byteLength = byteLength;
->>>>>>> origin/main
     function slowToString(encoding, start, end) {
       let loweredCase = false;
       if (start === void 0 || start < 0) {
@@ -774,21 +629,13 @@ var require_buffer = __commonJS({
         }
       }
     }
-<<<<<<< HEAD
-    Buffer3.prototype._isBuffer = true;
-=======
     Buffer2.prototype._isBuffer = true;
->>>>>>> origin/main
     function swap(b, n, m) {
       const i = b[n];
       b[n] = b[m];
       b[m] = i;
     }
-<<<<<<< HEAD
-    Buffer3.prototype.swap16 = function swap16() {
-=======
     Buffer2.prototype.swap16 = function swap16() {
->>>>>>> origin/main
       const len = this.length;
       if (len % 2 !== 0) {
         throw new RangeError("Buffer size must be a multiple of 16-bits");
@@ -798,11 +645,7 @@ var require_buffer = __commonJS({
       }
       return this;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.swap32 = function swap32() {
-=======
     Buffer2.prototype.swap32 = function swap32() {
->>>>>>> origin/main
       const len = this.length;
       if (len % 4 !== 0) {
         throw new RangeError("Buffer size must be a multiple of 32-bits");
@@ -813,11 +656,7 @@ var require_buffer = __commonJS({
       }
       return this;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.swap64 = function swap64() {
-=======
     Buffer2.prototype.swap64 = function swap64() {
->>>>>>> origin/main
       const len = this.length;
       if (len % 8 !== 0) {
         throw new RangeError("Buffer size must be a multiple of 64-bits");
@@ -830,11 +669,7 @@ var require_buffer = __commonJS({
       }
       return this;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.toString = function toString() {
-=======
     Buffer2.prototype.toString = function toString() {
->>>>>>> origin/main
       const length = this.length;
       if (length === 0)
         return "";
@@ -842,19 +677,6 @@ var require_buffer = __commonJS({
         return utf8Slice(this, 0, length);
       return slowToString.apply(this, arguments);
     };
-<<<<<<< HEAD
-    Buffer3.prototype.toLocaleString = Buffer3.prototype.toString;
-    Buffer3.prototype.equals = function equals2(b) {
-      if (!Buffer3.isBuffer(b))
-        throw new TypeError("Argument must be a Buffer");
-      if (this === b)
-        return true;
-      return Buffer3.compare(this, b) === 0;
-    };
-    Buffer3.prototype.inspect = function inspect() {
-      let str = "";
-      const max = exports.INSPECT_MAX_BYTES;
-=======
     Buffer2.prototype.toLocaleString = Buffer2.prototype.toString;
     Buffer2.prototype.equals = function equals2(b) {
       if (!Buffer2.isBuffer(b))
@@ -866,22 +688,12 @@ var require_buffer = __commonJS({
     Buffer2.prototype.inspect = function inspect() {
       let str = "";
       const max = exports2.INSPECT_MAX_BYTES;
->>>>>>> origin/main
       str = this.toString("hex", 0, max).replace(/(.{2})/g, "$1 ").trim();
       if (this.length > max)
         str += " ... ";
       return "<Buffer " + str + ">";
     };
     if (customInspectSymbol) {
-<<<<<<< HEAD
-      Buffer3.prototype[customInspectSymbol] = Buffer3.prototype.inspect;
-    }
-    Buffer3.prototype.compare = function compare(target, start, end, thisStart, thisEnd) {
-      if (isInstance(target, Uint8Array)) {
-        target = Buffer3.from(target, target.offset, target.byteLength);
-      }
-      if (!Buffer3.isBuffer(target)) {
-=======
       Buffer2.prototype[customInspectSymbol] = Buffer2.prototype.inspect;
     }
     Buffer2.prototype.compare = function compare(target, start, end, thisStart, thisEnd) {
@@ -889,7 +701,6 @@ var require_buffer = __commonJS({
         target = Buffer2.from(target, target.offset, target.byteLength);
       }
       if (!Buffer2.isBuffer(target)) {
->>>>>>> origin/main
         throw new TypeError(
           'The "target" argument must be one of type Buffer or Uint8Array. Received type ' + typeof target
         );
@@ -971,15 +782,9 @@ var require_buffer = __commonJS({
           return -1;
       }
       if (typeof val === "string") {
-<<<<<<< HEAD
-        val = Buffer3.from(val, encoding);
-      }
-      if (Buffer3.isBuffer(val)) {
-=======
         val = Buffer2.from(val, encoding);
       }
       if (Buffer2.isBuffer(val)) {
->>>>>>> origin/main
         if (val.length === 0) {
           return -1;
         }
@@ -1052,15 +857,6 @@ var require_buffer = __commonJS({
       }
       return -1;
     }
-<<<<<<< HEAD
-    Buffer3.prototype.includes = function includes(val, byteOffset, encoding) {
-      return this.indexOf(val, byteOffset, encoding) !== -1;
-    };
-    Buffer3.prototype.indexOf = function indexOf(val, byteOffset, encoding) {
-      return bidirectionalIndexOf(this, val, byteOffset, encoding, true);
-    };
-    Buffer3.prototype.lastIndexOf = function lastIndexOf(val, byteOffset, encoding) {
-=======
     Buffer2.prototype.includes = function includes(val, byteOffset, encoding) {
       return this.indexOf(val, byteOffset, encoding) !== -1;
     };
@@ -1068,7 +864,6 @@ var require_buffer = __commonJS({
       return bidirectionalIndexOf(this, val, byteOffset, encoding, true);
     };
     Buffer2.prototype.lastIndexOf = function lastIndexOf(val, byteOffset, encoding) {
->>>>>>> origin/main
       return bidirectionalIndexOf(this, val, byteOffset, encoding, false);
     };
     function hexWrite(buf, string, offset, length) {
@@ -1107,11 +902,7 @@ var require_buffer = __commonJS({
     function ucs2Write(buf, string, offset, length) {
       return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length);
     }
-<<<<<<< HEAD
-    Buffer3.prototype.write = function write(string, offset, length, encoding) {
-=======
     Buffer2.prototype.write = function write(string, offset, length, encoding) {
->>>>>>> origin/main
       if (offset === void 0) {
         encoding = "utf8";
         length = this.length;
@@ -1170,11 +961,7 @@ var require_buffer = __commonJS({
         }
       }
     };
-<<<<<<< HEAD
-    Buffer3.prototype.toJSON = function toJSON() {
-=======
     Buffer2.prototype.toJSON = function toJSON() {
->>>>>>> origin/main
       return {
         type: "Buffer",
         data: Array.prototype.slice.call(this._arr || this, 0)
@@ -1299,11 +1086,7 @@ var require_buffer = __commonJS({
       }
       return res;
     }
-<<<<<<< HEAD
-    Buffer3.prototype.slice = function slice(start, end) {
-=======
     Buffer2.prototype.slice = function slice(start, end) {
->>>>>>> origin/main
       const len = this.length;
       start = ~~start;
       end = end === void 0 ? len : ~~end;
@@ -1324,11 +1107,7 @@ var require_buffer = __commonJS({
       if (end < start)
         end = start;
       const newBuf = this.subarray(start, end);
-<<<<<<< HEAD
-      Object.setPrototypeOf(newBuf, Buffer3.prototype);
-=======
       Object.setPrototypeOf(newBuf, Buffer2.prototype);
->>>>>>> origin/main
       return newBuf;
     };
     function checkOffset(offset, ext, length) {
@@ -1337,11 +1116,7 @@ var require_buffer = __commonJS({
       if (offset + ext > length)
         throw new RangeError("Trying to access beyond buffer length");
     }
-<<<<<<< HEAD
-    Buffer3.prototype.readUintLE = Buffer3.prototype.readUIntLE = function readUIntLE(offset, byteLength2, noAssert) {
-=======
     Buffer2.prototype.readUintLE = Buffer2.prototype.readUIntLE = function readUIntLE(offset, byteLength2, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       byteLength2 = byteLength2 >>> 0;
       if (!noAssert)
@@ -1354,11 +1129,7 @@ var require_buffer = __commonJS({
       }
       return val;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readUintBE = Buffer3.prototype.readUIntBE = function readUIntBE(offset, byteLength2, noAssert) {
-=======
     Buffer2.prototype.readUintBE = Buffer2.prototype.readUIntBE = function readUIntBE(offset, byteLength2, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       byteLength2 = byteLength2 >>> 0;
       if (!noAssert) {
@@ -1371,61 +1142,37 @@ var require_buffer = __commonJS({
       }
       return val;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readUint8 = Buffer3.prototype.readUInt8 = function readUInt8(offset, noAssert) {
-=======
     Buffer2.prototype.readUint8 = Buffer2.prototype.readUInt8 = function readUInt8(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 1, this.length);
       return this[offset];
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readUint16LE = Buffer3.prototype.readUInt16LE = function readUInt16LE(offset, noAssert) {
-=======
     Buffer2.prototype.readUint16LE = Buffer2.prototype.readUInt16LE = function readUInt16LE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 2, this.length);
       return this[offset] | this[offset + 1] << 8;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readUint16BE = Buffer3.prototype.readUInt16BE = function readUInt16BE(offset, noAssert) {
-=======
     Buffer2.prototype.readUint16BE = Buffer2.prototype.readUInt16BE = function readUInt16BE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 2, this.length);
       return this[offset] << 8 | this[offset + 1];
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readUint32LE = Buffer3.prototype.readUInt32LE = function readUInt32LE(offset, noAssert) {
-=======
     Buffer2.prototype.readUint32LE = Buffer2.prototype.readUInt32LE = function readUInt32LE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 4, this.length);
       return (this[offset] | this[offset + 1] << 8 | this[offset + 2] << 16) + this[offset + 3] * 16777216;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readUint32BE = Buffer3.prototype.readUInt32BE = function readUInt32BE(offset, noAssert) {
-=======
     Buffer2.prototype.readUint32BE = Buffer2.prototype.readUInt32BE = function readUInt32BE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 4, this.length);
       return this[offset] * 16777216 + (this[offset + 1] << 16 | this[offset + 2] << 8 | this[offset + 3]);
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readBigUInt64LE = defineBigIntMethod(function readBigUInt64LE(offset) {
-=======
     Buffer2.prototype.readBigUInt64LE = defineBigIntMethod(function readBigUInt64LE(offset) {
->>>>>>> origin/main
       offset = offset >>> 0;
       validateNumber(offset, "offset");
       const first2 = this[offset];
@@ -1437,11 +1184,7 @@ var require_buffer = __commonJS({
       const hi = this[++offset] + this[++offset] * 2 ** 8 + this[++offset] * 2 ** 16 + last2 * 2 ** 24;
       return BigInt(lo) + (BigInt(hi) << BigInt(32));
     });
-<<<<<<< HEAD
-    Buffer3.prototype.readBigUInt64BE = defineBigIntMethod(function readBigUInt64BE(offset) {
-=======
     Buffer2.prototype.readBigUInt64BE = defineBigIntMethod(function readBigUInt64BE(offset) {
->>>>>>> origin/main
       offset = offset >>> 0;
       validateNumber(offset, "offset");
       const first2 = this[offset];
@@ -1453,11 +1196,7 @@ var require_buffer = __commonJS({
       const lo = this[++offset] * 2 ** 24 + this[++offset] * 2 ** 16 + this[++offset] * 2 ** 8 + last2;
       return (BigInt(hi) << BigInt(32)) + BigInt(lo);
     });
-<<<<<<< HEAD
-    Buffer3.prototype.readIntLE = function readIntLE(offset, byteLength2, noAssert) {
-=======
     Buffer2.prototype.readIntLE = function readIntLE(offset, byteLength2, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       byteLength2 = byteLength2 >>> 0;
       if (!noAssert)
@@ -1473,11 +1212,7 @@ var require_buffer = __commonJS({
         val -= Math.pow(2, 8 * byteLength2);
       return val;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readIntBE = function readIntBE(offset, byteLength2, noAssert) {
-=======
     Buffer2.prototype.readIntBE = function readIntBE(offset, byteLength2, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       byteLength2 = byteLength2 >>> 0;
       if (!noAssert)
@@ -1493,11 +1228,7 @@ var require_buffer = __commonJS({
         val -= Math.pow(2, 8 * byteLength2);
       return val;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readInt8 = function readInt8(offset, noAssert) {
-=======
     Buffer2.prototype.readInt8 = function readInt8(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 1, this.length);
@@ -1505,53 +1236,33 @@ var require_buffer = __commonJS({
         return this[offset];
       return (255 - this[offset] + 1) * -1;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readInt16LE = function readInt16LE(offset, noAssert) {
-=======
     Buffer2.prototype.readInt16LE = function readInt16LE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 2, this.length);
       const val = this[offset] | this[offset + 1] << 8;
       return val & 32768 ? val | 4294901760 : val;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readInt16BE = function readInt16BE(offset, noAssert) {
-=======
     Buffer2.prototype.readInt16BE = function readInt16BE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 2, this.length);
       const val = this[offset + 1] | this[offset] << 8;
       return val & 32768 ? val | 4294901760 : val;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readInt32LE = function readInt32LE(offset, noAssert) {
-=======
     Buffer2.prototype.readInt32LE = function readInt32LE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 4, this.length);
       return this[offset] | this[offset + 1] << 8 | this[offset + 2] << 16 | this[offset + 3] << 24;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readInt32BE = function readInt32BE(offset, noAssert) {
-=======
     Buffer2.prototype.readInt32BE = function readInt32BE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 4, this.length);
       return this[offset] << 24 | this[offset + 1] << 16 | this[offset + 2] << 8 | this[offset + 3];
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readBigInt64LE = defineBigIntMethod(function readBigInt64LE(offset) {
-=======
     Buffer2.prototype.readBigInt64LE = defineBigIntMethod(function readBigInt64LE(offset) {
->>>>>>> origin/main
       offset = offset >>> 0;
       validateNumber(offset, "offset");
       const first2 = this[offset];
@@ -1562,11 +1273,7 @@ var require_buffer = __commonJS({
       const val = this[offset + 4] + this[offset + 5] * 2 ** 8 + this[offset + 6] * 2 ** 16 + (last2 << 24);
       return (BigInt(val) << BigInt(32)) + BigInt(first2 + this[++offset] * 2 ** 8 + this[++offset] * 2 ** 16 + this[++offset] * 2 ** 24);
     });
-<<<<<<< HEAD
-    Buffer3.prototype.readBigInt64BE = defineBigIntMethod(function readBigInt64BE(offset) {
-=======
     Buffer2.prototype.readBigInt64BE = defineBigIntMethod(function readBigInt64BE(offset) {
->>>>>>> origin/main
       offset = offset >>> 0;
       validateNumber(offset, "offset");
       const first2 = this[offset];
@@ -1578,63 +1285,39 @@ var require_buffer = __commonJS({
       this[++offset] * 2 ** 16 + this[++offset] * 2 ** 8 + this[++offset];
       return (BigInt(val) << BigInt(32)) + BigInt(this[++offset] * 2 ** 24 + this[++offset] * 2 ** 16 + this[++offset] * 2 ** 8 + last2);
     });
-<<<<<<< HEAD
-    Buffer3.prototype.readFloatLE = function readFloatLE(offset, noAssert) {
-=======
     Buffer2.prototype.readFloatLE = function readFloatLE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 4, this.length);
       return ieee754.read(this, offset, true, 23, 4);
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readFloatBE = function readFloatBE(offset, noAssert) {
-=======
     Buffer2.prototype.readFloatBE = function readFloatBE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 4, this.length);
       return ieee754.read(this, offset, false, 23, 4);
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readDoubleLE = function readDoubleLE(offset, noAssert) {
-=======
     Buffer2.prototype.readDoubleLE = function readDoubleLE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 8, this.length);
       return ieee754.read(this, offset, true, 52, 8);
     };
-<<<<<<< HEAD
-    Buffer3.prototype.readDoubleBE = function readDoubleBE(offset, noAssert) {
-=======
     Buffer2.prototype.readDoubleBE = function readDoubleBE(offset, noAssert) {
->>>>>>> origin/main
       offset = offset >>> 0;
       if (!noAssert)
         checkOffset(offset, 8, this.length);
       return ieee754.read(this, offset, false, 52, 8);
     };
     function checkInt(buf, value, offset, ext, max, min) {
-<<<<<<< HEAD
-      if (!Buffer3.isBuffer(buf))
-=======
       if (!Buffer2.isBuffer(buf))
->>>>>>> origin/main
         throw new TypeError('"buffer" argument must be a Buffer instance');
       if (value > max || value < min)
         throw new RangeError('"value" argument is out of bounds');
       if (offset + ext > buf.length)
         throw new RangeError("Index out of range");
     }
-<<<<<<< HEAD
-    Buffer3.prototype.writeUintLE = Buffer3.prototype.writeUIntLE = function writeUIntLE(value, offset, byteLength2, noAssert) {
-=======
     Buffer2.prototype.writeUintLE = Buffer2.prototype.writeUIntLE = function writeUIntLE(value, offset, byteLength2, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       byteLength2 = byteLength2 >>> 0;
@@ -1650,11 +1333,7 @@ var require_buffer = __commonJS({
       }
       return offset + byteLength2;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeUintBE = Buffer3.prototype.writeUIntBE = function writeUIntBE(value, offset, byteLength2, noAssert) {
-=======
     Buffer2.prototype.writeUintBE = Buffer2.prototype.writeUIntBE = function writeUIntBE(value, offset, byteLength2, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       byteLength2 = byteLength2 >>> 0;
@@ -1670,11 +1349,7 @@ var require_buffer = __commonJS({
       }
       return offset + byteLength2;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeUint8 = Buffer3.prototype.writeUInt8 = function writeUInt8(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeUint8 = Buffer2.prototype.writeUInt8 = function writeUInt8(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1682,11 +1357,7 @@ var require_buffer = __commonJS({
       this[offset] = value & 255;
       return offset + 1;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeUint16LE = Buffer3.prototype.writeUInt16LE = function writeUInt16LE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeUint16LE = Buffer2.prototype.writeUInt16LE = function writeUInt16LE(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1695,11 +1366,7 @@ var require_buffer = __commonJS({
       this[offset + 1] = value >>> 8;
       return offset + 2;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeUint16BE = Buffer3.prototype.writeUInt16BE = function writeUInt16BE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeUint16BE = Buffer2.prototype.writeUInt16BE = function writeUInt16BE(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1708,11 +1375,7 @@ var require_buffer = __commonJS({
       this[offset + 1] = value & 255;
       return offset + 2;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeUint32LE = Buffer3.prototype.writeUInt32LE = function writeUInt32LE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeUint32LE = Buffer2.prototype.writeUInt32LE = function writeUInt32LE(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1723,11 +1386,7 @@ var require_buffer = __commonJS({
       this[offset] = value & 255;
       return offset + 4;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeUint32BE = Buffer3.prototype.writeUInt32BE = function writeUInt32BE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeUint32BE = Buffer2.prototype.writeUInt32BE = function writeUInt32BE(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1778,15 +1437,6 @@ var require_buffer = __commonJS({
       buf[offset] = hi;
       return offset + 8;
     }
-<<<<<<< HEAD
-    Buffer3.prototype.writeBigUInt64LE = defineBigIntMethod(function writeBigUInt64LE(value, offset = 0) {
-      return wrtBigUInt64LE(this, value, offset, BigInt(0), BigInt("0xffffffffffffffff"));
-    });
-    Buffer3.prototype.writeBigUInt64BE = defineBigIntMethod(function writeBigUInt64BE(value, offset = 0) {
-      return wrtBigUInt64BE(this, value, offset, BigInt(0), BigInt("0xffffffffffffffff"));
-    });
-    Buffer3.prototype.writeIntLE = function writeIntLE(value, offset, byteLength2, noAssert) {
-=======
     Buffer2.prototype.writeBigUInt64LE = defineBigIntMethod(function writeBigUInt64LE(value, offset = 0) {
       return wrtBigUInt64LE(this, value, offset, BigInt(0), BigInt("0xffffffffffffffff"));
     });
@@ -1794,7 +1444,6 @@ var require_buffer = __commonJS({
       return wrtBigUInt64BE(this, value, offset, BigInt(0), BigInt("0xffffffffffffffff"));
     });
     Buffer2.prototype.writeIntLE = function writeIntLE(value, offset, byteLength2, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert) {
@@ -1813,11 +1462,7 @@ var require_buffer = __commonJS({
       }
       return offset + byteLength2;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeIntBE = function writeIntBE(value, offset, byteLength2, noAssert) {
-=======
     Buffer2.prototype.writeIntBE = function writeIntBE(value, offset, byteLength2, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert) {
@@ -1836,11 +1481,7 @@ var require_buffer = __commonJS({
       }
       return offset + byteLength2;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeInt8 = function writeInt8(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeInt8 = function writeInt8(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1850,11 +1491,7 @@ var require_buffer = __commonJS({
       this[offset] = value & 255;
       return offset + 1;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeInt16LE = function writeInt16LE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeInt16LE = function writeInt16LE(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1863,11 +1500,7 @@ var require_buffer = __commonJS({
       this[offset + 1] = value >>> 8;
       return offset + 2;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeInt16BE = function writeInt16BE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeInt16BE = function writeInt16BE(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1876,11 +1509,7 @@ var require_buffer = __commonJS({
       this[offset + 1] = value & 255;
       return offset + 2;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeInt32LE = function writeInt32LE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeInt32LE = function writeInt32LE(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1891,11 +1520,7 @@ var require_buffer = __commonJS({
       this[offset + 3] = value >>> 24;
       return offset + 4;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeInt32BE = function writeInt32BE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeInt32BE = function writeInt32BE(value, offset, noAssert) {
->>>>>>> origin/main
       value = +value;
       offset = offset >>> 0;
       if (!noAssert)
@@ -1908,17 +1533,10 @@ var require_buffer = __commonJS({
       this[offset + 3] = value & 255;
       return offset + 4;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.writeBigInt64LE = defineBigIntMethod(function writeBigInt64LE(value, offset = 0) {
-      return wrtBigUInt64LE(this, value, offset, -BigInt("0x8000000000000000"), BigInt("0x7fffffffffffffff"));
-    });
-    Buffer3.prototype.writeBigInt64BE = defineBigIntMethod(function writeBigInt64BE(value, offset = 0) {
-=======
     Buffer2.prototype.writeBigInt64LE = defineBigIntMethod(function writeBigInt64LE(value, offset = 0) {
       return wrtBigUInt64LE(this, value, offset, -BigInt("0x8000000000000000"), BigInt("0x7fffffffffffffff"));
     });
     Buffer2.prototype.writeBigInt64BE = defineBigIntMethod(function writeBigInt64BE(value, offset = 0) {
->>>>>>> origin/main
       return wrtBigUInt64BE(this, value, offset, -BigInt("0x8000000000000000"), BigInt("0x7fffffffffffffff"));
     });
     function checkIEEE754(buf, value, offset, ext, max, min) {
@@ -1936,17 +1554,10 @@ var require_buffer = __commonJS({
       ieee754.write(buf, value, offset, littleEndian, 23, 4);
       return offset + 4;
     }
-<<<<<<< HEAD
-    Buffer3.prototype.writeFloatLE = function writeFloatLE(value, offset, noAssert) {
-      return writeFloat(this, value, offset, true, noAssert);
-    };
-    Buffer3.prototype.writeFloatBE = function writeFloatBE(value, offset, noAssert) {
-=======
     Buffer2.prototype.writeFloatLE = function writeFloatLE(value, offset, noAssert) {
       return writeFloat(this, value, offset, true, noAssert);
     };
     Buffer2.prototype.writeFloatBE = function writeFloatBE(value, offset, noAssert) {
->>>>>>> origin/main
       return writeFloat(this, value, offset, false, noAssert);
     };
     function writeDouble(buf, value, offset, littleEndian, noAssert) {
@@ -1958,16 +1569,6 @@ var require_buffer = __commonJS({
       ieee754.write(buf, value, offset, littleEndian, 52, 8);
       return offset + 8;
     }
-<<<<<<< HEAD
-    Buffer3.prototype.writeDoubleLE = function writeDoubleLE(value, offset, noAssert) {
-      return writeDouble(this, value, offset, true, noAssert);
-    };
-    Buffer3.prototype.writeDoubleBE = function writeDoubleBE(value, offset, noAssert) {
-      return writeDouble(this, value, offset, false, noAssert);
-    };
-    Buffer3.prototype.copy = function copy2(target, targetStart, start, end) {
-      if (!Buffer3.isBuffer(target))
-=======
     Buffer2.prototype.writeDoubleLE = function writeDoubleLE(value, offset, noAssert) {
       return writeDouble(this, value, offset, true, noAssert);
     };
@@ -1976,7 +1577,6 @@ var require_buffer = __commonJS({
     };
     Buffer2.prototype.copy = function copy2(target, targetStart, start, end) {
       if (!Buffer2.isBuffer(target))
->>>>>>> origin/main
         throw new TypeError("argument should be a Buffer");
       if (!start)
         start = 0;
@@ -2016,11 +1616,7 @@ var require_buffer = __commonJS({
       }
       return len;
     };
-<<<<<<< HEAD
-    Buffer3.prototype.fill = function fill(val, start, end, encoding) {
-=======
     Buffer2.prototype.fill = function fill(val, start, end, encoding) {
->>>>>>> origin/main
       if (typeof val === "string") {
         if (typeof start === "string") {
           encoding = start;
@@ -2033,11 +1629,7 @@ var require_buffer = __commonJS({
         if (encoding !== void 0 && typeof encoding !== "string") {
           throw new TypeError("encoding must be a string");
         }
-<<<<<<< HEAD
-        if (typeof encoding === "string" && !Buffer3.isEncoding(encoding)) {
-=======
         if (typeof encoding === "string" && !Buffer2.isEncoding(encoding)) {
->>>>>>> origin/main
           throw new TypeError("Unknown encoding: " + encoding);
         }
         if (val.length === 1) {
@@ -2067,11 +1659,7 @@ var require_buffer = __commonJS({
           this[i] = val;
         }
       } else {
-<<<<<<< HEAD
-        const bytes = Buffer3.isBuffer(val) ? val : Buffer3.from(val, encoding);
-=======
         const bytes = Buffer2.isBuffer(val) ? val : Buffer2.from(val, encoding);
->>>>>>> origin/main
         const len = bytes.length;
         if (len === 0) {
           throw new TypeError('The value "' + val + '" is invalid for argument "value"');
@@ -2338,11 +1926,7 @@ var require_buffer = __commonJS({
 });
 
 // polyfill_buffer.js
-<<<<<<< HEAD
-var import_obsidian, buffer, Buffer2;
-=======
 var import_obsidian, buffer, Buffer;
->>>>>>> origin/main
 var init_polyfill_buffer = __esm({
   "polyfill_buffer.js"() {
     import_obsidian = require("obsidian");
@@ -2351,21 +1935,13 @@ var init_polyfill_buffer = __esm({
     } else {
       buffer = global.Buffer;
     }
-<<<<<<< HEAD
-    Buffer2 = buffer;
-=======
     Buffer = buffer;
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/async-lock@1.4.0/node_modules/async-lock/lib/index.js
 var require_lib = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/async-lock@1.4.0/node_modules/async-lock/lib/index.js"(exports, module2) {
-=======
   "node_modules/.pnpm/async-lock@1.4.0/node_modules/async-lock/lib/index.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var AsyncLock2 = function(opts) {
@@ -2590,11 +2166,7 @@ var require_lib = __commonJS({
 
 // node_modules/.pnpm/async-lock@1.4.0/node_modules/async-lock/index.js
 var require_async_lock = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/async-lock@1.4.0/node_modules/async-lock/index.js"(exports, module2) {
-=======
   "node_modules/.pnpm/async-lock@1.4.0/node_modules/async-lock/index.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     module2.exports = require_lib();
@@ -2603,11 +2175,7 @@ var require_async_lock = __commonJS({
 
 // node_modules/.pnpm/inherits@2.0.4/node_modules/inherits/inherits_browser.js
 var require_inherits_browser = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/inherits@2.0.4/node_modules/inherits/inherits_browser.js"(exports, module2) {
-=======
   "node_modules/.pnpm/inherits@2.0.4/node_modules/inherits/inherits_browser.js"(exports2, module2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     if (typeof Object.create === "function") {
       module2.exports = function inherits(ctor, superCtor) {
@@ -2640,35 +2208,15 @@ var require_inherits_browser = __commonJS({
 
 // node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer/index.js
 var require_safe_buffer = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer/index.js"(exports, module2) {
-    init_polyfill_buffer();
-    var buffer2 = require_buffer();
-    var Buffer3 = buffer2.Buffer;
-=======
   "node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer/index.js"(exports2, module2) {
     init_polyfill_buffer();
     var buffer2 = require_buffer();
     var Buffer2 = buffer2.Buffer;
->>>>>>> origin/main
     function copyProps(src, dst) {
       for (var key2 in src) {
         dst[key2] = src[key2];
       }
     }
-<<<<<<< HEAD
-    if (Buffer3.from && Buffer3.alloc && Buffer3.allocUnsafe && Buffer3.allocUnsafeSlow) {
-      module2.exports = buffer2;
-    } else {
-      copyProps(buffer2, exports);
-      exports.Buffer = SafeBuffer;
-    }
-    function SafeBuffer(arg, encodingOrOffset, length) {
-      return Buffer3(arg, encodingOrOffset, length);
-    }
-    SafeBuffer.prototype = Object.create(Buffer3.prototype);
-    copyProps(Buffer3, SafeBuffer);
-=======
     if (Buffer2.from && Buffer2.alloc && Buffer2.allocUnsafe && Buffer2.allocUnsafeSlow) {
       module2.exports = buffer2;
     } else {
@@ -2680,26 +2228,17 @@ var require_safe_buffer = __commonJS({
     }
     SafeBuffer.prototype = Object.create(Buffer2.prototype);
     copyProps(Buffer2, SafeBuffer);
->>>>>>> origin/main
     SafeBuffer.from = function(arg, encodingOrOffset, length) {
       if (typeof arg === "number") {
         throw new TypeError("Argument must not be a number");
       }
-<<<<<<< HEAD
-      return Buffer3(arg, encodingOrOffset, length);
-=======
       return Buffer2(arg, encodingOrOffset, length);
->>>>>>> origin/main
     };
     SafeBuffer.alloc = function(size, fill, encoding) {
       if (typeof size !== "number") {
         throw new TypeError("Argument must be a number");
       }
-<<<<<<< HEAD
-      var buf = Buffer3(size);
-=======
       var buf = Buffer2(size);
->>>>>>> origin/main
       if (fill !== void 0) {
         if (typeof encoding === "string") {
           buf.fill(fill, encoding);
@@ -2715,11 +2254,7 @@ var require_safe_buffer = __commonJS({
       if (typeof size !== "number") {
         throw new TypeError("Argument must be a number");
       }
-<<<<<<< HEAD
-      return Buffer3(size);
-=======
       return Buffer2(size);
->>>>>>> origin/main
     };
     SafeBuffer.allocUnsafeSlow = function(size) {
       if (typeof size !== "number") {
@@ -2732,19 +2267,11 @@ var require_safe_buffer = __commonJS({
 
 // node_modules/.pnpm/sha.js@2.4.11/node_modules/sha.js/hash.js
 var require_hash = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/sha.js@2.4.11/node_modules/sha.js/hash.js"(exports, module2) {
-    init_polyfill_buffer();
-    var Buffer3 = require_safe_buffer().Buffer;
-    function Hash2(blockSize, finalSize) {
-      this._block = Buffer3.alloc(blockSize);
-=======
   "node_modules/.pnpm/sha.js@2.4.11/node_modules/sha.js/hash.js"(exports2, module2) {
     init_polyfill_buffer();
     var Buffer2 = require_safe_buffer().Buffer;
     function Hash2(blockSize, finalSize) {
       this._block = Buffer2.alloc(blockSize);
->>>>>>> origin/main
       this._finalSize = finalSize;
       this._blockSize = blockSize;
       this._len = 0;
@@ -2752,11 +2279,7 @@ var require_hash = __commonJS({
     Hash2.prototype.update = function(data, enc) {
       if (typeof data === "string") {
         enc = enc || "utf8";
-<<<<<<< HEAD
-        data = Buffer3.from(data, enc);
-=======
         data = Buffer2.from(data, enc);
->>>>>>> origin/main
       }
       var block = this._block;
       var blockSize = this._blockSize;
@@ -2807,21 +2330,12 @@ var require_hash = __commonJS({
 
 // node_modules/.pnpm/sha.js@2.4.11/node_modules/sha.js/sha1.js
 var require_sha1 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/sha.js@2.4.11/node_modules/sha.js/sha1.js"(exports, module2) {
-    init_polyfill_buffer();
-    var inherits = require_inherits_browser();
-    var Hash2 = require_hash();
-    var Buffer3 = require_safe_buffer().Buffer;
-    var K = [
-=======
   "node_modules/.pnpm/sha.js@2.4.11/node_modules/sha.js/sha1.js"(exports2, module2) {
     init_polyfill_buffer();
     var inherits = require_inherits_browser();
     var Hash2 = require_hash();
     var Buffer2 = require_safe_buffer().Buffer;
     var K2 = [
->>>>>>> origin/main
       1518500249,
       1859775393,
       2400959708 | 0,
@@ -2871,11 +2385,7 @@ var require_sha1 = __commonJS({
         W2[i] = rotl1(W2[i - 3] ^ W2[i - 8] ^ W2[i - 14] ^ W2[i - 16]);
       for (var j = 0; j < 80; ++j) {
         var s = ~~(j / 20);
-<<<<<<< HEAD
-        var t = rotl5(a) + ft(s, b, c, d) + e + W2[j] + K[s] | 0;
-=======
         var t = rotl5(a) + ft(s, b, c, d) + e + W2[j] + K2[s] | 0;
->>>>>>> origin/main
         e = d;
         d = c;
         c = rotl30(b);
@@ -2889,11 +2399,7 @@ var require_sha1 = __commonJS({
       this._e = e + this._e | 0;
     };
     Sha1.prototype._hash = function() {
-<<<<<<< HEAD
-      var H = Buffer3.allocUnsafe(20);
-=======
       var H = Buffer2.allocUnsafe(20);
->>>>>>> origin/main
       H.writeInt32BE(this._a | 0, 0);
       H.writeInt32BE(this._b | 0, 4);
       H.writeInt32BE(this._c | 0, 8);
@@ -2907,22 +2413,13 @@ var require_sha1 = __commonJS({
 
 // node_modules/.pnpm/crc-32@1.2.2/node_modules/crc-32/crc32.js
 var require_crc32 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/crc-32@1.2.2/node_modules/crc-32/crc32.js"(exports) {
-=======
   "node_modules/.pnpm/crc-32@1.2.2/node_modules/crc-32/crc32.js"(exports2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     var CRC32;
     (function(factory) {
       if (typeof DO_NOT_EXPORT_CRC === "undefined") {
-<<<<<<< HEAD
-        if ("object" === typeof exports) {
-          factory(exports);
-=======
         if ("object" === typeof exports2) {
           factory(exports2);
->>>>>>> origin/main
         } else if ("function" === typeof define && define.amd) {
           define(function() {
             var module3 = {};
@@ -3021,22 +2518,14 @@ var require_crc32 = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/utils/common.js
 var require_common = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/utils/common.js"(exports) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/utils/common.js"(exports2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var TYPED_OK = typeof Uint8Array !== "undefined" && typeof Uint16Array !== "undefined" && typeof Int32Array !== "undefined";
     function _has(obj, key2) {
       return Object.prototype.hasOwnProperty.call(obj, key2);
     }
-<<<<<<< HEAD
-    exports.assign = function(obj) {
-=======
     exports2.assign = function(obj) {
->>>>>>> origin/main
       var sources = Array.prototype.slice.call(arguments, 1);
       while (sources.length) {
         var source = sources.shift();
@@ -3054,11 +2543,7 @@ var require_common = __commonJS({
       }
       return obj;
     };
-<<<<<<< HEAD
-    exports.shrinkBuf = function(buf, size) {
-=======
     exports2.shrinkBuf = function(buf, size) {
->>>>>>> origin/main
       if (buf.length === size) {
         return buf;
       }
@@ -3106,22 +2591,6 @@ var require_common = __commonJS({
         return [].concat.apply([], chunks);
       }
     };
-<<<<<<< HEAD
-    exports.setTyped = function(on) {
-      if (on) {
-        exports.Buf8 = Uint8Array;
-        exports.Buf16 = Uint16Array;
-        exports.Buf32 = Int32Array;
-        exports.assign(exports, fnTyped);
-      } else {
-        exports.Buf8 = Array;
-        exports.Buf16 = Array;
-        exports.Buf32 = Array;
-        exports.assign(exports, fnUntyped);
-      }
-    };
-    exports.setTyped(TYPED_OK);
-=======
     exports2.setTyped = function(on) {
       if (on) {
         exports2.Buf8 = Uint8Array;
@@ -3136,17 +2605,12 @@ var require_common = __commonJS({
       }
     };
     exports2.setTyped(TYPED_OK);
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/trees.js
 var require_trees = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/trees.js"(exports) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/trees.js"(exports2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var utils = require_common();
@@ -3779,29 +3243,17 @@ var require_trees = __commonJS({
       }
       return s.last_lit === s.lit_bufsize - 1;
     }
-<<<<<<< HEAD
-    exports._tr_init = _tr_init;
-    exports._tr_stored_block = _tr_stored_block;
-    exports._tr_flush_block = _tr_flush_block;
-    exports._tr_tally = _tr_tally;
-    exports._tr_align = _tr_align;
-=======
     exports2._tr_init = _tr_init;
     exports2._tr_stored_block = _tr_stored_block;
     exports2._tr_flush_block = _tr_flush_block;
     exports2._tr_tally = _tr_tally;
     exports2._tr_align = _tr_align;
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/adler32.js
 var require_adler32 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/adler32.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/adler32.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     function adler32(adler, buf, len, pos) {
@@ -3824,11 +3276,7 @@ var require_adler32 = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/crc32.js
 var require_crc322 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/crc32.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/crc32.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     function makeTable() {
@@ -3857,11 +3305,7 @@ var require_crc322 = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/messages.js
 var require_messages = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/messages.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/messages.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     module2.exports = {
@@ -3889,11 +3333,7 @@ var require_messages = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/deflate.js
 var require_deflate = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/deflate.js"(exports) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/deflate.js"(exports2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var utils = require_common();
@@ -4551,11 +3991,7 @@ var require_deflate = __commonJS({
       strm.state.gzhead = head;
       return Z_OK;
     }
-<<<<<<< HEAD
-    function deflateInit2(strm, level, method, windowBits, memLevel, strategy) {
-=======
     function deflateInit2(strm, level, method2, windowBits, memLevel, strategy) {
->>>>>>> origin/main
       if (!strm) {
         return Z_STREAM_ERROR;
       }
@@ -4570,11 +4006,7 @@ var require_deflate = __commonJS({
         wrap = 2;
         windowBits -= 16;
       }
-<<<<<<< HEAD
-      if (memLevel < 1 || memLevel > MAX_MEM_LEVEL || method !== Z_DEFLATED || windowBits < 8 || windowBits > 15 || level < 0 || level > 9 || strategy < 0 || strategy > Z_FIXED) {
-=======
       if (memLevel < 1 || memLevel > MAX_MEM_LEVEL || method2 !== Z_DEFLATED || windowBits < 8 || windowBits > 15 || level < 0 || level > 9 || strategy < 0 || strategy > Z_FIXED) {
->>>>>>> origin/main
         return err(strm, Z_STREAM_ERROR);
       }
       if (windowBits === 8) {
@@ -4602,11 +4034,7 @@ var require_deflate = __commonJS({
       s.l_buf = (1 + 2) * s.lit_bufsize;
       s.level = level;
       s.strategy = strategy;
-<<<<<<< HEAD
-      s.method = method;
-=======
       s.method = method2;
->>>>>>> origin/main
       return deflateReset(strm);
     }
     function deflateInit(strm, level) {
@@ -4941,17 +4369,6 @@ var require_deflate = __commonJS({
       s.wrap = wrap;
       return Z_OK;
     }
-<<<<<<< HEAD
-    exports.deflateInit = deflateInit;
-    exports.deflateInit2 = deflateInit2;
-    exports.deflateReset = deflateReset;
-    exports.deflateResetKeep = deflateResetKeep;
-    exports.deflateSetHeader = deflateSetHeader;
-    exports.deflate = deflate2;
-    exports.deflateEnd = deflateEnd;
-    exports.deflateSetDictionary = deflateSetDictionary;
-    exports.deflateInfo = "pako deflate (from Nodeca project)";
-=======
     exports2.deflateInit = deflateInit;
     exports2.deflateInit2 = deflateInit2;
     exports2.deflateReset = deflateReset;
@@ -4961,17 +4378,12 @@ var require_deflate = __commonJS({
     exports2.deflateEnd = deflateEnd;
     exports2.deflateSetDictionary = deflateSetDictionary;
     exports2.deflateInfo = "pako deflate (from Nodeca project)";
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/utils/strings.js
 var require_strings = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/utils/strings.js"(exports) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/utils/strings.js"(exports2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var utils = require_common();
@@ -4993,11 +4405,7 @@ var require_strings = __commonJS({
     }
     var q;
     _utf8len[254] = _utf8len[254] = 1;
-<<<<<<< HEAD
-    exports.string2buf = function(str) {
-=======
     exports2.string2buf = function(str) {
->>>>>>> origin/main
       var buf, c, c2, m_pos, i, str_len = str.length, buf_len = 0;
       for (m_pos = 0; m_pos < str_len; m_pos++) {
         c = str.charCodeAt(m_pos);
@@ -5050,28 +4458,17 @@ var require_strings = __commonJS({
       }
       return result;
     }
-<<<<<<< HEAD
-    exports.buf2binstring = function(buf) {
-      return buf2binstring(buf, buf.length);
-    };
-    exports.binstring2buf = function(str) {
-=======
     exports2.buf2binstring = function(buf) {
       return buf2binstring(buf, buf.length);
     };
     exports2.binstring2buf = function(str) {
->>>>>>> origin/main
       var buf = new utils.Buf8(str.length);
       for (var i = 0, len = buf.length; i < len; i++) {
         buf[i] = str.charCodeAt(i);
       }
       return buf;
     };
-<<<<<<< HEAD
-    exports.buf2string = function(buf, max) {
-=======
     exports2.buf2string = function(buf, max) {
->>>>>>> origin/main
       var i, out, c, c_len;
       var len = max || buf.length;
       var utf16buf = new Array(len * 2);
@@ -5106,11 +4503,7 @@ var require_strings = __commonJS({
       }
       return buf2binstring(utf16buf, out);
     };
-<<<<<<< HEAD
-    exports.utf8border = function(buf, max) {
-=======
     exports2.utf8border = function(buf, max) {
->>>>>>> origin/main
       var pos;
       max = max || buf.length;
       if (max > buf.length) {
@@ -5133,11 +4526,7 @@ var require_strings = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/zstream.js
 var require_zstream = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/zstream.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/zstream.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     function ZStream() {
@@ -5160,11 +4549,7 @@ var require_zstream = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/deflate.js
 var require_deflate2 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/deflate.js"(exports) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/deflate.js"(exports2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var zlib_deflate = require_deflate();
@@ -5318,27 +4703,16 @@ var require_deflate2 = __commonJS({
       options.gzip = true;
       return deflate2(input, options);
     }
-<<<<<<< HEAD
-    exports.Deflate = Deflate;
-    exports.deflate = deflate2;
-    exports.deflateRaw = deflateRaw;
-    exports.gzip = gzip;
-=======
     exports2.Deflate = Deflate;
     exports2.deflate = deflate2;
     exports2.deflateRaw = deflateRaw;
     exports2.gzip = gzip;
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inffast.js
 var require_inffast = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inffast.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inffast.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var BAD = 30;
@@ -5568,11 +4942,7 @@ var require_inffast = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inftrees.js
 var require_inftrees = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inftrees.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inftrees.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var utils = require_common();
@@ -5725,11 +5095,7 @@ var require_inftrees = __commonJS({
       var len = 0;
       var sym = 0;
       var min = 0, max = 0;
-<<<<<<< HEAD
-      var root = 0;
-=======
       var root2 = 0;
->>>>>>> origin/main
       var curr = 0;
       var drop = 0;
       var left = 0;
@@ -5754,23 +5120,14 @@ var require_inftrees = __commonJS({
       for (sym = 0; sym < codes; sym++) {
         count[lens[lens_index + sym]]++;
       }
-<<<<<<< HEAD
-      root = bits;
-=======
       root2 = bits;
->>>>>>> origin/main
       for (max = MAXBITS; max >= 1; max--) {
         if (count[max] !== 0) {
           break;
         }
       }
-<<<<<<< HEAD
-      if (root > max) {
-        root = max;
-=======
       if (root2 > max) {
         root2 = max;
->>>>>>> origin/main
       }
       if (max === 0) {
         table[table_index++] = 1 << 24 | 64 << 16 | 0;
@@ -5783,13 +5140,8 @@ var require_inftrees = __commonJS({
           break;
         }
       }
-<<<<<<< HEAD
-      if (root < min) {
-        root = min;
-=======
       if (root2 < min) {
         root2 = min;
->>>>>>> origin/main
       }
       left = 1;
       for (len = 1; len <= MAXBITS; len++) {
@@ -5829,17 +5181,10 @@ var require_inftrees = __commonJS({
       sym = 0;
       len = min;
       next = table_index;
-<<<<<<< HEAD
-      curr = root;
-      drop = 0;
-      low = -1;
-      used = 1 << root;
-=======
       curr = root2;
       drop = 0;
       low = -1;
       used = 1 << root2;
->>>>>>> origin/main
       mask = used - 1;
       if (type === LENS && used > ENOUGH_LENS || type === DISTS && used > ENOUGH_DISTS) {
         return 1;
@@ -5880,15 +5225,9 @@ var require_inftrees = __commonJS({
           }
           len = lens[lens_index + work[sym]];
         }
-<<<<<<< HEAD
-        if (len > root && (huff & mask) !== low) {
-          if (drop === 0) {
-            drop = root;
-=======
         if (len > root2 && (huff & mask) !== low) {
           if (drop === 0) {
             drop = root2;
->>>>>>> origin/main
           }
           next += min;
           curr = len - drop;
@@ -5906,21 +5245,13 @@ var require_inftrees = __commonJS({
             return 1;
           }
           low = huff & mask;
-<<<<<<< HEAD
-          table[low] = root << 24 | curr << 16 | next - table_index | 0;
-=======
           table[low] = root2 << 24 | curr << 16 | next - table_index | 0;
->>>>>>> origin/main
         }
       }
       if (huff !== 0) {
         table[next + huff] = len - drop << 24 | 64 << 16 | 0;
       }
-<<<<<<< HEAD
-      opts.bits = root;
-=======
       opts.bits = root2;
->>>>>>> origin/main
       return 0;
     };
   }
@@ -5928,11 +5259,7 @@ var require_inftrees = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inflate.js
 var require_inflate = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inflate.js"(exports) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/inflate.js"(exports2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var utils = require_common();
@@ -5959,11 +5286,7 @@ var require_inflate = __commonJS({
     var TIME = 3;
     var OS = 4;
     var EXLEN = 5;
-<<<<<<< HEAD
-    var EXTRA = 6;
-=======
     var EXTRA2 = 6;
->>>>>>> origin/main
     var NAME = 7;
     var COMMENT = 8;
     var HCRC = 9;
@@ -6380,13 +5703,8 @@ var require_inflate = __commonJS({
               } else if (state.head) {
                 state.head.extra = null;
               }
-<<<<<<< HEAD
-              state.mode = EXTRA;
-            case EXTRA:
-=======
               state.mode = EXTRA2;
             case EXTRA2:
->>>>>>> origin/main
               if (state.flags & 1024) {
                 copy2 = state.length;
                 if (copy2 > have) {
@@ -7143,18 +6461,6 @@ var require_inflate = __commonJS({
       state.havedict = 1;
       return Z_OK;
     }
-<<<<<<< HEAD
-    exports.inflateReset = inflateReset;
-    exports.inflateReset2 = inflateReset2;
-    exports.inflateResetKeep = inflateResetKeep;
-    exports.inflateInit = inflateInit;
-    exports.inflateInit2 = inflateInit2;
-    exports.inflate = inflate2;
-    exports.inflateEnd = inflateEnd;
-    exports.inflateGetHeader = inflateGetHeader;
-    exports.inflateSetDictionary = inflateSetDictionary;
-    exports.inflateInfo = "pako inflate (from Nodeca project)";
-=======
     exports2.inflateReset = inflateReset;
     exports2.inflateReset2 = inflateReset2;
     exports2.inflateResetKeep = inflateResetKeep;
@@ -7165,17 +6471,12 @@ var require_inflate = __commonJS({
     exports2.inflateGetHeader = inflateGetHeader;
     exports2.inflateSetDictionary = inflateSetDictionary;
     exports2.inflateInfo = "pako inflate (from Nodeca project)";
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/constants.js
 var require_constants = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/constants.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/constants.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     module2.exports = {
@@ -7223,11 +6524,7 @@ var require_constants = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/gzheader.js
 var require_gzheader = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/gzheader.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/zlib/gzheader.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     function GZheader() {
@@ -7248,11 +6545,7 @@ var require_gzheader = __commonJS({
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/inflate.js
 var require_inflate2 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/inflate.js"(exports) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/lib/inflate.js"(exports2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var zlib_inflate = require_inflate();
@@ -7419,27 +6712,16 @@ var require_inflate2 = __commonJS({
       options.raw = true;
       return inflate2(input, options);
     }
-<<<<<<< HEAD
-    exports.Inflate = Inflate;
-    exports.inflate = inflate2;
-    exports.inflateRaw = inflateRaw;
-    exports.ungzip = inflate2;
-=======
     exports2.Inflate = Inflate;
     exports2.inflate = inflate2;
     exports2.inflateRaw = inflateRaw;
     exports2.ungzip = inflate2;
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/pako@1.0.11/node_modules/pako/index.js
 var require_pako = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pako@1.0.11/node_modules/pako/index.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pako@1.0.11/node_modules/pako/index.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var assign2 = require_common().assign;
@@ -7454,11 +6736,7 @@ var require_pako = __commonJS({
 
 // node_modules/.pnpm/pify@4.0.1/node_modules/pify/index.js
 var require_pify = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/pify@4.0.1/node_modules/pify/index.js"(exports, module2) {
-=======
   "node_modules/.pnpm/pify@4.0.1/node_modules/pify/index.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     var processFn = (fn, options) => function(...args) {
@@ -7524,11 +6802,7 @@ var require_pify = __commonJS({
 
 // node_modules/.pnpm/ignore@5.2.4/node_modules/ignore/index.js
 var require_ignore = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/ignore@5.2.4/node_modules/ignore/index.js"(exports, module2) {
-=======
   "node_modules/.pnpm/ignore@5.2.4/node_modules/ignore/index.js"(exports2, module2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     function makeArray(subject) {
       return Array.isArray(subject) ? subject : [subject];
@@ -7902,11 +7176,7 @@ var require_ignore = __commonJS({
 
 // node_modules/.pnpm/clean-git-ref@2.0.1/node_modules/clean-git-ref/lib/index.js
 var require_lib2 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/clean-git-ref@2.0.1/node_modules/clean-git-ref/lib/index.js"(exports, module2) {
-=======
   "node_modules/.pnpm/clean-git-ref@2.0.1/node_modules/clean-git-ref/lib/index.js"(exports2, module2) {
->>>>>>> origin/main
     "use strict";
     init_polyfill_buffer();
     function escapeRegExp(string) {
@@ -7940,11 +7210,7 @@ var require_lib2 = __commonJS({
 
 // node_modules/.pnpm/diff3@0.0.3/node_modules/diff3/onp.js
 var require_onp = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/diff3@0.0.3/node_modules/diff3/onp.js"(exports, module2) {
-=======
   "node_modules/.pnpm/diff3@0.0.3/node_modules/diff3/onp.js"(exports2, module2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     module2.exports = function(a_, b_) {
       var a = a_, b = b_, m = a.length, n = b.length, reverse = false, ed = null, offset = m + 1, path2 = [], pathposi = [], ses = [], lcs = "", SES_DELETE = -1, SES_COMMON = 0, SES_ADD = 1;
@@ -8074,22 +7340,14 @@ var require_onp = __commonJS({
 
 // node_modules/.pnpm/diff3@0.0.3/node_modules/diff3/diff3.js
 var require_diff3 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/diff3@0.0.3/node_modules/diff3/diff3.js"(exports, module2) {
-=======
   "node_modules/.pnpm/diff3@0.0.3/node_modules/diff3/diff3.js"(exports2, module2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     var onp = require_onp();
     function longestCommonSubsequence(file1, file2) {
       var diff2 = new onp(file1, file2);
       diff2.compose();
       var ses = diff2.getses();
-<<<<<<< HEAD
-      var root;
-=======
       var root2;
->>>>>>> origin/main
       var prev;
       var file1RevIdx = file1.length - 1, file2RevIdx = file2.length - 1;
       for (var i = ses.length - 1; i >= 0; --i) {
@@ -8102,20 +7360,12 @@ var require_diff3 = __commonJS({
             };
             prev = prev.chain;
           } else {
-<<<<<<< HEAD
-            root = {
-=======
             root2 = {
->>>>>>> origin/main
               file1index: file1RevIdx,
               file2index: file2RevIdx,
               chain: null
             };
-<<<<<<< HEAD
-            prev = root;
-=======
             prev = root2;
->>>>>>> origin/main
           }
           file1RevIdx--;
           file2RevIdx--;
@@ -8134,11 +7384,7 @@ var require_diff3 = __commonJS({
         return tail;
       }
       prev.chain = tail;
-<<<<<<< HEAD
-      return root;
-=======
       return root2;
->>>>>>> origin/main
     }
     function diffIndices(file1, file2) {
       var result = [];
@@ -8300,11 +7546,7 @@ var require_diff3 = __commonJS({
 
 // node_modules/.pnpm/ms@2.1.2/node_modules/ms/index.js
 var require_ms = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/ms@2.1.2/node_modules/ms/index.js"(exports, module2) {
-=======
   "node_modules/.pnpm/ms@2.1.2/node_modules/ms/index.js"(exports2, module2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     var s = 1e3;
     var m = s * 60;
@@ -8419,13 +7661,9 @@ var require_ms = __commonJS({
   }
 });
 
-// node_modules/.pnpm/debug@4.3.4_supports-color@7.2.0/node_modules/debug/src/common.js
+// node_modules/.pnpm/debug@4.3.4_supports-color@9.4.0/node_modules/debug/src/common.js
 var require_common2 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/debug@4.3.4_supports-color@7.2.0/node_modules/debug/src/common.js"(exports, module2) {
-=======
-  "node_modules/.pnpm/debug@4.3.4_supports-color@7.2.0/node_modules/debug/src/common.js"(exports2, module2) {
->>>>>>> origin/main
+  "node_modules/.pnpm/debug@4.3.4_supports-color@9.4.0/node_modules/debug/src/common.js"(exports2, module2) {
     init_polyfill_buffer();
     function setup(env) {
       createDebug.debug = createDebug;
@@ -8587,19 +7825,9 @@ var require_common2 = __commonJS({
   }
 });
 
-// node_modules/.pnpm/debug@4.3.4_supports-color@7.2.0/node_modules/debug/src/browser.js
+// node_modules/.pnpm/debug@4.3.4_supports-color@9.4.0/node_modules/debug/src/browser.js
 var require_browser = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/debug@4.3.4_supports-color@7.2.0/node_modules/debug/src/browser.js"(exports, module2) {
-    init_polyfill_buffer();
-    exports.formatArgs = formatArgs;
-    exports.save = save;
-    exports.load = load;
-    exports.useColors = useColors;
-    exports.storage = localstorage();
-    exports.destroy = (() => {
-=======
-  "node_modules/.pnpm/debug@4.3.4_supports-color@7.2.0/node_modules/debug/src/browser.js"(exports2, module2) {
+  "node_modules/.pnpm/debug@4.3.4_supports-color@9.4.0/node_modules/debug/src/browser.js"(exports2, module2) {
     init_polyfill_buffer();
     exports2.formatArgs = formatArgs;
     exports2.save = save;
@@ -8607,7 +7835,6 @@ var require_browser = __commonJS({
     exports2.useColors = useColors;
     exports2.storage = localstorage();
     exports2.destroy = (() => {
->>>>>>> origin/main
       let warned = false;
       return () => {
         if (!warned) {
@@ -8616,11 +7843,7 @@ var require_browser = __commonJS({
         }
       };
     })();
-<<<<<<< HEAD
-    exports.colors = [
-=======
     exports2.colors = [
->>>>>>> origin/main
       "#0000CC",
       "#0000FF",
       "#0033CC",
@@ -8731,24 +7954,14 @@ var require_browser = __commonJS({
       });
       args.splice(lastC, 0, c);
     }
-<<<<<<< HEAD
-    exports.log = console.debug || console.log || (() => {
-=======
     exports2.log = console.debug || console.log || (() => {
->>>>>>> origin/main
     });
     function save(namespaces) {
       try {
         if (namespaces) {
-<<<<<<< HEAD
-          exports.storage.setItem("debug", namespaces);
-        } else {
-          exports.storage.removeItem("debug");
-=======
           exports2.storage.setItem("debug", namespaces);
         } else {
           exports2.storage.removeItem("debug");
->>>>>>> origin/main
         }
       } catch (error) {
       }
@@ -8756,11 +7969,7 @@ var require_browser = __commonJS({
     function load() {
       let r;
       try {
-<<<<<<< HEAD
-        r = exports.storage.getItem("debug");
-=======
         r = exports2.storage.getItem("debug");
->>>>>>> origin/main
       } catch (error) {
       }
       if (!r && typeof process !== "undefined" && "env" in process) {
@@ -8774,11 +7983,7 @@ var require_browser = __commonJS({
       } catch (error) {
       }
     }
-<<<<<<< HEAD
-    module2.exports = require_common2()(exports);
-=======
     module2.exports = require_common2()(exports2);
->>>>>>> origin/main
     var { formatters } = module2.exports;
     formatters.j = function(v) {
       try {
@@ -8790,25 +7995,15 @@ var require_browser = __commonJS({
   }
 });
 
-// node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@7.2.0/node_modules/@kwsites/file-exists/dist/src/index.js
+// node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@9.4.0/node_modules/@kwsites/file-exists/dist/src/index.js
 var require_src = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@7.2.0/node_modules/@kwsites/file-exists/dist/src/index.js"(exports) {
-    "use strict";
-    init_polyfill_buffer();
-    var __importDefault = exports && exports.__importDefault || function(mod) {
-      return mod && mod.__esModule ? mod : { "default": mod };
-    };
-    Object.defineProperty(exports, "__esModule", { value: true });
-=======
-  "node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@7.2.0/node_modules/@kwsites/file-exists/dist/src/index.js"(exports2) {
+  "node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@9.4.0/node_modules/@kwsites/file-exists/dist/src/index.js"(exports2) {
     "use strict";
     init_polyfill_buffer();
     var __importDefault = exports2 && exports2.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
->>>>>>> origin/main
     var fs_1 = require("fs");
     var debug_1 = __importDefault(require_browser());
     var log2 = debug_1.default("@kwsites/file-exists");
@@ -8835,15 +8030,6 @@ var require_src = __commonJS({
         throw e;
       }
     }
-<<<<<<< HEAD
-    function exists2(path2, type = exports.READABLE) {
-      return check(path2, (type & exports.FILE) > 0, (type & exports.FOLDER) > 0);
-    }
-    exports.exists = exists2;
-    exports.FILE = 1;
-    exports.FOLDER = 2;
-    exports.READABLE = exports.FILE + exports.FOLDER;
-=======
     function exists2(path2, type = exports2.READABLE) {
       return check(path2, (type & exports2.FILE) > 0, (type & exports2.FOLDER) > 0);
     }
@@ -8851,51 +8037,31 @@ var require_src = __commonJS({
     exports2.FILE = 1;
     exports2.FOLDER = 2;
     exports2.READABLE = exports2.FILE + exports2.FOLDER;
->>>>>>> origin/main
   }
 });
 
-// node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@7.2.0/node_modules/@kwsites/file-exists/dist/index.js
+// node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@9.4.0/node_modules/@kwsites/file-exists/dist/index.js
 var require_dist = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@7.2.0/node_modules/@kwsites/file-exists/dist/index.js"(exports) {
-=======
-  "node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@7.2.0/node_modules/@kwsites/file-exists/dist/index.js"(exports2) {
->>>>>>> origin/main
+  "node_modules/.pnpm/@kwsites+file-exists@1.1.1_supports-color@9.4.0/node_modules/@kwsites/file-exists/dist/index.js"(exports2) {
     "use strict";
     init_polyfill_buffer();
     function __export3(m) {
       for (var p in m)
-<<<<<<< HEAD
-        if (!exports.hasOwnProperty(p))
-          exports[p] = m[p];
-    }
-    Object.defineProperty(exports, "__esModule", { value: true });
-=======
         if (!exports2.hasOwnProperty(p))
           exports2[p] = m[p];
     }
     Object.defineProperty(exports2, "__esModule", { value: true });
->>>>>>> origin/main
     __export3(require_src());
   }
 });
 
 // node_modules/.pnpm/@kwsites+promise-deferred@1.1.1/node_modules/@kwsites/promise-deferred/dist/index.js
 var require_dist2 = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/@kwsites+promise-deferred@1.1.1/node_modules/@kwsites/promise-deferred/dist/index.js"(exports) {
-    "use strict";
-    init_polyfill_buffer();
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.createDeferred = exports.deferred = void 0;
-=======
   "node_modules/.pnpm/@kwsites+promise-deferred@1.1.1/node_modules/@kwsites/promise-deferred/dist/index.js"(exports2) {
     "use strict";
     init_polyfill_buffer();
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.createDeferred = exports2.deferred = void 0;
->>>>>>> origin/main
     function deferred2() {
       let done;
       let fail;
@@ -8926,11 +8092,6 @@ var require_dist2 = __commonJS({
         }
       };
     }
-<<<<<<< HEAD
-    exports.deferred = deferred2;
-    exports.createDeferred = deferred2;
-    exports.default = deferred2;
-=======
     exports2.deferred = deferred2;
     exports2.createDeferred = deferred2;
     exports2.default = deferred2;
@@ -9762,6 +8923,21 @@ var require_has_symbols = __commonJS({
   }
 });
 
+// node_modules/.pnpm/has-proto@1.0.1/node_modules/has-proto/index.js
+var require_has_proto = __commonJS({
+  "node_modules/.pnpm/has-proto@1.0.1/node_modules/has-proto/index.js"(exports2, module2) {
+    "use strict";
+    init_polyfill_buffer();
+    var test = {
+      foo: {}
+    };
+    var $Object = Object;
+    module2.exports = function hasProto() {
+      return { __proto__: test }.foo === test.foo && !({ __proto__: null } instanceof $Object);
+    };
+  }
+});
+
 // node_modules/.pnpm/function-bind@1.1.1/node_modules/function-bind/implementation.js
 var require_implementation2 = __commonJS({
   "node_modules/.pnpm/function-bind@1.1.1/node_modules/function-bind/implementation.js"(exports2, module2) {
@@ -9833,9 +9009,9 @@ var require_src2 = __commonJS({
   }
 });
 
-// node_modules/.pnpm/get-intrinsic@1.2.0/node_modules/get-intrinsic/index.js
+// node_modules/.pnpm/get-intrinsic@1.2.1/node_modules/get-intrinsic/index.js
 var require_get_intrinsic = __commonJS({
-  "node_modules/.pnpm/get-intrinsic@1.2.0/node_modules/get-intrinsic/index.js"(exports2, module2) {
+  "node_modules/.pnpm/get-intrinsic@1.2.1/node_modules/get-intrinsic/index.js"(exports2, module2) {
     "use strict";
     init_polyfill_buffer();
     var undefined2;
@@ -9872,16 +9048,17 @@ var require_get_intrinsic = __commonJS({
       }
     }() : throwTypeError;
     var hasSymbols = require_has_symbols()();
-    var getProto = Object.getPrototypeOf || function(x) {
+    var hasProto = require_has_proto()();
+    var getProto = Object.getPrototypeOf || (hasProto ? function(x) {
       return x.__proto__;
-    };
+    } : null);
     var needsEval = {};
-    var TypedArray = typeof Uint8Array === "undefined" ? undefined2 : getProto(Uint8Array);
+    var TypedArray = typeof Uint8Array === "undefined" || !getProto ? undefined2 : getProto(Uint8Array);
     var INTRINSICS = {
       "%AggregateError%": typeof AggregateError === "undefined" ? undefined2 : AggregateError,
       "%Array%": Array,
       "%ArrayBuffer%": typeof ArrayBuffer === "undefined" ? undefined2 : ArrayBuffer,
-      "%ArrayIteratorPrototype%": hasSymbols ? getProto([][Symbol.iterator]()) : undefined2,
+      "%ArrayIteratorPrototype%": hasSymbols && getProto ? getProto([][Symbol.iterator]()) : undefined2,
       "%AsyncFromSyncIteratorPrototype%": undefined2,
       "%AsyncFunction%": needsEval,
       "%AsyncGenerator%": needsEval,
@@ -9912,10 +9089,10 @@ var require_get_intrinsic = __commonJS({
       "%Int32Array%": typeof Int32Array === "undefined" ? undefined2 : Int32Array,
       "%isFinite%": isFinite,
       "%isNaN%": isNaN,
-      "%IteratorPrototype%": hasSymbols ? getProto(getProto([][Symbol.iterator]())) : undefined2,
+      "%IteratorPrototype%": hasSymbols && getProto ? getProto(getProto([][Symbol.iterator]())) : undefined2,
       "%JSON%": typeof JSON === "object" ? JSON : undefined2,
       "%Map%": typeof Map === "undefined" ? undefined2 : Map,
-      "%MapIteratorPrototype%": typeof Map === "undefined" || !hasSymbols ? undefined2 : getProto((/* @__PURE__ */ new Map())[Symbol.iterator]()),
+      "%MapIteratorPrototype%": typeof Map === "undefined" || !hasSymbols || !getProto ? undefined2 : getProto((/* @__PURE__ */ new Map())[Symbol.iterator]()),
       "%Math%": Math,
       "%Number%": Number,
       "%Object%": Object,
@@ -9928,10 +9105,10 @@ var require_get_intrinsic = __commonJS({
       "%Reflect%": typeof Reflect === "undefined" ? undefined2 : Reflect,
       "%RegExp%": RegExp,
       "%Set%": typeof Set === "undefined" ? undefined2 : Set,
-      "%SetIteratorPrototype%": typeof Set === "undefined" || !hasSymbols ? undefined2 : getProto((/* @__PURE__ */ new Set())[Symbol.iterator]()),
+      "%SetIteratorPrototype%": typeof Set === "undefined" || !hasSymbols || !getProto ? undefined2 : getProto((/* @__PURE__ */ new Set())[Symbol.iterator]()),
       "%SharedArrayBuffer%": typeof SharedArrayBuffer === "undefined" ? undefined2 : SharedArrayBuffer,
       "%String%": String,
-      "%StringIteratorPrototype%": hasSymbols ? getProto(""[Symbol.iterator]()) : undefined2,
+      "%StringIteratorPrototype%": hasSymbols && getProto ? getProto(""[Symbol.iterator]()) : undefined2,
       "%Symbol%": hasSymbols ? Symbol : undefined2,
       "%SyntaxError%": $SyntaxError,
       "%ThrowTypeError%": ThrowTypeError,
@@ -9946,11 +9123,13 @@ var require_get_intrinsic = __commonJS({
       "%WeakRef%": typeof WeakRef === "undefined" ? undefined2 : WeakRef,
       "%WeakSet%": typeof WeakSet === "undefined" ? undefined2 : WeakSet
     };
-    try {
-      null.error;
-    } catch (e) {
-      errorProto = getProto(getProto(e));
-      INTRINSICS["%Error.prototype%"] = errorProto;
+    if (getProto) {
+      try {
+        null.error;
+      } catch (e) {
+        errorProto = getProto(getProto(e));
+        INTRINSICS["%Error.prototype%"] = errorProto;
+      }
     }
     var errorProto;
     var doEval = function doEval2(name) {
@@ -9968,7 +9147,7 @@ var require_get_intrinsic = __commonJS({
         }
       } else if (name === "%AsyncIteratorPrototype%") {
         var gen = doEval2("%AsyncGenerator%");
-        if (gen) {
+        if (gen && getProto) {
           value = getProto(gen.prototype);
         }
       }
@@ -13389,17 +12568,12 @@ var require_sha256 = __commonJS({
         }
       }
     })();
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/compiler.js
 var require_compiler = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/compiler.js"(exports) {
-=======
   "node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/compiler.js"(exports2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     (function(Hogan4) {
       var rIsWhitespace = /\S/, rQuot = /\"/g, rNewline = /\n/g, rCr = /\r/g, rSlash = /\\/g, rLineSep = /\u2028/, rParagraphSep = /\u2029/;
@@ -13722,21 +12896,13 @@ var require_compiler = __commonJS({
         template = this.generate(this.parse(this.scan(text2, options.delimiters), text2, options), text2, options);
         return this.cache[key2] = template;
       };
-<<<<<<< HEAD
-    })(typeof exports !== "undefined" ? exports : Hogan);
-=======
     })(typeof exports2 !== "undefined" ? exports2 : Hogan);
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/template.js
 var require_template = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/template.js"(exports) {
-=======
   "node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/template.js"(exports2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     var Hogan4 = {};
     (function(Hogan5) {
@@ -13996,21 +13162,13 @@ var require_template = __commonJS({
       var isArray = Array.isArray || function(a) {
         return Object.prototype.toString.call(a) === "[object Array]";
       };
-<<<<<<< HEAD
-    })(typeof exports !== "undefined" ? exports : Hogan4);
-=======
     })(typeof exports2 !== "undefined" ? exports2 : Hogan4);
->>>>>>> origin/main
   }
 });
 
 // node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/hogan.js
 var require_hogan = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/hogan.js"(exports, module2) {
-=======
   "node_modules/.pnpm/hogan.js@3.0.2/node_modules/hogan.js/lib/hogan.js"(exports2, module2) {
->>>>>>> origin/main
     init_polyfill_buffer();
     var Hogan4 = require_compiler();
     Hogan4.Template = require_template().Template;
@@ -14021,20 +13179,6 @@ var require_hogan = __commonJS({
 
 // node_modules/.pnpm/feather-icons@4.29.0/node_modules/feather-icons/dist/feather.js
 var require_feather = __commonJS({
-<<<<<<< HEAD
-  "node_modules/.pnpm/feather-icons@4.29.0/node_modules/feather-icons/dist/feather.js"(exports, module2) {
-    init_polyfill_buffer();
-    (function webpackUniversalModuleDefinition(root, factory) {
-      if (typeof exports === "object" && typeof module2 === "object")
-        module2.exports = factory();
-      else if (typeof define === "function" && define.amd)
-        define([], factory);
-      else if (typeof exports === "object")
-        exports["feather"] = factory();
-      else
-        root["feather"] = factory();
-    })(typeof self !== "undefined" ? self : exports, function() {
-=======
   "node_modules/.pnpm/feather-icons@4.29.0/node_modules/feather-icons/dist/feather.js"(exports2, module2) {
     init_polyfill_buffer();
     (function webpackUniversalModuleDefinition(root2, factory) {
@@ -14047,7 +13191,6 @@ var require_feather = __commonJS({
       else
         root2["feather"] = factory();
     })(typeof self !== "undefined" ? self : exports2, function() {
->>>>>>> origin/main
       return (
         /******/
         function(modules) {
@@ -14071,15 +13214,9 @@ var require_feather = __commonJS({
           }
           __webpack_require__.m = modules;
           __webpack_require__.c = installedModules;
-<<<<<<< HEAD
-          __webpack_require__.d = function(exports2, name, getter) {
-            if (!__webpack_require__.o(exports2, name)) {
-              Object.defineProperty(exports2, name, {
-=======
           __webpack_require__.d = function(exports3, name, getter) {
             if (!__webpack_require__.o(exports3, name)) {
               Object.defineProperty(exports3, name, {
->>>>>>> origin/main
                 /******/
                 configurable: false,
                 /******/
@@ -14090,13 +13227,8 @@ var require_feather = __commonJS({
               });
             }
           };
-<<<<<<< HEAD
-          __webpack_require__.r = function(exports2) {
-            Object.defineProperty(exports2, "__esModule", { value: true });
-=======
           __webpack_require__.r = function(exports3) {
             Object.defineProperty(exports3, "__esModule", { value: true });
->>>>>>> origin/main
           };
           __webpack_require__.n = function(module3) {
             var getter = module3 && module3.__esModule ? (
@@ -14137,11 +13269,7 @@ var require_feather = __commonJS({
               \*******************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
               (function() {
                 "use strict";
@@ -14211,11 +13339,7 @@ var require_feather = __commonJS({
                 } else if (true) {
                   !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
                     return classNames;
-<<<<<<< HEAD
-                  }.apply(exports2, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module3.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-=======
                   }.apply(exports3, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module3.exports = __WEBPACK_AMD_DEFINE_RESULT__));
->>>>>>> origin/main
                 } else {
                 }
               })();
@@ -14228,11 +13352,7 @@ var require_feather = __commonJS({
               \***********************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               __webpack_require__(
                 /*! ../../modules/es.string.iterator */
                 "./node_modules/core-js/modules/es.string.iterator.js"
@@ -14255,11 +13375,7 @@ var require_feather = __commonJS({
               \******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = function(it) {
                 if (typeof it != "function") {
                   throw TypeError(String(it) + " is not a function");
@@ -14275,11 +13391,7 @@ var require_feather = __commonJS({
               \*****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var isObject = __webpack_require__(
                 /*! ../internals/is-object */
                 "./node_modules/core-js/internals/is-object.js"
@@ -14299,11 +13411,7 @@ var require_feather = __commonJS({
               \******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               "use strict";
               var bind = __webpack_require__(
                 /*! ../internals/bind-context */
@@ -14373,11 +13481,7 @@ var require_feather = __commonJS({
               \**********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var toIndexedObject = __webpack_require__(
                 /*! ../internals/to-indexed-object */
                 "./node_modules/core-js/internals/to-indexed-object.js"
@@ -14420,11 +13524,7 @@ var require_feather = __commonJS({
               \********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var aFunction = __webpack_require__(
                 /*! ../internals/a-function */
                 "./node_modules/core-js/internals/a-function.js"
@@ -14464,11 +13564,7 @@ var require_feather = __commonJS({
               \****************************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var anObject = __webpack_require__(
                 /*! ../internals/an-object */
                 "./node_modules/core-js/internals/an-object.js"
@@ -14492,11 +13588,7 @@ var require_feather = __commonJS({
               \**************************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var wellKnownSymbol = __webpack_require__(
                 /*! ../internals/well-known-symbol */
                 "./node_modules/core-js/internals/well-known-symbol.js"
@@ -14548,11 +13640,7 @@ var require_feather = __commonJS({
               \*******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               var toString = {}.toString;
               module3.exports = function(it) {
                 return toString.call(it).slice(8, -1);
@@ -14566,11 +13654,7 @@ var require_feather = __commonJS({
               \***************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var classofRaw = __webpack_require__(
                 /*! ../internals/classof-raw */
                 "./node_modules/core-js/internals/classof-raw.js"
@@ -14602,11 +13686,7 @@ var require_feather = __commonJS({
               \***********************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var has = __webpack_require__(
                 /*! ../internals/has */
                 "./node_modules/core-js/internals/has.js"
@@ -14642,11 +13722,7 @@ var require_feather = __commonJS({
               \********************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var fails = __webpack_require__(
                 /*! ../internals/fails */
                 "./node_modules/core-js/internals/fails.js"
@@ -14666,11 +13742,7 @@ var require_feather = __commonJS({
               \***********************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               "use strict";
               var IteratorPrototype = __webpack_require__(
                 /*! ../internals/iterators-core */
@@ -14711,11 +13783,7 @@ var require_feather = __commonJS({
               \**********************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = function(bitmap, value) {
                 return {
                   enumerable: !(bitmap & 1),
@@ -14733,11 +13801,7 @@ var require_feather = __commonJS({
               \***********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               "use strict";
               var toPrimitive = __webpack_require__(
                 /*! ../internals/to-primitive */
@@ -14767,11 +13831,7 @@ var require_feather = __commonJS({
               \***********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               "use strict";
               var $ = __webpack_require__(
                 /*! ../internals/export */
@@ -14909,11 +13969,7 @@ var require_feather = __commonJS({
               \*******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var fails = __webpack_require__(
                 /*! ../internals/fails */
                 "./node_modules/core-js/internals/fails.js"
@@ -14932,11 +13988,7 @@ var require_feather = __commonJS({
               \*******************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -14959,11 +14011,7 @@ var require_feather = __commonJS({
               \*********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = [
                 "constructor",
                 "hasOwnProperty",
@@ -14982,11 +14030,7 @@ var require_feather = __commonJS({
               \**************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -15056,11 +14100,7 @@ var require_feather = __commonJS({
               \*************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = function(exec) {
                 try {
                   return !!exec();
@@ -15077,11 +14117,7 @@ var require_feather = __commonJS({
               \**************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var shared = __webpack_require__(
                 /*! ../internals/shared */
                 "./node_modules/core-js/internals/shared.js"
@@ -15096,11 +14132,7 @@ var require_feather = __commonJS({
               \***************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var classof = __webpack_require__(
                 /*! ../internals/classof */
                 "./node_modules/core-js/internals/classof.js"
@@ -15127,11 +14159,7 @@ var require_feather = __commonJS({
               \**************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               (function(global2) {
                 var O = "object";
                 var check = function(it) {
@@ -15153,11 +14181,7 @@ var require_feather = __commonJS({
               \***********************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               var hasOwnProperty = {}.hasOwnProperty;
               module3.exports = function(it, key2) {
                 return hasOwnProperty.call(it, key2);
@@ -15171,11 +14195,7 @@ var require_feather = __commonJS({
               \*******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = {};
             }
           ),
@@ -15186,11 +14206,7 @@ var require_feather = __commonJS({
               \************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var DESCRIPTORS = __webpack_require__(
                 /*! ../internals/descriptors */
                 "./node_modules/core-js/internals/descriptors.js"
@@ -15218,11 +14234,7 @@ var require_feather = __commonJS({
               \************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -15238,11 +14250,7 @@ var require_feather = __commonJS({
               \**********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var DESCRIPTORS = __webpack_require__(
                 /*! ../internals/descriptors */
                 "./node_modules/core-js/internals/descriptors.js"
@@ -15271,11 +14279,7 @@ var require_feather = __commonJS({
               \**********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var fails = __webpack_require__(
                 /*! ../internals/fails */
                 "./node_modules/core-js/internals/fails.js"
@@ -15299,11 +14303,7 @@ var require_feather = __commonJS({
               \**********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var NATIVE_WEAK_MAP = __webpack_require__(
                 /*! ../internals/native-weak-map */
                 "./node_modules/core-js/internals/native-weak-map.js"
@@ -15391,11 +14391,7 @@ var require_feather = __commonJS({
               \********************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var wellKnownSymbol = __webpack_require__(
                 /*! ../internals/well-known-symbol */
                 "./node_modules/core-js/internals/well-known-symbol.js"
@@ -15418,28 +14414,17 @@ var require_feather = __commonJS({
               \*****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var fails = __webpack_require__(
                 /*! ../internals/fails */
                 "./node_modules/core-js/internals/fails.js"
               );
               var replacement = /#|\.prototype\./;
               var isForced = function(feature, detection) {
-<<<<<<< HEAD
-                var value = data[normalize(feature)];
-                return value == POLYFILL ? true : value == NATIVE ? false : typeof detection == "function" ? fails(detection) : !!detection;
-              };
-              var normalize = isForced.normalize = function(string) {
-=======
                 var value = data[normalize2(feature)];
                 return value == POLYFILL ? true : value == NATIVE ? false : typeof detection == "function" ? fails(detection) : !!detection;
               };
               var normalize2 = isForced.normalize = function(string) {
->>>>>>> origin/main
                 return String(string).replace(replacement, ".").toLowerCase();
               };
               var data = isForced.data = {};
@@ -15455,11 +14440,7 @@ var require_feather = __commonJS({
               \*****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = function(it) {
                 return typeof it === "object" ? it !== null : typeof it === "function";
               };
@@ -15472,11 +14453,7 @@ var require_feather = __commonJS({
               \***************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = false;
             }
           ),
@@ -15487,11 +14464,7 @@ var require_feather = __commonJS({
               \**********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               "use strict";
               var getPrototypeOf = __webpack_require__(
                 /*! ../internals/object-get-prototype-of */
@@ -15546,11 +14519,7 @@ var require_feather = __commonJS({
               \*****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = {};
             }
           ),
@@ -15561,11 +14530,7 @@ var require_feather = __commonJS({
               \*********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var fails = __webpack_require__(
                 /*! ../internals/fails */
                 "./node_modules/core-js/internals/fails.js"
@@ -15582,11 +14547,7 @@ var require_feather = __commonJS({
               \***********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -15606,11 +14567,7 @@ var require_feather = __commonJS({
               \*********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var anObject = __webpack_require__(
                 /*! ../internals/an-object */
                 "./node_modules/core-js/internals/an-object.js"
@@ -15684,11 +14641,7 @@ var require_feather = __commonJS({
               \********************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var DESCRIPTORS = __webpack_require__(
                 /*! ../internals/descriptors */
                 "./node_modules/core-js/internals/descriptors.js"
@@ -15724,11 +14677,7 @@ var require_feather = __commonJS({
               \******************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var DESCRIPTORS = __webpack_require__(
                 /*! ../internals/descriptors */
                 "./node_modules/core-js/internals/descriptors.js"
@@ -15746,11 +14695,7 @@ var require_feather = __commonJS({
                 "./node_modules/core-js/internals/to-primitive.js"
               );
               var nativeDefineProperty = Object.defineProperty;
-<<<<<<< HEAD
-              exports2.f = DESCRIPTORS ? nativeDefineProperty : function defineProperty(O, P, Attributes) {
-=======
               exports3.f = DESCRIPTORS ? nativeDefineProperty : function defineProperty(O, P, Attributes) {
->>>>>>> origin/main
                 anObject(O);
                 P = toPrimitive(P, true);
                 anObject(Attributes);
@@ -15774,11 +14719,7 @@ var require_feather = __commonJS({
               \******************************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var DESCRIPTORS = __webpack_require__(
                 /*! ../internals/descriptors */
                 "./node_modules/core-js/internals/descriptors.js"
@@ -15808,11 +14749,7 @@ var require_feather = __commonJS({
                 "./node_modules/core-js/internals/ie8-dom-define.js"
               );
               var nativeGetOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-<<<<<<< HEAD
-              exports2.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnPropertyDescriptor(O, P) {
-=======
               exports3.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnPropertyDescriptor(O, P) {
->>>>>>> origin/main
                 O = toIndexedObject(O);
                 P = toPrimitive(P, true);
                 if (IE8_DOM_DEFINE)
@@ -15832,11 +14769,7 @@ var require_feather = __commonJS({
               \*************************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var internalObjectKeys = __webpack_require__(
                 /*! ../internals/object-keys-internal */
                 "./node_modules/core-js/internals/object-keys-internal.js"
@@ -15846,11 +14779,7 @@ var require_feather = __commonJS({
                 "./node_modules/core-js/internals/enum-bug-keys.js"
               );
               var hiddenKeys = enumBugKeys.concat("length", "prototype");
-<<<<<<< HEAD
-              exports2.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
-=======
               exports3.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
->>>>>>> origin/main
                 return internalObjectKeys(O, hiddenKeys);
               };
             }
@@ -15862,13 +14791,8 @@ var require_feather = __commonJS({
               \***************************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-              exports2.f = Object.getOwnPropertySymbols;
-=======
             function(module3, exports3) {
               exports3.f = Object.getOwnPropertySymbols;
->>>>>>> origin/main
             }
           ),
           /***/
@@ -15878,11 +14802,7 @@ var require_feather = __commonJS({
               \*******************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var has = __webpack_require__(
                 /*! ../internals/has */
                 "./node_modules/core-js/internals/has.js"
@@ -15919,11 +14839,7 @@ var require_feather = __commonJS({
               \****************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var has = __webpack_require__(
                 /*! ../internals/has */
                 "./node_modules/core-js/internals/has.js"
@@ -15963,11 +14879,7 @@ var require_feather = __commonJS({
               \*******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var internalObjectKeys = __webpack_require__(
                 /*! ../internals/object-keys-internal */
                 "./node_modules/core-js/internals/object-keys-internal.js"
@@ -15988,20 +14900,12 @@ var require_feather = __commonJS({
               \*************************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               "use strict";
               var nativePropertyIsEnumerable = {}.propertyIsEnumerable;
               var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
               var NASHORN_BUG = getOwnPropertyDescriptor && !nativePropertyIsEnumerable.call({ 1: 2 }, 1);
-<<<<<<< HEAD
-              exports2.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
-=======
               exports3.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
->>>>>>> origin/main
                 var descriptor = getOwnPropertyDescriptor(this, V);
                 return !!descriptor && descriptor.enumerable;
               } : nativePropertyIsEnumerable;
@@ -16014,11 +14918,7 @@ var require_feather = __commonJS({
               \*******************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var validateSetPrototypeOfArguments = __webpack_require__(
                 /*! ../internals/validate-set-prototype-of-arguments */
                 "./node_modules/core-js/internals/validate-set-prototype-of-arguments.js"
@@ -16051,11 +14951,7 @@ var require_feather = __commonJS({
               \****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -16087,11 +14983,7 @@ var require_feather = __commonJS({
               \************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               module3.exports = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -16105,11 +14997,7 @@ var require_feather = __commonJS({
               \****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -16180,11 +15068,7 @@ var require_feather = __commonJS({
               \********************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               module3.exports = function(it) {
                 if (it == void 0)
                   throw TypeError("Can't call method on " + it);
@@ -16199,11 +15083,7 @@ var require_feather = __commonJS({
               \******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -16229,11 +15109,7 @@ var require_feather = __commonJS({
               \*************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var defineProperty = __webpack_require__(
                 /*! ../internals/object-define-property */
                 "./node_modules/core-js/internals/object-define-property.js"
@@ -16261,11 +15137,7 @@ var require_feather = __commonJS({
               \******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var shared = __webpack_require__(
                 /*! ../internals/shared */
                 "./node_modules/core-js/internals/shared.js"
@@ -16287,11 +15159,7 @@ var require_feather = __commonJS({
               \**************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -16322,11 +15190,7 @@ var require_feather = __commonJS({
               \*****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var toInteger = __webpack_require__(
                 /*! ../internals/to-integer */
                 "./node_modules/core-js/internals/to-integer.js"
@@ -16354,11 +15218,7 @@ var require_feather = __commonJS({
               \*************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var toInteger = __webpack_require__(
                 /*! ../internals/to-integer */
                 "./node_modules/core-js/internals/to-integer.js"
@@ -16378,11 +15238,7 @@ var require_feather = __commonJS({
               \*************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var IndexedObject = __webpack_require__(
                 /*! ../internals/indexed-object */
                 "./node_modules/core-js/internals/indexed-object.js"
@@ -16403,11 +15259,7 @@ var require_feather = __commonJS({
               \******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               var ceil = Math.ceil;
               var floor = Math.floor;
               module3.exports = function(argument) {
@@ -16422,11 +15274,7 @@ var require_feather = __commonJS({
               \*****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var toInteger = __webpack_require__(
                 /*! ../internals/to-integer */
                 "./node_modules/core-js/internals/to-integer.js"
@@ -16444,11 +15292,7 @@ var require_feather = __commonJS({
               \*****************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var requireObjectCoercible = __webpack_require__(
                 /*! ../internals/require-object-coercible */
                 "./node_modules/core-js/internals/require-object-coercible.js"
@@ -16465,11 +15309,7 @@ var require_feather = __commonJS({
               \********************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var isObject = __webpack_require__(
                 /*! ../internals/is-object */
                 "./node_modules/core-js/internals/is-object.js"
@@ -16495,11 +15335,7 @@ var require_feather = __commonJS({
               \***********************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               var id = 0;
               var postfix = Math.random();
               module3.exports = function(key2) {
@@ -16514,11 +15350,7 @@ var require_feather = __commonJS({
               \*******************************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var isObject = __webpack_require__(
                 /*! ../internals/is-object */
                 "./node_modules/core-js/internals/is-object.js"
@@ -16542,11 +15374,7 @@ var require_feather = __commonJS({
               \*************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var global2 = __webpack_require__(
                 /*! ../internals/global */
                 "./node_modules/core-js/internals/global.js"
@@ -16577,11 +15405,7 @@ var require_feather = __commonJS({
               \*******************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               var $ = __webpack_require__(
                 /*! ../internals/export */
                 "./node_modules/core-js/internals/export.js"
@@ -16609,11 +15433,7 @@ var require_feather = __commonJS({
               \************************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               "use strict";
               var codePointAt = __webpack_require__(
                 /*! ../internals/string-at */
@@ -16656,11 +15476,7 @@ var require_feather = __commonJS({
               \***********************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2) {
-=======
             function(module3, exports3) {
->>>>>>> origin/main
               var g;
               g = function() {
                 return this;
@@ -16692,15 +15508,9 @@ var require_feather = __commonJS({
               \*********************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-              "use strict";
-              Object.defineProperty(exports2, "__esModule", {
-=======
             function(module3, exports3, __webpack_require__) {
               "use strict";
               Object.defineProperty(exports3, "__esModule", {
->>>>>>> origin/main
                 value: true
               });
               var _extends = Object.assign || function(target) {
@@ -16788,11 +15598,7 @@ var require_feather = __commonJS({
                   return key2 + '="' + attrs[key2] + '"';
                 }).join(" ");
               }
-<<<<<<< HEAD
-              exports2.default = Icon;
-=======
               exports3.default = Icon;
->>>>>>> origin/main
             }
           ),
           /***/
@@ -16802,15 +15608,9 @@ var require_feather = __commonJS({
               \**********************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-              "use strict";
-              Object.defineProperty(exports2, "__esModule", {
-=======
             function(module3, exports3, __webpack_require__) {
               "use strict";
               Object.defineProperty(exports3, "__esModule", {
->>>>>>> origin/main
                 value: true
               });
               var _icon = __webpack_require__(
@@ -16831,11 +15631,7 @@ var require_feather = __commonJS({
               function _interopRequireDefault(obj) {
                 return obj && obj.__esModule ? obj : { default: obj };
               }
-<<<<<<< HEAD
-              exports2.default = Object.keys(_icons2.default).map(function(key2) {
-=======
               exports3.default = Object.keys(_icons2.default).map(function(key2) {
->>>>>>> origin/main
                 return new _icon2.default(key2, _icons2.default[key2], _tags2.default[key2]);
               }).reduce(function(object, icon) {
                 object[icon.name] = icon;
@@ -16850,11 +15646,7 @@ var require_feather = __commonJS({
               \**********************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               "use strict";
               var _icons = __webpack_require__(
                 /*! ./icons */
@@ -16884,15 +15676,9 @@ var require_feather = __commonJS({
               \************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-              "use strict";
-              Object.defineProperty(exports2, "__esModule", {
-=======
             function(module3, exports3, __webpack_require__) {
               "use strict";
               Object.defineProperty(exports3, "__esModule", {
->>>>>>> origin/main
                 value: true
               });
               var _extends = Object.assign || function(target) {
@@ -16945,11 +15731,7 @@ var require_feather = __commonJS({
                   return attrs;
                 }, {});
               }
-<<<<<<< HEAD
-              exports2.default = replace;
-=======
               exports3.default = replace;
->>>>>>> origin/main
             }
           ),
           /***/
@@ -16970,15 +15752,9 @@ var require_feather = __commonJS({
               \***********************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-              "use strict";
-              Object.defineProperty(exports2, "__esModule", {
-=======
             function(module3, exports3, __webpack_require__) {
               "use strict";
               Object.defineProperty(exports3, "__esModule", {
->>>>>>> origin/main
                 value: true
               });
               var _icons = __webpack_require__(
@@ -17000,11 +15776,7 @@ var require_feather = __commonJS({
                 }
                 return _icons2.default[name].toSvg(attrs);
               }
-<<<<<<< HEAD
-              exports2.default = toSvg;
-=======
               exports3.default = toSvg;
->>>>>>> origin/main
             }
           ),
           /***/
@@ -17014,11 +15786,7 @@ var require_feather = __commonJS({
               \**************************************************/
             /*! no static exports found */
             /***/
-<<<<<<< HEAD
-            function(module3, exports2, __webpack_require__) {
-=======
             function(module3, exports3, __webpack_require__) {
->>>>>>> origin/main
               __webpack_require__(
                 /*! core-js/es/array/from */
                 "./node_modules/core-js/es/array/from.js"
@@ -17044,7 +15812,7 @@ __export(main_exports, {
 module.exports = __toCommonJS(main_exports);
 init_polyfill_buffer();
 
-// node_modules/.pnpm/isomorphic-git@1.23.0/node_modules/isomorphic-git/index.js
+// node_modules/.pnpm/isomorphic-git@1.24.2/node_modules/isomorphic-git/index.js
 init_polyfill_buffer();
 var import_async_lock = __toESM(require_async_lock(), 1);
 var import_sha1 = __toESM(require_sha1(), 1);
@@ -17054,7 +15822,7 @@ var import_pify = __toESM(require_pify(), 1);
 var import_ignore = __toESM(require_ignore(), 1);
 var import_clean_git_ref = __toESM(require_lib2(), 1);
 var import_diff3 = __toESM(require_diff3(), 1);
-var BaseError = class extends Error {
+var BaseError = class _BaseError extends Error {
   constructor(message) {
     super(message);
     this.caller = "";
@@ -17069,7 +15837,7 @@ var BaseError = class extends Error {
     };
   }
   fromJSON(json) {
-    const e = new BaseError(json.message);
+    const e = new _BaseError(json.message);
     e.code = json.code;
     e.data = json.data;
     e.caller = json.caller;
@@ -17080,7 +15848,7 @@ var BaseError = class extends Error {
     return true;
   }
 };
-var UnmergedPathsError = class extends BaseError {
+var UnmergedPathsError = class _UnmergedPathsError extends BaseError {
   /**
    * @param {Array<string>} filepaths
    */
@@ -17088,12 +15856,12 @@ var UnmergedPathsError = class extends BaseError {
     super(
       `Modifying the index is not possible because you have unmerged files: ${filepaths.toString}. Fix them up in the work tree, and then use 'git add/rm as appropriate to mark resolution and make a commit.`
     );
-    this.code = this.name = UnmergedPathsError.code;
+    this.code = this.name = _UnmergedPathsError.code;
     this.data = { filepaths };
   }
 };
 UnmergedPathsError.code = "UnmergedPathsError";
-var InternalError = class extends BaseError {
+var InternalError = class _InternalError extends BaseError {
   /**
    * @param {string} message
    */
@@ -17101,18 +15869,18 @@ var InternalError = class extends BaseError {
     super(
       `An internal error caused this command to fail. Please file a bug report at https://github.com/isomorphic-git/isomorphic-git/issues with this error message: ${message}`
     );
-    this.code = this.name = InternalError.code;
+    this.code = this.name = _InternalError.code;
     this.data = { message };
   }
 };
 InternalError.code = "InternalError";
-var UnsafeFilepathError = class extends BaseError {
+var UnsafeFilepathError = class _UnsafeFilepathError extends BaseError {
   /**
    * @param {string} filepath
    */
   constructor(filepath) {
     super(`The filepath "${filepath}" contains unsafe character sequences`);
-    this.code = this.name = UnsafeFilepathError.code;
+    this.code = this.name = _UnsafeFilepathError.code;
     this.data = { filepath };
   }
 };
@@ -17286,14 +16054,10 @@ function parseCacheEntryFlags(bits) {
 function renderCacheEntryFlags(entry) {
   const flags = entry.flags;
   flags.extended = false;
-<<<<<<< HEAD
-  flags.nameLength = Math.min(Buffer2.from(entry.path).length, 4095);
-=======
   flags.nameLength = Math.min(Buffer.from(entry.path).length, 4095);
->>>>>>> origin/main
   return (flags.assumeValid ? 32768 : 0) + (flags.extended ? 16384 : 0) + ((flags.stage & 3) << 12) + (flags.nameLength & 4095);
 }
-var GitIndex = class {
+var GitIndex = class _GitIndex {
   /*::
    _entries: Map<string, CacheEntry>
    _dirty: boolean // Used to determine if index needs to be saved to filesystem
@@ -17319,31 +16083,30 @@ var GitIndex = class {
     }
   }
   static async from(buffer2) {
-<<<<<<< HEAD
-    if (Buffer2.isBuffer(buffer2)) {
-=======
     if (Buffer.isBuffer(buffer2)) {
->>>>>>> origin/main
-      return GitIndex.fromBuffer(buffer2);
+      return _GitIndex.fromBuffer(buffer2);
     } else if (buffer2 === null) {
-      return new GitIndex(null);
+      return new _GitIndex(null);
     } else {
       throw new InternalError("invalid type passed to GitIndex.from");
     }
   }
   static async fromBuffer(buffer2) {
+    if (buffer2.length === 0) {
+      throw new InternalError("Index file is empty (.git/index)");
+    }
+    const index2 = new _GitIndex();
+    const reader = new BufferCursor(buffer2);
+    const magic = reader.toString("utf8", 4);
+    if (magic !== "DIRC") {
+      throw new InternalError(`Invalid dircache magic file number: ${magic}`);
+    }
     const shaComputed = await shasum(buffer2.slice(0, -20));
     const shaClaimed = buffer2.slice(-20).toString("hex");
     if (shaClaimed !== shaComputed) {
       throw new InternalError(
         `Invalid checksum in GitIndex buffer: expected ${shaClaimed} but saw ${shaComputed}`
       );
-    }
-    const index2 = new GitIndex();
-    const reader = new BufferCursor(buffer2);
-    const magic = reader.toString("utf8", 4);
-    if (magic !== "DIRC") {
-      throw new InternalError(`Inavlid dircache magic file number: ${magic}`);
     }
     const version2 = reader.readUInt32BE();
     if (version2 !== 2) {
@@ -17428,11 +16191,7 @@ var GitIndex = class {
       };
     }
     stats = normalizeStats(stats);
-<<<<<<< HEAD
-    const bfilepath = Buffer2.from(filepath);
-=======
     const bfilepath = Buffer.from(filepath);
->>>>>>> origin/main
     const entry = {
       ctimeSeconds: stats.ctimeSeconds,
       ctimeNanoseconds: stats.ctimeNanoseconds,
@@ -17486,15 +16245,9 @@ var GitIndex = class {
     return this.entries.map((entry) => `${entry.mode.toString(8)} ${entry.oid}    ${entry.path}`).join("\n");
   }
   static async _entryToBuffer(entry) {
-<<<<<<< HEAD
-    const bpath = Buffer2.from(entry.path);
-    const length = Math.ceil((62 + bpath.length + 1) / 8) * 8;
-    const written = Buffer2.alloc(length);
-=======
     const bpath = Buffer.from(entry.path);
     const length = Math.ceil((62 + bpath.length + 1) / 8) * 8;
     const written = Buffer.alloc(length);
->>>>>>> origin/main
     const writer = new BufferCursor(written);
     const stat = normalizeStats(entry);
     writer.writeUInt32BE(stat.ctimeSeconds);
@@ -17513,38 +16266,27 @@ var GitIndex = class {
     return written;
   }
   async toObject() {
-<<<<<<< HEAD
-    const header = Buffer2.alloc(12);
-=======
     const header = Buffer.alloc(12);
->>>>>>> origin/main
     const writer = new BufferCursor(header);
     writer.write("DIRC", 4, "utf8");
     writer.writeUInt32BE(2);
     writer.writeUInt32BE(this.entriesFlat.length);
     let entryBuffers = [];
     for (const entry of this.entries) {
-      entryBuffers.push(GitIndex._entryToBuffer(entry));
+      entryBuffers.push(_GitIndex._entryToBuffer(entry));
       if (entry.stages.length > 1) {
         for (const stage of entry.stages) {
           if (stage && stage !== entry) {
-            entryBuffers.push(GitIndex._entryToBuffer(stage));
+            entryBuffers.push(_GitIndex._entryToBuffer(stage));
           }
         }
       }
     }
     entryBuffers = await Promise.all(entryBuffers);
-<<<<<<< HEAD
-    const body = Buffer2.concat(entryBuffers);
-    const main = Buffer2.concat([header, body]);
-    const sum = await shasum(main);
-    return Buffer2.concat([main, Buffer2.from(sum, "hex")]);
-=======
     const body = Buffer.concat(entryBuffers);
     const main = Buffer.concat([header, body]);
     const sum = await shasum(main);
     return Buffer.concat([main, Buffer.from(sum, "hex")]);
->>>>>>> origin/main
   }
 };
 function compareStats(entry, stats) {
@@ -17790,18 +16532,18 @@ function STAGE() {
   Object.freeze(o);
   return o;
 }
-var NotFoundError = class extends BaseError {
+var NotFoundError = class _NotFoundError extends BaseError {
   /**
    * @param {string} what
    */
   constructor(what) {
     super(`Could not find ${what}.`);
-    this.code = this.name = NotFoundError.code;
+    this.code = this.name = _NotFoundError.code;
     this.data = { what };
   }
 };
 NotFoundError.code = "NotFoundError";
-var ObjectTypeError = class extends BaseError {
+var ObjectTypeError = class _ObjectTypeError extends BaseError {
   /**
    * @param {string} oid
    * @param {'blob'|'commit'|'tag'|'tree'} actual
@@ -17812,23 +16554,23 @@ var ObjectTypeError = class extends BaseError {
     super(
       `Object ${oid} ${filepath ? `at ${filepath}` : ""}was anticipated to be a ${expected} but it is a ${actual}.`
     );
-    this.code = this.name = ObjectTypeError.code;
+    this.code = this.name = _ObjectTypeError.code;
     this.data = { oid, actual, expected, filepath };
   }
 };
 ObjectTypeError.code = "ObjectTypeError";
-var InvalidOidError = class extends BaseError {
+var InvalidOidError = class _InvalidOidError extends BaseError {
   /**
    * @param {string} value
    */
   constructor(value) {
     super(`Expected a 40-char hex object id but saw "${value}".`);
-    this.code = this.name = InvalidOidError.code;
+    this.code = this.name = _InvalidOidError.code;
     this.data = { value };
   }
 };
 InvalidOidError.code = "InvalidOidError";
-var NoRefspecError = class extends BaseError {
+var NoRefspecError = class _NoRefspecError extends BaseError {
   /**
    * @param {string} remote
    */
@@ -17837,12 +16579,12 @@ var NoRefspecError = class extends BaseError {
 [remote "${remote}"]
 	fetch = +refs/heads/*:refs/remotes/origin/*
 `);
-    this.code = this.name = NoRefspecError.code;
+    this.code = this.name = _NoRefspecError.code;
     this.data = { remote };
   }
 };
 NoRefspecError.code = "NoRefspecError";
-var GitPackedRefs = class {
+var GitPackedRefs = class _GitPackedRefs {
   constructor(text2) {
     this.refs = /* @__PURE__ */ new Map();
     this.parsedConfig = [];
@@ -17868,7 +16610,7 @@ var GitPackedRefs = class {
     return this;
   }
   static from(text2) {
-    return new GitPackedRefs(text2);
+    return new _GitPackedRefs(text2);
   }
   delete(ref) {
     this.parsedConfig = this.parsedConfig.filter((entry) => entry.ref !== ref);
@@ -17878,7 +16620,7 @@ var GitPackedRefs = class {
     return this.parsedConfig.map(({ line }) => line).join("\n") + "\n";
   }
 };
-var GitRefSpec = class {
+var GitRefSpec = class _GitRefSpec {
   constructor({ remotePath, localPath, force, matchPrefix }) {
     Object.assign(this, {
       remotePath,
@@ -17901,7 +16643,7 @@ var GitRefSpec = class {
     if (remoteIsGlob !== localIsGlob) {
       throw new InternalError("Invalid refspec");
     }
-    return new GitRefSpec({
+    return new _GitRefSpec({
       remotePath,
       localPath,
       force,
@@ -17931,7 +16673,7 @@ var GitRefSpec = class {
     return null;
   }
 };
-var GitRefSpecSet = class {
+var GitRefSpecSet = class _GitRefSpecSet {
   constructor(rules = []) {
     this.rules = rules;
   }
@@ -17940,7 +16682,7 @@ var GitRefSpecSet = class {
     for (const refspec of refspecs) {
       rules.push(GitRefSpec.from(refspec));
     }
-    return new GitRefSpecSet(rules);
+    return new _GitRefSpecSet(rules);
   }
   add(refspec) {
     const rule = GitRefSpec.from(refspec);
@@ -18090,7 +16832,7 @@ var findLastIndex = (array, callback) => {
     return callback(item) ? index2 : lastIndex;
   }, -1);
 };
-var GitConfig = class {
+var GitConfig = class _GitConfig {
   constructor(text2) {
     let section = null;
     let subsection = null;
@@ -18116,7 +16858,7 @@ var GitConfig = class {
     });
   }
   static from(text2) {
-    return new GitConfig(text2);
+    return new _GitConfig(text2);
   }
   async get(path2, getall = false) {
     const normalizedPath = normalizePath$1(path2).path;
@@ -18235,7 +16977,7 @@ var refpaths = (ref) => [
   `refs/remotes/${ref}/HEAD`
 ];
 var GIT_FILES = ["config", "description", "index", "shallow", "commondir"];
-var GitRefManager = class {
+var GitRefManager = class _GitRefManager {
   static async updateRemoteRefs({
     fs,
     gitdir,
@@ -18263,12 +17005,12 @@ var GitRefManager = class {
     const refspec = GitRefSpecSet.from(refspecs);
     const actualRefsToWrite = /* @__PURE__ */ new Map();
     if (pruneTags) {
-      const tags2 = await GitRefManager.listRefs({
+      const tags2 = await _GitRefManager.listRefs({
         fs,
         gitdir,
         filepath: "refs/tags"
       });
-      await GitRefManager.deleteRefs({
+      await _GitRefManager.deleteRefs({
         fs,
         gitdir,
         refs: tags2.map((tag2) => `refs/tags/${tag2}`)
@@ -18277,7 +17019,7 @@ var GitRefManager = class {
     if (tags) {
       for (const serverRef of refs.keys()) {
         if (serverRef.startsWith("refs/tags") && !serverRef.endsWith("^{}")) {
-          if (!await GitRefManager.exists({ fs, gitdir, ref: serverRef })) {
+          if (!await _GitRefManager.exists({ fs, gitdir, ref: serverRef })) {
             const oid = refs.get(serverRef);
             actualRefsToWrite.set(serverRef, oid);
           }
@@ -18300,7 +17042,7 @@ var GitRefManager = class {
     const pruned = [];
     if (prune) {
       for (const filepath of refspec.localNamespaces()) {
-        const refs2 = (await GitRefManager.listRefs({
+        const refs2 = (await _GitRefManager.listRefs({
           fs,
           gitdir,
           filepath
@@ -18312,7 +17054,7 @@ var GitRefManager = class {
         }
       }
       if (pruned.length > 0) {
-        await GitRefManager.deleteRefs({ fs, gitdir, refs: pruned });
+        await _GitRefManager.deleteRefs({ fs, gitdir, refs: pruned });
       }
     }
     for (const [key2, value] of actualRefsToWrite) {
@@ -18334,7 +17076,7 @@ var GitRefManager = class {
 `, "utf8");
   }
   static async deleteRef({ fs, gitdir, ref }) {
-    return GitRefManager.deleteRefs({ fs, gitdir, refs: [ref] });
+    return _GitRefManager.deleteRefs({ fs, gitdir, refs: [ref] });
   }
   static async deleteRefs({ fs, gitdir, refs }) {
     await Promise.all(refs.map((ref) => fs.rm(join(gitdir, ref))));
@@ -18369,24 +17111,24 @@ var GitRefManager = class {
     let sha;
     if (ref.startsWith("ref: ")) {
       ref = ref.slice("ref: ".length);
-      return GitRefManager.resolve({ fs, gitdir, ref, depth });
+      return _GitRefManager.resolve({ fs, gitdir, ref, depth });
     }
     if (ref.length === 40 && /[0-9a-f]{40}/.test(ref)) {
       return ref;
     }
-    const packedMap = await GitRefManager.packedRefs({ fs, gitdir });
+    const packedMap = await _GitRefManager.packedRefs({ fs, gitdir });
     const allpaths = refpaths(ref).filter((p) => !GIT_FILES.includes(p));
     for (const ref2 of allpaths) {
       sha = await fs.read(`${gitdir}/${ref2}`, { encoding: "utf8" }) || packedMap.get(ref2);
       if (sha) {
-        return GitRefManager.resolve({ fs, gitdir, ref: sha.trim(), depth });
+        return _GitRefManager.resolve({ fs, gitdir, ref: sha.trim(), depth });
       }
     }
     throw new NotFoundError(ref);
   }
   static async exists({ fs, gitdir, ref }) {
     try {
-      await GitRefManager.expand({ fs, gitdir, ref });
+      await _GitRefManager.expand({ fs, gitdir, ref });
       return true;
     } catch (err) {
       return false;
@@ -18396,7 +17138,7 @@ var GitRefManager = class {
     if (ref.length === 40 && /[0-9a-f]{40}/.test(ref)) {
       return ref;
     }
-    const packedMap = await GitRefManager.packedRefs({ fs, gitdir });
+    const packedMap = await _GitRefManager.packedRefs({ fs, gitdir });
     const allpaths = refpaths(ref);
     for (const ref2 of allpaths) {
       if (await fs.exists(`${gitdir}/${ref2}`))
@@ -18423,7 +17165,7 @@ var GitRefManager = class {
     }
     if (ref.startsWith("ref: ")) {
       ref = ref.slice("ref: ".length);
-      return GitRefManager.resolveAgainstMap({ ref, fullref, depth, map });
+      return _GitRefManager.resolveAgainstMap({ ref, fullref, depth, map });
     }
     if (ref.length === 40 && /[0-9a-f]{40}/.test(ref)) {
       return { fullref, oid: ref };
@@ -18432,7 +17174,7 @@ var GitRefManager = class {
     for (const ref2 of allpaths) {
       const sha = map.get(ref2);
       if (sha) {
-        return GitRefManager.resolveAgainstMap({
+        return _GitRefManager.resolveAgainstMap({
           ref: sha.trim(),
           fullref: ref2,
           depth,
@@ -18449,7 +17191,7 @@ var GitRefManager = class {
   }
   // List all the refs that match the `filepath` prefix
   static async listRefs({ fs, gitdir, filepath }) {
-    const packedMap = GitRefManager.packedRefs({ fs, gitdir });
+    const packedMap = _GitRefManager.packedRefs({ fs, gitdir });
     let files = null;
     try {
       files = await fs.readdirDeep(`${gitdir}/${filepath}`);
@@ -18470,17 +17212,17 @@ var GitRefManager = class {
   }
   static async listBranches({ fs, gitdir, remote }) {
     if (remote) {
-      return GitRefManager.listRefs({
+      return _GitRefManager.listRefs({
         fs,
         gitdir,
         filepath: `refs/remotes/${remote}`
       });
     } else {
-      return GitRefManager.listRefs({ fs, gitdir, filepath: `refs/heads` });
+      return _GitRefManager.listRefs({ fs, gitdir, filepath: `refs/heads` });
     }
   }
   static async listTags({ fs, gitdir }) {
-    const tags = await GitRefManager.listRefs({
+    const tags = await _GitRefManager.listRefs({
       fs,
       gitdir,
       filepath: `refs/tags`
@@ -18565,13 +17307,9 @@ function nudgeIntoShape(entry) {
   }
   return entry;
 }
-var GitTree = class {
+var GitTree = class _GitTree {
   constructor(entries) {
-<<<<<<< HEAD
-    if (Buffer2.isBuffer(entries)) {
-=======
     if (Buffer.isBuffer(entries)) {
->>>>>>> origin/main
       this._entries = parseBuffer(entries);
     } else if (Array.isArray(entries)) {
       this._entries = entries.map(nudgeIntoShape);
@@ -18581,7 +17319,7 @@ var GitTree = class {
     this._entries.sort(comparePath);
   }
   static from(tree) {
-    return new GitTree(tree);
+    return new _GitTree(tree);
   }
   render() {
     return this._entries.map((entry) => `${entry.mode} ${entry.type} ${entry.oid}    ${entry.path}`).join("\n");
@@ -18589,16 +17327,6 @@ var GitTree = class {
   toObject() {
     const entries = [...this._entries];
     entries.sort(compareTreeEntryPath);
-<<<<<<< HEAD
-    return Buffer2.concat(
-      entries.map((entry) => {
-        const mode = Buffer2.from(entry.mode.replace(/^0/, ""));
-        const space2 = Buffer2.from(" ");
-        const path2 = Buffer2.from(entry.path, "utf8");
-        const nullchar = Buffer2.from([0]);
-        const oid = Buffer2.from(entry.oid, "hex");
-        return Buffer2.concat([mode, space2, path2, nullchar, oid]);
-=======
     return Buffer.concat(
       entries.map((entry) => {
         const mode = Buffer.from(entry.mode.replace(/^0/, ""));
@@ -18607,7 +17335,6 @@ var GitTree = class {
         const nullchar = Buffer.from([0]);
         const oid = Buffer.from(entry.oid, "hex");
         return Buffer.concat([mode, space2, path2, nullchar, oid]);
->>>>>>> origin/main
       })
     );
   }
@@ -18625,15 +17352,9 @@ var GitTree = class {
 };
 var GitObject = class {
   static wrap({ type, object }) {
-<<<<<<< HEAD
-    return Buffer2.concat([
-      Buffer2.from(`${type} ${object.byteLength.toString()}\0`),
-      Buffer2.from(object)
-=======
     return Buffer.concat([
       Buffer.from(`${type} ${object.byteLength.toString()}\0`),
       Buffer.from(object)
->>>>>>> origin/main
     ]);
   }
   static unwrap(buffer2) {
@@ -18649,11 +17370,7 @@ var GitObject = class {
     }
     return {
       type,
-<<<<<<< HEAD
-      object: Buffer2.from(buffer2.slice(i + 1))
-=======
       object: Buffer.from(buffer2.slice(i + 1))
->>>>>>> origin/main
     };
   }
 };
@@ -18679,11 +17396,7 @@ function applyDelta(delta, source) {
   if (firstOp.byteLength === targetSize) {
     target = firstOp;
   } else {
-<<<<<<< HEAD
-    target = Buffer2.alloc(targetSize);
-=======
     target = Buffer.alloc(targetSize);
->>>>>>> origin/main
     const writer = new BufferCursor(target);
     writer.copy(firstOp);
     while (!reader.eof()) {
@@ -18838,11 +17551,7 @@ var StreamReader = class {
       this._ended = true;
     }
     if (value) {
-<<<<<<< HEAD
-      value = Buffer2.from(value);
-=======
       value = Buffer.from(value);
->>>>>>> origin/main
     }
     return value;
   }
@@ -18869,11 +17578,7 @@ var StreamReader = class {
         break;
       buffers.push(nextbuffer);
     }
-<<<<<<< HEAD
-    this.buffer = Buffer2.concat(buffers);
-=======
     this.buffer = Buffer.concat(buffers);
->>>>>>> origin/main
   }
   async _loadnext() {
     this._discardedBytes += this.buffer.length;
@@ -18962,11 +17667,7 @@ async function parseHeader(reader) {
       shift += 7;
       bytes.push(byte);
     } while (byte & 128);
-<<<<<<< HEAD
-    reference = Buffer2.from(bytes);
-=======
     reference = Buffer.from(bytes);
->>>>>>> origin/main
   }
   if (type === 7) {
     const buf = await reader.read(20);
@@ -19018,7 +17719,7 @@ function otherVarIntDecode(reader, startWith) {
   } while (byte & 128);
   return result;
 }
-var GitPackIndex = class {
+var GitPackIndex = class _GitPackIndex {
   constructor(stuff) {
     Object.assign(this, stuff);
     this.offsetCache = {};
@@ -19053,7 +17754,7 @@ var GitPackIndex = class {
       offsets.set(hashes[i], reader.readUInt32BE());
     }
     const packfileSha = reader.slice(20).toString("hex");
-    return new GitPackIndex({
+    return new _GitPackIndex({
       hashes,
       crcs: {},
       offsets,
@@ -19119,7 +17820,7 @@ var GitPackIndex = class {
       o.end = end;
       o.crc = crc;
     }
-    const p = new GitPackIndex({
+    const p = new _GitPackIndex({
       pack: Promise.resolve(pack),
       packfileSha,
       crcs,
@@ -19167,19 +17868,11 @@ var GitPackIndex = class {
   async toBuffer() {
     const buffers = [];
     const write = (str, encoding) => {
-<<<<<<< HEAD
-      buffers.push(Buffer2.from(str, encoding));
-    };
-    write("ff744f63", "hex");
-    write("00000002", "hex");
-    const fanoutBuffer = new BufferCursor(Buffer2.alloc(256 * 4));
-=======
       buffers.push(Buffer.from(str, encoding));
     };
     write("ff744f63", "hex");
     write("00000002", "hex");
     const fanoutBuffer = new BufferCursor(Buffer.alloc(256 * 4));
->>>>>>> origin/main
     for (let i = 0; i < 256; i++) {
       let count = 0;
       for (const hash2 of this.hashes) {
@@ -19192,38 +17885,22 @@ var GitPackIndex = class {
     for (const hash2 of this.hashes) {
       write(hash2, "hex");
     }
-<<<<<<< HEAD
-    const crcsBuffer = new BufferCursor(Buffer2.alloc(this.hashes.length * 4));
-=======
     const crcsBuffer = new BufferCursor(Buffer.alloc(this.hashes.length * 4));
->>>>>>> origin/main
     for (const hash2 of this.hashes) {
       crcsBuffer.writeUInt32BE(this.crcs[hash2]);
     }
     buffers.push(crcsBuffer.buffer);
-<<<<<<< HEAD
-    const offsetsBuffer = new BufferCursor(Buffer2.alloc(this.hashes.length * 4));
-=======
     const offsetsBuffer = new BufferCursor(Buffer.alloc(this.hashes.length * 4));
->>>>>>> origin/main
     for (const hash2 of this.hashes) {
       offsetsBuffer.writeUInt32BE(this.offsets.get(hash2));
     }
     buffers.push(offsetsBuffer.buffer);
     write(this.packfileSha, "hex");
-<<<<<<< HEAD
-    const totalBuffer = Buffer2.concat(buffers);
-    const sha = await shasum(totalBuffer);
-    const shaBuffer = Buffer2.alloc(20);
-    shaBuffer.write(sha, "hex");
-    return Buffer2.concat([totalBuffer, shaBuffer]);
-=======
     const totalBuffer = Buffer.concat(buffers);
     const sha = await shasum(totalBuffer);
     const shaBuffer = Buffer.alloc(20);
     shaBuffer.write(sha, "hex");
     return Buffer.concat([totalBuffer, shaBuffer]);
->>>>>>> origin/main
   }
   async load({ pack }) {
     this.pack = pack;
@@ -19287,22 +17964,14 @@ var GitPackIndex = class {
       ({ object: base, type } = await this.read({ oid }));
     }
     const buffer2 = raw.slice(reader.tell());
-<<<<<<< HEAD
-    object = Buffer2.from(await inflate(buffer2));
-=======
     object = Buffer.from(await inflate(buffer2));
->>>>>>> origin/main
     if (object.byteLength !== length) {
       throw new InternalError(
         `Packfile told us object would have length ${length} but it had length ${object.byteLength}`
       );
     }
     if (base) {
-<<<<<<< HEAD
-      object = Buffer2.from(applyDelta(object, base));
-=======
       object = Buffer.from(applyDelta(object, base));
->>>>>>> origin/main
     }
     if (this.readDepth > 3) {
       this.offsetCache[start] = { type, object };
@@ -19387,11 +18056,7 @@ async function _readObject({
   const getExternalRefDelta = (oid2) => _readObject({ fs, cache, gitdir, oid: oid2 });
   let result;
   if (oid === "4b825dc642cb6eb9a060e54bf8d69288fbee4904") {
-<<<<<<< HEAD
-    result = { format: "wrapped", object: Buffer2.from(`tree 0\0`) };
-=======
     result = { format: "wrapped", object: Buffer.from(`tree 0\0`) };
->>>>>>> origin/main
   }
   if (!result) {
     result = await readObjectLoose({ fs, gitdir, oid });
@@ -19412,11 +18077,7 @@ async function _readObject({
     return result;
   }
   if (result.format === "deflated") {
-<<<<<<< HEAD
-    result.object = Buffer2.from(await inflate(result.object));
-=======
     result.object = Buffer.from(await inflate(result.object));
->>>>>>> origin/main
     result.format = "wrapped";
   }
   if (result.format === "wrapped") {
@@ -19441,7 +18102,7 @@ async function _readObject({
   }
   throw new InternalError(`invalid format "${result.format}"`);
 }
-var AlreadyExistsError = class extends BaseError {
+var AlreadyExistsError = class _AlreadyExistsError extends BaseError {
   /**
    * @param {'note'|'remote'|'tag'|'branch'} noun
    * @param {string} where
@@ -19451,12 +18112,12 @@ var AlreadyExistsError = class extends BaseError {
     super(
       `Failed to create ${noun} at ${where} because it already exists.${canForce ? ` (Hint: use 'force: true' parameter to overwrite existing ${noun}.)` : ""}`
     );
-    this.code = this.name = AlreadyExistsError.code;
+    this.code = this.name = _AlreadyExistsError.code;
     this.data = { noun, where, canForce };
   }
 };
 AlreadyExistsError.code = "AlreadyExistsError";
-var AmbiguousError = class extends BaseError {
+var AmbiguousError = class _AmbiguousError extends BaseError {
   /**
    * @param {'oids'|'refs'} nouns
    * @param {string} short
@@ -19468,12 +18129,12 @@ var AmbiguousError = class extends BaseError {
         ", "
       )}). Use a longer abbreviation length to disambiguate them.`
     );
-    this.code = this.name = AmbiguousError.code;
+    this.code = this.name = _AmbiguousError.code;
     this.data = { nouns, short, matches };
   }
 };
 AmbiguousError.code = "AmbiguousError";
-var CheckoutConflictError = class extends BaseError {
+var CheckoutConflictError = class _CheckoutConflictError extends BaseError {
   /**
    * @param {string[]} filepaths
    */
@@ -19483,12 +18144,12 @@ var CheckoutConflictError = class extends BaseError {
         ", "
       )}`
     );
-    this.code = this.name = CheckoutConflictError.code;
+    this.code = this.name = _CheckoutConflictError.code;
     this.data = { filepaths };
   }
 };
 CheckoutConflictError.code = "CheckoutConflictError";
-var CommitNotFetchedError = class extends BaseError {
+var CommitNotFetchedError = class _CommitNotFetchedError extends BaseError {
   /**
    * @param {string} ref
    * @param {string} oid
@@ -19497,40 +18158,40 @@ var CommitNotFetchedError = class extends BaseError {
     super(
       `Failed to checkout "${ref}" because commit ${oid} is not available locally. Do a git fetch to make the branch available locally.`
     );
-    this.code = this.name = CommitNotFetchedError.code;
+    this.code = this.name = _CommitNotFetchedError.code;
     this.data = { ref, oid };
   }
 };
 CommitNotFetchedError.code = "CommitNotFetchedError";
-var EmptyServerResponseError = class extends BaseError {
+var EmptyServerResponseError = class _EmptyServerResponseError extends BaseError {
   constructor() {
     super(`Empty response from git server.`);
-    this.code = this.name = EmptyServerResponseError.code;
+    this.code = this.name = _EmptyServerResponseError.code;
     this.data = {};
   }
 };
 EmptyServerResponseError.code = "EmptyServerResponseError";
-var FastForwardError = class extends BaseError {
+var FastForwardError = class _FastForwardError extends BaseError {
   constructor() {
     super(`A simple fast-forward merge was not possible.`);
-    this.code = this.name = FastForwardError.code;
+    this.code = this.name = _FastForwardError.code;
     this.data = {};
   }
 };
 FastForwardError.code = "FastForwardError";
-var GitPushError = class extends BaseError {
+var GitPushError = class _GitPushError extends BaseError {
   /**
    * @param {string} prettyDetails
    * @param {PushResult} result
    */
   constructor(prettyDetails, result) {
     super(`One or more branches were not updated: ${prettyDetails}`);
-    this.code = this.name = GitPushError.code;
+    this.code = this.name = _GitPushError.code;
     this.data = { prettyDetails, result };
   }
 };
 GitPushError.code = "GitPushError";
-var HttpError = class extends BaseError {
+var HttpError = class _HttpError extends BaseError {
   /**
    * @param {number} statusCode
    * @param {string} statusMessage
@@ -19538,12 +18199,12 @@ var HttpError = class extends BaseError {
    */
   constructor(statusCode, statusMessage, response) {
     super(`HTTP Error: ${statusCode} ${statusMessage}`);
-    this.code = this.name = HttpError.code;
+    this.code = this.name = _HttpError.code;
     this.data = { statusCode, statusMessage, response };
   }
 };
 HttpError.code = "HttpError";
-var InvalidFilepathError = class extends BaseError {
+var InvalidFilepathError = class _InvalidFilepathError extends BaseError {
   /**
    * @param {'leading-slash'|'trailing-slash'|'directory'} [reason]
    */
@@ -19555,12 +18216,12 @@ var InvalidFilepathError = class extends BaseError {
       message = `"filepath" should not be a directory.`;
     }
     super(message);
-    this.code = this.name = InvalidFilepathError.code;
+    this.code = this.name = _InvalidFilepathError.code;
     this.data = { reason };
   }
 };
 InvalidFilepathError.code = "InvalidFilepathError";
-var InvalidRefNameError = class extends BaseError {
+var InvalidRefNameError = class _InvalidRefNameError extends BaseError {
   /**
    * @param {string} ref
    * @param {string} suggestion
@@ -19570,31 +18231,31 @@ var InvalidRefNameError = class extends BaseError {
     super(
       `"${ref}" would be an invalid git reference. (Hint: a valid alternative would be "${suggestion}".)`
     );
-    this.code = this.name = InvalidRefNameError.code;
+    this.code = this.name = _InvalidRefNameError.code;
     this.data = { ref, suggestion };
   }
 };
 InvalidRefNameError.code = "InvalidRefNameError";
-var MaxDepthError = class extends BaseError {
+var MaxDepthError = class _MaxDepthError extends BaseError {
   /**
    * @param {number} depth
    */
   constructor(depth) {
     super(`Maximum search depth of ${depth} exceeded.`);
-    this.code = this.name = MaxDepthError.code;
+    this.code = this.name = _MaxDepthError.code;
     this.data = { depth };
   }
 };
 MaxDepthError.code = "MaxDepthError";
-var MergeNotSupportedError = class extends BaseError {
+var MergeNotSupportedError = class _MergeNotSupportedError extends BaseError {
   constructor() {
     super(`Merges with conflicts are not supported yet.`);
-    this.code = this.name = MergeNotSupportedError.code;
+    this.code = this.name = _MergeNotSupportedError.code;
     this.data = {};
   }
 };
 MergeNotSupportedError.code = "MergeNotSupportedError";
-var MergeConflictError = class extends BaseError {
+var MergeConflictError = class _MergeConflictError extends BaseError {
   /**
    * @param {Array<string>} filepaths
    */
@@ -19602,12 +18263,12 @@ var MergeConflictError = class extends BaseError {
     super(
       `Automatic merge failed with one or more merge conflicts in the following files: ${filepaths.toString()}. Fix conflicts then commit the result.`
     );
-    this.code = this.name = MergeConflictError.code;
+    this.code = this.name = _MergeConflictError.code;
     this.data = { filepaths };
   }
 };
 MergeConflictError.code = "MergeConflictError";
-var MissingNameError = class extends BaseError {
+var MissingNameError = class _MissingNameError extends BaseError {
   /**
    * @param {'author'|'committer'|'tagger'} role
    */
@@ -19615,12 +18276,12 @@ var MissingNameError = class extends BaseError {
     super(
       `No name was provided for ${role} in the argument or in the .git/config file.`
     );
-    this.code = this.name = MissingNameError.code;
+    this.code = this.name = _MissingNameError.code;
     this.data = { role };
   }
 };
 MissingNameError.code = "MissingNameError";
-var MissingParameterError = class extends BaseError {
+var MissingParameterError = class _MissingParameterError extends BaseError {
   /**
    * @param {string} parameter
    */
@@ -19628,12 +18289,12 @@ var MissingParameterError = class extends BaseError {
     super(
       `The function requires a "${parameter}" parameter but none was provided.`
     );
-    this.code = this.name = MissingParameterError.code;
+    this.code = this.name = _MissingParameterError.code;
     this.data = { parameter };
   }
 };
 MissingParameterError.code = "MissingParameterError";
-var MultipleGitError = class extends BaseError {
+var MultipleGitError = class _MultipleGitError extends BaseError {
   /**
    * @param {Error[]} errors
    * @param {string} message
@@ -19642,25 +18303,25 @@ var MultipleGitError = class extends BaseError {
     super(
       `There are multiple errors that were thrown by the method. Please refer to the "errors" property to see more`
     );
-    this.code = this.name = MultipleGitError.code;
+    this.code = this.name = _MultipleGitError.code;
     this.data = { errors };
     this.errors = errors;
   }
 };
 MultipleGitError.code = "MultipleGitError";
-var ParseError = class extends BaseError {
+var ParseError = class _ParseError extends BaseError {
   /**
    * @param {string} expected
    * @param {string} actual
    */
   constructor(expected, actual) {
     super(`Expected "${expected}" but received "${actual}".`);
-    this.code = this.name = ParseError.code;
+    this.code = this.name = _ParseError.code;
     this.data = { expected, actual };
   }
 };
 ParseError.code = "ParseError";
-var PushRejectedError = class extends BaseError {
+var PushRejectedError = class _PushRejectedError extends BaseError {
   /**
    * @param {'not-fast-forward'|'tag-exists'} reason
    */
@@ -19672,12 +18333,12 @@ var PushRejectedError = class extends BaseError {
       message = " because tag already exists";
     }
     super(`Push rejected${message}. Use "force: true" to override.`);
-    this.code = this.name = PushRejectedError.code;
+    this.code = this.name = _PushRejectedError.code;
     this.data = { reason };
   }
 };
 PushRejectedError.code = "PushRejectedError";
-var RemoteCapabilityError = class extends BaseError {
+var RemoteCapabilityError = class _RemoteCapabilityError extends BaseError {
   /**
    * @param {'shallow'|'deepen-since'|'deepen-not'|'deepen-relative'} capability
    * @param {'depth'|'since'|'exclude'|'relative'} parameter
@@ -19686,12 +18347,12 @@ var RemoteCapabilityError = class extends BaseError {
     super(
       `Remote does not support the "${capability}" so the "${parameter}" parameter cannot be used.`
     );
-    this.code = this.name = RemoteCapabilityError.code;
+    this.code = this.name = _RemoteCapabilityError.code;
     this.data = { capability, parameter };
   }
 };
 RemoteCapabilityError.code = "RemoteCapabilityError";
-var SmartHttpError = class extends BaseError {
+var SmartHttpError = class _SmartHttpError extends BaseError {
   /**
    * @param {string} preview
    * @param {string} response
@@ -19700,12 +18361,12 @@ var SmartHttpError = class extends BaseError {
     super(
       `Remote did not reply using the "smart" HTTP protocol. Expected "001e# service=git-upload-pack" but received: ${preview}`
     );
-    this.code = this.name = SmartHttpError.code;
+    this.code = this.name = _SmartHttpError.code;
     this.data = { preview, response };
   }
 };
 SmartHttpError.code = "SmartHttpError";
-var UnknownTransportError = class extends BaseError {
+var UnknownTransportError = class _UnknownTransportError extends BaseError {
   /**
    * @param {string} url
    * @param {string} transport
@@ -19715,31 +18376,31 @@ var UnknownTransportError = class extends BaseError {
     super(
       `Git remote "${url}" uses an unrecognized transport protocol: "${transport}"`
     );
-    this.code = this.name = UnknownTransportError.code;
+    this.code = this.name = _UnknownTransportError.code;
     this.data = { url, transport, suggestion };
   }
 };
 UnknownTransportError.code = "UnknownTransportError";
-var UrlParseError = class extends BaseError {
+var UrlParseError = class _UrlParseError extends BaseError {
   /**
    * @param {string} url
    */
   constructor(url) {
     super(`Cannot parse remote URL: "${url}"`);
-    this.code = this.name = UrlParseError.code;
+    this.code = this.name = _UrlParseError.code;
     this.data = { url };
   }
 };
 UrlParseError.code = "UrlParseError";
-var UserCanceledError = class extends BaseError {
+var UserCanceledError = class _UserCanceledError extends BaseError {
   constructor() {
     super(`The operation was canceled.`);
-    this.code = this.name = UserCanceledError.code;
+    this.code = this.name = _UserCanceledError.code;
     this.data = {};
   }
 };
 UserCanceledError.code = "UserCanceledError";
-var IndexResetError = class extends BaseError {
+var IndexResetError = class _IndexResetError extends BaseError {
   /**
    * @param {Array<string>} filepaths
    */
@@ -19747,7 +18408,7 @@ var IndexResetError = class extends BaseError {
     super(
       `Could not merge index: Entry for '${filepath}' is not up to date. Either reset the index entry to HEAD, or stage your unstaged chages.`
     );
-    this.code = this.name = IndexResetError.code;
+    this.code = this.name = _IndexResetError.code;
     this.data = { filepath };
   }
 };
@@ -19834,18 +18495,14 @@ function parseTimezoneOffset(offset) {
 function negateExceptForZero$1(n) {
   return n === 0 ? n : -n;
 }
-var GitAnnotatedTag = class {
+var GitAnnotatedTag = class _GitAnnotatedTag {
   constructor(tag2) {
     if (typeof tag2 === "string") {
       this._tag = tag2;
-<<<<<<< HEAD
-    } else if (Buffer2.isBuffer(tag2)) {
-=======
     } else if (Buffer.isBuffer(tag2)) {
->>>>>>> origin/main
       this._tag = tag2.toString("utf8");
     } else if (typeof tag2 === "object") {
-      this._tag = GitAnnotatedTag.render(tag2);
+      this._tag = _GitAnnotatedTag.render(tag2);
     } else {
       throw new InternalError(
         "invalid type passed to GitAnnotatedTag constructor"
@@ -19853,7 +18510,7 @@ var GitAnnotatedTag = class {
     }
   }
   static from(tag2) {
-    return new GitAnnotatedTag(tag2);
+    return new _GitAnnotatedTag(tag2);
   }
   static render(obj) {
     return `object ${obj.object}
@@ -19927,18 +18584,14 @@ ${obj.gpgsig ? obj.gpgsig : ""}`;
     return this.withoutSignature() + "\n";
   }
   toObject() {
-<<<<<<< HEAD
-    return Buffer2.from(this._tag, "utf8");
-=======
     return Buffer.from(this._tag, "utf8");
->>>>>>> origin/main
   }
   static async sign(tag2, sign, secretKey) {
     const payload = tag2.payload();
     let { signature } = await sign({ payload, secretKey });
     signature = normalizeNewlines(signature);
     const signedTag = payload + signature;
-    return GitAnnotatedTag.from(signedTag);
+    return _GitAnnotatedTag.from(signedTag);
   }
 };
 function indent(str) {
@@ -19947,39 +18600,31 @@ function indent(str) {
 function outdent(str) {
   return str.split("\n").map((x) => x.replace(/^ /, "")).join("\n");
 }
-var GitCommit = class {
+var GitCommit = class _GitCommit {
   constructor(commit2) {
     if (typeof commit2 === "string") {
       this._commit = commit2;
-<<<<<<< HEAD
-    } else if (Buffer2.isBuffer(commit2)) {
-=======
     } else if (Buffer.isBuffer(commit2)) {
->>>>>>> origin/main
       this._commit = commit2.toString("utf8");
     } else if (typeof commit2 === "object") {
-      this._commit = GitCommit.render(commit2);
+      this._commit = _GitCommit.render(commit2);
     } else {
       throw new InternalError("invalid type passed to GitCommit constructor");
     }
   }
   static fromPayloadSignature({ payload, signature }) {
-    const headers = GitCommit.justHeaders(payload);
-    const message = GitCommit.justMessage(payload);
+    const headers = _GitCommit.justHeaders(payload);
+    const message = _GitCommit.justMessage(payload);
     const commit2 = normalizeNewlines(
       headers + "\ngpgsig" + indent(signature) + "\n" + message
     );
-    return new GitCommit(commit2);
+    return new _GitCommit(commit2);
   }
   static from(commit2) {
-    return new GitCommit(commit2);
+    return new _GitCommit(commit2);
   }
   toObject() {
-<<<<<<< HEAD
-    return Buffer2.from(this._commit, "utf8");
-=======
     return Buffer.from(this._commit, "utf8");
->>>>>>> origin/main
   }
   // Todo: allow setting the headers and message
   headers() {
@@ -19987,7 +18632,7 @@ var GitCommit = class {
   }
   // Todo: allow setting the headers and message
   message() {
-    return GitCommit.justMessage(this._commit);
+    return _GitCommit.justMessage(this._commit);
   }
   parse() {
     return Object.assign({ message: this.message() }, this.headers());
@@ -19999,7 +18644,7 @@ var GitCommit = class {
     return commit2.slice(0, commit2.indexOf("\n\n"));
   }
   parseHeaders() {
-    const headers = GitCommit.justHeaders(this._commit).split("\n");
+    const headers = _GitCommit.justHeaders(this._commit).split("\n");
     const hs = [];
     for (const h of headers) {
       if (h[0] === " ") {
@@ -20058,7 +18703,7 @@ var GitCommit = class {
     return headers;
   }
   static render(obj) {
-    return GitCommit.renderHeaders(obj) + "\n" + normalizeNewlines(obj.message);
+    return _GitCommit.renderHeaders(obj) + "\n" + normalizeNewlines(obj.message);
   }
   render() {
     return this._commit;
@@ -20082,12 +18727,12 @@ var GitCommit = class {
   }
   static async sign(commit2, sign, secretKey) {
     const payload = commit2.withoutSignature();
-    const message = GitCommit.justMessage(commit2._commit);
+    const message = _GitCommit.justMessage(commit2._commit);
     let { signature } = await sign({ payload, secretKey });
     signature = normalizeNewlines(signature);
-    const headers = GitCommit.justHeaders(commit2._commit);
+    const headers = _GitCommit.justHeaders(commit2._commit);
     const signedCommit = headers + "\ngpgsig" + indent(signature) + "\n" + message;
-    return GitCommit.from(signedCommit);
+    return _GitCommit.from(signedCommit);
   }
 };
 async function resolveTree({ fs, cache, gitdir, oid }) {
@@ -20441,11 +19086,7 @@ async function _walk({
   const walkers = trees.map(
     (proxy) => proxy[GitWalkSymbol]({ fs, dir, gitdir, cache })
   );
-<<<<<<< HEAD
-  const root = new Array(walkers.length).fill(".");
-=======
   const root2 = new Array(walkers.length).fill(".");
->>>>>>> origin/main
   const range = arrayRange(0, walkers.length);
   const unionWalkerFromReaddir = async (entries) => {
     range.map((i) => {
@@ -20460,13 +19101,8 @@ async function _walk({
       children: unionOfIterators(iterators)
     };
   };
-<<<<<<< HEAD
-  const walk2 = async (root2) => {
-    const { entries, children: children2 } = await unionWalkerFromReaddir(root2);
-=======
   const walk2 = async (root3) => {
     const { entries, children: children2 } = await unionWalkerFromReaddir(root3);
->>>>>>> origin/main
     const fullpath = entries.find((entry) => entry && entry._fullpath)._fullpath;
     const parent = await map(fullpath, entries);
     if (parent !== null) {
@@ -20475,11 +19111,7 @@ async function _walk({
       return reduce(parent, walkedChildren);
     }
   };
-<<<<<<< HEAD
-  return walk2(root);
-=======
   return walk2(root2);
->>>>>>> origin/main
 }
 async function rmRecursive(fs, filepath) {
   const entries = await fs.readdir(filepath);
@@ -20500,47 +19132,63 @@ async function rmRecursive(fs, filepath) {
     await fs.rmdir(filepath);
   }
 }
+function isPromiseFs(fs) {
+  const test = (targetFs) => {
+    try {
+      return targetFs.readFile().catch((e) => e);
+    } catch (e) {
+      return e;
+    }
+  };
+  return test(fs).constructor.name === "Promise";
+}
+var commands = [
+  "readFile",
+  "writeFile",
+  "mkdir",
+  "rmdir",
+  "unlink",
+  "stat",
+  "lstat",
+  "readdir",
+  "readlink",
+  "symlink"
+];
+function bindFs(target, fs) {
+  if (isPromiseFs(fs)) {
+    for (const command of commands) {
+      target[`_${command}`] = fs[command].bind(fs);
+    }
+  } else {
+    for (const command of commands) {
+      target[`_${command}`] = (0, import_pify.default)(fs[command].bind(fs));
+    }
+  }
+  if (isPromiseFs(fs)) {
+    if (fs.rm)
+      target._rm = fs.rm.bind(fs);
+    else if (fs.rmdir.length > 1)
+      target._rm = fs.rmdir.bind(fs);
+    else
+      target._rm = rmRecursive.bind(null, target);
+  } else {
+    if (fs.rm)
+      target._rm = (0, import_pify.default)(fs.rm.bind(fs));
+    else if (fs.rmdir.length > 2)
+      target._rm = (0, import_pify.default)(fs.rmdir.bind(fs));
+    else
+      target._rm = rmRecursive.bind(null, target);
+  }
+}
 var FileSystem = class {
   constructor(fs) {
     if (typeof fs._original_unwrapped_fs !== "undefined")
       return fs;
     const promises = Object.getOwnPropertyDescriptor(fs, "promises");
     if (promises && promises.enumerable) {
-      this._readFile = fs.promises.readFile.bind(fs.promises);
-      this._writeFile = fs.promises.writeFile.bind(fs.promises);
-      this._mkdir = fs.promises.mkdir.bind(fs.promises);
-      if (fs.promises.rm) {
-        this._rm = fs.promises.rm.bind(fs.promises);
-      } else if (fs.promises.rmdir.length > 1) {
-        this._rm = fs.promises.rmdir.bind(fs.promises);
-      } else {
-        this._rm = rmRecursive.bind(null, this);
-      }
-      this._rmdir = fs.promises.rmdir.bind(fs.promises);
-      this._unlink = fs.promises.unlink.bind(fs.promises);
-      this._stat = fs.promises.stat.bind(fs.promises);
-      this._lstat = fs.promises.lstat.bind(fs.promises);
-      this._readdir = fs.promises.readdir.bind(fs.promises);
-      this._readlink = fs.promises.readlink.bind(fs.promises);
-      this._symlink = fs.promises.symlink.bind(fs.promises);
+      bindFs(this, fs.promises);
     } else {
-      this._readFile = (0, import_pify.default)(fs.readFile.bind(fs));
-      this._writeFile = (0, import_pify.default)(fs.writeFile.bind(fs));
-      this._mkdir = (0, import_pify.default)(fs.mkdir.bind(fs));
-      if (fs.rm) {
-        this._rm = (0, import_pify.default)(fs.rm.bind(fs));
-      } else if (fs.rmdir.length > 2) {
-        this._rm = (0, import_pify.default)(fs.rmdir.bind(fs));
-      } else {
-        this._rm = rmRecursive.bind(null, this);
-      }
-      this._rmdir = (0, import_pify.default)(fs.rmdir.bind(fs));
-      this._unlink = (0, import_pify.default)(fs.unlink.bind(fs));
-      this._stat = (0, import_pify.default)(fs.stat.bind(fs));
-      this._lstat = (0, import_pify.default)(fs.lstat.bind(fs));
-      this._readdir = (0, import_pify.default)(fs.readdir.bind(fs));
-      this._readlink = (0, import_pify.default)(fs.readlink.bind(fs));
-      this._symlink = (0, import_pify.default)(fs.symlink.bind(fs));
+      bindFs(this, fs);
     }
     this._original_unwrapped_fs = fs;
   }
@@ -20573,11 +19221,7 @@ var FileSystem = class {
     try {
       let buffer2 = await this._readFile(filepath, options);
       if (typeof buffer2 !== "string") {
-<<<<<<< HEAD
-        buffer2 = Buffer2.from(buffer2);
-=======
         buffer2 = Buffer.from(buffer2);
->>>>>>> origin/main
       }
       return buffer2;
     } catch (err) {
@@ -20701,11 +19345,7 @@ var FileSystem = class {
   async readlink(filename, opts = { encoding: "buffer" }) {
     try {
       const link = await this._readlink(filename, opts);
-<<<<<<< HEAD
-      return Buffer2.isBuffer(link) ? link : Buffer2.from(link);
-=======
       return Buffer.isBuffer(link) ? link : Buffer.from(link);
->>>>>>> origin/main
     } catch (err) {
       if (err.code === "ENOENT") {
         return null;
@@ -20903,11 +19543,7 @@ async function _writeObject({
       object = GitObject.wrap({ type, object });
     }
     oid = await shasum(object);
-<<<<<<< HEAD
-    object = Buffer2.from(await deflate(object));
-=======
     object = Buffer.from(await deflate(object));
->>>>>>> origin/main
   }
   if (!dryRun) {
     await writeObjectLoose({ fs, gitdir, object, format: "deflated", oid });
@@ -20926,7 +19562,8 @@ async function add({
   gitdir = join(dir, ".git"),
   filepath,
   cache = {},
-  force = false
+  force = false,
+  parallel = true
 }) {
   try {
     assertParameter("fs", _fs);
@@ -20935,14 +19572,30 @@ async function add({
     assertParameter("filepath", filepath);
     const fs = new FileSystem(_fs);
     await GitIndexManager.acquire({ fs, gitdir, cache }, async (index2) => {
-      return addToIndex({ dir, gitdir, fs, filepath, index: index2, force });
+      return addToIndex({
+        dir,
+        gitdir,
+        fs,
+        filepath,
+        index: index2,
+        force,
+        parallel
+      });
     });
   } catch (err) {
     err.caller = "git.add";
     throw err;
   }
 }
-async function addToIndex({ dir, gitdir, fs, filepath, index: index2, force }) {
+async function addToIndex({
+  dir,
+  gitdir,
+  fs,
+  filepath,
+  index: index2,
+  force,
+  parallel
+}) {
   filepath = Array.isArray(filepath) ? filepath : [filepath];
   const promises = filepath.map(async (currentFilepath) => {
     if (!force) {
@@ -20960,17 +19613,32 @@ async function addToIndex({ dir, gitdir, fs, filepath, index: index2, force }) {
       throw new NotFoundError(currentFilepath);
     if (stats.isDirectory()) {
       const children2 = await fs.readdir(join(dir, currentFilepath));
-      const promises2 = children2.map(
-        (child) => addToIndex({
-          dir,
-          gitdir,
-          fs,
-          filepath: [join(currentFilepath, child)],
-          index: index2,
-          force
-        })
-      );
-      await Promise.all(promises2);
+      if (parallel) {
+        const promises2 = children2.map(
+          (child) => addToIndex({
+            dir,
+            gitdir,
+            fs,
+            filepath: [join(currentFilepath, child)],
+            index: index2,
+            force,
+            parallel
+          })
+        );
+        await Promise.all(promises2);
+      } else {
+        for (const child of children2) {
+          await addToIndex({
+            dir,
+            gitdir,
+            fs,
+            filepath: [join(currentFilepath, child)],
+            index: index2,
+            force,
+            parallel
+          });
+        }
+      }
     } else {
       const object = stats.isSymbolicLink() ? await fs.readlink(join(dir, currentFilepath)).then(posixifyPathBuffer) : await fs.read(join(dir, currentFilepath));
       if (object === null)
@@ -21223,11 +19891,7 @@ async function _addNote({
     }
   }
   if (typeof note === "string") {
-<<<<<<< HEAD
-    note = Buffer2.from(note, "utf8");
-=======
     note = Buffer.from(note, "utf8");
->>>>>>> origin/main
   }
   const noteOid = await _writeObject({
     fs,
@@ -21530,16 +20194,6 @@ async function branch({
     throw err;
   }
 }
-<<<<<<< HEAD
-var worthWalking = (filepath, root) => {
-  if (filepath === "." || root == null || root.length === 0 || root === ".") {
-    return true;
-  }
-  if (root.length >= filepath.length) {
-    return root.startsWith(filepath);
-  } else {
-    return filepath.startsWith(root);
-=======
 var worthWalking = (filepath, root2) => {
   if (filepath === "." || root2 == null || root2.length === 0 || root2 === ".") {
     return true;
@@ -21548,7 +20202,6 @@ var worthWalking = (filepath, root2) => {
     return root2.startsWith(filepath);
   } else {
     return filepath.startsWith(root2);
->>>>>>> origin/main
   }
 };
 async function _checkout({
@@ -21611,19 +20264,11 @@ async function _checkout({
         throw err;
       }
     }
-<<<<<<< HEAD
-    const conflicts2 = ops.filter(([method]) => method === "conflict").map(([method, fullpath]) => fullpath);
-    if (conflicts2.length > 0) {
-      throw new CheckoutConflictError(conflicts2);
-    }
-    const errors = ops.filter(([method]) => method === "error").map(([method, fullpath]) => fullpath);
-=======
     const conflicts2 = ops.filter(([method2]) => method2 === "conflict").map(([method2, fullpath]) => fullpath);
     if (conflicts2.length > 0) {
       throw new CheckoutConflictError(conflicts2);
     }
     const errors = ops.filter(([method2]) => method2 === "error").map(([method2, fullpath]) => fullpath);
->>>>>>> origin/main
     if (errors.length > 0) {
       throw new InternalError(errors.join(", "));
     }
@@ -21635,17 +20280,10 @@ async function _checkout({
     await GitIndexManager.acquire({ fs, gitdir, cache }, async function(index2) {
       await Promise.all(
         ops.filter(
-<<<<<<< HEAD
-          ([method]) => method === "delete" || method === "delete-index"
-        ).map(async function([method, fullpath]) {
-          const filepath = `${dir}/${fullpath}`;
-          if (method === "delete") {
-=======
           ([method2]) => method2 === "delete" || method2 === "delete-index"
         ).map(async function([method2, fullpath]) {
           const filepath = `${dir}/${fullpath}`;
           if (method2 === "delete") {
->>>>>>> origin/main
             await fs.rm(filepath);
           }
           index2.delete({ filepath: fullpath });
@@ -21660,19 +20298,11 @@ async function _checkout({
       );
     });
     await GitIndexManager.acquire({ fs, gitdir, cache }, async function(index2) {
-<<<<<<< HEAD
-      for (const [method, fullpath] of ops) {
-        if (method === "rmdir" || method === "rmdir-index") {
-          const filepath = `${dir}/${fullpath}`;
-          try {
-            if (method === "rmdir-index") {
-=======
       for (const [method2, fullpath] of ops) {
         if (method2 === "rmdir" || method2 === "rmdir-index") {
           const filepath = `${dir}/${fullpath}`;
           try {
             if (method2 === "rmdir-index") {
->>>>>>> origin/main
               index2.delete({ filepath: fullpath });
             }
             await fs.rmdir(filepath);
@@ -21696,11 +20326,7 @@ async function _checkout({
       }
     });
     await Promise.all(
-<<<<<<< HEAD
-      ops.filter(([method]) => method === "mkdir" || method === "mkdir-index").map(async function([_, fullpath]) {
-=======
       ops.filter(([method2]) => method2 === "mkdir" || method2 === "mkdir-index").map(async function([_, fullpath]) {
->>>>>>> origin/main
         const filepath = `${dir}/${fullpath}`;
         await fs.mkdir(filepath);
         if (onProgress) {
@@ -21715,19 +20341,11 @@ async function _checkout({
     await GitIndexManager.acquire({ fs, gitdir, cache }, async function(index2) {
       await Promise.all(
         ops.filter(
-<<<<<<< HEAD
-          ([method]) => method === "create" || method === "create-index" || method === "update" || method === "mkdir-index"
-        ).map(async function([method, fullpath, oid2, mode, chmod]) {
-          const filepath = `${dir}/${fullpath}`;
-          try {
-            if (method !== "create-index" && method !== "mkdir-index") {
-=======
           ([method2]) => method2 === "create" || method2 === "create-index" || method2 === "update" || method2 === "mkdir-index"
         ).map(async function([method2, fullpath, oid2, mode, chmod]) {
           const filepath = `${dir}/${fullpath}`;
           try {
             if (method2 !== "create-index" && method2 !== "mkdir-index") {
->>>>>>> origin/main
               const { object } = await _readObject({ fs, cache, gitdir, oid: oid2 });
               if (chmod) {
                 await fs.rm(filepath);
@@ -21748,11 +20366,7 @@ async function _checkout({
             if (mode === 33261) {
               stats.mode = 493;
             }
-<<<<<<< HEAD
-            if (method === "mkdir-index") {
-=======
             if (method2 === "mkdir-index") {
->>>>>>> origin/main
               stats.mode = 57344;
             }
             index2.insert({
@@ -22112,11 +20726,7 @@ function translateSSHtoHTTP(url) {
   return url;
 }
 function calculateBasicAuthHeader({ username = "", password = "" }) {
-<<<<<<< HEAD
-  return `Basic ${Buffer2.from(`${username}:${password}`).toString("base64")}`;
-=======
   return `Basic ${Buffer.from(`${username}:${password}`).toString("base64")}`;
->>>>>>> origin/main
 }
 async function forAwait(iterable, cb) {
   const iter = getIterator(iterable);
@@ -22160,20 +20770,6 @@ function padHex(b, n) {
 }
 var GitPktLine = class {
   static flush() {
-<<<<<<< HEAD
-    return Buffer2.from("0000", "utf8");
-  }
-  static delim() {
-    return Buffer2.from("0001", "utf8");
-  }
-  static encode(line) {
-    if (typeof line === "string") {
-      line = Buffer2.from(line);
-    }
-    const length = line.length + 4;
-    const hexlength = padHex(4, length);
-    return Buffer2.concat([Buffer2.from(hexlength, "utf8"), line]);
-=======
     return Buffer.from("0000", "utf8");
   }
   static delim() {
@@ -22186,7 +20782,6 @@ var GitPktLine = class {
     const length = line.length + 4;
     const hexlength = padHex(4, length);
     return Buffer.concat([Buffer.from(hexlength, "utf8"), line]);
->>>>>>> origin/main
   }
   static streamReader(stream) {
     const reader = new StreamReader(stream);
@@ -22301,11 +20896,7 @@ var updateHeaders = (headers, auth) => {
 };
 var stringifyBody = async (res) => {
   try {
-<<<<<<< HEAD
-    const data = Buffer2.from(await collect(res.body));
-=======
     const data = Buffer.from(await collect(res.body));
->>>>>>> origin/main
     const response = data.toString("utf8");
     const preview = response.length < 256 ? response : response.slice(0, 256) + "...";
     return { preview, response, data };
@@ -22584,8 +21175,8 @@ function filterCapabilities(server, client) {
 }
 var pkg = {
   name: "isomorphic-git",
-  version: "1.23.0",
-  agent: "git/isomorphic-git@1.23.0"
+  version: "1.24.2",
+  agent: "git/isomorphic-git@1.24.2"
 };
 var FIFO = class {
   constructor() {
@@ -22878,11 +21469,7 @@ async function _fetch({
   depth = null,
   since = null,
   exclude = [],
-<<<<<<< HEAD
-  relative = false,
-=======
   relative: relative2 = false,
->>>>>>> origin/main
   tags = false,
   singleBranch = false,
   headers = {},
@@ -22930,11 +21517,7 @@ async function _fetch({
   if (exclude.length > 0 && !remoteHTTP.capabilities.has("deepen-not")) {
     throw new RemoteCapabilityError("deepen-not", "exclude");
   }
-<<<<<<< HEAD
-  if (relative === true && !remoteHTTP.capabilities.has("deepen-relative")) {
-=======
   if (relative2 === true && !remoteHTTP.capabilities.has("deepen-relative")) {
->>>>>>> origin/main
     throw new RemoteCapabilityError("deepen-relative", "relative");
   }
   const { oid, fullref } = GitRefManager.resolveAgainstMap({
@@ -22962,11 +21545,7 @@ async function _fetch({
       `agent=${pkg.agent}`
     ]
   );
-<<<<<<< HEAD
-  if (relative)
-=======
   if (relative2)
->>>>>>> origin/main
     capabilities.push("deepen-relative");
   const wants = singleBranch ? [oid] : remoteRefs.values();
   const haveRefs = singleBranch ? [ref] : await GitRefManager.listRefs({
@@ -22997,11 +21576,7 @@ async function _fetch({
     since,
     exclude
   });
-<<<<<<< HEAD
-  const packbuffer = Buffer2.from(await collect(packstream));
-=======
   const packbuffer = Buffer.from(await collect(packstream));
->>>>>>> origin/main
   const raw = await GitRemoteHTTP2.connect({
     http,
     onProgress,
@@ -23115,11 +21690,7 @@ async function _fetch({
       }
     });
   }
-<<<<<<< HEAD
-  const packfile = Buffer2.from(await collect(response.packfile));
-=======
   const packfile = Buffer.from(await collect(response.packfile));
->>>>>>> origin/main
   const packfileSha = packfile.slice(-20).toString("hex");
   const res = {
     defaultBranch: response.HEAD,
@@ -23196,11 +21767,7 @@ async function _clone({
   depth,
   since,
   exclude,
-<<<<<<< HEAD
-  relative,
-=======
   relative: relative2,
->>>>>>> origin/main
   singleBranch,
   noCheckout,
   noTags,
@@ -23230,11 +21797,7 @@ async function _clone({
       depth,
       since,
       exclude,
-<<<<<<< HEAD
-      relative,
-=======
       relative: relative2,
->>>>>>> origin/main
       singleBranch,
       headers,
       tags: !noTags
@@ -23275,11 +21838,7 @@ async function clone({
   depth = void 0,
   since = void 0,
   exclude = [],
-<<<<<<< HEAD
-  relative = false,
-=======
   relative: relative2 = false,
->>>>>>> origin/main
   singleBranch = false,
   noCheckout = false,
   noTags = false,
@@ -23312,11 +21871,7 @@ async function clone({
       depth,
       since,
       exclude,
-<<<<<<< HEAD
-      relative,
-=======
       relative: relative2,
->>>>>>> origin/main
       singleBranch,
       noCheckout,
       noTags,
@@ -23403,6 +21958,7 @@ async function currentBranch({
   }
 }
 async function _deleteBranch({ fs, gitdir, ref }) {
+  ref = ref.startsWith("refs/heads/") ? ref : `refs/heads/${ref}`;
   const exist = await GitRefManager.exists({ fs, gitdir, ref });
   if (!exist) {
     throw new NotFoundError(ref);
@@ -23812,15 +22368,9 @@ async function mergeBlobs({
       mergeResult: { mode, path: path2, oid: await ours.oid(), type }
     };
   }
-<<<<<<< HEAD
-  const ourContent = Buffer2.from(await ours.content()).toString("utf8");
-  const baseContent = Buffer2.from(await base.content()).toString("utf8");
-  const theirContent = Buffer2.from(await theirs.content()).toString("utf8");
-=======
   const ourContent = Buffer.from(await ours.content()).toString("utf8");
   const baseContent = Buffer.from(await base.content()).toString("utf8");
   const theirContent = Buffer.from(await theirs.content()).toString("utf8");
->>>>>>> origin/main
   const { mergedText, cleanMerge } = await mergeDriver({
     branches: [baseName, ourName, theirName],
     contents: [baseContent, ourContent, theirContent],
@@ -23830,11 +22380,7 @@ async function mergeBlobs({
     fs,
     gitdir,
     type: "blob",
-<<<<<<< HEAD
-    object: Buffer2.from(mergedText, "utf8"),
-=======
     object: Buffer.from(mergedText, "utf8"),
->>>>>>> origin/main
     dryRun
   });
   return { cleanMerge, mergeResult: { mode, path: path2, oid, type } };
@@ -24117,11 +22663,7 @@ async function fetch({
   depth = null,
   since = null,
   exclude = [],
-<<<<<<< HEAD
-  relative = false,
-=======
   relative: relative2 = false,
->>>>>>> origin/main
   tags = false,
   singleBranch = false,
   headers = {},
@@ -24151,11 +22693,7 @@ async function fetch({
       depth,
       since,
       exclude,
-<<<<<<< HEAD
-      relative,
-=======
       relative: relative2,
->>>>>>> origin/main
       tags,
       singleBranch,
       headers,
@@ -24399,15 +22937,9 @@ async function hashBlob({ object }) {
   try {
     assertParameter("object", object);
     if (typeof object === "string") {
-<<<<<<< HEAD
-      object = Buffer2.from(object, "utf8");
-    } else {
-      object = Buffer2.from(object);
-=======
       object = Buffer.from(object, "utf8");
     } else {
       object = Buffer.from(object);
->>>>>>> origin/main
     }
     const type = "blob";
     const { oid, object: _object } = await hashObject({
@@ -25177,11 +23709,7 @@ async function _pack({
   const hash2 = new import_sha1.default();
   const outputStream = [];
   function write(chunk, enc) {
-<<<<<<< HEAD
-    const buff = Buffer2.from(chunk, enc);
-=======
     const buff = Buffer.from(chunk, enc);
->>>>>>> origin/main
     outputStream.push(buff);
     hash2.update(buff);
   }
@@ -25199,11 +23727,7 @@ async function _pack({
       write(padHex(2, byte), "hex");
       length = length >>> 7;
     }
-<<<<<<< HEAD
-    write(Buffer2.from(await deflate(object)));
-=======
     write(Buffer.from(await deflate(object)));
->>>>>>> origin/main
   }
   write("PACK");
   write("00000002", "hex");
@@ -25218,11 +23742,7 @@ async function _pack({
 }
 async function _packObjects({ fs, cache, gitdir, oids, write }) {
   const buffers = await _pack({ fs, cache, gitdir, oids });
-<<<<<<< HEAD
-  const packfile = Buffer2.from(await collect(buffers));
-=======
   const packfile = Buffer.from(await collect(buffers));
->>>>>>> origin/main
   const packfileSha = packfile.slice(-20).toString("hex");
   const filename = `pack-${packfileSha}.pack`;
   if (write) {
@@ -26352,15 +24872,9 @@ async function status({
 async function getOidAtPath({ fs, cache, gitdir, tree, path: path2 }) {
   if (typeof path2 === "string")
     path2 = path2.split("/");
-<<<<<<< HEAD
-  const dirname2 = path2.shift();
-  for (const entry of tree) {
-    if (entry.path === dirname2) {
-=======
   const dirname3 = path2.shift();
   for (const entry of tree) {
     if (entry.path === dirname3) {
->>>>>>> origin/main
       if (path2.length === 0) {
         return entry.oid;
       }
@@ -26696,11 +25210,7 @@ async function writeObject({
           object = GitTree.from(object).toObject();
           break;
         case "blob":
-<<<<<<< HEAD
-          object = Buffer2.from(object, encoding);
-=======
           object = Buffer.from(object, encoding);
->>>>>>> origin/main
           break;
         case "tag":
           object = GitAnnotatedTag.from(object).toObject();
@@ -26884,1940 +25394,6 @@ var index = {
 var isomorphic_git_default = index;
 
 // src/main.ts
-<<<<<<< HEAD
-var import_obsidian26 = require("obsidian");
-
-// src/promiseQueue.ts
-init_polyfill_buffer();
-var PromiseQueue = class {
-  constructor() {
-    this.tasks = [];
-  }
-  addTask(task) {
-    this.tasks.push(task);
-    if (this.tasks.length === 1) {
-      this.handleTask();
-    }
-  }
-  async handleTask() {
-    if (this.tasks.length > 0) {
-      this.tasks[0]().finally(() => {
-        this.tasks.shift();
-        this.handleTask();
-      });
-    }
-  }
-};
-
-// src/settings.ts
-init_polyfill_buffer();
-var import_obsidian7 = require("obsidian");
-
-// src/isomorphicGit.ts
-init_polyfill_buffer();
-
-// node_modules/.pnpm/diff@5.1.0/node_modules/diff/lib/index.mjs
-init_polyfill_buffer();
-function Diff() {
-}
-Diff.prototype = {
-  diff: function diff(oldString, newString) {
-    var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-    var callback = options.callback;
-    if (typeof options === "function") {
-      callback = options;
-      options = {};
-    }
-    this.options = options;
-    var self2 = this;
-    function done(value) {
-      if (callback) {
-        setTimeout(function() {
-          callback(void 0, value);
-        }, 0);
-        return true;
-      } else {
-        return value;
-      }
-    }
-    oldString = this.castInput(oldString);
-    newString = this.castInput(newString);
-    oldString = this.removeEmpty(this.tokenize(oldString));
-    newString = this.removeEmpty(this.tokenize(newString));
-    var newLen = newString.length, oldLen = oldString.length;
-    var editLength = 1;
-    var maxEditLength = newLen + oldLen;
-    if (options.maxEditLength) {
-      maxEditLength = Math.min(maxEditLength, options.maxEditLength);
-    }
-    var bestPath = [{
-      newPos: -1,
-      components: []
-    }];
-    var oldPos = this.extractCommon(bestPath[0], newString, oldString, 0);
-    if (bestPath[0].newPos + 1 >= newLen && oldPos + 1 >= oldLen) {
-      return done([{
-        value: this.join(newString),
-        count: newString.length
-      }]);
-    }
-    function execEditLength() {
-      for (var diagonalPath = -1 * editLength; diagonalPath <= editLength; diagonalPath += 2) {
-        var basePath = void 0;
-        var addPath = bestPath[diagonalPath - 1], removePath = bestPath[diagonalPath + 1], _oldPos = (removePath ? removePath.newPos : 0) - diagonalPath;
-        if (addPath) {
-          bestPath[diagonalPath - 1] = void 0;
-        }
-        var canAdd = addPath && addPath.newPos + 1 < newLen, canRemove = removePath && 0 <= _oldPos && _oldPos < oldLen;
-        if (!canAdd && !canRemove) {
-          bestPath[diagonalPath] = void 0;
-          continue;
-        }
-        if (!canAdd || canRemove && addPath.newPos < removePath.newPos) {
-          basePath = clonePath(removePath);
-          self2.pushComponent(basePath.components, void 0, true);
-        } else {
-          basePath = addPath;
-          basePath.newPos++;
-          self2.pushComponent(basePath.components, true, void 0);
-        }
-        _oldPos = self2.extractCommon(basePath, newString, oldString, diagonalPath);
-        if (basePath.newPos + 1 >= newLen && _oldPos + 1 >= oldLen) {
-          return done(buildValues(self2, basePath.components, newString, oldString, self2.useLongestToken));
-        } else {
-          bestPath[diagonalPath] = basePath;
-        }
-      }
-      editLength++;
-    }
-    if (callback) {
-      (function exec() {
-        setTimeout(function() {
-          if (editLength > maxEditLength) {
-            return callback();
-          }
-          if (!execEditLength()) {
-            exec();
-          }
-        }, 0);
-      })();
-    } else {
-      while (editLength <= maxEditLength) {
-        var ret = execEditLength();
-        if (ret) {
-          return ret;
-        }
-      }
-    }
-  },
-  pushComponent: function pushComponent(components, added, removed) {
-    var last2 = components[components.length - 1];
-    if (last2 && last2.added === added && last2.removed === removed) {
-      components[components.length - 1] = {
-        count: last2.count + 1,
-        added,
-        removed
-      };
-    } else {
-      components.push({
-        count: 1,
-        added,
-        removed
-      });
-    }
-  },
-  extractCommon: function extractCommon(basePath, newString, oldString, diagonalPath) {
-    var newLen = newString.length, oldLen = oldString.length, newPos = basePath.newPos, oldPos = newPos - diagonalPath, commonCount = 0;
-    while (newPos + 1 < newLen && oldPos + 1 < oldLen && this.equals(newString[newPos + 1], oldString[oldPos + 1])) {
-      newPos++;
-      oldPos++;
-      commonCount++;
-    }
-    if (commonCount) {
-      basePath.components.push({
-        count: commonCount
-      });
-    }
-    basePath.newPos = newPos;
-    return oldPos;
-  },
-  equals: function equals(left, right) {
-    if (this.options.comparator) {
-      return this.options.comparator(left, right);
-    } else {
-      return left === right || this.options.ignoreCase && left.toLowerCase() === right.toLowerCase();
-    }
-  },
-  removeEmpty: function removeEmpty(array) {
-    var ret = [];
-    for (var i = 0; i < array.length; i++) {
-      if (array[i]) {
-        ret.push(array[i]);
-      }
-    }
-    return ret;
-  },
-  castInput: function castInput(value) {
-    return value;
-  },
-  tokenize: function tokenize(value) {
-    return value.split("");
-  },
-  join: function join2(chars) {
-    return chars.join("");
-  }
-};
-function buildValues(diff2, components, newString, oldString, useLongestToken) {
-  var componentPos = 0, componentLen = components.length, newPos = 0, oldPos = 0;
-  for (; componentPos < componentLen; componentPos++) {
-    var component = components[componentPos];
-    if (!component.removed) {
-      if (!component.added && useLongestToken) {
-        var value = newString.slice(newPos, newPos + component.count);
-        value = value.map(function(value2, i) {
-          var oldValue = oldString[oldPos + i];
-          return oldValue.length > value2.length ? oldValue : value2;
-        });
-        component.value = diff2.join(value);
-      } else {
-        component.value = diff2.join(newString.slice(newPos, newPos + component.count));
-      }
-      newPos += component.count;
-      if (!component.added) {
-        oldPos += component.count;
-      }
-    } else {
-      component.value = diff2.join(oldString.slice(oldPos, oldPos + component.count));
-      oldPos += component.count;
-      if (componentPos && components[componentPos - 1].added) {
-        var tmp = components[componentPos - 1];
-        components[componentPos - 1] = components[componentPos];
-        components[componentPos] = tmp;
-      }
-    }
-  }
-  var lastComponent = components[componentLen - 1];
-  if (componentLen > 1 && typeof lastComponent.value === "string" && (lastComponent.added || lastComponent.removed) && diff2.equals("", lastComponent.value)) {
-    components[componentLen - 2].value += lastComponent.value;
-    components.pop();
-  }
-  return components;
-}
-function clonePath(path2) {
-  return {
-    newPos: path2.newPos,
-    components: path2.components.slice(0)
-  };
-}
-var characterDiff = new Diff();
-function diffChars(oldStr, newStr, options) {
-  return characterDiff.diff(oldStr, newStr, options);
-}
-var extendedWordChars = /^[A-Za-z\xC0-\u02C6\u02C8-\u02D7\u02DE-\u02FF\u1E00-\u1EFF]+$/;
-var reWhitespace = /\S/;
-var wordDiff = new Diff();
-wordDiff.equals = function(left, right) {
-  if (this.options.ignoreCase) {
-    left = left.toLowerCase();
-    right = right.toLowerCase();
-  }
-  return left === right || this.options.ignoreWhitespace && !reWhitespace.test(left) && !reWhitespace.test(right);
-};
-wordDiff.tokenize = function(value) {
-  var tokens = value.split(/([^\S\r\n]+|[()[\]{}'"\r\n]|\b)/);
-  for (var i = 0; i < tokens.length - 1; i++) {
-    if (!tokens[i + 1] && tokens[i + 2] && extendedWordChars.test(tokens[i]) && extendedWordChars.test(tokens[i + 2])) {
-      tokens[i] += tokens[i + 2];
-      tokens.splice(i + 1, 2);
-      i--;
-    }
-  }
-  return tokens;
-};
-function diffWordsWithSpace(oldStr, newStr, options) {
-  return wordDiff.diff(oldStr, newStr, options);
-}
-var lineDiff = new Diff();
-lineDiff.tokenize = function(value) {
-  var retLines = [], linesAndNewlines = value.split(/(\n|\r\n)/);
-  if (!linesAndNewlines[linesAndNewlines.length - 1]) {
-    linesAndNewlines.pop();
-  }
-  for (var i = 0; i < linesAndNewlines.length; i++) {
-    var line = linesAndNewlines[i];
-    if (i % 2 && !this.options.newlineIsToken) {
-      retLines[retLines.length - 1] += line;
-    } else {
-      if (this.options.ignoreWhitespace) {
-        line = line.trim();
-      }
-      retLines.push(line);
-    }
-  }
-  return retLines;
-};
-function diffLines(oldStr, newStr, callback) {
-  return lineDiff.diff(oldStr, newStr, callback);
-}
-var sentenceDiff = new Diff();
-sentenceDiff.tokenize = function(value) {
-  return value.split(/(\S.+?[.!?])(?=\s+|$)/);
-};
-var cssDiff = new Diff();
-cssDiff.tokenize = function(value) {
-  return value.split(/([{}:;,]|\s+)/);
-};
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function(obj2) {
-      return typeof obj2;
-    };
-  } else {
-    _typeof = function(obj2) {
-      return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-    };
-  }
-  return _typeof(obj);
-}
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-}
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr))
-    return _arrayLikeToArray(arr);
-}
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter))
-    return Array.from(iter);
-}
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o)
-    return;
-  if (typeof o === "string")
-    return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor)
-    n = o.constructor.name;
-  if (n === "Map" || n === "Set")
-    return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-    return _arrayLikeToArray(o, minLen);
-}
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length)
-    len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++)
-    arr2[i] = arr[i];
-  return arr2;
-}
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-var objectPrototypeToString = Object.prototype.toString;
-var jsonDiff = new Diff();
-jsonDiff.useLongestToken = true;
-jsonDiff.tokenize = lineDiff.tokenize;
-jsonDiff.castInput = function(value) {
-  var _this$options = this.options, undefinedReplacement = _this$options.undefinedReplacement, _this$options$stringi = _this$options.stringifyReplacer, stringifyReplacer = _this$options$stringi === void 0 ? function(k, v) {
-    return typeof v === "undefined" ? undefinedReplacement : v;
-  } : _this$options$stringi;
-  return typeof value === "string" ? value : JSON.stringify(canonicalize(value, null, null, stringifyReplacer), stringifyReplacer, "  ");
-};
-jsonDiff.equals = function(left, right) {
-  return Diff.prototype.equals.call(jsonDiff, left.replace(/,([\r\n])/g, "$1"), right.replace(/,([\r\n])/g, "$1"));
-};
-function canonicalize(obj, stack, replacementStack, replacer, key2) {
-  stack = stack || [];
-  replacementStack = replacementStack || [];
-  if (replacer) {
-    obj = replacer(key2, obj);
-  }
-  var i;
-  for (i = 0; i < stack.length; i += 1) {
-    if (stack[i] === obj) {
-      return replacementStack[i];
-    }
-  }
-  var canonicalizedObj;
-  if ("[object Array]" === objectPrototypeToString.call(obj)) {
-    stack.push(obj);
-    canonicalizedObj = new Array(obj.length);
-    replacementStack.push(canonicalizedObj);
-    for (i = 0; i < obj.length; i += 1) {
-      canonicalizedObj[i] = canonicalize(obj[i], stack, replacementStack, replacer, key2);
-    }
-    stack.pop();
-    replacementStack.pop();
-    return canonicalizedObj;
-  }
-  if (obj && obj.toJSON) {
-    obj = obj.toJSON();
-  }
-  if (_typeof(obj) === "object" && obj !== null) {
-    stack.push(obj);
-    canonicalizedObj = {};
-    replacementStack.push(canonicalizedObj);
-    var sortedKeys = [], _key;
-    for (_key in obj) {
-      if (obj.hasOwnProperty(_key)) {
-        sortedKeys.push(_key);
-      }
-    }
-    sortedKeys.sort();
-    for (i = 0; i < sortedKeys.length; i += 1) {
-      _key = sortedKeys[i];
-      canonicalizedObj[_key] = canonicalize(obj[_key], stack, replacementStack, replacer, _key);
-    }
-    stack.pop();
-    replacementStack.pop();
-  } else {
-    canonicalizedObj = obj;
-  }
-  return canonicalizedObj;
-}
-var arrayDiff = new Diff();
-arrayDiff.tokenize = function(value) {
-  return value.slice();
-};
-arrayDiff.join = arrayDiff.removeEmpty = function(value) {
-  return value;
-};
-function structuredPatch(oldFileName, newFileName, oldStr, newStr, oldHeader, newHeader, options) {
-  if (!options) {
-    options = {};
-  }
-  if (typeof options.context === "undefined") {
-    options.context = 4;
-  }
-  var diff2 = diffLines(oldStr, newStr, options);
-  if (!diff2) {
-    return;
-  }
-  diff2.push({
-    value: "",
-    lines: []
-  });
-  function contextLines(lines) {
-    return lines.map(function(entry) {
-      return " " + entry;
-    });
-  }
-  var hunks = [];
-  var oldRangeStart = 0, newRangeStart = 0, curRange = [], oldLine = 1, newLine = 1;
-  var _loop = function _loop2(i2) {
-    var current = diff2[i2], lines = current.lines || current.value.replace(/\n$/, "").split("\n");
-    current.lines = lines;
-    if (current.added || current.removed) {
-      var _curRange;
-      if (!oldRangeStart) {
-        var prev = diff2[i2 - 1];
-        oldRangeStart = oldLine;
-        newRangeStart = newLine;
-        if (prev) {
-          curRange = options.context > 0 ? contextLines(prev.lines.slice(-options.context)) : [];
-          oldRangeStart -= curRange.length;
-          newRangeStart -= curRange.length;
-        }
-      }
-      (_curRange = curRange).push.apply(_curRange, _toConsumableArray(lines.map(function(entry) {
-        return (current.added ? "+" : "-") + entry;
-      })));
-      if (current.added) {
-        newLine += lines.length;
-      } else {
-        oldLine += lines.length;
-      }
-    } else {
-      if (oldRangeStart) {
-        if (lines.length <= options.context * 2 && i2 < diff2.length - 2) {
-          var _curRange2;
-          (_curRange2 = curRange).push.apply(_curRange2, _toConsumableArray(contextLines(lines)));
-        } else {
-          var _curRange3;
-          var contextSize = Math.min(lines.length, options.context);
-          (_curRange3 = curRange).push.apply(_curRange3, _toConsumableArray(contextLines(lines.slice(0, contextSize))));
-          var hunk = {
-            oldStart: oldRangeStart,
-            oldLines: oldLine - oldRangeStart + contextSize,
-            newStart: newRangeStart,
-            newLines: newLine - newRangeStart + contextSize,
-            lines: curRange
-          };
-          if (i2 >= diff2.length - 2 && lines.length <= options.context) {
-            var oldEOFNewline = /\n$/.test(oldStr);
-            var newEOFNewline = /\n$/.test(newStr);
-            var noNlBeforeAdds = lines.length == 0 && curRange.length > hunk.oldLines;
-            if (!oldEOFNewline && noNlBeforeAdds && oldStr.length > 0) {
-              curRange.splice(hunk.oldLines, 0, "\\ No newline at end of file");
-            }
-            if (!oldEOFNewline && !noNlBeforeAdds || !newEOFNewline) {
-              curRange.push("\\ No newline at end of file");
-            }
-          }
-          hunks.push(hunk);
-          oldRangeStart = 0;
-          newRangeStart = 0;
-          curRange = [];
-        }
-      }
-      oldLine += lines.length;
-      newLine += lines.length;
-    }
-  };
-  for (var i = 0; i < diff2.length; i++) {
-    _loop(i);
-  }
-  return {
-    oldFileName,
-    newFileName,
-    oldHeader,
-    newHeader,
-    hunks
-  };
-}
-function formatPatch(diff2) {
-  var ret = [];
-  if (diff2.oldFileName == diff2.newFileName) {
-    ret.push("Index: " + diff2.oldFileName);
-  }
-  ret.push("===================================================================");
-  ret.push("--- " + diff2.oldFileName + (typeof diff2.oldHeader === "undefined" ? "" : "	" + diff2.oldHeader));
-  ret.push("+++ " + diff2.newFileName + (typeof diff2.newHeader === "undefined" ? "" : "	" + diff2.newHeader));
-  for (var i = 0; i < diff2.hunks.length; i++) {
-    var hunk = diff2.hunks[i];
-    if (hunk.oldLines === 0) {
-      hunk.oldStart -= 1;
-    }
-    if (hunk.newLines === 0) {
-      hunk.newStart -= 1;
-    }
-    ret.push("@@ -" + hunk.oldStart + "," + hunk.oldLines + " +" + hunk.newStart + "," + hunk.newLines + " @@");
-    ret.push.apply(ret, hunk.lines);
-  }
-  return ret.join("\n") + "\n";
-}
-function createTwoFilesPatch(oldFileName, newFileName, oldStr, newStr, oldHeader, newHeader, options) {
-  return formatPatch(structuredPatch(oldFileName, newFileName, oldStr, newStr, oldHeader, newHeader, options));
-}
-function createPatch(fileName, oldStr, newStr, oldHeader, newHeader, options) {
-  return createTwoFilesPatch(fileName, fileName, oldStr, newStr, oldHeader, newHeader, options);
-}
-
-// src/isomorphicGit.ts
-var import_obsidian5 = require("obsidian");
-
-// src/gitManager.ts
-init_polyfill_buffer();
-var GitManager = class {
-  constructor(plugin) {
-    this.plugin = plugin;
-    this.app = plugin.app;
-  }
-  getVaultPath(path2) {
-    if (this.plugin.settings.basePath) {
-      return this.plugin.settings.basePath + "/" + path2;
-    } else {
-      return path2;
-    }
-  }
-  getPath(path2, relativeToVault) {
-    return relativeToVault && this.plugin.settings.basePath.length > 0 ? path2.substring(this.plugin.settings.basePath.length + 1) : path2;
-  }
-  _getTreeStructure(children2, beginLength = 0) {
-    const list = [];
-    children2 = [...children2];
-    while (children2.length > 0) {
-      const first2 = children2.first();
-      const restPath = first2.path.substring(beginLength);
-      if (restPath.contains("/")) {
-        const title = restPath.substring(0, restPath.indexOf("/"));
-        const childrenWithSameTitle = children2.filter((item) => {
-          return item.path.substring(beginLength).startsWith(title + "/");
-        });
-        childrenWithSameTitle.forEach((item) => children2.remove(item));
-        const path2 = first2.path.substring(
-          0,
-          restPath.indexOf("/") + beginLength
-        );
-        list.push({
-          title,
-          path: path2,
-          vaultPath: this.getVaultPath(path2),
-          children: this._getTreeStructure(
-            childrenWithSameTitle,
-            (beginLength > 0 ? beginLength + title.length : title.length) + 1
-          )
-        });
-      } else {
-        list.push({
-          title: restPath,
-          data: first2,
-          path: first2.path,
-          vaultPath: this.getVaultPath(first2.path)
-        });
-        children2.remove(first2);
-      }
-    }
-    return list;
-  }
-  /*
-   * Sorts the children and simplifies the title
-   * If a node only contains another subdirectory, that subdirectory is moved up one level and integrated into the parent node
-   */
-  simplify(tree) {
-    var _a2, _b, _c, _d;
-    for (const node of tree) {
-      while (true) {
-        const singleChild = ((_a2 = node.children) == null ? void 0 : _a2.length) == 1;
-        const singleChildIsDir = ((_c = (_b = node.children) == null ? void 0 : _b.first()) == null ? void 0 : _c.data) == void 0;
-        if (!(node.children != void 0 && singleChild && singleChildIsDir))
-          break;
-        const child = node.children.first();
-        node.title += "/" + child.title;
-        node.data = child.data;
-        node.path = child.path;
-        node.vaultPath = child.vaultPath;
-        node.children = child.children;
-      }
-      if (node.children != void 0) {
-        this.simplify(node.children);
-      }
-      (_d = node.children) == null ? void 0 : _d.sort((a, b) => {
-        const dirCompare = (b.data == void 0 ? 1 : 0) - (a.data == void 0 ? 1 : 0);
-        if (dirCompare != 0) {
-          return dirCompare;
-        } else {
-          return a.title.localeCompare(b.title);
-        }
-      });
-    }
-    return tree.sort((a, b) => {
-      const dirCompare = (b.data == void 0 ? 1 : 0) - (a.data == void 0 ? 1 : 0);
-      if (dirCompare != 0) {
-        return dirCompare;
-      } else {
-        return a.title.localeCompare(b.title);
-      }
-    });
-  }
-  getTreeStructure(children2) {
-    const tree = this._getTreeStructure(children2);
-    const res = this.simplify(tree);
-    return res;
-  }
-  async formatCommitMessage(template) {
-    let status2;
-    if (template.includes("{{numFiles}}")) {
-      status2 = await this.status();
-      const numFiles = status2.staged.length;
-      template = template.replace("{{numFiles}}", String(numFiles));
-    }
-    if (template.includes("{{hostname}}")) {
-      const hostname = this.plugin.localStorage.getHostname() || "";
-      template = template.replace("{{hostname}}", hostname);
-    }
-    if (template.includes("{{files}}")) {
-      status2 = status2 != null ? status2 : await this.status();
-      const changeset = {};
-      status2.staged.forEach((value) => {
-        if (value.index in changeset) {
-          changeset[value.index].push(value.path);
-        } else {
-          changeset[value.index] = [value.path];
-        }
-      });
-      const chunks = [];
-      for (const [action, files2] of Object.entries(changeset)) {
-        chunks.push(action + " " + files2.join(" "));
-      }
-      const files = chunks.join(", ");
-      template = template.replace("{{files}}", files);
-    }
-    const moment = window.moment;
-    template = template.replace(
-      "{{date}}",
-      moment().format(this.plugin.settings.commitDateFormat)
-    );
-    if (this.plugin.settings.listChangedFilesInMessageBody) {
-      template = template + "\n\nAffected files:\n" + (status2 != null ? status2 : await this.status()).staged.map((e) => e.path).join("\n");
-    }
-    return template;
-  }
-};
-
-// src/myAdapter.ts
-init_polyfill_buffer();
-var import_obsidian2 = require("obsidian");
-var MyAdapter = class {
-  constructor(vault, plugin) {
-    this.plugin = plugin;
-    this.promises = {};
-    this.adapter = vault.adapter;
-    this.vault = vault;
-    this.lastBasePath = this.plugin.settings.basePath;
-    this.promises.readFile = this.readFile.bind(this);
-    this.promises.writeFile = this.writeFile.bind(this);
-    this.promises.readdir = this.readdir.bind(this);
-    this.promises.mkdir = this.mkdir.bind(this);
-    this.promises.rmdir = this.rmdir.bind(this);
-    this.promises.stat = this.stat.bind(this);
-    this.promises.unlink = this.unlink.bind(this);
-    this.promises.lstat = this.lstat.bind(this);
-    this.promises.readlink = this.readlink.bind(this);
-    this.promises.symlink = this.symlink.bind(this);
-  }
-  async readFile(path2, opts) {
-    var _a2;
-    this.maybeLog("Read: " + path2 + JSON.stringify(opts));
-    if (opts == "utf8" || opts.encoding == "utf8") {
-      const file = this.vault.getAbstractFileByPath(path2);
-      if (file instanceof import_obsidian2.TFile) {
-        this.maybeLog("Reuse");
-        return this.vault.read(file);
-      } else {
-        return this.adapter.read(path2);
-      }
-    } else {
-      if (path2.endsWith(this.gitDir + "/index")) {
-        if (this.plugin.settings.basePath != this.lastBasePath) {
-          this.clearIndex();
-          this.lastBasePath = this.plugin.settings.basePath;
-          return this.adapter.readBinary(path2);
-        }
-        return (_a2 = this.index) != null ? _a2 : this.adapter.readBinary(path2);
-      }
-      const file = this.vault.getAbstractFileByPath(path2);
-      if (file instanceof import_obsidian2.TFile) {
-        this.maybeLog("Reuse");
-        return this.vault.readBinary(file);
-      } else {
-        return this.adapter.readBinary(path2);
-      }
-    }
-  }
-  async writeFile(path2, data) {
-    this.maybeLog("Write: " + path2);
-    if (typeof data === "string") {
-      const file = this.vault.getAbstractFileByPath(path2);
-      if (file instanceof import_obsidian2.TFile) {
-        return this.vault.modify(file, data);
-      } else {
-        return this.adapter.write(path2, data);
-      }
-    } else {
-      if (path2.endsWith(this.gitDir + "/index")) {
-        this.index = data;
-        this.indexmtime = Date.now();
-      } else {
-        const file = this.vault.getAbstractFileByPath(path2);
-        if (file instanceof import_obsidian2.TFile) {
-          return this.vault.modifyBinary(file, data);
-        } else {
-          return this.adapter.writeBinary(path2, data);
-        }
-      }
-    }
-  }
-  async readdir(path2) {
-    if (path2 === ".")
-      path2 = "/";
-    const res = await this.adapter.list(path2);
-    const all = [...res.files, ...res.folders];
-    let formattedAll;
-    if (path2 !== "/") {
-      formattedAll = all.map(
-        (e) => (0, import_obsidian2.normalizePath)(e.substring(path2.length))
-      );
-    } else {
-      formattedAll = all;
-    }
-    return formattedAll;
-  }
-  async mkdir(path2) {
-    return this.adapter.mkdir(path2);
-  }
-  async rmdir(path2, opts) {
-    var _a2, _b;
-    return this.adapter.rmdir(path2, (_b = (_a2 = opts == null ? void 0 : opts.options) == null ? void 0 : _a2.recursive) != null ? _b : false);
-  }
-  async stat(path2) {
-    if (path2.endsWith(this.gitDir + "/index")) {
-      if (this.index !== void 0 && this.indexctime != void 0 && this.indexmtime != void 0) {
-        return {
-          isFile: () => true,
-          isDirectory: () => false,
-          isSymbolicLink: () => false,
-          size: this.index.length,
-          type: "file",
-          ctimeMs: this.indexctime,
-          mtimeMs: this.indexmtime
-        };
-      } else {
-        const stat = await this.adapter.stat(path2);
-        if (stat == void 0) {
-          throw { code: "ENOENT" };
-        }
-        this.indexctime = stat.ctime;
-        this.indexmtime = stat.mtime;
-        return {
-          ctimeMs: stat.ctime,
-          mtimeMs: stat.mtime,
-          size: stat.size,
-          type: "file",
-          isFile: () => true,
-          isDirectory: () => false,
-          isSymbolicLink: () => false
-        };
-      }
-    }
-    if (path2 === ".")
-      path2 = "/";
-    const file = this.vault.getAbstractFileByPath(path2);
-    this.maybeLog("Stat: " + path2);
-    if (file instanceof import_obsidian2.TFile) {
-      this.maybeLog("Reuse stat");
-      return {
-        ctimeMs: file.stat.ctime,
-        mtimeMs: file.stat.mtime,
-        size: file.stat.size,
-        type: "file",
-        isFile: () => true,
-        isDirectory: () => false,
-        isSymbolicLink: () => false
-      };
-    } else {
-      const stat = await this.adapter.stat(path2);
-      if (stat) {
-        return {
-          ctimeMs: stat.ctime,
-          mtimeMs: stat.mtime,
-          size: stat.size,
-          type: stat.type === "folder" ? "directory" : stat.type,
-          isFile: () => stat.type === "file",
-          isDirectory: () => stat.type === "folder",
-          isSymbolicLink: () => false
-        };
-      } else {
-        throw { code: "ENOENT" };
-      }
-    }
-  }
-  async unlink(path2) {
-    return this.adapter.remove(path2);
-  }
-  async lstat(path2) {
-    return this.stat(path2);
-  }
-  async readlink(path2) {
-    throw new Error(`readlink of (${path2}) is not implemented.`);
-  }
-  async symlink(path2) {
-    throw new Error(`symlink of (${path2}) is not implemented.`);
-  }
-  async saveAndClear() {
-    if (this.index !== void 0) {
-      await this.adapter.writeBinary(
-        this.plugin.gitManager.getVaultPath(this.gitDir + "/index"),
-        this.index,
-        {
-          ctime: this.indexctime,
-          mtime: this.indexmtime
-        }
-      );
-    }
-    this.clearIndex();
-  }
-  clearIndex() {
-    this.index = void 0;
-    this.indexctime = void 0;
-    this.indexmtime = void 0;
-  }
-  get gitDir() {
-    return this.plugin.settings.gitDir || ".git";
-  }
-  maybeLog(text2) {
-  }
-};
-
-// src/types.ts
-init_polyfill_buffer();
-
-// src/ui/modals/generalModal.ts
-init_polyfill_buffer();
-var import_obsidian3 = require("obsidian");
-var generalModalConfigDefaults = {
-  options: [],
-  placeholder: "",
-  allowEmpty: false,
-  onlySelection: false,
-  initialValue: void 0
-};
-var GeneralModal = class extends import_obsidian3.SuggestModal {
-  constructor(config) {
-    super(app);
-    this.config = { ...generalModalConfigDefaults, ...config };
-    this.setPlaceholder(this.config.placeholder);
-  }
-  open() {
-    super.open();
-    if (this.config.initialValue != void 0) {
-      this.inputEl.value = this.config.initialValue;
-      this.inputEl.dispatchEvent(new Event("input"));
-    }
-    return new Promise((resolve) => {
-      this.resolve = resolve;
-    });
-  }
-  selectSuggestion(value, evt) {
-    if (this.resolve) {
-      let res;
-      if (this.config.allowEmpty && value === " ")
-        res = "";
-      else if (value === "...")
-        res = void 0;
-      else
-        res = value;
-      this.resolve(res);
-    }
-    super.selectSuggestion(value, evt);
-  }
-  onClose() {
-    if (this.resolve)
-      this.resolve(void 0);
-  }
-  getSuggestions(query) {
-    if (this.config.onlySelection) {
-      return this.config.options;
-    } else if (this.config.allowEmpty) {
-      return [query.length > 0 ? query : " ", ...this.config.options];
-    } else {
-      return [query.length > 0 ? query : "...", ...this.config.options];
-    }
-  }
-  renderSuggestion(value, el) {
-    el.setText(value);
-  }
-  onChooseSuggestion(item, evt) {
-  }
-};
-
-// src/utils.ts
-init_polyfill_buffer();
-var import_obsidian4 = require("obsidian");
-var worthWalking2 = (filepath, root) => {
-  if (filepath === "." || root == null || root.length === 0 || root === ".") {
-    return true;
-  }
-  if (root.length >= filepath.length) {
-    return root.startsWith(filepath);
-  } else {
-    return filepath.startsWith(root);
-  }
-};
-function getNewLeaf(event) {
-  let leaf;
-  if (event) {
-    if (event.button === 0 || event.button === 1) {
-      const type = import_obsidian4.Keymap.isModEvent(event);
-      leaf = app.workspace.getLeaf(type);
-    }
-  } else {
-    leaf = app.workspace.getLeaf(false);
-  }
-  return leaf;
-}
-function splitRemoteBranch(remoteBranch) {
-  const [remote, ...branch2] = remoteBranch.split("/");
-  return [remote, branch2.length === 0 ? void 0 : branch2.join("/")];
-}
-function getDisplayPath(path2) {
-  if (path2.endsWith("/"))
-    return path2;
-  return path2.split("/").last().replace(".md", "");
-}
-
-// src/isomorphicGit.ts
-var IsomorphicGit = class extends GitManager {
-  constructor(plugin) {
-    super(plugin);
-    this.FILE = 0;
-    this.HEAD = 1;
-    this.WORKDIR = 2;
-    this.STAGE = 3;
-    // Mapping from statusMatrix to git status codes based off git status --short
-    // See: https://isomorphic-git.org/docs/en/statusMatrix
-    this.status_mapping = {
-      "000": "  ",
-      "003": "AD",
-      "020": "??",
-      "022": "A ",
-      "023": "AM",
-      "100": "D ",
-      "101": " D",
-      "103": "MD",
-      "110": "DA",
-      // Technically, two files: first one is deleted "D " and second one is untracked "??"
-      "111": "  ",
-      "120": "DA",
-      // Same as "110"
-      "121": " M",
-      "122": "M ",
-      "123": "MM"
-    };
-    this.noticeLength = 999999;
-    this.fs = new MyAdapter(this.app.vault, this.plugin);
-  }
-  getRepo() {
-    return {
-      fs: this.fs,
-      dir: this.plugin.settings.basePath,
-      gitdir: this.plugin.settings.gitDir || void 0,
-      onAuth: () => {
-        var _a2, _b;
-        return {
-          username: (_a2 = this.plugin.localStorage.getUsername()) != null ? _a2 : void 0,
-          password: (_b = this.plugin.localStorage.getPassword()) != null ? _b : void 0
-        };
-      },
-      onAuthFailure: async () => {
-        new import_obsidian5.Notice(
-          "Authentication failed. Please try with different credentials"
-        );
-        const username = await new GeneralModal({
-          placeholder: "Specify your username"
-        }).open();
-        if (username) {
-          const password = await new GeneralModal({
-            placeholder: "Specify your password/personal access token"
-          }).open();
-          if (password) {
-            this.plugin.localStorage.setUsername(username);
-            this.plugin.localStorage.setPassword(password);
-            return {
-              username,
-              password
-            };
-          }
-        }
-        return { cancel: true };
-      },
-      http: {
-        async request({
-          url,
-          method,
-          headers,
-          body
-        }) {
-          if (body) {
-            body = await collect2(body);
-            body = body.buffer;
-          }
-          const res = await (0, import_obsidian5.requestUrl)({
-            url,
-            method,
-            headers,
-            body,
-            throw: false
-          });
-          return {
-            url,
-            method,
-            headers: res.headers,
-            body: [new Uint8Array(res.arrayBuffer)],
-            statusCode: res.status,
-            statusMessage: res.status.toString()
-          };
-        }
-      }
-    };
-  }
-  async wrapFS(call) {
-    try {
-      const res = await call;
-      await this.fs.saveAndClear();
-      return res;
-    } catch (error) {
-      await this.fs.saveAndClear();
-      throw error;
-    }
-  }
-  async status() {
-    let notice;
-    const timeout = window.setTimeout(function() {
-      notice = new import_obsidian5.Notice(
-        "This takes longer: Getting status",
-        this.noticeLength
-      );
-    }, 2e4);
-    try {
-      this.plugin.setState(1 /* status */);
-      const status2 = (await this.wrapFS(isomorphic_git_default.statusMatrix({ ...this.getRepo() }))).map((row) => this.getFileStatusResult(row));
-      const changed = status2.filter(
-        (fileStatus) => fileStatus.working_dir !== " "
-      );
-      const staged = status2.filter(
-        (fileStatus) => fileStatus.index !== " " && fileStatus.index !== "U"
-      );
-      const conflicted = [];
-      window.clearTimeout(timeout);
-      notice == null ? void 0 : notice.hide();
-      return { changed, staged, conflicted };
-    } catch (error) {
-      window.clearTimeout(timeout);
-      notice == null ? void 0 : notice.hide();
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async commitAll({
-    message,
-    status: status2,
-    unstagedFiles
-  }) {
-    try {
-      await this.checkAuthorInfo();
-      await this.stageAll({ status: status2, unstagedFiles });
-      return this.commit(message);
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async commit(message) {
-    try {
-      await this.checkAuthorInfo();
-      this.plugin.setState(4 /* commit */);
-      const formatMessage = await this.formatCommitMessage(message);
-      const hadConflict = this.plugin.localStorage.getConflict() === "true";
-      let parent = void 0;
-      if (hadConflict) {
-        const branchInfo = await this.branchInfo();
-        parent = [branchInfo.current, branchInfo.tracking];
-      }
-      await this.wrapFS(
-        isomorphic_git_default.commit({
-          ...this.getRepo(),
-          message: formatMessage,
-          parent
-        })
-      );
-      this.plugin.localStorage.setConflict("false");
-      return;
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async stage(filepath, relativeToVault) {
-    const gitPath = this.getPath(filepath, relativeToVault);
-    let vaultPath;
-    if (relativeToVault) {
-      vaultPath = filepath;
-    } else {
-      vaultPath = this.getVaultPath(filepath);
-    }
-    try {
-      this.plugin.setState(3 /* add */);
-      if (await this.app.vault.adapter.exists(vaultPath)) {
-        await this.wrapFS(
-          isomorphic_git_default.add({ ...this.getRepo(), filepath: gitPath })
-        );
-      } else {
-        await this.wrapFS(
-          isomorphic_git_default.remove({ ...this.getRepo(), filepath: gitPath })
-        );
-      }
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async stageAll({
-    dir,
-    status: status2,
-    unstagedFiles
-  }) {
-    try {
-      if (status2) {
-        await Promise.all(
-          status2.changed.map(
-            (file) => file.working_dir !== "D" ? this.wrapFS(
-              isomorphic_git_default.add({
-                ...this.getRepo(),
-                filepath: file.path
-              })
-            ) : isomorphic_git_default.remove({
-              ...this.getRepo(),
-              filepath: file.path
-            })
-          )
-        );
-      } else {
-        const filesToStage = unstagedFiles != null ? unstagedFiles : await this.getUnstagedFiles(dir != null ? dir : ".");
-        await Promise.all(
-          filesToStage.map(
-            ({ filepath, deleted }) => deleted ? isomorphic_git_default.remove({ ...this.getRepo(), filepath }) : this.wrapFS(
-              isomorphic_git_default.add({ ...this.getRepo(), filepath })
-            )
-          )
-        );
-      }
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async unstage(filepath, relativeToVault) {
-    try {
-      this.plugin.setState(3 /* add */);
-      filepath = this.getPath(filepath, relativeToVault);
-      await this.wrapFS(
-        isomorphic_git_default.resetIndex({ ...this.getRepo(), filepath })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async unstageAll({
-    dir,
-    status: status2
-  }) {
-    try {
-      let staged;
-      if (status2) {
-        staged = status2.staged.map((file) => file.path);
-      } else {
-        const res = await this.getStagedFiles(dir != null ? dir : ".");
-        staged = res.map(({ filepath }) => filepath);
-      }
-      await this.wrapFS(
-        Promise.all(
-          staged.map(
-            (file) => isomorphic_git_default.resetIndex({ ...this.getRepo(), filepath: file })
-          )
-        )
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async discard(filepath) {
-    try {
-      this.plugin.setState(3 /* add */);
-      await this.wrapFS(
-        isomorphic_git_default.checkout({
-          ...this.getRepo(),
-          filepaths: [filepath],
-          force: true
-        })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async discardAll({
-    dir,
-    status: status2
-  }) {
-    let files = [];
-    if (status2) {
-      if (dir != void 0) {
-        files = status2.changed.filter((file) => file.path.startsWith(dir)).map((file) => file.path);
-      } else {
-        files = status2.changed.map((file) => file.path);
-      }
-    } else {
-      files = (await this.getUnstagedFiles(dir)).map(
-        ({ filepath }) => filepath
-      );
-    }
-    try {
-      await this.wrapFS(
-        isomorphic_git_default.checkout({
-          ...this.getRepo(),
-          filepaths: files,
-          force: true
-        })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  getProgressText(action, event) {
-    let out = `${action} progress:`;
-    if (event.phase) {
-      out = `${out} ${event.phase}:`;
-    }
-    if (event.loaded) {
-      out = `${out} ${event.loaded}`;
-      if (event.total) {
-        out = `${out} of ${event.total}`;
-      }
-    }
-    return out;
-  }
-  resolveRef(ref) {
-    return this.wrapFS(isomorphic_git_default.resolveRef({ ...this.getRepo(), ref }));
-  }
-  async pull() {
-    const progressNotice = this.showNotice("Initializing pull");
-    try {
-      this.plugin.setState(2 /* pull */);
-      const localCommit = await this.resolveRef("HEAD");
-      await this.fetch();
-      const branchInfo = await this.branchInfo();
-      await this.checkAuthorInfo();
-      const mergeRes = await this.wrapFS(
-        isomorphic_git_default.merge({
-          ...this.getRepo(),
-          ours: branchInfo.current,
-          theirs: branchInfo.tracking,
-          abortOnConflict: false
-        })
-      );
-      if (!mergeRes.alreadyMerged) {
-        await this.wrapFS(
-          isomorphic_git_default.checkout({
-            ...this.getRepo(),
-            ref: branchInfo.current,
-            onProgress: (progress) => {
-              if (progressNotice !== void 0) {
-                progressNotice.noticeEl.innerText = this.getProgressText("Checkout", progress);
-              }
-            },
-            remote: branchInfo.remote
-          })
-        );
-      }
-      progressNotice == null ? void 0 : progressNotice.hide();
-      const upstreamCommit = await this.resolveRef("HEAD");
-      const changedFiles = await this.getFileChangesCount(
-        localCommit,
-        upstreamCommit
-      );
-      this.showNotice("Finished pull", false);
-      return changedFiles.map((file) => ({
-        path: file.path,
-        working_dir: "P",
-        index: "P",
-        vault_path: this.getVaultPath(file.path)
-      }));
-    } catch (error) {
-      progressNotice == null ? void 0 : progressNotice.hide();
-      if (error instanceof Errors.MergeConflictError) {
-        this.plugin.handleConflict(
-          error.data.filepaths.map((file) => this.getVaultPath(file))
-        );
-      }
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async push() {
-    if (!await this.canPush()) {
-      return 0;
-    }
-    const progressNotice = this.showNotice("Initializing push");
-    try {
-      this.plugin.setState(1 /* status */);
-      const status2 = await this.branchInfo();
-      const trackingBranch = status2.tracking;
-      const currentBranch2 = status2.current;
-      const numChangedFiles = (await this.getFileChangesCount(currentBranch2, trackingBranch)).length;
-      this.plugin.setState(5 /* push */);
-      await this.wrapFS(
-        isomorphic_git_default.push({
-          ...this.getRepo(),
-          onProgress: (progress) => {
-            if (progressNotice !== void 0) {
-              progressNotice.noticeEl.innerText = this.getProgressText("Pushing", progress);
-            }
-          }
-        })
-      );
-      progressNotice == null ? void 0 : progressNotice.hide();
-      return numChangedFiles;
-    } catch (error) {
-      progressNotice == null ? void 0 : progressNotice.hide();
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async getUnpushedCommits() {
-    const status2 = await this.branchInfo();
-    const trackingBranch = status2.tracking;
-    const currentBranch2 = status2.current;
-    if (trackingBranch == null || currentBranch2 == null) {
-      return 0;
-    }
-    const localCommit = await this.resolveRef(currentBranch2);
-    const upstreamCommit = await this.resolveRef(trackingBranch);
-    const changedFiles = await this.getFileChangesCount(
-      localCommit,
-      upstreamCommit
-    );
-    return changedFiles.length;
-  }
-  async canPush() {
-    const status2 = await this.branchInfo();
-    const trackingBranch = status2.tracking;
-    const currentBranch2 = status2.current;
-    const current = await this.resolveRef(currentBranch2);
-    const tracking = await this.resolveRef(trackingBranch);
-    return current != tracking;
-  }
-  async checkRequirements() {
-    const headExists = await this.plugin.app.vault.adapter.exists(
-      `${this.getRepo().dir}/.git/HEAD`
-    );
-    return headExists ? "valid" : "missing-repo";
-  }
-  async branchInfo() {
-    var _a2, _b;
-    try {
-      const current = await isomorphic_git_default.currentBranch(this.getRepo()) || "";
-      const branches = await isomorphic_git_default.listBranches(this.getRepo());
-      const remote = (_a2 = await this.getConfig(`branch.${current}.remote`)) != null ? _a2 : "origin";
-      const trackingBranch = (_b = await this.getConfig(`branch.${current}.merge`)) == null ? void 0 : _b.split("refs/heads")[1];
-      const tracking = trackingBranch ? remote + trackingBranch : void 0;
-      return {
-        current,
-        tracking,
-        branches,
-        remote
-      };
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async getCurrentRemote() {
-    var _a2;
-    const current = await isomorphic_git_default.currentBranch(this.getRepo()) || "";
-    const remote = (_a2 = await this.getConfig(`branch.${current}.remote`)) != null ? _a2 : "origin";
-    return remote;
-  }
-  async checkout(branch2, remote) {
-    try {
-      return this.wrapFS(
-        isomorphic_git_default.checkout({
-          ...this.getRepo(),
-          ref: branch2,
-          force: !!remote,
-          remote
-        })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async createBranch(branch2) {
-    try {
-      await this.wrapFS(
-        isomorphic_git_default.branch({ ...this.getRepo(), ref: branch2, checkout: true })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async deleteBranch(branch2) {
-    try {
-      await this.wrapFS(
-        isomorphic_git_default.deleteBranch({ ...this.getRepo(), ref: branch2 })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async branchIsMerged(branch2) {
-    return true;
-  }
-  async init() {
-    try {
-      await this.wrapFS(isomorphic_git_default.init(this.getRepo()));
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async clone(url, dir, depth) {
-    const progressNotice = this.showNotice("Initializing clone");
-    try {
-      await this.wrapFS(
-        isomorphic_git_default.clone({
-          ...this.getRepo(),
-          dir,
-          url,
-          depth,
-          onProgress: (progress) => {
-            if (progressNotice !== void 0) {
-              progressNotice.noticeEl.innerText = this.getProgressText("Cloning", progress);
-            }
-          }
-        })
-      );
-      progressNotice == null ? void 0 : progressNotice.hide();
-    } catch (error) {
-      progressNotice == null ? void 0 : progressNotice.hide();
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async setConfig(path2, value) {
-    try {
-      return this.wrapFS(
-        isomorphic_git_default.setConfig({
-          ...this.getRepo(),
-          path: path2,
-          value
-        })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async getConfig(path2) {
-    try {
-      return this.wrapFS(
-        isomorphic_git_default.getConfig({
-          ...this.getRepo(),
-          path: path2
-        })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async fetch(remote) {
-    const progressNotice = this.showNotice("Initializing fetch");
-    try {
-      const args = {
-        ...this.getRepo(),
-        onProgress: (progress) => {
-          if (progressNotice !== void 0) {
-            progressNotice.noticeEl.innerText = this.getProgressText("Fetching", progress);
-          }
-        },
-        remote: remote != null ? remote : await this.getCurrentRemote()
-      };
-      await this.wrapFS(isomorphic_git_default.fetch(args));
-      progressNotice == null ? void 0 : progressNotice.hide();
-    } catch (error) {
-      this.plugin.displayError(error);
-      progressNotice == null ? void 0 : progressNotice.hide();
-      throw error;
-    }
-  }
-  async setRemote(name, url) {
-    try {
-      await this.wrapFS(
-        isomorphic_git_default.addRemote({
-          ...this.getRepo(),
-          remote: name,
-          url,
-          force: true
-        })
-      );
-    } catch (error) {
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async getRemoteBranches(remote) {
-    let remoteBranches = [];
-    remoteBranches.push(
-      ...await this.wrapFS(
-        isomorphic_git_default.listBranches({ ...this.getRepo(), remote })
-      )
-    );
-    remoteBranches.remove("HEAD");
-    remoteBranches = remoteBranches.map((e) => `${remote}/${e}`);
-    return remoteBranches;
-  }
-  async getRemotes() {
-    return (await this.wrapFS(isomorphic_git_default.listRemotes({ ...this.getRepo() }))).map(
-      (remoteUrl) => remoteUrl.remote
-    );
-  }
-  async removeRemote(remoteName) {
-    await this.wrapFS(
-      isomorphic_git_default.deleteRemote({ ...this.getRepo(), remote: remoteName })
-    );
-  }
-  async getRemoteUrl(remote) {
-    var _a2;
-    return (_a2 = (await this.wrapFS(isomorphic_git_default.listRemotes({ ...this.getRepo() }))).filter((item) => item.remote == remote)[0]) == null ? void 0 : _a2.url;
-  }
-  async log(_, __ = true, limit) {
-    const logs = await this.wrapFS(
-      isomorphic_git_default.log({ ...this.getRepo(), depth: limit })
-    );
-    return Promise.all(
-      logs.map(async (log2) => {
-        const completeMessage = log2.commit.message.split("\n\n");
-        return {
-          message: completeMessage[0],
-          body: completeMessage.slice(1).join("\n\n"),
-          date: new Date(
-            log2.commit.committer.timestamp
-          ).toDateString(),
-          diff: {
-            changed: 0,
-            files: (await this.getFileChangesCount(
-              log2.commit.parent.first(),
-              log2.oid
-            )).map((item) => {
-              return {
-                path: item.path,
-                status: item.type,
-                vault_path: this.getVaultPath(item.path),
-                hash: log2.oid,
-                binary: void 0
-              };
-            })
-          },
-          hash: log2.oid,
-          refs: []
-        };
-      })
-    );
-  }
-  updateBasePath(basePath) {
-    this.getRepo().dir = basePath;
-  }
-  async updateUpstreamBranch(remoteBranch) {
-    const [remote, branch2] = splitRemoteBranch(remoteBranch);
-    const branchInfo = await this.branchInfo();
-    await this.setConfig(
-      `branch.${branchInfo.current}.merge`,
-      `refs/heads/${branch2}`
-    );
-    await this.setConfig(`branch.${branch2}.remote`, remote);
-  }
-  updateGitPath(gitPath) {
-    return;
-  }
-  async getFileChangesCount(commitHash1, commitHash2) {
-    return this.walkDifference({
-      walkers: [
-        isomorphic_git_default.TREE({ ref: commitHash1 }),
-        isomorphic_git_default.TREE({ ref: commitHash2 })
-      ]
-    });
-  }
-  async walkDifference({
-    walkers,
-    dir: base
-  }) {
-    const res = await this.wrapFS(
-      isomorphic_git_default.walk({
-        ...this.getRepo(),
-        trees: walkers,
-        map: async function(filepath, [A, B]) {
-          if (!worthWalking2(filepath, base)) {
-            return null;
-          }
-          if (await (A == null ? void 0 : A.type()) === "tree" || await (B == null ? void 0 : B.type()) === "tree") {
-            return;
-          }
-          const Aoid = await (A == null ? void 0 : A.oid());
-          const Boid = await (B == null ? void 0 : B.oid());
-          let type = "equal";
-          if (Aoid !== Boid) {
-            type = "M";
-          }
-          if (Aoid === void 0) {
-            type = "A";
-          }
-          if (Boid === void 0) {
-            type = "D";
-          }
-          if (Aoid === void 0 && Boid === void 0) {
-            console.log("Something weird happened:");
-            console.log(A);
-            console.log(B);
-          }
-          if (type === "equal") {
-            return;
-          }
-          return {
-            path: filepath,
-            type
-          };
-        }
-      })
-    );
-    return res;
-  }
-  async getStagedFiles(dir = ".") {
-    const res = await this.walkDifference({
-      walkers: [isomorphic_git_default.TREE({ ref: "HEAD" }), isomorphic_git_default.STAGE()],
-      dir
-    });
-    return res.map((file) => {
-      return {
-        vault_path: this.getVaultPath(file.path),
-        filepath: file.path
-      };
-    });
-  }
-  async getUnstagedFiles(base = ".") {
-    let notice;
-    const timeout = window.setTimeout(function() {
-      notice = new import_obsidian5.Notice(
-        "This takes longer: Getting status",
-        this.noticeLength
-      );
-    }, 2e4);
-    try {
-      const repo = this.getRepo();
-      const res = await this.wrapFS(
-        //Modified from `git.statusMatrix`
-        isomorphic_git_default.walk({
-          ...repo,
-          trees: [isomorphic_git_default.WORKDIR(), isomorphic_git_default.STAGE()],
-          map: async function(filepath, [workdir, stage]) {
-            if (!stage && workdir) {
-              const isIgnored2 = await isomorphic_git_default.isIgnored({
-                ...repo,
-                filepath
-              });
-              if (isIgnored2) {
-                return null;
-              }
-            }
-            if (!worthWalking2(filepath, base)) {
-              return null;
-            }
-            const [workdirType, stageType] = await Promise.all([
-              workdir && workdir.type(),
-              stage && stage.type()
-            ]);
-            const isBlob = [workdirType, stageType].includes(
-              "blob"
-            );
-            if ((workdirType === "tree" || workdirType === "special") && !isBlob)
-              return;
-            if (stageType === "commit")
-              return null;
-            if ((stageType === "tree" || stageType === "special") && !isBlob)
-              return;
-            const stageOid = stageType === "blob" ? await stage.oid() : void 0;
-            let workdirOid;
-            if (workdirType === "blob" && stageType !== "blob") {
-              workdirOid = "42";
-            } else if (workdirType === "blob") {
-              workdirOid = await workdir.oid();
-            }
-            if (!workdirOid) {
-              return {
-                filepath,
-                deleted: true
-              };
-            }
-            if (workdirOid !== stageOid) {
-              return {
-                filepath,
-                deleted: false
-              };
-            }
-            return null;
-          }
-        })
-      );
-      window.clearTimeout(timeout);
-      notice == null ? void 0 : notice.hide();
-      return res;
-    } catch (error) {
-      window.clearTimeout(timeout);
-      notice == null ? void 0 : notice.hide();
-      this.plugin.displayError(error);
-      throw error;
-    }
-  }
-  async getDiffString(filePath, stagedChanges = false, hash2) {
-    const vaultPath = this.getVaultPath(filePath);
-    const map = async (file, [A]) => {
-      if (filePath == file) {
-        const oid = await A.oid();
-        const contents = await isomorphic_git_default.readBlob({
-          ...this.getRepo(),
-          oid
-        });
-        return contents.blob;
-      }
-    };
-    if (hash2) {
-      const commitContent = await readBlob({
-        ...this.getRepo(),
-        filepath: filePath,
-        oid: hash2
-      }).then((headBlob) => new TextDecoder().decode(headBlob.blob)).catch((err) => {
-        if (err instanceof isomorphic_git_default.Errors.NotFoundError)
-          return void 0;
-        throw err;
-      });
-      const commit2 = await isomorphic_git_default.readCommit({
-        ...this.getRepo(),
-        oid: hash2
-      });
-      const previousContent = await readBlob({
-        ...this.getRepo(),
-        filepath: filePath,
-        oid: commit2.commit.parent.first()
-      }).then((headBlob) => new TextDecoder().decode(headBlob.blob)).catch((err) => {
-        if (err instanceof isomorphic_git_default.Errors.NotFoundError)
-          return void 0;
-        throw err;
-      });
-      const diff2 = createPatch(
-        vaultPath,
-        previousContent != null ? previousContent : "",
-        commitContent != null ? commitContent : ""
-      );
-      return diff2;
-    }
-    const stagedBlob = (await isomorphic_git_default.walk({
-      ...this.getRepo(),
-      trees: [isomorphic_git_default.STAGE()],
-      map
-    })).first();
-    const stagedContent = new TextDecoder().decode(stagedBlob);
-    if (stagedChanges) {
-      const headContent = await this.resolveRef("HEAD").then(
-        (oid) => readBlob({
-          ...this.getRepo(),
-          filepath: filePath,
-          oid
-        })
-      ).then((headBlob) => new TextDecoder().decode(headBlob.blob)).catch((err) => {
-        if (err instanceof isomorphic_git_default.Errors.NotFoundError)
-          return void 0;
-        throw err;
-      });
-      const diff2 = createPatch(
-        vaultPath,
-        headContent != null ? headContent : "",
-        stagedContent
-      );
-      return diff2;
-    } else {
-      let workdirContent;
-      if (await app.vault.adapter.exists(vaultPath)) {
-        workdirContent = await app.vault.adapter.read(vaultPath);
-      } else {
-        workdirContent = "";
-      }
-      const diff2 = createPatch(vaultPath, stagedContent, workdirContent);
-      return diff2;
-    }
-  }
-  async getLastCommitTime() {
-    const repo = this.getRepo();
-    const oid = await this.resolveRef("HEAD");
-    const commit2 = await isomorphic_git_default.readCommit({ ...repo, oid });
-    const date = commit2.commit.committer.timestamp;
-    return new Date(date * 1e3);
-  }
-  getFileStatusResult(row) {
-    const status2 = this.status_mapping[`${row[this.HEAD]}${row[this.WORKDIR]}${row[this.STAGE]}`];
-    return {
-      index: status2[0] == "?" ? "U" : status2[0],
-      working_dir: status2[1] == "?" ? "U" : status2[1],
-      path: row[this.FILE],
-      vault_path: this.getVaultPath(row[this.FILE])
-    };
-  }
-  async checkAuthorInfo() {
-    const name = await this.getConfig("user.name");
-    const email = await this.getConfig("user.email");
-    if (!name || !email) {
-      throw "Git author information is not set. Please set it in the settings.";
-    }
-  }
-  showNotice(message, infinity = true) {
-    if (!this.plugin.settings.disablePopups) {
-      return new import_obsidian5.Notice(
-        message,
-        infinity ? this.noticeLength : void 0
-      );
-    }
-  }
-};
-function fromValue2(value) {
-  let queue = [value];
-  return {
-    next() {
-      return Promise.resolve({
-        done: queue.length === 0,
-        value: queue.pop()
-      });
-    },
-    return() {
-      queue = [];
-      return {};
-    },
-    [Symbol.asyncIterator]() {
-      return this;
-    }
-  };
-}
-function getIterator2(iterable) {
-  if (iterable[Symbol.asyncIterator]) {
-    return iterable[Symbol.asyncIterator]();
-  }
-  if (iterable[Symbol.iterator]) {
-    return iterable[Symbol.iterator]();
-  }
-  if (iterable.next) {
-    return iterable;
-  }
-  return fromValue2(iterable);
-}
-async function forAwait2(iterable, cb) {
-  const iter = getIterator2(iterable);
-  while (true) {
-    const { value, done } = await iter.next();
-    if (value)
-      await cb(value);
-    if (done)
-      break;
-  }
-  if (iter.return)
-    iter.return();
-}
-async function collect2(iterable) {
-  let size = 0;
-  const buffers = [];
-  await forAwait2(iterable, (value) => {
-    buffers.push(value);
-    size += value.byteLength;
-  });
-  const result = new Uint8Array(size);
-  let nextIndex = 0;
-  for (const buffer2 of buffers) {
-    result.set(buffer2, nextIndex);
-    nextIndex += buffer2.byteLength;
-  }
-  return result;
-}
-
-// src/simpleGit.ts
-init_polyfill_buffer();
-var import_child_process2 = require("child_process");
-var import_debug2 = __toESM(require_browser());
-var import_obsidian6 = require("obsidian");
-=======
 var import_obsidian30 = require("obsidian");
 
 // src/lineAuthor/lineAuthorIntegration.ts
@@ -28829,11 +25405,10 @@ init_polyfill_buffer();
 var import_child_process2 = require("child_process");
 var import_debug2 = __toESM(require_browser());
 var import_obsidian4 = require("obsidian");
->>>>>>> origin/main
 var path = __toESM(require("path"));
 var import_path = require("path");
 
-// node_modules/.pnpm/github.com+Vinzent03+git-js@6b9a2d899bc8256e38a1d6f0b8a88116ba2bf56a_supports-color@7.2.0/node_modules/simple-git/dist/esm/index.js
+// node_modules/.pnpm/github.com+Vinzent03+git-js@6b9a2d899bc8256e38a1d6f0b8a88116ba2bf56a_supports-color@9.4.0_rdkutdaeyye3o67thmklazfzta/node_modules/simple-git/dist/esm/index.js
 init_polyfill_buffer();
 var import_file_exists = __toESM(require_dist(), 1);
 var import_debug = __toESM(require_browser(), 1);
@@ -28848,15 +25423,15 @@ var __getOwnPropNames2 = Object.getOwnPropertyNames;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp2 = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
+var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __spreadValues = (a, b) => {
   for (var prop in b || (b = {}))
     if (__hasOwnProp2.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
+      __defNormalProp2(a, prop, b[prop]);
   if (__getOwnPropSymbols)
     for (var prop of __getOwnPropSymbols(b)) {
       if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
+        __defNormalProp2(a, prop, b[prop]);
     }
   return a;
 };
@@ -29027,11 +25602,7 @@ function prefixedArray(input, prefix) {
   return output;
 }
 function bufferToString(input) {
-<<<<<<< HEAD
-  return (Array.isArray(input) ? Buffer2.concat(input) : input).toString("utf-8");
-=======
   return (Array.isArray(input) ? Buffer.concat(input) : input).toString("utf-8");
->>>>>>> origin/main
 }
 function pick(source, properties) {
   return Object.assign({}, ...properties.map((property) => property in source ? { [property]: source[property] } : {}));
@@ -29188,19 +25759,19 @@ var init_simple_git_options = __esm2({
     };
   }
 });
-function appendTaskOptions(options, commands = []) {
+function appendTaskOptions(options, commands2 = []) {
   if (!filterPlainObject(options)) {
-    return commands;
+    return commands2;
   }
-  return Object.keys(options).reduce((commands2, key2) => {
+  return Object.keys(options).reduce((commands22, key2) => {
     const value = options[key2];
     if (filterPrimitives(value, ["boolean"])) {
-      commands2.push(key2 + "=" + value);
+      commands22.push(key2 + "=" + value);
     } else {
-      commands2.push(key2);
+      commands22.push(key2);
     }
-    return commands2;
-  }, commands);
+    return commands22;
+  }, commands2);
 }
 function getTrailingOptions(args, initialPrimitive = 0, objectOnly = false) {
   const command = [];
@@ -29325,18 +25896,18 @@ function checkIsRepoTask(action) {
     case "root":
       return checkIsRepoRootTask();
   }
-  const commands = ["rev-parse", "--is-inside-work-tree"];
+  const commands2 = ["rev-parse", "--is-inside-work-tree"];
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     onError,
     parser
   };
 }
 function checkIsRepoRootTask() {
-  const commands = ["rev-parse", "--git-dir"];
+  const commands2 = ["rev-parse", "--git-dir"];
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     onError,
     parser(path2) {
@@ -29345,9 +25916,9 @@ function checkIsRepoRootTask() {
   };
 }
 function checkIsBareRepoTask() {
-  const commands = ["rev-parse", "--is-bare-repository"];
+  const commands2 = ["rev-parse", "--is-bare-repository"];
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     onError,
     parser
@@ -29370,11 +25941,7 @@ var init_check_is_repo = __esm2({
     })(CheckRepoActions || {});
     onError = ({ exitCode }, error, done, fail) => {
       if (exitCode === 128 && isNotRepoMessage(error)) {
-<<<<<<< HEAD
-        return done(Buffer2.from("false"));
-=======
         return done(Buffer.from("false"));
->>>>>>> origin/main
       }
       fail(error);
     };
@@ -29439,18 +26006,18 @@ function configurationErrorTask(error) {
     }
   };
 }
-function straightThroughStringTask(commands, trimmed2 = false) {
+function straightThroughStringTask(commands2, trimmed2 = false) {
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser(text2) {
       return trimmed2 ? String(text2).trim() : text2;
     }
   };
 }
-function straightThroughBufferTask(commands) {
+function straightThroughBufferTask(commands2) {
   return {
-    commands,
+    commands: commands2,
     format: "buffer",
     parser(buffer2) {
       return buffer2;
@@ -29495,9 +26062,9 @@ function cleanWithOptionsTask(mode, customArgs) {
   return cleanTask(cleanMode, options);
 }
 function cleanTask(mode, customArgs) {
-  const commands = ["clean", `-${mode}`, ...customArgs];
+  const commands2 = ["clean", `-${mode}`, ...customArgs];
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser(text2) {
       return cleanSummaryParser(mode === "n", text2);
@@ -29658,13 +26225,13 @@ function asConfigScope(scope, fallback) {
   return fallback;
 }
 function addConfigTask(key2, value, append22, scope) {
-  const commands = ["config", `--${scope}`];
+  const commands2 = ["config", `--${scope}`];
   if (append22) {
-    commands.push("--add");
+    commands2.push("--add");
   }
-  commands.push(key2, value);
+  commands2.push(key2, value);
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser(text2) {
       return text2;
@@ -29672,12 +26239,12 @@ function addConfigTask(key2, value, append22, scope) {
   };
 }
 function getConfigTask(key2, scope) {
-  const commands = ["config", "--null", "--show-origin", "--get-all", key2];
+  const commands2 = ["config", "--null", "--show-origin", "--get-all", key2];
   if (scope) {
-    commands.splice(1, 0, `--${scope}`);
+    commands2.splice(1, 0, `--${scope}`);
   }
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser(text2) {
       return configGetParser(text2, key2);
@@ -29685,12 +26252,12 @@ function getConfigTask(key2, scope) {
   };
 }
 function listConfigTask(scope) {
-  const commands = ["config", "--list", "--show-origin", "--null"];
+  const commands2 = ["config", "--list", "--show-origin", "--null"];
   if (scope) {
-    commands.push(`--${scope}`);
+    commands2.push(`--${scope}`);
   }
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser(text2) {
       return configListParser(text2);
@@ -29761,9 +26328,9 @@ function grep_default() {
       if (typeof searchTerm === "string") {
         searchTerm = grepQueryBuilder().param(searchTerm);
       }
-      const commands = ["grep", "--null", "-n", "--full-name", ...options, ...searchTerm];
+      const commands2 = ["grep", "--null", "-n", "--full-name", ...options, ...searchTerm];
       return this._runTask({
-        commands,
+        commands: commands2,
         format: "utf-8",
         parser(stdOut) {
           return parseGrep(stdOut);
@@ -29809,12 +26376,12 @@ __export2(reset_exports, {
   resetTask: () => resetTask
 });
 function resetTask(mode, customArgs) {
-  const commands = ["reset"];
+  const commands2 = ["reset"];
   if (isValidResetMode(mode)) {
-    commands.push(`--${mode}`);
+    commands2.push(`--${mode}`);
   }
-  commands.push(...customArgs);
-  return straightThroughStringTask(commands);
+  commands2.push(...customArgs);
+  return straightThroughStringTask(commands2);
 }
 function getResetMode(mode) {
   if (isValidResetMode(mode)) {
@@ -29899,11 +26466,7 @@ var init_git_logger = __esm2({
     init_utils();
     import_debug.default.formatters.L = (value) => String(filterHasLength(value) ? value.length : "-");
     import_debug.default.formatters.B = (value) => {
-<<<<<<< HEAD
-      if (Buffer2.isBuffer(value)) {
-=======
       if (Buffer.isBuffer(value)) {
->>>>>>> origin/main
         return value.toString("utf8");
       }
       return objectToString(value);
@@ -29975,20 +26538,16 @@ var init_tasks_pending_queue = __esm2({
     TasksPendingQueue.counter = 0;
   }
 });
-function pluginContext(task, commands) {
+function pluginContext(task, commands2) {
   return {
     method: first(task.commands) || "",
-    commands
+    commands: commands2
   };
 }
 function onErrorReceived(target, logger) {
   return (err) => {
     logger(`[ERROR] child process exception %o`, err);
-<<<<<<< HEAD
-    target.push(Buffer2.from(String(err.stack), "ascii"));
-=======
     target.push(Buffer.from(String(err.stack), "ascii"));
->>>>>>> origin/main
   };
 }
 function onDataReceived(target, name, logger, output) {
@@ -30084,11 +26643,7 @@ var init_git_executor_chain = __esm2({
             return task.onError(result, error, (newStdOut) => {
               logger.info(`custom error handler treated as success`);
               logger(`custom error returned a %s`, objectToString(newStdOut));
-<<<<<<< HEAD
-              done(new GitOutputStreams(Array.isArray(newStdOut) ? Buffer2.concat(newStdOut) : newStdOut, Buffer2.concat(stdErr)));
-=======
               done(new GitOutputStreams(Array.isArray(newStdOut) ? Buffer.concat(newStdOut) : newStdOut, Buffer.concat(stdErr)));
->>>>>>> origin/main
             }, fail);
           }
           if (error) {
@@ -30096,11 +26651,7 @@ var init_git_executor_chain = __esm2({
             return fail(error);
           }
           logger.info(`retrieving task output complete`);
-<<<<<<< HEAD
-          done(new GitOutputStreams(Buffer2.concat(stdOut), Buffer2.concat(stdErr)));
-=======
           done(new GitOutputStreams(Buffer.concat(stdOut), Buffer.concat(stdErr)));
->>>>>>> origin/main
         });
       }
       gitResponse(task, command, args, outputHandler, logger) {
@@ -30234,20 +26785,12 @@ var init_task_callback = __esm2({
     init_utils();
   }
 });
-<<<<<<< HEAD
-function changeWorkingDirectoryTask(directory, root) {
-=======
 function changeWorkingDirectoryTask(directory, root2) {
->>>>>>> origin/main
   return adhocExecTask((instance10) => {
     if (!folderExists(directory)) {
       throw new Error(`Git.cwd: cannot change to non-directory "${directory}"`);
     }
-<<<<<<< HEAD
-    return (root || instance10).cwd = directory;
-=======
     return (root2 || instance10).cwd = directory;
->>>>>>> origin/main
   });
 }
 var init_change_working_directory = __esm2({
@@ -30257,11 +26800,11 @@ var init_change_working_directory = __esm2({
   }
 });
 function checkoutTask(args) {
-  const commands = ["checkout", ...args];
-  if (commands[1] === "-b" && commands.includes("-B")) {
-    commands[1] = remove2(commands, "-B");
+  const commands2 = ["checkout", ...args];
+  if (commands2[1] === "-b" && commands2.includes("-B")) {
+    commands2[1] = remove2(commands2, "-B");
   }
-  return straightThroughStringTask(commands);
+  return straightThroughStringTask(commands2);
 }
 function checkout_default() {
   return {
@@ -30301,17 +26844,10 @@ var init_parse_commit = __esm2({
   "src/lib/parsers/parse-commit.ts"() {
     init_utils();
     parsers = [
-<<<<<<< HEAD
-      new LineParser(/^\[([^\s]+)( \([^)]+\))? ([^\]]+)/, (result, [branch2, root, commit2]) => {
-        result.branch = branch2;
-        result.commit = commit2;
-        result.root = !!root;
-=======
       new LineParser(/^\[([^\s]+)( \([^)]+\))? ([^\]]+)/, (result, [branch2, root2, commit2]) => {
         result.branch = branch2;
         result.commit = commit2;
         result.root = !!root2;
->>>>>>> origin/main
       }),
       new LineParser(/\s*Author:\s(.+)/i, (result, [author]) => {
         const parts = author.split("<");
@@ -30342,7 +26878,7 @@ var init_parse_commit = __esm2({
   }
 });
 function commitTask(message, files, customArgs) {
-  const commands = [
+  const commands2 = [
     "-c",
     "core.abbrev=40",
     "commit",
@@ -30351,7 +26887,7 @@ function commitTask(message, files, customArgs) {
     ...customArgs
   ];
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser: parseCommitResult
   };
@@ -30376,11 +26912,11 @@ var init_commit = __esm2({
   }
 });
 function hashObjectTask(filePath, write) {
-  const commands = ["hash-object", filePath];
+  const commands2 = ["hash-object", filePath];
   if (write) {
-    commands.push("-w");
+    commands2.push("-w");
   }
-  return straightThroughStringTask(commands, true);
+  return straightThroughStringTask(commands2, true);
 }
 var init_hash_object = __esm2({
   "src/lib/tasks/hash-object.ts"() {
@@ -30428,15 +26964,15 @@ function hasBareCommand(command) {
   return command.includes(bareCommand);
 }
 function initTask(bare = false, path2, customArgs) {
-  const commands = ["init", ...customArgs];
-  if (bare && !hasBareCommand(commands)) {
-    commands.splice(1, 0, bareCommand);
+  const commands2 = ["init", ...customArgs];
+  if (bare && !hasBareCommand(commands2)) {
+    commands2.splice(1, 0, bareCommand);
   }
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser(text2) {
-      return parseInit(commands.includes("--bare"), path2, text2);
+      return parseInit(commands2.includes("--bare"), path2, text2);
     }
   };
 }
@@ -30638,14 +27174,14 @@ __export2(diff_exports, {
 });
 function diffSummaryTask(customArgs) {
   let logFormat = logFormatFromCommand(customArgs);
-  const commands = ["diff"];
+  const commands2 = ["diff"];
   if (logFormat === "") {
     logFormat = "--stat";
-    commands.push("--stat=4096");
+    commands2.push("--stat=4096");
   }
-  commands.push(...customArgs);
-  return validateLogFormatConfig(commands) || {
-    commands,
+  commands2.push(...customArgs);
+  return validateLogFormatConfig(commands2) || {
+    commands: commands2,
     format: "utf-8",
     parser: getDiffParser(logFormat)
   };
@@ -31108,18 +27644,18 @@ function pushTagsTask(ref = {}, customArgs) {
   return pushTask(ref, customArgs);
 }
 function pushTask(ref = {}, customArgs) {
-  const commands = ["push", ...customArgs];
+  const commands2 = ["push", ...customArgs];
   if (ref.branch) {
-    commands.splice(1, 0, ref.branch);
+    commands2.splice(1, 0, ref.branch);
   }
   if (ref.remote) {
-    commands.splice(1, 0, ref.remote);
+    commands2.splice(1, 0, ref.remote);
   }
-  remove2(commands, "-v");
-  append(commands, "--verbose");
-  append(commands, "--porcelain");
+  remove2(commands2, "-v");
+  append(commands2, "--verbose");
+  append(commands2, "--porcelain");
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser: parsePushResult
   };
@@ -31292,7 +27828,7 @@ var init_StatusSummary = __esm2({
   }
 });
 function statusTask(customArgs) {
-  const commands = [
+  const commands2 = [
     "status",
     "--porcelain",
     "-b",
@@ -31302,7 +27838,7 @@ function statusTask(customArgs) {
   ];
   return {
     format: "utf-8",
-    commands,
+    commands: commands2,
     parser(text2) {
       return parseStatusSummary(text2);
     }
@@ -31342,11 +27878,7 @@ function version_default() {
         parser: versionParser,
         onError(result, error, done, fail) {
           if (result.exitCode === -2) {
-<<<<<<< HEAD
-            return done(Buffer2.from(NOT_INSTALLED));
-=======
             return done(Buffer.from(NOT_INSTALLED));
->>>>>>> origin/main
           }
           fail(error);
         }
@@ -31643,22 +28175,22 @@ __export2(branch_exports, {
   deleteBranchTask: () => deleteBranchTask,
   deleteBranchesTask: () => deleteBranchesTask
 });
-function containsDeleteBranchCommand(commands) {
+function containsDeleteBranchCommand(commands2) {
   const deleteCommands = ["-d", "-D", "--delete"];
-  return commands.some((command) => deleteCommands.includes(command));
+  return commands2.some((command) => deleteCommands.includes(command));
 }
 function branchTask(customArgs) {
   const isDelete = containsDeleteBranchCommand(customArgs);
-  const commands = ["branch", ...customArgs];
-  if (commands.length === 1) {
-    commands.push("-a");
+  const commands2 = ["branch", ...customArgs];
+  if (commands2.length === 1) {
+    commands2.push("-a");
   }
-  if (!commands.includes("-v")) {
-    commands.splice(1, 0, "-v");
+  if (!commands2.includes("-v")) {
+    commands2.splice(1, 0, "-v");
   }
   return {
     format: "utf-8",
-    commands,
+    commands: commands2,
     parser(stdOut, stdErr) {
       if (isDelete) {
         return parseBranchDeletions(stdOut, stdErr).all[0];
@@ -31747,14 +28279,14 @@ function disallowedCommand(command) {
   return /^--upload-pack(=|$)/.test(command);
 }
 function cloneTask(repo, directory, customArgs) {
-  const commands = ["clone", ...customArgs];
-  filterString(repo) && commands.push(repo);
-  filterString(directory) && commands.push(directory);
-  const banned = commands.find(disallowedCommand);
+  const commands2 = ["clone", ...customArgs];
+  filterString(repo) && commands2.push(repo);
+  filterString(directory) && commands2.push(directory);
+  const banned = commands2.find(disallowedCommand);
   if (banned) {
     return configurationErrorTask(`git.fetch: potential exploit argument blocked.`);
   }
-  return straightThroughStringTask(commands);
+  return straightThroughStringTask(commands2);
 }
 function cloneMirrorTask(repo, directory, customArgs) {
   append(customArgs, "--mirror");
@@ -31821,16 +28353,16 @@ function disallowedCommand2(command) {
   return /^--upload-pack(=|$)/.test(command);
 }
 function fetchTask(remote, branch2, customArgs) {
-  const commands = ["fetch", ...customArgs];
+  const commands2 = ["fetch", ...customArgs];
   if (remote && branch2) {
-    commands.push(remote, branch2);
+    commands2.push(remote, branch2);
   }
-  const banned = commands.find(disallowedCommand2);
+  const banned = commands2.find(disallowedCommand2);
   if (banned) {
     return configurationErrorTask(`git.fetch: potential exploit argument blocked.`);
   }
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser: parseFetchResult
   };
@@ -31877,12 +28409,12 @@ __export2(pull_exports, {
   pullTask: () => pullTask
 });
 function pullTask(remote, branch2, customArgs) {
-  const commands = ["pull", ...customArgs];
+  const commands2 = ["pull", ...customArgs];
   if (remote && branch2) {
-    commands.splice(1, 0, remote, branch2);
+    commands2.splice(1, 0, remote, branch2);
   }
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser(stdOut, stdErr) {
       return parsePullResult(stdOut, stdErr);
@@ -31943,29 +28475,29 @@ function addRemoteTask(remoteName, remoteRepo, customArgs = []) {
   return straightThroughStringTask(["remote", "add", ...customArgs, remoteName, remoteRepo]);
 }
 function getRemotesTask(verbose) {
-  const commands = ["remote"];
+  const commands2 = ["remote"];
   if (verbose) {
-    commands.push("-v");
+    commands2.push("-v");
   }
   return {
-    commands,
+    commands: commands2,
     format: "utf-8",
     parser: verbose ? parseGetRemotesVerbose : parseGetRemotes
   };
 }
 function listRemotesTask(customArgs = []) {
-  const commands = [...customArgs];
-  if (commands[0] !== "ls-remote") {
-    commands.unshift("ls-remote");
+  const commands2 = [...customArgs];
+  if (commands2[0] !== "ls-remote") {
+    commands2.unshift("ls-remote");
   }
-  return straightThroughStringTask(commands);
+  return straightThroughStringTask(commands2);
 }
 function remoteTask(customArgs = []) {
-  const commands = [...customArgs];
-  if (commands[0] !== "remote") {
-    commands.unshift("remote");
+  const commands2 = [...customArgs];
+  if (commands2[0] !== "remote") {
+    commands2.unshift("remote");
   }
-  return straightThroughStringTask(commands);
+  return straightThroughStringTask(commands2);
 }
 function removeRemoteTask(remoteName) {
   return straightThroughStringTask(["remote", "remove", remoteName]);
@@ -31982,10 +28514,10 @@ __export2(stash_list_exports, {
 });
 function stashListTask(opt = {}, customArgs) {
   const options = parseLogOptions(opt);
-  const commands = ["stash", "list", ...options.commands, ...customArgs];
-  const parser3 = createListLogSummaryParser(options.splitter, options.fields, logFormatFromCommand(commands));
-  return validateLogFormatConfig(commands) || {
-    commands,
+  const commands2 = ["stash", "list", ...options.commands, ...customArgs];
+  const parser3 = createListLogSummaryParser(options.splitter, options.fields, logFormatFromCommand(commands2));
+  return validateLogFormatConfig(commands2) || {
+    commands: commands2,
     format: "utf-8",
     parser: parser3
   };
@@ -32012,11 +28544,11 @@ function initSubModuleTask(customArgs) {
   return subModuleTask(["init", ...customArgs]);
 }
 function subModuleTask(customArgs) {
-  const commands = [...customArgs];
-  if (commands[0] !== "submodule") {
-    commands.unshift("submodule");
+  const commands2 = [...customArgs];
+  if (commands2[0] !== "submodule") {
+    commands2.unshift("submodule");
   }
-  return straightThroughStringTask(commands);
+  return straightThroughStringTask(commands2);
 }
 function updateSubModuleTask(customArgs) {
   return subModuleTask(["update", ...customArgs]);
@@ -32119,11 +28651,7 @@ var init_tag = __esm2({
   }
 });
 var require_git = __commonJS2({
-<<<<<<< HEAD
-  "src/git.js"(exports, module2) {
-=======
   "src/git.js"(exports2, module2) {
->>>>>>> origin/main
     var { GitExecutor: GitExecutor2 } = (init_git_executor(), __toCommonJS2(git_executor_exports));
     var { SimpleGitApi: SimpleGitApi2 } = (init_simple_git_api(), __toCommonJS2(simple_git_api_exports));
     var { Scheduler: Scheduler2 } = (init_scheduler(), __toCommonJS2(scheduler_exports));
@@ -32260,9 +28788,9 @@ var require_git = __commonJS2({
     Git2.prototype.branchLocal = function(then) {
       return this._runTask(branchLocalTask2(), trailingFunctionArgument2(arguments));
     };
-    Git2.prototype.raw = function(commands) {
-      const createRestCommands = !Array.isArray(commands);
-      const command = [].slice.call(createRestCommands ? arguments : commands, 0);
+    Git2.prototype.raw = function(commands2) {
+      const createRestCommands = !Array.isArray(commands2);
+      const command = [].slice.call(createRestCommands ? arguments : commands2, 0);
       for (let i = 0; i < command.length && createRestCommands; i++) {
         if (!filterPrimitives2(command[i])) {
           command.splice(i, command.length - i);
@@ -32354,8 +28882,8 @@ var require_git = __commonJS2({
       return this._runTask(task, trailingFunctionArgument2(arguments));
     };
     Git2.prototype.revparse = function() {
-      const commands = ["rev-parse", ...getTrailingOptions2(arguments, true)];
-      return this._runTask(straightThroughStringTask2(commands, true), trailingFunctionArgument2(arguments));
+      const commands2 = ["rev-parse", ...getTrailingOptions2(arguments, true)];
+      return this._runTask(straightThroughStringTask2(commands2, true), trailingFunctionArgument2(arguments));
     };
     Git2.prototype.show = function(options, then) {
       return this._runTask(straightThroughStringTask2(["show", ...getTrailingOptions2(arguments, 1)]), trailingFunctionArgument2(arguments));
@@ -32450,16 +28978,6 @@ function preventProtocolOverride(arg, next) {
   }
   throw new GitPluginError(void 0, "unsafe", "Configuring protocol.allow is not permitted without enabling allowUnsafeExtProtocol");
 }
-<<<<<<< HEAD
-function preventUploadPack(arg, method) {
-  if (/^\s*--(upload|receive)-pack/.test(arg)) {
-    throw new GitPluginError(void 0, "unsafe", `Use of --upload-pack or --receive-pack is not permitted without enabling allowUnsafePack`);
-  }
-  if (method === "clone" && /^\s*-u\b/.test(arg)) {
-    throw new GitPluginError(void 0, "unsafe", `Use of clone with option -u is not permitted without enabling allowUnsafePack`);
-  }
-  if (method === "push" && /^\s*--exec\b/.test(arg)) {
-=======
 function preventUploadPack(arg, method2) {
   if (/^\s*--(upload|receive)-pack/.test(arg)) {
     throw new GitPluginError(void 0, "unsafe", `Use of --upload-pack or --receive-pack is not permitted without enabling allowUnsafePack`);
@@ -32468,7 +28986,6 @@ function preventUploadPack(arg, method2) {
     throw new GitPluginError(void 0, "unsafe", `Use of clone with option -u is not permitted without enabling allowUnsafePack`);
   }
   if (method2 === "push" && /^\s*--exec\b/.test(arg)) {
->>>>>>> origin/main
     throw new GitPluginError(void 0, "unsafe", `Use of push with option --exec is not permitted without enabling allowUnsafePack`);
   }
 }
@@ -32570,11 +29087,7 @@ function isTaskError(result) {
   return !!(result.exitCode && result.stdErr.length);
 }
 function getErrorMessage(result) {
-<<<<<<< HEAD
-  return Buffer2.concat([...result.stdOut, ...result.stdErr]);
-=======
   return Buffer.concat([...result.stdOut, ...result.stdErr]);
->>>>>>> origin/main
 }
 function errorDetectionHandler(overwrite = false, isError = isTaskError, errorMessage = getErrorMessage) {
   return (error, result) => {
@@ -32593,11 +29106,7 @@ function errorDetectionPlugin(config) {
         stdOut: context.stdOut,
         exitCode: context.exitCode
       });
-<<<<<<< HEAD
-      if (Buffer2.isBuffer(error)) {
-=======
       if (Buffer.isBuffer(error)) {
->>>>>>> origin/main
         return { error: new GitError(void 0, error.toString("utf-8")) };
       }
       return {
@@ -32739,9 +29248,6 @@ function gitInstanceFactory(baseDir, options) {
 init_git_response_error();
 var esm_default = gitInstanceFactory;
 
-<<<<<<< HEAD
-// src/simpleGit.ts
-=======
 // src/constants.ts
 init_polyfill_buffer();
 var import_obsidian2 = require("obsidian");
@@ -33043,7 +29549,6 @@ var GitManager = class {
 };
 
 // src/gitManager/simpleGit.ts
->>>>>>> origin/main
 var SimpleGit = class extends GitManager {
   constructor(plugin) {
     super(plugin);
@@ -33055,20 +29560,12 @@ var SimpleGit = class extends GitManager {
       let basePath = path2;
       if (this.plugin.settings.basePath) {
         const exists2 = await adapter.exists(
-<<<<<<< HEAD
-          (0, import_obsidian6.normalizePath)(this.plugin.settings.basePath)
-=======
           (0, import_obsidian4.normalizePath)(this.plugin.settings.basePath)
->>>>>>> origin/main
         );
         if (exists2) {
           basePath = path2 + import_path.sep + this.plugin.settings.basePath;
         } else if (!ignoreError) {
-<<<<<<< HEAD
-          new import_obsidian6.Notice("ObsidianGit: Base path does not exist");
-=======
           new import_obsidian4.Notice("ObsidianGit: Base path does not exist");
->>>>>>> origin/main
         }
       }
       this.git = esm_default({
@@ -33124,8 +29621,6 @@ var SimpleGit = class extends GitManager {
       )
     };
   }
-<<<<<<< HEAD
-=======
   async submoduleAwareHeadRevisonInContainingDirectory(filepath) {
     const repoPath = this.asRepositoryRelativePath(filepath, true);
     const containingDirectory = path.dirname(repoPath);
@@ -33136,7 +29631,6 @@ var SimpleGit = class extends GitManager {
     );
     return result;
   }
->>>>>>> origin/main
   async getSubmodulePaths() {
     return new Promise(async (resolve) => {
       this.git.outputHandler(async (cmd, stdout, stderr, args) => {
@@ -33144,11 +29638,7 @@ var SimpleGit = class extends GitManager {
           return;
         }
         let body = "";
-<<<<<<< HEAD
-        const root = this.app.vault.adapter.getBasePath() + (this.plugin.settings.basePath ? "/" + this.plugin.settings.basePath : "");
-=======
         const root2 = this.app.vault.adapter.getBasePath() + (this.plugin.settings.basePath ? "/" + this.plugin.settings.basePath : "");
->>>>>>> origin/main
         stdout.on("data", (chunk) => {
           body += chunk.toString("utf8");
         });
@@ -33157,11 +29647,7 @@ var SimpleGit = class extends GitManager {
           const strippedSubmods = submods.map((i) => {
             const submod = i.match(/'([^']*)'/);
             if (submod != void 0) {
-<<<<<<< HEAD
-              return root + "/" + submod[1] + import_path.sep;
-=======
               return root2 + "/" + submod[1] + import_path.sep;
->>>>>>> origin/main
             }
           }).filter((i) => !!i);
           strippedSubmods.reverse();
@@ -33195,8 +29681,6 @@ var SimpleGit = class extends GitManager {
       };
     }
   }
-<<<<<<< HEAD
-=======
   async blame(path2, trackMovement, ignoreWhitespace) {
     path2 = this.asRepositoryRelativePath(path2, true);
     if (!await this.isTracked(path2))
@@ -33234,7 +29718,6 @@ var SimpleGit = class extends GitManager {
     args.push("ls-files", "--", relativePath);
     return this.git.raw(args, (err) => err && console.warn("ls-files", err)).then((x) => x.trim() !== "");
   }
->>>>>>> origin/main
   async commitAll({ message }) {
     if (this.plugin.settings.updateSubmodules) {
       this.plugin.setState(4 /* commit */);
@@ -33250,19 +29733,12 @@ var SimpleGit = class extends GitManager {
     this.plugin.setState(3 /* add */);
     await this.git.add("-A", (err) => this.onError(err));
     this.plugin.setState(4 /* commit */);
-<<<<<<< HEAD
-    return (await this.git.commit(
-      await this.formatCommitMessage(message),
-      (err) => this.onError(err)
-    )).summary.changes;
-=======
     const res = await this.git.commit(
       await this.formatCommitMessage(message),
       (err) => this.onError(err)
     );
     dispatchEvent(new CustomEvent("git-head-update"));
     return res.summary.changes;
->>>>>>> origin/main
   }
   async commit(message) {
     this.plugin.setState(4 /* commit */);
@@ -33270,20 +29746,13 @@ var SimpleGit = class extends GitManager {
       await this.formatCommitMessage(message),
       (err) => this.onError(err)
     )).summary.changes;
-<<<<<<< HEAD
-=======
     dispatchEvent(new CustomEvent("git-head-update"));
->>>>>>> origin/main
     this.plugin.setState(0 /* idle */);
     return res;
   }
   async stage(path2, relativeToVault) {
     this.plugin.setState(3 /* add */);
-<<<<<<< HEAD
-    path2 = this.getPath(path2, relativeToVault);
-=======
     path2 = this.asRepositoryRelativePath(path2, relativeToVault);
->>>>>>> origin/main
     await this.git.add(["--", path2], (err) => this.onError(err));
     this.plugin.setState(0 /* idle */);
   }
@@ -33302,11 +29771,7 @@ var SimpleGit = class extends GitManager {
   }
   async unstage(path2, relativeToVault) {
     this.plugin.setState(3 /* add */);
-<<<<<<< HEAD
-    path2 = this.getPath(path2, relativeToVault);
-=======
     path2 = this.asRepositoryRelativePath(path2, relativeToVault);
->>>>>>> origin/main
     await this.git.reset(["--", path2], (err) => this.onError(err));
     this.plugin.setState(0 /* idle */);
   }
@@ -33315,8 +29780,6 @@ var SimpleGit = class extends GitManager {
     await this.git.checkout(["--", filepath], (err) => this.onError(err));
     this.plugin.setState(0 /* idle */);
   }
-<<<<<<< HEAD
-=======
   async hashObject(filepath) {
     filepath = this.asRepositoryRelativePath(filepath, true);
     const inSubmodule = await this.getSubmoduleOfFile(filepath);
@@ -33329,7 +29792,6 @@ var SimpleGit = class extends GitManager {
     );
     return revision;
   }
->>>>>>> origin/main
   async discardAll({ dir }) {
     return this.discard(dir != null ? dir : ".");
   }
@@ -33383,10 +29845,7 @@ var SimpleGit = class extends GitManager {
           );
         }
       }
-<<<<<<< HEAD
-=======
       dispatchEvent(new CustomEvent("git-head-update"));
->>>>>>> origin/main
       const afterMergeCommit = await this.git.revparse(
         [branchInfo.current],
         (err) => this.onError(err)
@@ -33483,11 +29942,7 @@ var SimpleGit = class extends GitManager {
   async log(file, relativeToVault = true, limit) {
     let path2;
     if (file) {
-<<<<<<< HEAD
-      path2 = this.getPath(file, relativeToVault);
-=======
       path2 = this.asRepositoryRelativePath(file, relativeToVault);
->>>>>>> origin/main
     }
     const res = await this.git.log(
       {
@@ -33499,30 +29954,26 @@ var SimpleGit = class extends GitManager {
       (err) => this.onError(err)
     );
     return res.all.map((e) => {
-      var _a2, _b;
+      var _a2, _b, _c, _d;
       return {
         ...e,
         refs: e.refs.split(", "),
         diff: {
           ...e.diff,
-          files: e.diff.files.map((f) => ({
+          files: (_b = (_a2 = e.diff) == null ? void 0 : _a2.files.map((f) => ({
             ...f,
             status: f.status,
             path: f.file,
             hash: e.hash,
             vault_path: this.getVaultPath(f.file)
-          }))
+          }))) != null ? _b : []
         },
-        fileName: (_b = (_a2 = e.diff) == null ? void 0 : _a2.files.first()) == null ? void 0 : _b.file
+        fileName: (_d = (_c = e.diff) == null ? void 0 : _c.files.first()) == null ? void 0 : _d.file
       };
     });
   }
   async show(commitHash, file, relativeToVault = true) {
-<<<<<<< HEAD
-    const path2 = this.getPath(file, relativeToVault);
-=======
     const path2 = this.asRepositoryRelativePath(file, relativeToVault);
->>>>>>> origin/main
     return this.git.show(
       [commitHash + ":" + path2],
       (err) => this.onError(err)
@@ -33667,8 +30118,6 @@ var SimpleGit = class extends GitManager {
   async diff(file, commit1, commit2) {
     return await this.git.diff([`${commit1}..${commit2}`, "--", file]);
   }
-<<<<<<< HEAD
-=======
   async getSubmoduleOfFile(repositoryRelativeFile) {
     let submoduleRoot = await this.git.raw(
       [
@@ -33699,7 +30148,6 @@ var SimpleGit = class extends GitManager {
     const newRelativePath = path.relative(submoduleRoot, absolutePath);
     return { submodule: submoduleRoot, relativeFilepath: newRelativePath };
   }
->>>>>>> origin/main
   async getLastCommitTime() {
     const res = await this.git.log({ n: 1 }, (err) => this.onError(err));
     if (res != null && res.latest != null) {
@@ -33743,11 +30191,6 @@ var SimpleGit = class extends GitManager {
     }
   }
 };
-<<<<<<< HEAD
-
-// src/settings.ts
-var ObsidianGitSettingsTab = class extends import_obsidian7.PluginSettingTab {
-=======
 var zeroCommit = {
   hash: "000000",
   isZeroCommit: true,
@@ -34697,6 +31140,7 @@ var IsomorphicGit = class extends GitManager {
       "110": "DA",
       // Technically, two files: first one is deleted "D " and second one is untracked "??"
       "111": "  ",
+      "113": "MM",
       "120": "DA",
       // Same as "110"
       "121": " M",
@@ -35665,7 +32109,6 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
   get settings() {
     return this.plugin.settings;
   }
->>>>>>> origin/main
   display() {
     const { containerEl } = this;
     const plugin = this.plugin;
@@ -35681,11 +32124,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
     if (gitReady) {
       containerEl.createEl("br");
       containerEl.createEl("h3", { text: "Automatic" });
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Split automatic commit and push").setDesc("Enable to use separate timer for commit and push").addToggle(
-=======
       new import_obsidian8.Setting(containerEl).setName("Split automatic commit and push").setDesc("Enable to use separate timer for commit and push").addToggle(
->>>>>>> origin/main
         (toggle) => toggle.setValue(
           plugin.settings.differentIntervalCommitAndPush
         ).onChange((value) => {
@@ -35706,11 +32145,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           this.display();
         })
       );
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName(`Vault ${commitOrBackup} interval (minutes)`).setDesc(
-=======
       new import_obsidian8.Setting(containerEl).setName(`Vault ${commitOrBackup} interval (minutes)`).setDesc(
->>>>>>> origin/main
         `${plugin.settings.differentIntervalCommitAndPush ? "Commit" : "Commit and push"} changes every X minutes. Set to 0 (default) to disable. (See below setting for further configuration!)`
       ).addText(
         (text2) => text2.setValue(String(plugin.settings.autoSaveInterval)).onChange((value) => {
@@ -35722,37 +32157,21 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
               plugin.startAutoBackup(
                 plugin.settings.autoSaveInterval
               );
-<<<<<<< HEAD
-              new import_obsidian7.Notice(
-                `Automatic ${commitOrBackup} enabled! Every ${plugin.settings.autoSaveInterval} minutes.`
-              );
-            } else if (plugin.settings.autoSaveInterval <= 0) {
-              plugin.clearAutoBackup() && new import_obsidian7.Notice(
-=======
               new import_obsidian8.Notice(
                 `Automatic ${commitOrBackup} enabled! Every ${plugin.settings.autoSaveInterval} minutes.`
               );
             } else if (plugin.settings.autoSaveInterval <= 0) {
               plugin.clearAutoBackup() && new import_obsidian8.Notice(
->>>>>>> origin/main
                 `Automatic ${commitOrBackup} disabled!`
               );
             }
           } else {
-<<<<<<< HEAD
-            new import_obsidian7.Notice("Please specify a valid number.");
-=======
             new import_obsidian8.Notice("Please specify a valid number.");
->>>>>>> origin/main
           }
         })
       );
       if (!plugin.settings.setLastSaveToLastCommit)
-<<<<<<< HEAD
-        new import_obsidian7.Setting(containerEl).setName(`Auto Backup after file change`).setDesc(
-=======
         new import_obsidian8.Setting(containerEl).setName(`Auto Backup after file change`).setDesc(
->>>>>>> origin/main
           `If turned on, do auto ${commitOrBackup} every ${plugin.settings.autoSaveInterval} minutes after last change. This also prevents auto ${commitOrBackup} while editing a file. If turned off, it's independent from the last change.`
         ).addToggle(
           (toggle) => toggle.setValue(plugin.settings.autoBackupAfterFileChange).onChange((value) => {
@@ -35768,11 +32187,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           })
         );
       if (!plugin.settings.autoBackupAfterFileChange)
-<<<<<<< HEAD
-        new import_obsidian7.Setting(containerEl).setName(`Auto ${commitOrBackup} after latest commit`).setDesc(
-=======
         new import_obsidian8.Setting(containerEl).setName(`Auto ${commitOrBackup} after latest commit`).setDesc(
->>>>>>> origin/main
           `If turned on, set last auto ${commitOrBackup} time to latest commit`
         ).addToggle(
           (toggle) => toggle.setValue(plugin.settings.setLastSaveToLastCommit).onChange(async (value) => {
@@ -35784,11 +32199,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           })
         );
       if (plugin.settings.differentIntervalCommitAndPush) {
-<<<<<<< HEAD
-        new import_obsidian7.Setting(containerEl).setName(`Vault push interval (minutes)`).setDesc(
-=======
         new import_obsidian8.Setting(containerEl).setName(`Vault push interval (minutes)`).setDesc(
->>>>>>> origin/main
           "Push changes every X minutes. Set to 0 (default) to disable."
         ).addText(
           (text2) => text2.setValue(String(plugin.settings.autoPushInterval)).onChange((value) => {
@@ -35800,39 +32211,23 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
                 plugin.startAutoPush(
                   plugin.settings.autoPushInterval
                 );
-<<<<<<< HEAD
-                new import_obsidian7.Notice(
-                  `Automatic push enabled! Every ${plugin.settings.autoPushInterval} minutes.`
-                );
-              } else if (plugin.settings.autoPushInterval <= 0) {
-                plugin.clearAutoPush() && new import_obsidian7.Notice(
-=======
                 new import_obsidian8.Notice(
                   `Automatic push enabled! Every ${plugin.settings.autoPushInterval} minutes.`
                 );
               } else if (plugin.settings.autoPushInterval <= 0) {
                 plugin.clearAutoPush() && new import_obsidian8.Notice(
->>>>>>> origin/main
                   "Automatic push disabled!"
                 );
               }
             } else {
-<<<<<<< HEAD
-              new import_obsidian7.Notice(
-=======
               new import_obsidian8.Notice(
->>>>>>> origin/main
                 "Please specify a valid number."
               );
             }
           })
         );
       }
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Auto pull interval (minutes)").setDesc(
-=======
       new import_obsidian8.Setting(containerEl).setName("Auto pull interval (minutes)").setDesc(
->>>>>>> origin/main
         "Pull changes every X minutes. Set to 0 (default) to disable."
       ).addText(
         (text2) => text2.setValue(String(plugin.settings.autoPullInterval)).onChange((value) => {
@@ -35844,20 +32239,6 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
               plugin.startAutoPull(
                 plugin.settings.autoPullInterval
               );
-<<<<<<< HEAD
-              new import_obsidian7.Notice(
-                `Automatic pull enabled! Every ${plugin.settings.autoPullInterval} minutes.`
-              );
-            } else if (plugin.settings.autoPullInterval <= 0) {
-              plugin.clearAutoPull() && new import_obsidian7.Notice("Automatic pull disabled!");
-            }
-          } else {
-            new import_obsidian7.Notice("Please specify a valid number.");
-          }
-        })
-      );
-      new import_obsidian7.Setting(containerEl).setName("Specify custom commit message on auto backup").setDesc("You will get a pop up to specify your message").addToggle(
-=======
               new import_obsidian8.Notice(
                 `Automatic pull enabled! Every ${plugin.settings.autoPullInterval} minutes.`
               );
@@ -35870,19 +32251,14 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         })
       );
       new import_obsidian8.Setting(containerEl).setName("Specify custom commit message on auto backup").setDesc("You will get a pop up to specify your message").addToggle(
->>>>>>> origin/main
         (toggle) => toggle.setValue(plugin.settings.customMessageOnAutoBackup).onChange((value) => {
           plugin.settings.customMessageOnAutoBackup = value;
           plugin.saveSettings();
         })
       );
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Commit message on auto backup/commit").setDesc(
-=======
       new import_obsidian8.Setting(containerEl).setName("Commit message on auto backup/commit").setDesc(
->>>>>>> origin/main
-        "Available placeholders: {{date}} (see below), {{hostname}} (see below) and {{numFiles}} (number of changed files in the commit)"
-      ).addText(
+        "Available placeholders: {{date}} (see below), {{hostname}} (see below), {{numFiles}} (number of changed files in the commit) and {{files}} (changed files in commit message)"
+      ).addTextArea(
         (text2) => text2.setPlaceholder("vault backup: {{date}}").setValue(plugin.settings.autoCommitMessage).onChange((value) => {
           plugin.settings.autoCommitMessage = value;
           plugin.saveSettings();
@@ -35890,13 +32266,9 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
       );
       containerEl.createEl("br");
       containerEl.createEl("h3", { text: "Commit message" });
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Commit message on manual backup/commit").setDesc(
-=======
       new import_obsidian8.Setting(containerEl).setName("Commit message on manual backup/commit").setDesc(
->>>>>>> origin/main
-        "Available placeholders: {{date}} (see below), {{hostname}} (see below) and {{numFiles}} (number of changed files in the commit)"
-      ).addText(
+        "Available placeholders: {{date}} (see below), {{hostname}} (see below), {{numFiles}} (number of changed files in the commit) and {{files}} (changed files in commit message)"
+      ).addTextArea(
         (text2) => text2.setPlaceholder("vault backup: {{date}}").setValue(
           plugin.settings.commitMessage ? plugin.settings.commitMessage : ""
         ).onChange((value) => {
@@ -35904,24 +32276,15 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           plugin.saveSettings();
         })
       );
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("{{date}} placeholder format").setDesc(
-        'Specify custom date format. E.g. "YYYY-MM-DD HH:mm:ss"'
-=======
       new import_obsidian8.Setting(containerEl).setName("{{date}} placeholder format").setDesc(
         `Specify custom date format. E.g. "${DATE_TIME_FORMAT_SECONDS}"`
->>>>>>> origin/main
       ).addText(
         (text2) => text2.setPlaceholder(plugin.settings.commitDateFormat).setValue(plugin.settings.commitDateFormat).onChange(async (value) => {
           plugin.settings.commitDateFormat = value;
           await plugin.saveSettings();
         })
       );
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("{{hostname}} placeholder replacement").setDesc("Specify custom hostname for every device.").addText(
-=======
       new import_obsidian8.Setting(containerEl).setName("{{hostname}} placeholder replacement").setDesc("Specify custom hostname for every device.").addText(
->>>>>>> origin/main
         (text2) => {
           var _a2;
           return text2.setValue((_a2 = plugin.localStorage.getHostname()) != null ? _a2 : "").onChange(async (value) => {
@@ -35929,26 +32292,15 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           });
         }
       );
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Preview commit message").addButton(
-=======
       new import_obsidian8.Setting(containerEl).setName("Preview commit message").addButton(
->>>>>>> origin/main
         (button) => button.setButtonText("Preview").onClick(async () => {
           const commitMessagePreview = await plugin.gitManager.formatCommitMessage(
             plugin.settings.commitMessage
           );
-<<<<<<< HEAD
-          new import_obsidian7.Notice(`${commitMessagePreview}`);
-        })
-      );
-      new import_obsidian7.Setting(containerEl).setName("List filenames affected by commit in the commit body").addToggle(
-=======
           new import_obsidian8.Notice(`${commitMessagePreview}`);
         })
       );
       new import_obsidian8.Setting(containerEl).setName("List filenames affected by commit in the commit body").addToggle(
->>>>>>> origin/main
         (toggle) => toggle.setValue(plugin.settings.listChangedFilesInMessageBody).onChange((value) => {
           plugin.settings.listChangedFilesInMessageBody = value;
           plugin.saveSettings();
@@ -35957,11 +32309,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
       containerEl.createEl("br");
       containerEl.createEl("h3", { text: "Backup" });
       if (plugin.gitManager instanceof SimpleGit)
-<<<<<<< HEAD
-        new import_obsidian7.Setting(containerEl).setName("Sync Method").setDesc(
-=======
         new import_obsidian8.Setting(containerEl).setName("Sync Method").setDesc(
->>>>>>> origin/main
           "Selects the method used for handling new changes found in your remote git repository."
         ).addDropdown((dropdown) => {
           const options = {
@@ -35976,50 +32324,33 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
             plugin.saveSettings();
           });
         });
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Pull updates on startup").setDesc("Automatically pull updates when Obsidian starts").addToggle(
-=======
       new import_obsidian8.Setting(containerEl).setName("Pull updates on startup").setDesc("Automatically pull updates when Obsidian starts").addToggle(
->>>>>>> origin/main
         (toggle) => toggle.setValue(plugin.settings.autoPullOnBoot).onChange((value) => {
           plugin.settings.autoPullOnBoot = value;
           plugin.saveSettings();
         })
       );
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Push on backup").setDesc("Disable to only commit changes").addToggle(
-=======
       new import_obsidian8.Setting(containerEl).setName("Push on backup").setDesc("Disable to only commit changes").addToggle(
->>>>>>> origin/main
         (toggle) => toggle.setValue(!plugin.settings.disablePush).onChange((value) => {
           plugin.settings.disablePush = !value;
           plugin.saveSettings();
         })
       );
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Pull changes before push").setDesc("Commit -> pull -> push (Only if pushing is enabled)").addToggle(
-=======
       new import_obsidian8.Setting(containerEl).setName("Pull changes before push").setDesc("Commit -> pull -> push (Only if pushing is enabled)").addToggle(
->>>>>>> origin/main
         (toggle) => toggle.setValue(plugin.settings.pullBeforePush).onChange((value) => {
           plugin.settings.pullBeforePush = value;
           plugin.saveSettings();
         })
       );
-<<<<<<< HEAD
-    }
-    containerEl.createEl("br");
-    containerEl.createEl("h3", { text: "Miscellaneous" });
-    new import_obsidian7.Setting(containerEl).setName(
-=======
-      containerEl.createEl("br");
-      containerEl.createEl("h3", { text: "Line author information" });
-      this.addLineAuthorInfoSettings();
+      if (plugin.gitManager instanceof SimpleGit) {
+        containerEl.createEl("br");
+        containerEl.createEl("h3", { text: "Line author information" });
+        this.addLineAuthorInfoSettings();
+      }
     }
     containerEl.createEl("br");
     containerEl.createEl("h3", { text: "Miscellaneous" });
     new import_obsidian8.Setting(containerEl).setName(
->>>>>>> origin/main
       "Automatically refresh Source Control View on file changes"
     ).setDesc(
       "On slower machines this may cause lags. If so, just disable this option"
@@ -36029,11 +32360,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         plugin.saveSettings();
       })
     );
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Source Control View refresh interval").setDesc(
-=======
     new import_obsidian8.Setting(containerEl).setName("Source Control View refresh interval").setDesc(
->>>>>>> origin/main
       "Milliseconds to wait after file change before refreshing the Source Control View"
     ).addText(
       (toggle) => toggle.setValue(
@@ -36047,11 +32374,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         plugin.setRefreshDebouncer();
       })
     );
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Disable notifications").setDesc(
-=======
     new import_obsidian8.Setting(containerEl).setName("Disable notifications").setDesc(
->>>>>>> origin/main
       "Disable notifications for git operations to minimize distraction (refer to status bar for updates). Errors are still shown as notifications even if you enable this setting"
     ).addToggle(
       (toggle) => toggle.setValue(plugin.settings.disablePopups).onChange((value) => {
@@ -36059,11 +32382,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         plugin.saveSettings();
       })
     );
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Show status bar").setDesc(
-=======
     new import_obsidian8.Setting(containerEl).setName("Show status bar").setDesc(
->>>>>>> origin/main
       "Obsidian must be restarted for the changes to take affect"
     ).addToggle(
       (toggle) => toggle.setValue(plugin.settings.showStatusBar).onChange((value) => {
@@ -36071,21 +32390,13 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         plugin.saveSettings();
       })
     );
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Show stage/unstage button in file menu").addToggle(
-=======
     new import_obsidian8.Setting(containerEl).setName("Show stage/unstage button in file menu").addToggle(
->>>>>>> origin/main
       (toggle) => toggle.setValue(plugin.settings.showFileMenu).onChange((value) => {
         plugin.settings.showFileMenu = value;
         plugin.saveSettings();
       })
     );
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Show branch status bar").setDesc(
-=======
     new import_obsidian8.Setting(containerEl).setName("Show branch status bar").setDesc(
->>>>>>> origin/main
       "Obsidian must be restarted for the changes to take affect"
     ).addToggle(
       (toggle) => toggle.setValue(plugin.settings.showBranchStatusBar).onChange((value) => {
@@ -36093,11 +32404,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         plugin.saveSettings();
       })
     );
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Show changes files count in status bar").addToggle(
-=======
     new import_obsidian8.Setting(containerEl).setName("Show changes files count in status bar").addToggle(
->>>>>>> origin/main
       (toggle) => toggle.setValue(plugin.settings.changedFilesInStatusBar).onChange((value) => {
         plugin.settings.changedFilesInStatusBar = value;
         plugin.saveSettings();
@@ -36112,11 +32419,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
       containerEl.createEl("h3", { text: "Commit Author" });
     }
     if (plugin.gitManager instanceof IsomorphicGit)
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName(
-=======
       new import_obsidian8.Setting(containerEl).setName(
->>>>>>> origin/main
         "Username on your git server. E.g. your username on GitHub"
       ).addText((cb) => {
         var _a2;
@@ -36126,11 +32429,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         });
       });
     if (plugin.gitManager instanceof IsomorphicGit)
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Password/Personal access token").setDesc(
-=======
       new import_obsidian8.Setting(containerEl).setName("Password/Personal access token").setDesc(
->>>>>>> origin/main
         "Type in your password. You won't be able to see it again."
       ).addText((cb) => {
         cb.inputEl.autocapitalize = "off";
@@ -36140,13 +32439,8 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           plugin.localStorage.setPassword(value);
         });
       });
-<<<<<<< HEAD
-    if (gitReady)
-      new import_obsidian7.Setting(containerEl).setName("Author name for commit").addText(async (cb) => {
-=======
     if (plugin.gitReady)
       new import_obsidian8.Setting(containerEl).setName("Author name for commit").addText(async (cb) => {
->>>>>>> origin/main
         cb.setValue(await plugin.gitManager.getConfig("user.name"));
         cb.onChange((value) => {
           plugin.gitManager.setConfig(
@@ -36155,13 +32449,8 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           );
         });
       });
-<<<<<<< HEAD
-    if (gitReady)
-      new import_obsidian7.Setting(containerEl).setName("Author email for commit").addText(async (cb) => {
-=======
     if (plugin.gitReady)
       new import_obsidian8.Setting(containerEl).setName("Author email for commit").addText(async (cb) => {
->>>>>>> origin/main
         cb.setValue(
           await plugin.gitManager.getConfig("user.email")
         );
@@ -36175,11 +32464,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
     containerEl.createEl("br");
     containerEl.createEl("h3", { text: "Advanced" });
     if (plugin.gitManager instanceof SimpleGit) {
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Update submodules").setDesc(
-=======
       new import_obsidian8.Setting(containerEl).setName("Update submodules").setDesc(
->>>>>>> origin/main
         '"Create backup" and "pull" takes care of submodules. Missing features: Conflicted files, count of pulled/pushed/committed files. Tracking branch needs to be set for each submodule'
       ).addToggle(
         (toggle) => toggle.setValue(plugin.settings.updateSubmodules).onChange((value) => {
@@ -36188,11 +32473,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         })
       );
       if (plugin.settings.updateSubmodules) {
-<<<<<<< HEAD
-        new import_obsidian7.Setting(containerEl).setName("Submodule recurse checkout/switch").setDesc(
-=======
         new import_obsidian8.Setting(containerEl).setName("Submodule recurse checkout/switch").setDesc(
->>>>>>> origin/main
           "Whenever a checkout happens on the root repository, recurse the checkout on the submodules (if the branches exist)."
         ).addToggle(
           (toggle) => toggle.setValue(plugin.settings.submoduleRecurseCheckout).onChange((value) => {
@@ -36203,11 +32484,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
       }
     }
     if (plugin.gitManager instanceof SimpleGit)
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Custom Git binary path").addText((cb) => {
-=======
       new import_obsidian8.Setting(containerEl).setName("Custom Git binary path").addText((cb) => {
->>>>>>> origin/main
         var _a2;
         cb.setValue((_a2 = plugin.localStorage.getGitPath()) != null ? _a2 : "");
         cb.setPlaceholder("git");
@@ -36217,11 +32494,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         });
       });
     if (plugin.gitManager instanceof SimpleGit)
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Additional environment variables").setDesc(
-=======
       new import_obsidian8.Setting(containerEl).setName("Additional environment variables").setDesc(
->>>>>>> origin/main
         "Use each line for a new environment variable in the format KEY=VALUE"
       ).addTextArea((cb) => {
         cb.setPlaceholder("GIT_DIR=/path/to/git/dir");
@@ -36231,22 +32504,14 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         });
       });
     if (plugin.gitManager instanceof SimpleGit)
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Additional PATH environment variable paths").setDesc("Use each line for one path").addTextArea((cb) => {
-=======
       new import_obsidian8.Setting(containerEl).setName("Additional PATH environment variable paths").setDesc("Use each line for one path").addTextArea((cb) => {
->>>>>>> origin/main
         cb.setValue(plugin.localStorage.getPATHPaths().join("\n"));
         cb.onChange((value) => {
           plugin.localStorage.setPATHPaths(value.split("\n"));
         });
       });
     if (plugin.gitManager instanceof SimpleGit)
-<<<<<<< HEAD
-      new import_obsidian7.Setting(containerEl).setName("Reload with new environment variables").setDesc(
-=======
       new import_obsidian8.Setting(containerEl).setName("Reload with new environment variables").setDesc(
->>>>>>> origin/main
         "Removing previously added environment variables will not take effect until Obsidian is restarted."
       ).addButton((cb) => {
         cb.setButtonText("Reload");
@@ -36255,11 +32520,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           plugin.gitManager.setGitInstance();
         });
       });
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Custom base path (Git repository path)").setDesc(
-=======
     new import_obsidian8.Setting(containerEl).setName("Custom base path (Git repository path)").setDesc(
->>>>>>> origin/main
       `
             Sets the relative path to the vault from which the Git binary should be executed.
              Mostly used to set the path to the Git repository, which is only required if the Git repository is below the vault root directory. Use "\\" instead of "/" on Windows.
@@ -36273,11 +32534,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         plugin.gitManager.updateBasePath(value || "");
       });
     });
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Custom Git directory path (Instead of '.git')").setDesc(
-=======
     new import_obsidian8.Setting(containerEl).setName("Custom Git directory path (Instead of '.git')").setDesc(
->>>>>>> origin/main
       `Requires restart of Obsidian to take effect. Use "\\" instead of "/" on Windows.`
     ).addText((cb) => {
       cb.setValue(plugin.settings.gitDir);
@@ -36287,11 +32544,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         plugin.saveSettings();
       });
     });
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Disable on this device").addToggle(
-=======
     new import_obsidian8.Setting(containerEl).setName("Disable on this device").addToggle(
->>>>>>> origin/main
       (toggle) => toggle.setValue(plugin.localStorage.getPluginDisabled()).onChange((value) => {
         plugin.localStorage.setPluginDisabled(value);
         if (value) {
@@ -36299,20 +32552,12 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         } else {
           plugin.loadPlugin();
         }
-<<<<<<< HEAD
-        new import_obsidian7.Notice(
-=======
         new import_obsidian8.Notice(
->>>>>>> origin/main
           "Obsidian must be restarted for the changes to take affect"
         );
       })
     );
-<<<<<<< HEAD
-    new import_obsidian7.Setting(containerEl).setName("Donate").setDesc(
-=======
     new import_obsidian8.Setting(containerEl).setName("Donate").setDesc(
->>>>>>> origin/main
       "If you like this Plugin, consider donating to support continued development."
     ).addButton((bt) => {
       bt.buttonEl.outerHTML = "<a href='https://ko-fi.com/F1F195IQ5' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>";
@@ -36325,18 +32570,12 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
     const keys = containerEl.createDiv();
     keys.setAttr("align", "center");
     keys.addClass("obsidian-git-shortcuts");
-<<<<<<< HEAD
-    if (import_obsidian7.Platform.isMacOS === true) {
-=======
     if (import_obsidian8.Platform.isMacOS === true) {
->>>>>>> origin/main
       keys.createEl("kbd", { text: "CMD (\u2318) + OPTION (\u2325) + I" });
     } else {
       keys.createEl("kbd", { text: "CTRL + SHIFT + I" });
     }
   }
-<<<<<<< HEAD
-=======
   configureLineAuthorShowStatus(show) {
     this.settings.lineAuthor.show = show;
     this.plugin.saveSettings();
@@ -37712,16 +33951,11 @@ var PromiseQueue = class {
       });
     }
   }
->>>>>>> origin/main
 };
 
 // src/statusBar.ts
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian8 = require("obsidian");
-=======
 var import_obsidian13 = require("obsidian");
->>>>>>> origin/main
 var StatusBar = class {
   constructor(statusBarEl, plugin) {
     this.statusBarEl = statusBarEl;
@@ -37770,65 +34004,37 @@ var StatusBar = class {
         break;
       case 1 /* status */:
         this.statusBarEl.ariaLabel = "Checking repository status...";
-<<<<<<< HEAD
-        (0, import_obsidian8.setIcon)(this.iconEl, "refresh-cw");
-=======
         (0, import_obsidian13.setIcon)(this.iconEl, "refresh-cw");
->>>>>>> origin/main
         this.statusBarEl.addClass(this.base + "status");
         break;
       case 3 /* add */:
         this.statusBarEl.ariaLabel = "Adding files...";
-<<<<<<< HEAD
-        (0, import_obsidian8.setIcon)(this.iconEl, "refresh-w");
-=======
         (0, import_obsidian13.setIcon)(this.iconEl, "refresh-w");
->>>>>>> origin/main
         this.statusBarEl.addClass(this.base + "add");
         break;
       case 4 /* commit */:
         this.statusBarEl.ariaLabel = "Committing changes...";
-<<<<<<< HEAD
-        (0, import_obsidian8.setIcon)(this.iconEl, "git-commit");
-=======
         (0, import_obsidian13.setIcon)(this.iconEl, "git-commit");
->>>>>>> origin/main
         this.statusBarEl.addClass(this.base + "commit");
         break;
       case 5 /* push */:
         this.statusBarEl.ariaLabel = "Pushing changes...";
-<<<<<<< HEAD
-        (0, import_obsidian8.setIcon)(this.iconEl, "upload");
-=======
         (0, import_obsidian13.setIcon)(this.iconEl, "upload");
->>>>>>> origin/main
         this.statusBarEl.addClass(this.base + "push");
         break;
       case 2 /* pull */:
         this.statusBarEl.ariaLabel = "Pulling changes...";
-<<<<<<< HEAD
-        (0, import_obsidian8.setIcon)(this.iconEl, "download");
-=======
         (0, import_obsidian13.setIcon)(this.iconEl, "download");
->>>>>>> origin/main
         this.statusBarEl.addClass(this.base + "pull");
         break;
       case 6 /* conflicted */:
         this.statusBarEl.ariaLabel = "You have conflict files...";
-<<<<<<< HEAD
-        (0, import_obsidian8.setIcon)(this.iconEl, "alert-circle");
-=======
         (0, import_obsidian13.setIcon)(this.iconEl, "alert-circle");
->>>>>>> origin/main
         this.statusBarEl.addClass(this.base + "conflict");
         break;
       default:
         this.statusBarEl.ariaLabel = "Failed on initialization!";
-<<<<<<< HEAD
-        (0, import_obsidian8.setIcon)(this.iconEl, "alert-triangle");
-=======
         (0, import_obsidian13.setIcon)(this.iconEl, "alert-triangle");
->>>>>>> origin/main
         this.statusBarEl.addClass(this.base + "failed-init");
         break;
     }
@@ -37837,13 +34043,8 @@ var StatusBar = class {
     var _a2;
     const timestamp = this.lastCommitTimestamp;
     if (timestamp) {
-<<<<<<< HEAD
-      const moment = window.moment;
-      const fromNow = moment(timestamp).fromNow();
-=======
       const moment5 = window.moment;
       const fromNow = moment5(timestamp).fromNow();
->>>>>>> origin/main
       this.statusBarEl.ariaLabel = `${this.plugin.offlineMode ? "Offline: " : ""}Last Commit: ${fromNow}`;
       if ((_a2 = this.unPushedCommits) != null ? _a2 : 0 > 0) {
         this.statusBarEl.ariaLabel += `
@@ -37853,15 +34054,9 @@ var StatusBar = class {
       this.statusBarEl.ariaLabel = this.plugin.offlineMode ? "Git is offline" : "Git is ready";
     }
     if (this.plugin.offlineMode) {
-<<<<<<< HEAD
-      (0, import_obsidian8.setIcon)(this.iconEl, "globe");
-    } else {
-      (0, import_obsidian8.setIcon)(this.iconEl, "check");
-=======
       (0, import_obsidian13.setIcon)(this.iconEl, "globe");
     } else {
       (0, import_obsidian13.setIcon)(this.iconEl, "check");
->>>>>>> origin/main
     }
     if (this.plugin.settings.changedFilesInStatusBar && this.plugin.cachedStatus) {
       this.textEl.setText(
@@ -37878,13 +34073,8 @@ var StatusBar = class {
 
 // src/ui/modals/changedFilesModal.ts
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian9 = require("obsidian");
-var ChangedFilesModal = class extends import_obsidian9.FuzzySuggestModal {
-=======
 var import_obsidian14 = require("obsidian");
 var ChangedFilesModal = class extends import_obsidian14.FuzzySuggestModal {
->>>>>>> origin/main
   constructor(plugin, changedFiles) {
     super(plugin.app);
     this.plugin = plugin;
@@ -37922,13 +34112,8 @@ var ChangedFilesModal = class extends import_obsidian14.FuzzySuggestModal {
 
 // src/ui/modals/customMessageModal.ts
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian10 = require("obsidian");
-var CustomMessageModal = class extends import_obsidian10.SuggestModal {
-=======
 var import_obsidian15 = require("obsidian");
 var CustomMessageModal = class extends import_obsidian15.SuggestModal {
->>>>>>> origin/main
   constructor(plugin, fromAutoBackup) {
     super(plugin.app);
     this.fromAutoBackup = fromAutoBackup;
@@ -37966,57 +34151,6 @@ var CustomMessageModal = class extends import_obsidian15.SuggestModal {
   }
 };
 
-<<<<<<< HEAD
-// src/constants.ts
-init_polyfill_buffer();
-var import_obsidian11 = require("obsidian");
-var DEFAULT_SETTINGS = {
-  commitMessage: "vault backup: {{date}}",
-  commitDateFormat: "YYYY-MM-DD HH:mm:ss",
-  autoSaveInterval: 0,
-  autoPushInterval: 0,
-  autoPullInterval: 0,
-  autoPullOnBoot: false,
-  disablePush: false,
-  pullBeforePush: true,
-  disablePopups: false,
-  listChangedFilesInMessageBody: false,
-  showStatusBar: true,
-  updateSubmodules: false,
-  syncMethod: "merge",
-  customMessageOnAutoBackup: false,
-  autoBackupAfterFileChange: false,
-  treeStructure: false,
-  refreshSourceControl: import_obsidian11.Platform.isDesktopApp,
-  basePath: "",
-  differentIntervalCommitAndPush: false,
-  changedFilesInStatusBar: false,
-  showedMobileNotice: false,
-  refreshSourceControlTimer: 7e3,
-  showBranchStatusBar: true,
-  setLastSaveToLastCommit: false,
-  submoduleRecurseCheckout: false,
-  gitDir: "",
-  showFileMenu: true
-};
-var SOURCE_CONTROL_VIEW_CONFIG = {
-  type: "git-view",
-  name: "Source Control",
-  icon: "git-pull-request"
-};
-var HISTORY_VIEW_CONFIG = {
-  type: "git-history-view",
-  name: "History",
-  icon: "history"
-};
-var DIFF_VIEW_CONFIG = {
-  type: "diff-view",
-  name: "Diff View",
-  icon: "git-pull-request"
-};
-
-// src/localStorageSettings.ts
-=======
 // src/openInGitHub.ts
 init_polyfill_buffer();
 var import_obsidian16 = require("obsidian");
@@ -38093,7 +34227,6 @@ async function getData(manager) {
 }
 
 // src/setting/localStorageSettings.ts
->>>>>>> origin/main
 init_polyfill_buffer();
 var LocalStorageSettings = class {
   constructor(plugin) {
@@ -38196,93 +34329,6 @@ var LocalStorageSettings = class {
   }
 };
 
-<<<<<<< HEAD
-// src/openInGitHub.ts
-init_polyfill_buffer();
-var import_obsidian12 = require("obsidian");
-async function openLineInGitHub(editor, file, manager) {
-  const data = await getData(manager);
-  if (data.result === "failure") {
-    new import_obsidian12.Notice(data.reason);
-    return;
-  }
-  const { isGitHub, branch: branch2, repo, user } = data;
-  if (isGitHub) {
-    const path2 = manager.getPath(file.path, true);
-    const from = editor.getCursor("from").line + 1;
-    const to = editor.getCursor("to").line + 1;
-    if (from === to) {
-      window.open(
-        `https://github.com/${user}/${repo}/blob/${branch2}/${path2}?plain=1#L${from}`
-      );
-    } else {
-      window.open(
-        `https://github.com/${user}/${repo}/blob/${branch2}/${path2}?plain=1#L${from}-L${to}`
-      );
-    }
-  } else {
-    new import_obsidian12.Notice("It seems like you are not using GitHub");
-  }
-}
-async function openHistoryInGitHub(file, manager) {
-  const data = await getData(manager);
-  if (data.result === "failure") {
-    new import_obsidian12.Notice(data.reason);
-    return;
-  }
-  const { isGitHub, branch: branch2, repo, user } = data;
-  const path2 = manager.getPath(file.path, true);
-  if (isGitHub) {
-    window.open(
-      `https://github.com/${user}/${repo}/commits/${branch2}/${path2}`
-    );
-  } else {
-    new import_obsidian12.Notice("It seems like you are not using GitHub");
-  }
-}
-async function getData(manager) {
-  const branchInfo = await manager.branchInfo();
-  const remoteBranch = branchInfo.tracking;
-  const branch2 = branchInfo.current;
-  if (remoteBranch == null) {
-    return {
-      result: "failure",
-      reason: "Remote branch is not configured"
-    };
-  }
-  if (branch2 == null) {
-    return {
-      result: "failure",
-      reason: "Failed to get current branch name"
-    };
-  }
-  const remote = remoteBranch.substring(0, remoteBranch.indexOf("/"));
-  const remoteUrl = await manager.getConfig(
-    `remote.${remote}.url`
-  );
-  const [isGitHub, httpsUser, httpsRepo, sshUser, sshRepo] = remoteUrl.match(
-    /(?:^https:\/\/github\.com\/(.*)\/(.*)\.git$)|(?:^git@github\.com:(.*)\/(.*)\.git$)/
-  );
-  return {
-    result: "success",
-    isGitHub: !!isGitHub,
-    repo: httpsRepo || sshRepo,
-    user: httpsUser || sshUser,
-    branch: branch2
-  };
-}
-
-// src/ui/diff/diffView.ts
-init_polyfill_buffer();
-
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/diff2html.js
-init_polyfill_buffer();
-
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/diff-parser.js
-init_polyfill_buffer();
-
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/types.js
-=======
 // src/ui/diff/diffView.ts
 init_polyfill_buffer();
 
@@ -38293,7 +34339,6 @@ init_polyfill_buffer();
 init_polyfill_buffer();
 
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/types.js
->>>>>>> origin/main
 init_polyfill_buffer();
 var LineType;
 (function(LineType2) {
@@ -38315,11 +34360,7 @@ var DiffStyleType = {
   CHAR: "char"
 };
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/utils.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/utils.js
->>>>>>> origin/main
 init_polyfill_buffer();
 var specials = [
   "-",
@@ -38357,11 +34398,7 @@ function hashCode(text2) {
   return hash2;
 }
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/diff-parser.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/diff-parser.js
->>>>>>> origin/main
 var __spreadArray = function(to, from, pack) {
   if (pack || arguments.length === 2)
     for (var i = 0, l = from.length, ar; i < l; i++) {
@@ -38670,15 +34707,6 @@ function parse(diffInput, config) {
   return files;
 }
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/file-list-renderer.js
-init_polyfill_buffer();
-
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/render-utils.js
-init_polyfill_buffer();
-
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/rematch.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/file-list-renderer.js
 init_polyfill_buffer();
 
@@ -38686,7 +34714,6 @@ init_polyfill_buffer();
 init_polyfill_buffer();
 
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/rematch.js
->>>>>>> origin/main
 init_polyfill_buffer();
 function levenshtein(a, b) {
   if (a.length === 0) {
@@ -38780,11 +34807,7 @@ function newMatcherFn(distance2) {
   return group;
 }
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/render-utils.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/render-utils.js
->>>>>>> origin/main
 var __assign = function() {
   __assign = Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -38974,11 +34997,7 @@ function diffHighlight(diffLine1, diffLine2, isCombined, config) {
   };
 }
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/file-list-renderer.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/file-list-renderer.js
->>>>>>> origin/main
 var baseTemplatesPath = "file-summary";
 var iconsBaseTemplatesPath = "icon";
 function render(diffFiles, hoganUtils) {
@@ -39000,11 +35019,7 @@ function render(diffFiles, hoganUtils) {
   });
 }
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/line-by-line-renderer.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/line-by-line-renderer.js
->>>>>>> origin/main
 init_polyfill_buffer();
 var __assign2 = function() {
   __assign2 = Object.assign || function(t) {
@@ -39202,11 +35217,7 @@ var LineByLineRenderer = function() {
 }();
 var line_by_line_renderer_default = LineByLineRenderer;
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/side-by-side-renderer.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/side-by-side-renderer.js
->>>>>>> origin/main
 init_polyfill_buffer();
 var __assign3 = function() {
   __assign3 = Object.assign || function(t) {
@@ -39415,19 +35426,11 @@ var SideBySideRenderer = function() {
 }();
 var side_by_side_renderer_default = SideBySideRenderer;
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/hoganjs-utils.js
-init_polyfill_buffer();
-var Hogan3 = __toESM(require_hogan());
-
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/diff2html-templates.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/hoganjs-utils.js
 init_polyfill_buffer();
 var Hogan3 = __toESM(require_hogan());
 
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/diff2html-templates.js
->>>>>>> origin/main
 init_polyfill_buffer();
 var Hogan2 = __toESM(require_hogan());
 var defaultTemplates = {};
@@ -39832,11 +35835,7 @@ defaultTemplates["tag-file-renamed"] = new Hogan2.Template({ code: function(c, p
   return t.fl();
 }, partials: {}, subs: {} });
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/hoganjs-utils.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/hoganjs-utils.js
->>>>>>> origin/main
 var __assign4 = function() {
   __assign4 = Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -39882,11 +35881,7 @@ var HoganJsUtils = function() {
 }();
 var hoganjs_utils_default = HoganJsUtils;
 
-<<<<<<< HEAD
-// node_modules/.pnpm/diff2html@3.4.34/node_modules/diff2html/lib-esm/diff2html.js
-=======
 // node_modules/.pnpm/diff2html@3.4.35/node_modules/diff2html/lib-esm/diff2html.js
->>>>>>> origin/main
 var __assign5 = function() {
   __assign5 = Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -39913,20 +35908,18 @@ function html(diffInput, configuration) {
 }
 
 // src/ui/diff/diffView.ts
-<<<<<<< HEAD
-var import_obsidian13 = require("obsidian");
-var DiffView = class extends import_obsidian13.ItemView {
-=======
 var import_obsidian17 = require("obsidian");
 var DiffView = class extends import_obsidian17.ItemView {
->>>>>>> origin/main
   constructor(leaf, plugin) {
     super(leaf);
     this.plugin = plugin;
     this.gettingDiff = false;
+    this.gitRefreshBind = this.refresh.bind(this);
+    this.gitViewRefreshBind = this.refresh.bind(this);
     this.parser = new DOMParser();
     this.navigation = true;
-    addEventListener("git-refresh", this.refresh.bind(this));
+    addEventListener("git-refresh", this.gitRefreshBind);
+    addEventListener("git-view-refresh", this.gitViewRefreshBind);
   }
   getViewType() {
     return DIFF_VIEW_CONFIG.type;
@@ -39953,7 +35946,8 @@ var DiffView = class extends import_obsidian17.ItemView {
     return this.state;
   }
   onClose() {
-    removeEventListener("git-refresh", this.refresh.bind(this));
+    removeEventListener("git-refresh", this.gitRefreshBind);
+    removeEventListener("git-view-refresh", this.gitViewRefreshBind);
     return super.onClose();
   }
   onOpen() {
@@ -39972,16 +35966,26 @@ var DiffView = class extends import_obsidian17.ItemView {
         );
         this.contentEl.empty();
         if (!diff2) {
-          const content = await this.app.vault.adapter.read(
-            this.plugin.gitManager.getVaultPath(this.state.file)
-          );
-          const header = `--- /dev/null
+          if (this.plugin.gitManager instanceof SimpleGit && await this.plugin.gitManager.isTracked(
+            this.state.file
+          )) {
+            diff2 = [
+              `--- ${this.state.file}`,
+              `+++ ${this.state.file}`,
+              ""
+            ].join("\n");
+          } else {
+            const content = await this.app.vault.adapter.read(
+              this.plugin.gitManager.getVaultPath(this.state.file)
+            );
+            const header = `--- /dev/null
 +++ ${this.state.file}
 @@ -0,0 +1,${content.split("\n").length} @@`;
-          diff2 = [
-            ...header.split("\n"),
-            ...content.split("\n").map((line) => `+${line}`)
-          ].join("\n");
+            diff2 = [
+              ...header.split("\n"),
+              ...content.split("\n").map((line) => `+${line}`)
+            ].join("\n");
+          }
         }
         const diffEl = this.parser.parseFromString(html(diff2), "text/html").querySelector(".d2h-file-diff");
         this.contentEl.append(diffEl);
@@ -39994,20 +35998,18 @@ var DiffView = class extends import_obsidian17.ItemView {
 
 // src/ui/history/historyView.ts
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian16 = require("obsidian");
-=======
 var import_obsidian20 = require("obsidian");
->>>>>>> origin/main
 
 // src/ui/history/historyView.svelte
 init_polyfill_buffer();
 
-<<<<<<< HEAD
-// node_modules/.pnpm/svelte@3.57.0/node_modules/svelte/internal/index.mjs
-=======
-// node_modules/.pnpm/svelte@3.59.0/node_modules/svelte/internal/index.mjs
->>>>>>> origin/main
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/index.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/animations.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/utils.js
 init_polyfill_buffer();
 function noop() {
 }
@@ -40025,14 +36027,20 @@ function is_function(thing) {
   return typeof thing === "function";
 }
 function safe_not_equal(a, b) {
-  return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
+  return a != a ? b == b : a !== b || a && typeof a === "object" || typeof a === "function";
 }
 function is_empty(obj) {
   return Object.keys(obj).length === 0;
 }
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/environment.js
+init_polyfill_buffer();
 var is_client = typeof window !== "undefined";
 var now = is_client ? () => window.performance.now() : () => Date.now();
 var raf = is_client ? (cb) => requestAnimationFrame(cb) : noop;
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/loop.js
+init_polyfill_buffer();
 var tasks = /* @__PURE__ */ new Set();
 function run_tasks(now2) {
   tasks.forEach((task) => {
@@ -40057,14 +36065,47 @@ function loop(callback) {
     }
   };
 }
-<<<<<<< HEAD
-=======
-var globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : global;
-var ResizeObserverSingleton = class {
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/style_manager.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/dom.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/ResizeObserverSingleton.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/globals.js
+init_polyfill_buffer();
+var globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
+  // @ts-ignore Node typings have this
+  global
+);
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/ResizeObserverSingleton.js
+var ResizeObserverSingleton = class _ResizeObserverSingleton {
+  /** @param {ResizeObserverOptions} options */
   constructor(options) {
+    /**
+     * @private
+     * @readonly
+     * @type {WeakMap<Element, import('./private.js').Listener>}
+     */
+    __publicField(this, "_listeners", "WeakMap" in globals ? /* @__PURE__ */ new WeakMap() : void 0);
+    /**
+     * @private
+     * @type {ResizeObserver}
+     */
+    __publicField(this, "_observer");
+    /** @type {ResizeObserverOptions} */
+    __publicField(this, "options");
     this.options = options;
-    this._listeners = "WeakMap" in globals ? /* @__PURE__ */ new WeakMap() : void 0;
   }
+  /**
+   * @param {Element} element
+   * @param {import('./private.js').Listener} listener
+   * @returns {() => void}
+   */
   observe(element2, listener) {
     this._listeners.set(element2, listener);
     this._getObserver().observe(element2, this.options);
@@ -40073,19 +36114,23 @@ var ResizeObserverSingleton = class {
       this._observer.unobserve(element2);
     };
   }
+  /**
+   * @private
+   */
   _getObserver() {
     var _a2;
-    return (_a2 = this._observer) !== null && _a2 !== void 0 ? _a2 : this._observer = new ResizeObserver((entries) => {
+    return (_a2 = this._observer) != null ? _a2 : this._observer = new ResizeObserver((entries) => {
       var _a3;
       for (const entry of entries) {
-        ResizeObserverSingleton.entries.set(entry.target, entry);
-        (_a3 = this._listeners.get(entry.target)) === null || _a3 === void 0 ? void 0 : _a3(entry);
+        _ResizeObserverSingleton.entries.set(entry.target, entry);
+        (_a3 = this._listeners.get(entry.target)) == null ? void 0 : _a3(entry);
       }
     });
   }
 };
 ResizeObserverSingleton.entries = "WeakMap" in globals ? /* @__PURE__ */ new WeakMap() : void 0;
->>>>>>> origin/main
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/dom.js
 var is_hydrating = false;
 function start_hydrating() {
   is_hydrating = true;
@@ -40108,25 +36153,28 @@ function append_styles(target, style_sheet_id, styles) {
 function get_root_for_style(node) {
   if (!node)
     return document;
-<<<<<<< HEAD
-  const root = node.getRootNode ? node.getRootNode() : node.ownerDocument;
-  if (root && root.host) {
-    return root;
-=======
   const root2 = node.getRootNode ? node.getRootNode() : node.ownerDocument;
-  if (root2 && root2.host) {
-    return root2;
->>>>>>> origin/main
+  if (root2 && /** @type {ShadowRoot} */
+  root2.host) {
+    return (
+      /** @type {ShadowRoot} */
+      root2
+    );
   }
   return node.ownerDocument;
 }
 function append_empty_stylesheet(node) {
   const style_element = element("style");
+  style_element.textContent = "/* empty */";
   append_stylesheet(get_root_for_style(node), style_element);
   return style_element.sheet;
 }
 function append_stylesheet(node, style) {
-  append2(node.head || node, style);
+  append2(
+    /** @type {Document} */
+    node.head || node,
+    style
+  );
   return style.sheet;
 }
 function insert(target, node, anchor) {
@@ -40176,37 +36224,39 @@ function children(element2) {
 }
 function set_data(text2, data) {
   data = "" + data;
-<<<<<<< HEAD
-  if (text2.wholeText !== data)
-    text2.data = data;
-=======
   if (text2.data === data)
     return;
-  text2.data = data;
->>>>>>> origin/main
+  text2.data = /** @type {string} */
+  data;
 }
 function set_input_value(input, value) {
   input.value = value == null ? "" : value;
 }
 function set_style(node, key2, value, important) {
-<<<<<<< HEAD
-  if (value === null) {
-=======
   if (value == null) {
->>>>>>> origin/main
     node.style.removeProperty(key2);
   } else {
     node.style.setProperty(key2, value, important ? "important" : "");
   }
 }
 function toggle_class(element2, name, toggle) {
-  element2.classList[toggle ? "add" : "remove"](name);
+  element2.classList.toggle(name, !!toggle);
 }
 function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
-  const e = document.createEvent("CustomEvent");
-  e.initCustomEvent(type, bubbles, cancelable, detail);
-  return e;
+  return new CustomEvent(type, { detail, bubbles, cancelable });
 }
+function get_custom_elements_slots(element2) {
+  const result = {};
+  element2.childNodes.forEach(
+    /** @param {Element} node */
+    (node) => {
+      result[node.slot || "default"] = true;
+    }
+  );
+  return result;
+}
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/style_manager.js
 var managed_styles = /* @__PURE__ */ new Map();
 var active = 0;
 function hash(str) {
@@ -40269,6 +36319,18 @@ function clear_rules() {
     managed_styles.clear();
   });
 }
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/await_block.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/transitions.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/scheduler.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/lifecycle.js
+init_polyfill_buffer();
 var current_component;
 function set_current_component(component) {
   current_component = component;
@@ -40287,6 +36349,8 @@ function bubble(component, event) {
     callbacks.slice().forEach((fn) => fn.call(this, event));
   }
 }
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/scheduler.js
 var dirty_components = [];
 var binding_callbacks = [];
 var render_callbacks = [];
@@ -40360,6 +36424,8 @@ function flush_render_callbacks(fns) {
   targets.forEach((c) => c());
   render_callbacks = filtered;
 }
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/transitions.js
 var promise;
 function wait() {
   if (!promise) {
@@ -40421,12 +36487,16 @@ function create_bidirectional_transition(node, fn, params, intro) {
   let running_program = null;
   let pending_program = null;
   let animation_name = null;
+  let original_inert_value;
   function clear_animation() {
     if (animation_name)
       delete_rule(node, animation_name);
   }
   function init3(program, duration) {
-    const d = program.b - t;
+    const d = (
+      /** @type {Program['d']} */
+      program.b - t
+    );
     duration *= Math.abs(d);
     return {
       a: t,
@@ -40439,7 +36509,13 @@ function create_bidirectional_transition(node, fn, params, intro) {
     };
   }
   function go(b) {
-    const { delay: delay2 = 0, duration = 300, easing = identity, tick: tick2 = noop, css } = config || null_transition;
+    const {
+      delay: delay2 = 0,
+      duration = 300,
+      easing = identity,
+      tick: tick2 = noop,
+      css
+    } = config || null_transition;
     const program = {
       start: now() + delay2,
       b
@@ -40447,6 +36523,17 @@ function create_bidirectional_transition(node, fn, params, intro) {
     if (!b) {
       program.group = outros;
       outros.r += 1;
+    }
+    if ("inert" in node) {
+      if (b) {
+        if (original_inert_value !== void 0) {
+          node.inert = original_inert_value;
+        }
+      } else {
+        original_inert_value = /** @type {HTMLElement} */
+        node.inert;
+        node.inert = true;
+      }
     }
     if (running_program || pending_program) {
       pending_program = program;
@@ -40466,7 +36553,15 @@ function create_bidirectional_transition(node, fn, params, intro) {
           dispatch(node, running_program.b, "start");
           if (css) {
             clear_animation();
-            animation_name = create_rule(node, t, running_program.b, running_program.duration, 0, easing, config.css);
+            animation_name = create_rule(
+              node,
+              t,
+              running_program.b,
+              running_program.duration,
+              0,
+              easing,
+              config.css
+            );
           }
         }
         if (running_program) {
@@ -40496,7 +36591,8 @@ function create_bidirectional_transition(node, fn, params, intro) {
     run(b) {
       if (is_function(config)) {
         wait().then(() => {
-          config = config(options);
+          const opts = { direction: b ? "in" : "out" };
+          config = config(opts);
           go(b);
         });
       } else {
@@ -40509,59 +36605,73 @@ function create_bidirectional_transition(node, fn, params, intro) {
     }
   };
 }
-<<<<<<< HEAD
-var globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : global;
-=======
->>>>>>> origin/main
-var _boolean_attributes = [
-  "allowfullscreen",
-  "allowpaymentrequest",
-  "async",
-  "autofocus",
-  "autoplay",
-  "checked",
-  "controls",
-  "default",
-  "defer",
-  "disabled",
-  "formnovalidate",
-  "hidden",
-  "inert",
-  "ismap",
-<<<<<<< HEAD
-  "itemscope",
-=======
->>>>>>> origin/main
-  "loop",
-  "multiple",
-  "muted",
-  "nomodule",
-  "novalidate",
-  "open",
-  "playsinline",
-  "readonly",
-  "required",
-  "reversed",
-  "selected"
-];
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/each.js
+init_polyfill_buffer();
+function ensure_array_like(array_like_or_iterator) {
+  return (array_like_or_iterator == null ? void 0 : array_like_or_iterator.length) !== void 0 ? array_like_or_iterator : Array.from(array_like_or_iterator);
+}
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/spread.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/ssr.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/shared/boolean_attributes.js
+init_polyfill_buffer();
+var _boolean_attributes = (
+  /** @type {const} */
+  [
+    "allowfullscreen",
+    "allowpaymentrequest",
+    "async",
+    "autofocus",
+    "autoplay",
+    "checked",
+    "controls",
+    "default",
+    "defer",
+    "disabled",
+    "formnovalidate",
+    "hidden",
+    "inert",
+    "ismap",
+    "loop",
+    "multiple",
+    "muted",
+    "nomodule",
+    "novalidate",
+    "open",
+    "playsinline",
+    "readonly",
+    "required",
+    "reversed",
+    "selected"
+  ]
+);
 var boolean_attributes = /* @__PURE__ */ new Set([..._boolean_attributes]);
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/shared/utils/names.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/Component.js
+init_polyfill_buffer();
 function create_component(block) {
   block && block.c();
 }
-function mount_component(component, target, anchor, customElement) {
+function mount_component(component, target, anchor) {
   const { fragment, after_update } = component.$$;
   fragment && fragment.m(target, anchor);
-  if (!customElement) {
-    add_render_callback(() => {
-      const new_on_destroy = component.$$.on_mount.map(run).filter(is_function);
-      if (component.$$.on_destroy) {
-        component.$$.on_destroy.push(...new_on_destroy);
-      } else {
-        run_all(new_on_destroy);
-      }
-      component.$$.on_mount = [];
-    });
-  }
+  add_render_callback(() => {
+    const new_on_destroy = component.$$.on_mount.map(run).filter(is_function);
+    if (component.$$.on_destroy) {
+      component.$$.on_destroy.push(...new_on_destroy);
+    } else {
+      run_all(new_on_destroy);
+    }
+    component.$$.on_mount = [];
+  });
   after_update.forEach(add_render_callback);
 }
 function destroy_component(component, detaching) {
@@ -40633,7 +36743,7 @@ function init2(component, options, instance10, create_fragment10, not_equal, pro
     }
     if (options.intro)
       transition_in(component.$$.fragment);
-    mount_component(component, options.target, options.anchor, options.customElement);
+    mount_component(component, options.target, options.anchor);
     end_hydrating();
     flush();
   }
@@ -40642,53 +36752,208 @@ function init2(component, options, instance10, create_fragment10, not_equal, pro
 var SvelteElement;
 if (typeof HTMLElement === "function") {
   SvelteElement = class extends HTMLElement {
-    constructor() {
+    constructor($$componentCtor, $$slots, use_shadow_dom) {
       super();
-      this.attachShadow({ mode: "open" });
-    }
-    connectedCallback() {
-      const { on_mount } = this.$$;
-      this.$$.on_disconnect = on_mount.map(run).filter(is_function);
-      for (const key2 in this.$$.slotted) {
-        this.appendChild(this.$$.slotted[key2]);
+      __publicField(this, "$$componentCtor");
+      __publicField(this, "$$slots");
+      __publicField(this, "$$component");
+      __publicField(this, "$$connected", false);
+      __publicField(this, "$$data", {});
+      __publicField(this, "$$reflecting", false);
+      /** @type {Record<string, CustomElementPropDefinition>} */
+      __publicField(this, "$$props_definition", {});
+      /** @type {Record<string, Function[]>} */
+      __publicField(this, "$$listeners", {});
+      /** @type {Map<Function, Function>} */
+      __publicField(this, "$$listener_unsubscribe_fns", /* @__PURE__ */ new Map());
+      this.$$componentCtor = $$componentCtor;
+      this.$$slots = $$slots;
+      if (use_shadow_dom) {
+        this.attachShadow({ mode: "open" });
       }
     }
+    addEventListener(type, listener, options) {
+      this.$$listeners[type] = this.$$listeners[type] || [];
+      this.$$listeners[type].push(listener);
+      if (this.$$component) {
+        const unsub = this.$$component.$on(type, listener);
+        this.$$listener_unsubscribe_fns.set(listener, unsub);
+      }
+      super.addEventListener(type, listener, options);
+    }
+    removeEventListener(type, listener, options) {
+      super.removeEventListener(type, listener, options);
+      if (this.$$component) {
+        const unsub = this.$$listener_unsubscribe_fns.get(listener);
+        if (unsub) {
+          unsub();
+          this.$$listener_unsubscribe_fns.delete(listener);
+        }
+      }
+    }
+    async connectedCallback() {
+      this.$$connected = true;
+      if (!this.$$component) {
+        let create_slot = function(name) {
+          return () => {
+            let node;
+            const obj = {
+              c: function create() {
+                node = document.createElement("slot");
+                if (name !== "default") {
+                  node.setAttribute("name", name);
+                }
+              },
+              /**
+               * @param {HTMLElement} target
+               * @param {HTMLElement} [anchor]
+               */
+              m: function mount(target, anchor) {
+                insert(target, node, anchor);
+              },
+              d: function destroy(detaching) {
+                if (detaching) {
+                  detach(node);
+                }
+              }
+            };
+            return obj;
+          };
+        };
+        await Promise.resolve();
+        if (!this.$$connected) {
+          return;
+        }
+        const $$slots = {};
+        const existing_slots = get_custom_elements_slots(this);
+        for (const name of this.$$slots) {
+          if (name in existing_slots) {
+            $$slots[name] = [create_slot(name)];
+          }
+        }
+        for (const attribute of this.attributes) {
+          const name = this.$$get_prop_name(attribute.name);
+          if (!(name in this.$$data)) {
+            this.$$data[name] = get_custom_element_value(
+              name,
+              attribute.value,
+              this.$$props_definition,
+              "toProp"
+            );
+          }
+        }
+        this.$$component = new this.$$componentCtor({
+          target: this.shadowRoot || this,
+          props: {
+            ...this.$$data,
+            $$slots,
+            $$scope: {
+              ctx: []
+            }
+          }
+        });
+        for (const type in this.$$listeners) {
+          for (const listener of this.$$listeners[type]) {
+            const unsub = this.$$component.$on(type, listener);
+            this.$$listener_unsubscribe_fns.set(listener, unsub);
+          }
+        }
+        this.$$listeners = {};
+      }
+    }
+    // We don't need this when working within Svelte code, but for compatibility of people using this outside of Svelte
+    // and setting attributes through setAttribute etc, this is helpful
     attributeChangedCallback(attr2, _oldValue, newValue) {
-      this[attr2] = newValue;
+      var _a2;
+      if (this.$$reflecting)
+        return;
+      attr2 = this.$$get_prop_name(attr2);
+      this.$$data[attr2] = get_custom_element_value(
+        attr2,
+        newValue,
+        this.$$props_definition,
+        "toProp"
+      );
+      (_a2 = this.$$component) == null ? void 0 : _a2.$set({ [attr2]: this.$$data[attr2] });
     }
     disconnectedCallback() {
-      run_all(this.$$.on_disconnect);
+      this.$$connected = false;
+      Promise.resolve().then(() => {
+        if (!this.$$connected) {
+          this.$$component.$destroy();
+          this.$$component = void 0;
+        }
+      });
     }
-    $destroy() {
-      destroy_component(this, 1);
-      this.$destroy = noop;
-    }
-    $on(type, callback) {
-      if (!is_function(callback)) {
-        return noop;
-      }
-      const callbacks = this.$$.callbacks[type] || (this.$$.callbacks[type] = []);
-      callbacks.push(callback);
-      return () => {
-        const index2 = callbacks.indexOf(callback);
-        if (index2 !== -1)
-          callbacks.splice(index2, 1);
-      };
-    }
-    $set($$props) {
-      if (this.$$set && !is_empty($$props)) {
-        this.$$.skip_bound = true;
-        this.$$set($$props);
-        this.$$.skip_bound = false;
-      }
+    $$get_prop_name(attribute_name) {
+      return Object.keys(this.$$props_definition).find(
+        (key2) => this.$$props_definition[key2].attribute === attribute_name || !this.$$props_definition[key2].attribute && key2.toLowerCase() === attribute_name
+      ) || attribute_name;
     }
   };
 }
+function get_custom_element_value(prop, value, props_definition, transform) {
+  var _a2;
+  const type = (_a2 = props_definition[prop]) == null ? void 0 : _a2.type;
+  value = type === "Boolean" && typeof value !== "boolean" ? value != null : value;
+  if (!transform || !props_definition[prop]) {
+    return value;
+  } else if (transform === "toAttribute") {
+    switch (type) {
+      case "Object":
+      case "Array":
+        return value == null ? null : JSON.stringify(value);
+      case "Boolean":
+        return value ? "" : null;
+      case "Number":
+        return value == null ? null : value;
+      default:
+        return value;
+    }
+  } else {
+    switch (type) {
+      case "Object":
+      case "Array":
+        return value && JSON.parse(value);
+      case "Boolean":
+        return value;
+      case "Number":
+        return value != null ? +value : value;
+      default:
+        return value;
+    }
+  }
+}
 var SvelteComponent = class {
+  constructor() {
+    /**
+     * ### PRIVATE API
+     *
+     * Do not use, may change at any time
+     *
+     * @type {any}
+     */
+    __publicField(this, "$$");
+    /**
+     * ### PRIVATE API
+     *
+     * Do not use, may change at any time
+     *
+     * @type {any}
+     */
+    __publicField(this, "$$set");
+  }
+  /** @returns {void} */
   $destroy() {
     destroy_component(this, 1);
     this.$destroy = noop;
   }
+  /**
+   * @template {Extract<keyof Events, string>} K
+   * @param {K} type
+   * @param {((e: Events[K]) => void) | null | undefined} callback
+   * @returns {() => void}
+   */
   $on(type, callback) {
     if (!is_function(callback)) {
       return noop;
@@ -40701,16 +36966,32 @@ var SvelteComponent = class {
         callbacks.splice(index2, 1);
     };
   }
-  $set($$props) {
-    if (this.$$set && !is_empty($$props)) {
+  /**
+   * @param {Partial<Props>} props
+   * @returns {void}
+   */
+  $set(props) {
+    if (this.$$set && !is_empty(props)) {
       this.$$.skip_bound = true;
-      this.$$set($$props);
+      this.$$set(props);
       this.$$.skip_bound = false;
     }
   }
 };
 
-// node_modules/.pnpm/tslib@2.5.0/node_modules/tslib/tslib.es6.js
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/dev.js
+init_polyfill_buffer();
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/shared/version.js
+init_polyfill_buffer();
+var PUBLIC_VERSION = "4";
+
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/internal/disclose-version/index.js
+init_polyfill_buffer();
+if (typeof window !== "undefined")
+  (window.__svelte || (window.__svelte = { v: /* @__PURE__ */ new Set() })).v.add(PUBLIC_VERSION);
+
+// node_modules/.pnpm/tslib@2.6.0/node_modules/tslib/tslib.es6.mjs
 init_polyfill_buffer();
 function __awaiter(thisArg, _arguments, P, generator) {
   function adopt(value) {
@@ -40741,55 +37022,44 @@ function __awaiter(thisArg, _arguments, P, generator) {
 }
 
 // src/ui/history/historyView.svelte
-<<<<<<< HEAD
-var import_obsidian15 = require("obsidian");
-
-// node_modules/.pnpm/svelte@3.57.0/node_modules/svelte/index.mjs
-=======
 var import_obsidian19 = require("obsidian");
 
-// node_modules/.pnpm/svelte@3.59.0/node_modules/svelte/index.mjs
->>>>>>> origin/main
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/index.js
 init_polyfill_buffer();
 
 // src/ui/history/components/logComponent.svelte
 init_polyfill_buffer();
 
-<<<<<<< HEAD
-// node_modules/.pnpm/svelte@3.57.0/node_modules/svelte/transition/index.mjs
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/transition/index.js
 init_polyfill_buffer();
 
-// node_modules/.pnpm/svelte@3.57.0/node_modules/svelte/easing/index.mjs
-=======
-// node_modules/.pnpm/svelte@3.59.0/node_modules/svelte/transition/index.mjs
-init_polyfill_buffer();
-
-// node_modules/.pnpm/svelte@3.59.0/node_modules/svelte/easing/index.mjs
->>>>>>> origin/main
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/easing/index.js
 init_polyfill_buffer();
 function cubicOut(t) {
   const f = t - 1;
   return f * f * f + 1;
 }
 
-<<<<<<< HEAD
-// node_modules/.pnpm/svelte@3.57.0/node_modules/svelte/transition/index.mjs
-=======
-// node_modules/.pnpm/svelte@3.59.0/node_modules/svelte/transition/index.mjs
->>>>>>> origin/main
+// node_modules/.pnpm/svelte@4.0.0/node_modules/svelte/src/runtime/transition/index.js
 function slide(node, { delay: delay2 = 0, duration = 400, easing = cubicOut, axis = "y" } = {}) {
   const style = getComputedStyle(node);
   const opacity = +style.opacity;
   const primary_property = axis === "y" ? "height" : "width";
   const primary_property_value = parseFloat(style[primary_property]);
   const secondary_properties = axis === "y" ? ["top", "bottom"] : ["left", "right"];
-  const capitalized_secondary_properties = secondary_properties.map((e) => `${e[0].toUpperCase()}${e.slice(1)}`);
+  const capitalized_secondary_properties = secondary_properties.map(
+    (e) => `${e[0].toUpperCase()}${e.slice(1)}`
+  );
   const padding_start_value = parseFloat(style[`padding${capitalized_secondary_properties[0]}`]);
   const padding_end_value = parseFloat(style[`padding${capitalized_secondary_properties[1]}`]);
   const margin_start_value = parseFloat(style[`margin${capitalized_secondary_properties[0]}`]);
   const margin_end_value = parseFloat(style[`margin${capitalized_secondary_properties[1]}`]);
-  const border_width_start_value = parseFloat(style[`border${capitalized_secondary_properties[0]}Width`]);
-  const border_width_end_value = parseFloat(style[`border${capitalized_secondary_properties[1]}Width`]);
+  const border_width_start_value = parseFloat(
+    style[`border${capitalized_secondary_properties[0]}Width`]
+  );
+  const border_width_end_value = parseFloat(
+    style[`border${capitalized_secondary_properties[1]}Width`]
+  );
   return {
     delay: delay2,
     duration,
@@ -40800,11 +37070,7 @@ function slide(node, { delay: delay2 = 0, duration = 400, easing = cubicOut, axi
 
 // src/ui/history/components/logFileComponent.svelte
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian14 = require("obsidian");
-=======
 var import_obsidian18 = require("obsidian");
->>>>>>> origin/main
 function add_css(target) {
   append_styles(target, "svelte-pmbo0n", "main.svelte-pmbo0n .nav-file-title-content.svelte-pmbo0n{display:flex;align-items:center}");
 }
@@ -40838,8 +37104,9 @@ function create_if_block(ctx) {
     },
     p: noop,
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       ctx[7](null);
       mounted = false;
       run_all(dispose);
@@ -40891,21 +37158,13 @@ function create_fragment(ctx) {
       t2 = space();
       span = element("span");
       t3 = text(t3_value);
-<<<<<<< HEAD
-      attr(div0, "class", "nav-file-title-content svelte-pmbo0n");
-=======
       attr(div0, "class", "tree-item-inner nav-file-title-content svelte-pmbo0n");
->>>>>>> origin/main
       attr(div1, "class", "buttons");
       attr(span, "class", "type");
       attr(span, "data-type", span_data_type_value = /*diff*/
       ctx[0].status);
       attr(div2, "class", "git-tools");
-<<<<<<< HEAD
-      attr(div3, "class", "nav-file-title");
-=======
       attr(div3, "class", "tree-item-self is-clickable nav-file-title");
->>>>>>> origin/main
       attr(
         div3,
         "aria-label-position",
@@ -40914,11 +37173,7 @@ function create_fragment(ctx) {
       );
       attr(div3, "aria-label", div3_aria_label_value = /*diff*/
       ctx[0].vault_path);
-<<<<<<< HEAD
-      attr(main, "class", "nav-file svelte-pmbo0n");
-=======
       attr(main, "class", "tree-item nav-file svelte-pmbo0n");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, main, anchor);
@@ -41006,8 +37261,9 @@ function create_fragment(ctx) {
     i: noop,
     o: noop,
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       if (if_block)
         if_block.d();
       mounted = false;
@@ -41020,19 +37276,11 @@ function instance($$self, $$props, $$invalidate) {
   let { diff: diff2 } = $$props;
   let { view } = $$props;
   let buttons = [];
-<<<<<<< HEAD
-  window.setTimeout(() => buttons.forEach((b) => (0, import_obsidian14.setIcon)(b, b.getAttr("data-icon"))), 0);
-  function open(event) {
-    var _a2;
-    const file = view.app.vault.getAbstractFileByPath(diff2.vault_path);
-    if (file instanceof import_obsidian14.TFile) {
-=======
   window.setTimeout(() => buttons.forEach((b) => (0, import_obsidian18.setIcon)(b, b.getAttr("data-icon"))), 0);
   function open(event) {
     var _a2;
     const file = view.app.vault.getAbstractFileByPath(diff2.vault_path);
     if (file instanceof import_obsidian18.TFile) {
->>>>>>> origin/main
       (_a2 = getNewLeaf(event)) === null || _a2 === void 0 ? void 0 : _a2.openFile(file);
     }
   }
@@ -41141,15 +37389,9 @@ function create_else_block(ctx) {
       attr(div0, "data-icon", "folder");
       set_style(div0, "padding-right", "5px");
       set_style(div0, "display", "flex");
-<<<<<<< HEAD
-      attr(div1, "class", "nav-folder-collapse-indicator collapse-icon");
-      attr(div2, "class", "nav-folder-title-content svelte-1lnl15d");
-      attr(div3, "class", "nav-folder-title");
-=======
       attr(div1, "class", "tree-item-icon nav-folder-collapse-indicator collapse-icon");
       attr(div2, "class", "tree-item-inner nav-folder-title-content svelte-1lnl15d");
       attr(div3, "class", "tree-item-self is-clickable nav-folder-title");
->>>>>>> origin/main
       attr(
         div3,
         "aria-label-position",
@@ -41158,11 +37400,7 @@ function create_else_block(ctx) {
       );
       attr(div3, "aria-label", div3_aria_label_value = /*entity*/
       ctx[8].vaultPath);
-<<<<<<< HEAD
-      attr(div4, "class", "nav-folder");
-=======
       attr(div4, "class", "tree-item nav-folder");
->>>>>>> origin/main
       toggle_class(
         div4,
         "is-collapsed",
@@ -41260,8 +37498,9 @@ function create_else_block(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div4);
+      }
       if (if_block)
         if_block.d();
       mounted = false;
@@ -41321,8 +37560,9 @@ function create_if_block2(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       destroy_component(logfilecomponent);
     }
   };
@@ -41352,11 +37592,7 @@ function create_if_block_1(ctx) {
     c() {
       div = element("div");
       create_component(logtreecomponent.$$.fragment);
-<<<<<<< HEAD
-      attr(div, "class", "nav-folder-children");
-=======
       attr(div, "class", "tree-item-children nav-folder-children");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -41404,8 +37640,9 @@ function create_if_block_1(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       destroy_component(logtreecomponent);
       if (detaching && div_transition)
         div_transition.end();
@@ -41472,16 +37709,17 @@ function create_each_block(ctx) {
       current = false;
     },
     d(detaching) {
-      if_blocks[current_block_type_index].d(detaching);
-      if (detaching)
+      if (detaching) {
         detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
     }
   };
 }
 function create_fragment2(ctx) {
   let main;
   let current;
-  let each_value = (
+  let each_value = ensure_array_like(
     /*hierarchy*/
     ctx[0].children
   );
@@ -41518,8 +37756,10 @@ function create_fragment2(ctx) {
     p(ctx2, [dirty]) {
       if (dirty & /*hierarchy, view, closed, plugin, side, fold*/
       119) {
-        each_value = /*hierarchy*/
-        ctx2[0].children;
+        each_value = ensure_array_like(
+          /*hierarchy*/
+          ctx2[0].children
+        );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context(ctx2, each_value, i);
@@ -41565,8 +37805,9 @@ function create_fragment2(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       destroy_each(each_blocks, detaching);
     }
   };
@@ -41655,8 +37896,9 @@ function create_if_block_2(ctx) {
         set_data(t, t_value);
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
     }
   };
 }
@@ -41682,11 +37924,7 @@ function create_if_block3(ctx) {
     c() {
       div = element("div");
       if_block.c();
-<<<<<<< HEAD
-      attr(div, "class", "nav-folder-children");
-=======
       attr(div, "class", "tree-item-children nav-folder-children");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -41740,8 +37978,9 @@ function create_if_block3(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       if_blocks[current_block_type_index].d();
       if (detaching && div_transition)
         div_transition.end();
@@ -41751,7 +37990,7 @@ function create_if_block3(ctx) {
 function create_else_block2(ctx) {
   let each_1_anchor;
   let current;
-  let each_value = (
+  let each_value = ensure_array_like(
     /*log*/
     ctx[0].diff.files
   );
@@ -41781,8 +38020,10 @@ function create_else_block2(ctx) {
     p(ctx2, dirty) {
       if (dirty & /*view, log*/
       3) {
-        each_value = /*log*/
-        ctx2[0].diff.files;
+        each_value = ensure_array_like(
+          /*log*/
+          ctx2[0].diff.files
+        );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context2(ctx2, each_value, i);
@@ -41819,9 +38060,10 @@ function create_else_block2(ctx) {
       current = false;
     },
     d(detaching) {
-      destroy_each(each_blocks, detaching);
-      if (detaching)
+      if (detaching) {
         detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
     }
   };
 }
@@ -41976,13 +38218,8 @@ function create_fragment3(ctx) {
       t3 = space();
       if (if_block1)
         if_block1.c();
-<<<<<<< HEAD
-      attr(div0, "class", "nav-folder-collapse-indicator collapse-icon");
-      attr(div1, "class", "nav-folder-title-content");
-=======
       attr(div0, "class", "tree-item-icon nav-folder-collapse-indicator collapse-icon");
       attr(div1, "class", "tree-item-inner nav-folder-title-content");
->>>>>>> origin/main
       attr(div1, "aria-label", div1_aria_label_value = /*log*/
       ctx[0].message);
       attr(
@@ -41991,13 +38228,8 @@ function create_fragment3(ctx) {
         /*side*/
         ctx[5]
       );
-<<<<<<< HEAD
-      attr(div3, "class", "nav-folder-title");
-      attr(div4, "class", "staged nav-folder");
-=======
       attr(div3, "class", "tree-item-self is-clickable nav-folder-title");
       attr(div4, "class", "tree-item nav-folder");
->>>>>>> origin/main
       toggle_class(
         div4,
         "is-collapsed",
@@ -42107,8 +38339,9 @@ function create_fragment3(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       if (if_block0)
         if_block0.d();
       if (if_block1)
@@ -42174,7 +38407,7 @@ function create_if_block4(ctx) {
   let div1;
   let div0;
   let current;
-  let each_value = (
+  let each_value = ensure_array_like(
     /*logs*/
     ctx[6]
   );
@@ -42192,13 +38425,8 @@ function create_if_block4(ctx) {
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
       }
-<<<<<<< HEAD
-      attr(div0, "class", "nav-folder-children");
-      attr(div1, "class", "nav-folder mod-root");
-=======
       attr(div0, "class", "tree-item-children nav-folder-children");
       attr(div1, "class", "tree-item nav-folder mod-root");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, div1, anchor);
@@ -42213,8 +38441,10 @@ function create_if_block4(ctx) {
     p(ctx2, dirty) {
       if (dirty & /*view, showTree, logs, plugin*/
       71) {
-        each_value = /*logs*/
-        ctx2[6];
+        each_value = ensure_array_like(
+          /*logs*/
+          ctx2[6]
+        );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context3(ctx2, each_value, i);
@@ -42251,8 +38481,9 @@ function create_if_block4(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div1);
+      }
       destroy_each(each_blocks, detaching);
     }
   };
@@ -42442,8 +38673,9 @@ function create_fragment4(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       ctx[7](null);
       ctx[9](null);
       if (if_block)
@@ -42468,13 +38700,8 @@ function instance4($$self, $$props, $$invalidate) {
   plugin.app.workspace.onLayoutReady(() => {
     window.setTimeout(
       () => {
-<<<<<<< HEAD
-        buttons.forEach((btn) => (0, import_obsidian15.setIcon)(btn, btn.getAttr("data-icon"), 16));
-        (0, import_obsidian15.setIcon)(layoutBtn, showTree ? "list" : "folder", 16);
-=======
         buttons.forEach((btn) => (0, import_obsidian19.setIcon)(btn, btn.getAttr("data-icon"), 16));
         (0, import_obsidian19.setIcon)(layoutBtn, showTree ? "list" : "folder", 16);
->>>>>>> origin/main
       },
       0
     );
@@ -42519,11 +38746,7 @@ function instance4($$self, $$props, $$invalidate) {
       $: {
         if (layoutBtn) {
           layoutBtn.empty();
-<<<<<<< HEAD
-          (0, import_obsidian15.setIcon)(layoutBtn, showTree ? "list" : "folder", 16);
-=======
           (0, import_obsidian19.setIcon)(layoutBtn, showTree ? "list" : "folder", 16);
->>>>>>> origin/main
         }
       }
     }
@@ -42550,11 +38773,7 @@ var HistoryView = class extends SvelteComponent {
 var historyView_default = HistoryView;
 
 // src/ui/history/historyView.ts
-<<<<<<< HEAD
-var HistoryView2 = class extends import_obsidian16.ItemView {
-=======
 var HistoryView2 = class extends import_obsidian20.ItemView {
->>>>>>> origin/main
   constructor(leaf, plugin) {
     super(leaf);
     this.plugin = plugin;
@@ -42586,13 +38805,8 @@ var HistoryView2 = class extends import_obsidian20.ItemView {
 
 // src/ui/modals/branchModal.ts
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian17 = require("obsidian");
-var BranchModal = class extends import_obsidian17.FuzzySuggestModal {
-=======
 var import_obsidian21 = require("obsidian");
 var BranchModal = class extends import_obsidian21.FuzzySuggestModal {
->>>>>>> origin/main
   constructor(branches) {
     super(app);
     this.branches = branches;
@@ -42622,13 +38836,8 @@ var BranchModal = class extends import_obsidian21.FuzzySuggestModal {
 
 // src/ui/modals/ignoreModal.ts
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian18 = require("obsidian");
-var IgnoreModal = class extends import_obsidian18.Modal {
-=======
 var import_obsidian22 = require("obsidian");
 var IgnoreModal = class extends import_obsidian22.Modal {
->>>>>>> origin/main
   constructor(app2, content) {
     super(app2);
     this.content = content;
@@ -42666,18 +38875,6 @@ var IgnoreModal = class extends import_obsidian22.Modal {
 
 // src/ui/sourceControl/sourceControl.ts
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian25 = require("obsidian");
-
-// src/ui/sourceControl/sourceControl.svelte
-init_polyfill_buffer();
-var import_obsidian24 = require("obsidian");
-
-// src/ui/modals/discardModal.ts
-init_polyfill_buffer();
-var import_obsidian19 = require("obsidian");
-var DiscardModal = class extends import_obsidian19.Modal {
-=======
 var import_obsidian29 = require("obsidian");
 
 // src/ui/sourceControl/sourceControl.svelte
@@ -42688,7 +38885,6 @@ var import_obsidian28 = require("obsidian");
 init_polyfill_buffer();
 var import_obsidian23 = require("obsidian");
 var DiscardModal = class extends import_obsidian23.Modal {
->>>>>>> origin/main
   constructor(app2, deletion, filename) {
     super(app2);
     this.deletion = deletion;
@@ -42744,27 +38940,15 @@ var DiscardModal = class extends import_obsidian23.Modal {
 
 // src/ui/sourceControl/components/fileComponent.svelte
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian21 = require("obsidian");
-
-// node_modules/.pnpm/obsidian-community-lib@2.0.2_ydzx5qoi6374xmclt4keb2sh6a/node_modules/obsidian-community-lib/dist/index.js
-init_polyfill_buffer();
-
-// node_modules/.pnpm/obsidian-community-lib@2.0.2_ydzx5qoi6374xmclt4keb2sh6a/node_modules/obsidian-community-lib/dist/utils.js
-init_polyfill_buffer();
-var feather = __toESM(require_feather());
-var import_obsidian20 = require("obsidian");
-=======
 var import_obsidian25 = require("obsidian");
 
-// node_modules/.pnpm/obsidian-community-lib@2.0.2_fbkkrmn4giwwsr5htt45gr2jni/node_modules/obsidian-community-lib/dist/index.js
+// node_modules/.pnpm/obsidian-community-lib@2.0.2_@codemirror+state@6.2.1_@codemirror+view@6.14.0/node_modules/obsidian-community-lib/dist/index.js
 init_polyfill_buffer();
 
-// node_modules/.pnpm/obsidian-community-lib@2.0.2_fbkkrmn4giwwsr5htt45gr2jni/node_modules/obsidian-community-lib/dist/utils.js
+// node_modules/.pnpm/obsidian-community-lib@2.0.2_@codemirror+state@6.2.1_@codemirror+view@6.14.0/node_modules/obsidian-community-lib/dist/utils.js
 init_polyfill_buffer();
 var feather = __toESM(require_feather());
 var import_obsidian24 = require("obsidian");
->>>>>>> origin/main
 function hoverPreview(event, view, to) {
   const targetEl = event.target;
   app.workspace.trigger("hover-link", {
@@ -42810,8 +38994,9 @@ function create_if_block5(ctx) {
     },
     p: noop,
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       ctx[11](null);
       mounted = false;
       run_all(dispose);
@@ -42871,11 +39056,7 @@ function create_fragment5(ctx) {
       t4 = space();
       div4 = element("div");
       t5 = text(t5_value);
-<<<<<<< HEAD
-      attr(div0, "class", "nav-file-title-content svelte-pmbo0n");
-=======
       attr(div0, "class", "tree-item-inner nav-file-title-content svelte-pmbo0n");
->>>>>>> origin/main
       attr(div1, "data-icon", "undo");
       attr(div1, "aria-label", "Discard");
       attr(div1, "class", "clickable-icon");
@@ -42887,11 +39068,7 @@ function create_fragment5(ctx) {
       attr(div4, "data-type", div4_data_type_value = /*change*/
       ctx[0].working_dir);
       attr(div5, "class", "git-tools");
-<<<<<<< HEAD
-      attr(div6, "class", "nav-file-title");
-=======
       attr(div6, "class", "tree-item-self is-clickable nav-file-title");
->>>>>>> origin/main
       attr(
         div6,
         "aria-label-position",
@@ -42900,11 +39077,7 @@ function create_fragment5(ctx) {
       );
       attr(div6, "aria-label", div6_aria_label_value = /*change*/
       ctx[0].vault_path);
-<<<<<<< HEAD
-      attr(main, "class", "nav-file svelte-pmbo0n");
-=======
       attr(main, "class", "tree-item nav-file svelte-pmbo0n");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, main, anchor);
@@ -43012,8 +39185,9 @@ function create_fragment5(ctx) {
     i: noop,
     o: noop,
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       if (if_block)
         if_block.d();
       ctx[12](null);
@@ -43029,11 +39203,7 @@ function instance5($$self, $$props, $$invalidate) {
   let { view } = $$props;
   let { manager } = $$props;
   let buttons = [];
-<<<<<<< HEAD
-  window.setTimeout(() => buttons.forEach((b) => (0, import_obsidian21.setIcon)(b, b.getAttr("data-icon"))), 0);
-=======
   window.setTimeout(() => buttons.forEach((b) => (0, import_obsidian25.setIcon)(b, b.getAttr("data-icon"))), 0);
->>>>>>> origin/main
   function hover(event) {
     if (app.vault.getAbstractFileByPath(change.vault_path)) {
       hoverPreview(event, view, change.vault_path);
@@ -43043,11 +39213,7 @@ function instance5($$self, $$props, $$invalidate) {
     var _a2;
     const file = view.app.vault.getAbstractFileByPath(change.vault_path);
     console.log(event);
-<<<<<<< HEAD
-    if (file instanceof import_obsidian21.TFile) {
-=======
     if (file instanceof import_obsidian25.TFile) {
->>>>>>> origin/main
       (_a2 = getNewLeaf(event)) === null || _a2 === void 0 ? void 0 : _a2.openFile(file);
     }
   }
@@ -43143,11 +39309,7 @@ var fileComponent_default = FileComponent;
 
 // src/ui/sourceControl/components/pulledFileComponent.svelte
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian22 = require("obsidian");
-=======
 var import_obsidian26 = require("obsidian");
->>>>>>> origin/main
 function add_css5(target) {
   append_styles(target, "svelte-pmbo0n", "main.svelte-pmbo0n .nav-file-title-content.svelte-pmbo0n{display:flex;align-items:center}");
 }
@@ -43182,20 +39344,12 @@ function create_fragment6(ctx) {
       div1 = element("div");
       span = element("span");
       t2 = text(t2_value);
-<<<<<<< HEAD
-      attr(div0, "class", "nav-file-title-content svelte-pmbo0n");
-=======
       attr(div0, "class", "tree-item-inner nav-file-title-content svelte-pmbo0n");
->>>>>>> origin/main
       attr(span, "class", "type");
       attr(span, "data-type", span_data_type_value = /*change*/
       ctx[0].working_dir);
       attr(div1, "class", "git-tools");
-<<<<<<< HEAD
-      attr(div2, "class", "nav-file-title");
-=======
       attr(div2, "class", "tree-item-self is-clickable nav-file-title");
->>>>>>> origin/main
       attr(
         div2,
         "aria-label-position",
@@ -43204,11 +39358,7 @@ function create_fragment6(ctx) {
       );
       attr(div2, "aria-label", div2_aria_label_value = /*change*/
       ctx[0].vault_path);
-<<<<<<< HEAD
-      attr(main, "class", "nav-file svelte-pmbo0n");
-=======
       attr(main, "class", "tree-item nav-file svelte-pmbo0n");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, main, anchor);
@@ -43279,8 +39429,9 @@ function create_fragment6(ctx) {
     i: noop,
     o: noop,
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       mounted = false;
       run_all(dispose);
     }
@@ -43298,11 +39449,7 @@ function instance6($$self, $$props, $$invalidate) {
   function open(event) {
     var _a2;
     const file = view.app.vault.getAbstractFileByPath(change.vault_path);
-<<<<<<< HEAD
-    if (file instanceof import_obsidian22.TFile) {
-=======
     if (file instanceof import_obsidian26.TFile) {
->>>>>>> origin/main
       (_a2 = getNewLeaf(event)) === null || _a2 === void 0 ? void 0 : _a2.openFile(file);
     }
   }
@@ -43334,11 +39481,7 @@ var pulledFileComponent_default = PulledFileComponent;
 
 // src/ui/sourceControl/components/stagedFileComponent.svelte
 init_polyfill_buffer();
-<<<<<<< HEAD
-var import_obsidian23 = require("obsidian");
-=======
 var import_obsidian27 = require("obsidian");
->>>>>>> origin/main
 function add_css6(target) {
   append_styles(target, "svelte-pmbo0n", "main.svelte-pmbo0n .nav-file-title-content.svelte-pmbo0n{display:flex;align-items:center}");
 }
@@ -43366,8 +39509,9 @@ function create_if_block6(ctx) {
     },
     p: noop,
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       ctx[10](null);
       mounted = false;
       dispose();
@@ -43423,11 +39567,7 @@ function create_fragment7(ctx) {
       t3 = space();
       div3 = element("div");
       t4 = text(t4_value);
-<<<<<<< HEAD
-      attr(div0, "class", "nav-file-title-content svelte-pmbo0n");
-=======
       attr(div0, "class", "tree-item-inner nav-file-title-content svelte-pmbo0n");
->>>>>>> origin/main
       attr(div1, "data-icon", "minus");
       attr(div1, "aria-label", "Unstage");
       attr(div1, "class", "clickable-icon");
@@ -43436,11 +39576,7 @@ function create_fragment7(ctx) {
       attr(div3, "data-type", div3_data_type_value = /*change*/
       ctx[0].index);
       attr(div4, "class", "git-tools");
-<<<<<<< HEAD
-      attr(div5, "class", "nav-file-title");
-=======
       attr(div5, "class", "tree-item-self is-clickable nav-file-title");
->>>>>>> origin/main
       attr(
         div5,
         "aria-label-position",
@@ -43449,11 +39585,7 @@ function create_fragment7(ctx) {
       );
       attr(div5, "aria-label", div5_aria_label_value = /*change*/
       ctx[0].vault_path);
-<<<<<<< HEAD
-      attr(main, "class", "nav-file svelte-pmbo0n");
-=======
       attr(main, "class", "tree-item nav-file svelte-pmbo0n");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, main, anchor);
@@ -43554,8 +39686,9 @@ function create_fragment7(ctx) {
     i: noop,
     o: noop,
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       if (if_block)
         if_block.d();
       ctx[11](null);
@@ -43571,11 +39704,7 @@ function instance7($$self, $$props, $$invalidate) {
   let { view } = $$props;
   let { manager } = $$props;
   let buttons = [];
-<<<<<<< HEAD
-  window.setTimeout(() => buttons.forEach((b) => (0, import_obsidian23.setIcon)(b, b.getAttr("data-icon"), 16)), 0);
-=======
   window.setTimeout(() => buttons.forEach((b) => (0, import_obsidian27.setIcon)(b, b.getAttr("data-icon"), 16)), 0);
->>>>>>> origin/main
   function hover(event) {
     if (app.vault.getAbstractFileByPath(change.vault_path)) {
       hoverPreview(event, view, change.vault_path);
@@ -43584,11 +39713,7 @@ function instance7($$self, $$props, $$invalidate) {
   function open(event) {
     var _a2;
     const file = view.app.vault.getAbstractFileByPath(change.vault_path);
-<<<<<<< HEAD
-    if (file instanceof import_obsidian23.TFile) {
-=======
     if (file instanceof import_obsidian27.TFile) {
->>>>>>> origin/main
       (_a2 = getNewLeaf(event)) === null || _a2 === void 0 ? void 0 : _a2.openFile(file);
     }
   }
@@ -43745,21 +39870,12 @@ function create_else_block3(ctx) {
       attr(div0, "data-icon", "folder");
       set_style(div0, "padding-right", "5px");
       set_style(div0, "display", "flex");
-<<<<<<< HEAD
-      attr(div1, "class", "nav-folder-collapse-indicator collapse-icon");
-      attr(div2, "class", "nav-folder-title-content svelte-1lnl15d");
-      set_style(div3, "width", "11px");
-      attr(div4, "class", "buttons");
-      attr(div5, "class", "git-tools");
-      attr(div6, "class", "nav-folder-title");
-=======
       attr(div1, "class", "tree-item-icon nav-folder-collapse-indicator collapse-icon");
       attr(div2, "class", "tree-item-inner nav-folder-title-content svelte-1lnl15d");
       set_style(div3, "width", "11px");
       attr(div4, "class", "buttons");
       attr(div5, "class", "git-tools");
       attr(div6, "class", "tree-item-self is-clickable nav-folder-title");
->>>>>>> origin/main
       attr(
         div6,
         "aria-label-position",
@@ -43768,11 +39884,7 @@ function create_else_block3(ctx) {
       );
       attr(div6, "aria-label", div6_aria_label_value = /*entity*/
       ctx[15].vaultPath);
-<<<<<<< HEAD
-      attr(div7, "class", "nav-folder");
-=======
       attr(div7, "class", "tree-item nav-folder");
->>>>>>> origin/main
       toggle_class(
         div7,
         "is-collapsed",
@@ -43886,8 +39998,9 @@ function create_else_block3(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div7);
+      }
       if_block0.d();
       if (if_block1)
         if_block1.d();
@@ -43981,8 +40094,9 @@ function create_if_block7(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       if (~current_block_type_index) {
         if_blocks[current_block_type_index].d();
       }
@@ -44043,12 +40157,11 @@ function create_else_block_1(ctx) {
       ctx = new_ctx;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div0);
-      if (detaching)
         detach(t);
-      if (detaching)
         detach(div1);
+      }
       mounted = false;
       run_all(dispose);
     }
@@ -44086,8 +40199,9 @@ function create_if_block_5(ctx) {
       ctx = new_ctx;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       mounted = false;
       dispose();
     }
@@ -44122,11 +40236,7 @@ function create_if_block_4(ctx) {
     c() {
       div = element("div");
       create_component(treecomponent.$$.fragment);
-<<<<<<< HEAD
-      attr(div, "class", "nav-folder-children");
-=======
       attr(div, "class", "tree-item-children nav-folder-children");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -44178,8 +40288,9 @@ function create_if_block_4(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       destroy_component(treecomponent);
       if (detaching && div_transition)
         div_transition.end();
@@ -44412,16 +40523,17 @@ function create_each_block4(ctx) {
       current = false;
     },
     d(detaching) {
-      if_blocks[current_block_type_index].d(detaching);
-      if (detaching)
+      if (detaching) {
         detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
     }
   };
 }
 function create_fragment8(ctx) {
   let main;
   let current;
-  let each_value = (
+  let each_value = ensure_array_like(
     /*hierarchy*/
     ctx[0].children
   );
@@ -44458,8 +40570,10 @@ function create_fragment8(ctx) {
     p(ctx2, [dirty]) {
       if (dirty & /*hierarchy, plugin, view, fileType, FileType, closed, fold, side, unstage, stage, discard*/
       2031) {
-        each_value = /*hierarchy*/
-        ctx2[0].children;
+        each_value = ensure_array_like(
+          /*hierarchy*/
+          ctx2[0].children
+        );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context4(ctx2, each_value, i);
@@ -44505,8 +40619,9 @@ function create_fragment8(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       destroy_each(each_blocks, detaching);
     }
   };
@@ -44651,8 +40766,9 @@ function create_if_block_8(ctx) {
     },
     p: noop,
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       mounted = false;
       dispose();
     }
@@ -44761,34 +40877,20 @@ function create_if_block8(ctx) {
       t14 = space();
       if (if_block2)
         if_block2.c();
-<<<<<<< HEAD
-      attr(div0, "class", "nav-folder-collapse-indicator collapse-icon");
-      attr(div1, "class", "nav-folder-title-content");
-=======
       attr(div0, "class", "tree-item-icon nav-folder-collapse-indicator collapse-icon");
       attr(div1, "class", "tree-item-inner nav-folder-title-content");
->>>>>>> origin/main
       attr(div2, "data-icon", "minus");
       attr(div2, "aria-label", "Unstage");
       attr(div2, "class", "clickable-icon");
       attr(div3, "class", "buttons");
       attr(div4, "class", "files-count svelte-48bivb");
       attr(div5, "class", "git-tools");
-<<<<<<< HEAD
-      attr(div6, "class", "nav-folder-title");
-      attr(div7, "class", "staged nav-folder");
-      toggle_class(div7, "is-collapsed", !/*stagedOpen*/
-      ctx[13]);
-      attr(div8, "class", "nav-folder-collapse-indicator collapse-icon");
-      attr(div9, "class", "nav-folder-title-content");
-=======
       attr(div6, "class", "tree-item-self is-clickable nav-folder-title");
       attr(div7, "class", "staged tree-item nav-folder");
       toggle_class(div7, "is-collapsed", !/*stagedOpen*/
       ctx[13]);
       attr(div8, "class", "tree-item-icon nav-folder-collapse-indicator collapse-icon");
       attr(div9, "class", "tree-item-inner nav-folder-title-content");
->>>>>>> origin/main
       attr(div10, "data-icon", "undo");
       attr(div10, "aria-label", "Discard");
       attr(div10, "class", "clickable-icon");
@@ -44798,21 +40900,12 @@ function create_if_block8(ctx) {
       attr(div12, "class", "buttons");
       attr(div13, "class", "files-count svelte-48bivb");
       attr(div14, "class", "git-tools");
-<<<<<<< HEAD
-      attr(div15, "class", "nav-folder-title");
-      attr(div16, "class", "changes nav-folder");
-      toggle_class(div16, "is-collapsed", !/*changesOpen*/
-      ctx[12]);
-      attr(div17, "class", "nav-folder-children");
-      attr(div18, "class", "nav-folder mod-root");
-=======
       attr(div15, "class", "tree-item-self is-clickable nav-folder-title");
       attr(div16, "class", "changes nav-folder");
       toggle_class(div16, "is-collapsed", !/*changesOpen*/
       ctx[12]);
       attr(div17, "class", "tree-item-children nav-folder-children");
       attr(div18, "class", "tree-item nav-folder mod-root");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, div18, anchor);
@@ -44990,8 +41083,9 @@ function create_if_block8(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div18);
+      }
       ctx[34](null);
       if (if_block0)
         if_block0.d();
@@ -45027,11 +41121,7 @@ function create_if_block_6(ctx) {
     c() {
       div = element("div");
       if_block.c();
-<<<<<<< HEAD
-      attr(div, "class", "nav-folder-children");
-=======
       attr(div, "class", "tree-item-children nav-folder-children");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -45085,8 +41175,9 @@ function create_if_block_6(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       if_blocks[current_block_type_index].d();
       if (detaching && div_transition)
         div_transition.end();
@@ -45096,7 +41187,7 @@ function create_if_block_6(ctx) {
 function create_else_block_2(ctx) {
   let each_1_anchor;
   let current;
-  let each_value_2 = (
+  let each_value_2 = ensure_array_like(
     /*status*/
     ctx[6].staged
   );
@@ -45126,8 +41217,10 @@ function create_else_block_2(ctx) {
     p(ctx2, dirty) {
       if (dirty[0] & /*status, view, plugin*/
       67) {
-        each_value_2 = /*status*/
-        ctx2[6].staged;
+        each_value_2 = ensure_array_like(
+          /*status*/
+          ctx2[6].staged
+        );
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
           const child_ctx = get_each_context_2(ctx2, each_value_2, i);
@@ -45164,9 +41257,10 @@ function create_else_block_2(ctx) {
       current = false;
     },
     d(detaching) {
-      destroy_each(each_blocks, detaching);
-      if (detaching)
+      if (detaching) {
         detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
     }
   };
 }
@@ -45310,11 +41404,7 @@ function create_if_block_42(ctx) {
     c() {
       div = element("div");
       if_block.c();
-<<<<<<< HEAD
-      attr(div, "class", "nav-folder-children");
-=======
       attr(div, "class", "tree-item-children nav-folder-children");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -45368,8 +41458,9 @@ function create_if_block_42(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       if_blocks[current_block_type_index].d();
       if (detaching && div_transition)
         div_transition.end();
@@ -45379,7 +41470,7 @@ function create_if_block_42(ctx) {
 function create_else_block_12(ctx) {
   let each_1_anchor;
   let current;
-  let each_value_1 = (
+  let each_value_1 = ensure_array_like(
     /*status*/
     ctx[6].changed
   );
@@ -45409,8 +41500,10 @@ function create_else_block_12(ctx) {
     p(ctx2, dirty) {
       if (dirty[0] & /*status, view, plugin*/
       67) {
-        each_value_1 = /*status*/
-        ctx2[6].changed;
+        each_value_1 = ensure_array_like(
+          /*status*/
+          ctx2[6].changed
+        );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
           const child_ctx = get_each_context_1(ctx2, each_value_1, i);
@@ -45447,9 +41540,10 @@ function create_else_block_12(ctx) {
       current = false;
     },
     d(detaching) {
-      destroy_each(each_blocks, detaching);
-      if (detaching)
+      if (detaching) {
         detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
     }
   };
 }
@@ -45608,17 +41702,10 @@ function create_if_block_14(ctx) {
       t4 = space();
       if (if_block)
         if_block.c();
-<<<<<<< HEAD
-      attr(div0, "class", "nav-folder-collapse-indicator collapse-icon");
-      attr(div1, "class", "nav-folder-title-content");
-      attr(span, "class", "tree-item-flair");
-      attr(div2, "class", "nav-folder-title");
-=======
       attr(div0, "class", "tree-item-icon nav-folder-collapse-indicator collapse-icon");
       attr(div1, "class", "tree-item-inner nav-folder-title-content");
       attr(span, "class", "tree-item-flair");
       attr(div2, "class", "tree-item-self is-clickable nav-folder-title");
->>>>>>> origin/main
       attr(div3, "class", "pulled nav-folder");
       toggle_class(div3, "is-collapsed", !/*lastPulledFilesOpen*/
       ctx[14]);
@@ -45691,8 +41778,9 @@ function create_if_block_14(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div3);
+      }
       if (if_block)
         if_block.d();
       mounted = false;
@@ -45722,11 +41810,7 @@ function create_if_block_23(ctx) {
     c() {
       div = element("div");
       if_block.c();
-<<<<<<< HEAD
-      attr(div, "class", "nav-folder-children");
-=======
       attr(div, "class", "tree-item-children nav-folder-children");
->>>>>>> origin/main
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -45780,8 +41864,9 @@ function create_if_block_23(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(div);
+      }
       if_blocks[current_block_type_index].d();
       if (detaching && div_transition)
         div_transition.end();
@@ -45791,7 +41876,7 @@ function create_if_block_23(ctx) {
 function create_else_block4(ctx) {
   let each_1_anchor;
   let current;
-  let each_value = (
+  let each_value = ensure_array_like(
     /*lastPulledFiles*/
     ctx[7]
   );
@@ -45821,8 +41906,10 @@ function create_else_block4(ctx) {
     p(ctx2, dirty) {
       if (dirty[0] & /*lastPulledFiles, view*/
       130) {
-        each_value = /*lastPulledFiles*/
-        ctx2[7];
+        each_value = ensure_array_like(
+          /*lastPulledFiles*/
+          ctx2[7]
+        );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context5(ctx2, each_value, i);
@@ -45859,9 +41946,10 @@ function create_else_block4(ctx) {
       current = false;
     },
     d(detaching) {
-      destroy_each(each_blocks, detaching);
-      if (detaching)
+      if (detaching) {
         detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
     }
   };
 }
@@ -46275,8 +42363,9 @@ function create_fragment9(ctx) {
       current = false;
     },
     d(detaching) {
-      if (detaching)
+      if (detaching) {
         detach(main);
+      }
       ctx[23](null);
       ctx[24](null);
       ctx[25](null);
@@ -46318,13 +42407,8 @@ function instance9($$self, $$props, $$invalidate) {
   plugin.app.workspace.onLayoutReady(() => {
     window.setTimeout(
       () => {
-<<<<<<< HEAD
-        buttons.forEach((btn) => (0, import_obsidian24.setIcon)(btn, btn.getAttr("data-icon"), 16));
-        (0, import_obsidian24.setIcon)(layoutBtn, showTree ? "list" : "folder", 16);
-=======
         buttons.forEach((btn) => (0, import_obsidian28.setIcon)(btn, btn.getAttr("data-icon"), 16));
         (0, import_obsidian28.setIcon)(layoutBtn, showTree ? "list" : "folder", 16);
->>>>>>> origin/main
       },
       0
     );
@@ -46340,12 +42424,12 @@ function instance9($$self, $$props, $$invalidate) {
           plugin.setState(0 /* idle */);
           return false;
         }
-        plugin.gitManager.commit(commitMessage).then(() => {
+        plugin.promiseQueue.addTask(() => plugin.gitManager.commit(commitMessage).then(() => {
           if (commitMessage !== plugin.settings.commitMessage) {
             $$invalidate(2, commitMessage = "");
           }
           plugin.setUpAutoBackup();
-        }).finally(triggerRefresh2);
+        }).finally(triggerRefresh2));
       }
     });
   }
@@ -46353,11 +42437,11 @@ function instance9($$self, $$props, $$invalidate) {
     return __awaiter(this, void 0, void 0, function* () {
       $$invalidate(5, loading = true);
       if (status2) {
-        plugin.createBackup(false, false, commitMessage).then(() => {
+        plugin.promiseQueue.addTask(() => plugin.createBackup(false, false, commitMessage).then(() => {
           if (commitMessage !== plugin.settings.commitMessage) {
             $$invalidate(2, commitMessage = "");
           }
-        }).finally(triggerRefresh2);
+        }).finally(triggerRefresh2));
       }
     });
   }
@@ -46411,26 +42495,26 @@ function instance9($$self, $$props, $$invalidate) {
   }
   function stageAll() {
     $$invalidate(5, loading = true);
-    plugin.gitManager.stageAll({ status: status2 }).finally(triggerRefresh2);
+    plugin.promiseQueue.addTask(() => plugin.gitManager.stageAll({ status: status2 }).finally(triggerRefresh2));
   }
   function unstageAll() {
     $$invalidate(5, loading = true);
-    plugin.gitManager.unstageAll({ status: status2 }).finally(triggerRefresh2);
+    plugin.promiseQueue.addTask(() => plugin.gitManager.unstageAll({ status: status2 }).finally(triggerRefresh2));
   }
   function push2() {
     $$invalidate(5, loading = true);
-    plugin.push().finally(triggerRefresh2);
+    plugin.promiseQueue.addTask(() => plugin.push().finally(triggerRefresh2));
   }
   function pull2() {
     $$invalidate(5, loading = true);
-    plugin.pullChangesFromRemote().finally(triggerRefresh2);
+    plugin.promiseQueue.addTask(() => plugin.pullChangesFromRemote().finally(triggerRefresh2));
   }
   function discard() {
     new DiscardModal(view.app, false, plugin.gitManager.getVaultPath("/")).myOpen().then((shouldDiscard) => {
       if (shouldDiscard === true) {
-        plugin.gitManager.discardAll({ status: plugin.cachedStatus }).finally(() => {
+        plugin.promiseQueue.addTask(() => plugin.gitManager.discardAll({ status: plugin.cachedStatus }).finally(() => {
           dispatchEvent(new CustomEvent("git-refresh"));
-        });
+        }));
       }
     });
   }
@@ -46519,11 +42603,7 @@ function instance9($$self, $$props, $$invalidate) {
       $: {
         if (layoutBtn) {
           layoutBtn.empty();
-<<<<<<< HEAD
-          (0, import_obsidian24.setIcon)(layoutBtn, showTree ? "list" : "folder", 16);
-=======
           (0, import_obsidian28.setIcon)(layoutBtn, showTree ? "list" : "folder", 16);
->>>>>>> origin/main
         }
       }
     }
@@ -46584,11 +42664,7 @@ var SourceControl = class extends SvelteComponent {
 var sourceControl_default = SourceControl;
 
 // src/ui/sourceControl/sourceControl.ts
-<<<<<<< HEAD
-var GitView = class extends import_obsidian25.ItemView {
-=======
 var GitView = class extends import_obsidian29.ItemView {
->>>>>>> origin/main
   constructor(leaf, plugin) {
     super(leaf);
     this.plugin = plugin;
@@ -46644,11 +42720,7 @@ var BranchStatusBar = class {
 };
 
 // src/main.ts
-<<<<<<< HEAD
-var ObsidianGit = class extends import_obsidian26.Plugin {
-=======
 var ObsidianGit = class extends import_obsidian30.Plugin {
->>>>>>> origin/main
   constructor() {
     super(...arguments);
     this.gitReady = false;
@@ -46656,10 +42728,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     this.conflictOutputFile = "conflict-files-obsidian-git.md";
     this.offlineMode = false;
     this.loading = false;
-<<<<<<< HEAD
-=======
     this.lineAuthoringFeature = new LineAuthoringFeature(this);
->>>>>>> origin/main
   }
   setState(state) {
     var _a2;
@@ -46685,37 +42754,25 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       dispatchEvent(new CustomEvent("git-view-refresh"));
     }
   }
-<<<<<<< HEAD
-  async onload() {
-    console.log("loading " + this.manifest.name + " plugin");
-=======
   async refreshUpdatedHead() {
     this.lineAuthoringFeature.refreshLineAuthorViews();
   }
   async onload() {
     console.log("loading " + this.manifest.name + " plugin");
     pluginRef.plugin = this;
->>>>>>> origin/main
     this.localStorage = new LocalStorageSettings(this);
     this.localStorage.migrate();
     await this.loadSettings();
     this.migrateSettings();
-<<<<<<< HEAD
-    this.addSettingTab(new ObsidianGitSettingsTab(this.app, this));
-=======
     this.settingsTab = new ObsidianGitSettingsTab(this.app, this);
     this.addSettingTab(this.settingsTab);
->>>>>>> origin/main
     if (!this.localStorage.getPluginDisabled()) {
       this.loadPlugin();
     }
   }
   async loadPlugin() {
     addEventListener("git-refresh", this.refresh.bind(this));
-<<<<<<< HEAD
-=======
     addEventListener("git-head-update", this.refreshUpdatedHead.bind(this));
->>>>>>> origin/main
     this.registerView(SOURCE_CONTROL_VIEW_CONFIG.type, (leaf) => {
       return new GitView(leaf, this);
     });
@@ -46725,10 +42782,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     this.registerView(DIFF_VIEW_CONFIG.type, (leaf) => {
       return new DiffView(leaf, this);
     });
-<<<<<<< HEAD
-=======
     this.lineAuthoringFeature.onLoadPlugin();
->>>>>>> origin/main
     this.app.workspace.registerHoverLinkSource(
       SOURCE_CONTROL_VIEW_CONFIG.type,
       {
@@ -46808,14 +42862,10 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
             active: true,
             state: {
               staged: false,
-<<<<<<< HEAD
-              file: this.gitManager.getPath(file.path, true)
-=======
               file: this.gitManager.asRepositoryRelativePath(
                 file.path,
                 true
               )
->>>>>>> origin/main
             }
           });
         }
@@ -46824,12 +42874,18 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     this.addCommand({
       id: "view-file-on-github",
       name: "Open file on GitHub",
-      editorCallback: (editor, { file }) => openLineInGitHub(editor, file, this.gitManager)
+      editorCallback: (editor, { file }) => {
+        if (file)
+          return openLineInGitHub(editor, file, this.gitManager);
+      }
     });
     this.addCommand({
       id: "view-history-on-github",
       name: "Open file history on GitHub",
-      editorCallback: (_, { file }) => openHistoryInGitHub(file, this.gitManager)
+      editorCallback: (_, { file }) => {
+        if (file)
+          return openHistoryInGitHub(file, this.gitManager);
+      }
     });
     this.addCommand({
       id: "pull",
@@ -46851,14 +42907,10 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         } else {
           app.vault.adapter.append(
             this.gitManager.getVaultPath(".gitignore"),
-<<<<<<< HEAD
-            "\n" + this.gitManager.getPath(file.path, true)
-=======
             "\n" + this.gitManager.asRepositoryRelativePath(
               file.path,
               true
             )
->>>>>>> origin/main
           ).then(() => {
             this.refresh();
           });
@@ -46980,22 +43032,14 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
               `${this.settings.basePath}/.git`,
               true
             );
-<<<<<<< HEAD
-            new import_obsidian26.Notice(
-=======
             new import_obsidian30.Notice(
->>>>>>> origin/main
               "Successfully deleted repository. Reloading plugin..."
             );
             this.unloadPlugin();
             this.init();
           }
         } else {
-<<<<<<< HEAD
-          new import_obsidian26.Notice("No repository found");
-=======
           new import_obsidian30.Notice("No repository found");
->>>>>>> origin/main
         }
       }
     });
@@ -47062,8 +43106,6 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         }
       }
     });
-<<<<<<< HEAD
-=======
     this.addCommand({
       id: "toggle-line-author-info",
       name: "Toggle line author information",
@@ -47074,7 +43116,6 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         );
       }
     });
->>>>>>> origin/main
     this.registerEvent(
       this.app.workspace.on("file-menu", (menu, file, source) => {
         this.handleFileMenu(menu, file, source);
@@ -47090,11 +43131,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         }, 1e3)
       );
     }
-<<<<<<< HEAD
-    if (import_obsidian26.Platform.isDesktop && this.settings.showBranchStatusBar) {
-=======
     if (import_obsidian30.Platform.isDesktop && this.settings.showBranchStatusBar) {
->>>>>>> origin/main
       const branchStatusBarEl = this.addStatusBarItem();
       this.branchBar = new BranchStatusBar(branchStatusBarEl, this);
       this.registerInterval(
@@ -47109,11 +43146,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
   setRefreshDebouncer() {
     var _a2;
     (_a2 = this.debRefresh) == null ? void 0 : _a2.cancel();
-<<<<<<< HEAD
-    this.debRefresh = (0, import_obsidian26.debounce)(
-=======
     this.debRefresh = (0, import_obsidian30.debounce)(
->>>>>>> origin/main
       () => {
         if (this.settings.refreshSourceControl) {
           this.refresh();
@@ -47125,13 +43158,8 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
   }
   async showNotices() {
     const length = 1e4;
-<<<<<<< HEAD
-    if (this.manifest.id === "obsidian-git" && import_obsidian26.Platform.isDesktopApp && !this.settings.showedMobileNotice) {
-      new import_obsidian26.Notice(
-=======
     if (this.manifest.id === "obsidian-git" && import_obsidian30.Platform.isDesktopApp && !this.settings.showedMobileNotice) {
       new import_obsidian30.Notice(
->>>>>>> origin/main
         "Obsidian Git is now available on mobile! Please read the plugin's README for more information.",
         length
       );
@@ -47139,11 +43167,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       await this.saveSettings();
     }
     if (this.manifest.id === "obsidian-git-isomorphic") {
-<<<<<<< HEAD
-      new import_obsidian26.Notice(
-=======
       new import_obsidian30.Notice(
->>>>>>> origin/main
         "Obsidian Git Mobile is now deprecated. Please uninstall it and install Obsidian Git instead.",
         length
       );
@@ -47163,13 +43187,6 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     menu.addItem((item) => {
       item.setTitle(`Git: Stage`).setIcon("plus-circle").setSection("action").onClick((_) => {
         this.promiseQueue.addTask(async () => {
-<<<<<<< HEAD
-          if (file instanceof import_obsidian26.TFile) {
-            await this.gitManager.stage(file.path, true);
-          } else {
-            await this.gitManager.stageAll({
-              dir: this.gitManager.getPath(file.path, true)
-=======
           if (file instanceof import_obsidian30.TFile) {
             await this.gitManager.stage(file.path, true);
           } else {
@@ -47178,7 +43195,6 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
                 file.path,
                 true
               )
->>>>>>> origin/main
             });
           }
           this.displayMessage(`Staged ${file.path}`);
@@ -47188,13 +43204,6 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     menu.addItem((item) => {
       item.setTitle(`Git: Unstage`).setIcon("minus-circle").setSection("action").onClick((_) => {
         this.promiseQueue.addTask(async () => {
-<<<<<<< HEAD
-          if (file instanceof import_obsidian26.TFile) {
-            await this.gitManager.unstage(file.path, true);
-          } else {
-            await this.gitManager.unstageAll({
-              dir: this.gitManager.getPath(file.path, true)
-=======
           if (file instanceof import_obsidian30.TFile) {
             await this.gitManager.unstage(file.path, true);
           } else {
@@ -47203,7 +43212,6 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
                 file.path,
                 true
               )
->>>>>>> origin/main
             });
           }
           this.displayMessage(`Unstaged ${file.path}`);
@@ -47235,21 +43243,15 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
   unloadPlugin() {
     this.gitReady = false;
     dispatchEvent(new CustomEvent("git-refresh"));
-<<<<<<< HEAD
-=======
     this.lineAuthoringFeature.deactivateFeature();
->>>>>>> origin/main
     this.clearAutoPull();
     this.clearAutoPush();
     this.clearAutoBackup();
     removeEventListener("git-refresh", this.refresh.bind(this));
-<<<<<<< HEAD
-=======
     removeEventListener(
       "git-head-update",
       this.refreshUpdatedHead.bind(this)
     );
->>>>>>> origin/main
     this.app.metadataCache.offref(this.modifyEvent);
     this.app.metadataCache.offref(this.deleteEvent);
     this.app.metadataCache.offref(this.createEvent);
@@ -47268,20 +43270,14 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     if (data == void 0) {
       data = { showedMobileNotice: true };
     }
-<<<<<<< HEAD
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, data);
-  }
-  async saveSettings() {
-=======
     this.settings = mergeSettingsByPriority(DEFAULT_SETTINGS, data);
   }
   async saveSettings() {
     var _a2;
     (_a2 = this.settingsTab) == null ? void 0 : _a2.beforeSaveSettings();
->>>>>>> origin/main
     await this.saveData(this.settings);
   }
-  async saveLastAuto(date, mode) {
+  saveLastAuto(date, mode) {
     if (mode === "backup") {
       this.localStorage.setLastAutoBackup(date.toString());
     } else if (mode === "pull") {
@@ -47290,7 +43286,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       this.localStorage.setLastAutoPush(date.toString());
     }
   }
-  async loadLastAuto() {
+  loadLastAuto() {
     var _a2, _b, _c;
     return {
       backup: new Date((_a2 = this.localStorage.getLastAutoBackup()) != null ? _a2 : ""),
@@ -47298,21 +43294,14 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       push: new Date((_c = this.localStorage.getLastAutoPush()) != null ? _c : "")
     };
   }
-<<<<<<< HEAD
-=======
   get useSimpleGit() {
     return import_obsidian30.Platform.isDesktopApp;
   }
->>>>>>> origin/main
   async init() {
     var _a2;
     this.showNotices();
     try {
-<<<<<<< HEAD
-      if (import_obsidian26.Platform.isDesktopApp) {
-=======
       if (this.useSimpleGit) {
->>>>>>> origin/main
         this.gitManager = new SimpleGit(this);
         await this.gitManager.setGitInstance();
       } else {
@@ -47324,11 +43313,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
           this.displayError("Cannot run git command");
           break;
         case "missing-repo":
-<<<<<<< HEAD
-          new import_obsidian26.Notice(
-=======
           new import_obsidian30.Notice(
->>>>>>> origin/main
             "Can't find a valid git repository. Please create one via the given command or clone an existing repo.",
             1e4
           );
@@ -47353,10 +43338,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
           this.registerEvent(this.createEvent);
           this.registerEvent(this.renameEvent);
           (_a2 = this.branchBar) == null ? void 0 : _a2.display();
-<<<<<<< HEAD
-=======
           this.lineAuthoringFeature.conditionallyActivateBySettings();
->>>>>>> origin/main
           dispatchEvent(new CustomEvent("git-refresh"));
           if (this.settings.autoPullOnBoot) {
             this.promiseQueue.addTask(
@@ -47377,11 +43359,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
   }
   async createNewRepo() {
     await this.gitManager.init();
-<<<<<<< HEAD
-    new import_obsidian26.Notice("Initialized new repo");
-=======
     new import_obsidian30.Notice("Initialized new repo");
->>>>>>> origin/main
     await this.init();
   }
   async cloneNewRepo() {
@@ -47390,7 +43368,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     if (url) {
       const confirmOption = "Vault Root";
       let dir = await new GeneralModal({
-        options: [confirmOption],
+        options: this.gitManager instanceof IsomorphicGit ? [confirmOption] : [],
         placeholder: "Enter directory for clone. It needs to be empty or not existent.",
         allowEmpty: this.gitManager instanceof IsomorphicGit
       }).open();
@@ -47398,11 +43376,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         if (dir === confirmOption) {
           dir = ".";
         }
-<<<<<<< HEAD
-        dir = (0, import_obsidian26.normalizePath)(dir);
-=======
         dir = (0, import_obsidian30.normalizePath)(dir);
->>>>>>> origin/main
         if (dir === "/") {
           dir = ".";
         }
@@ -47414,11 +43388,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
           });
           const containsConflictDir = await modal2.open();
           if (containsConflictDir === void 0) {
-<<<<<<< HEAD
-            new import_obsidian26.Notice("Aborted clone");
-=======
             new import_obsidian30.Notice("Aborted clone");
->>>>>>> origin/main
             return;
           } else if (containsConflictDir === "YES") {
             const confirmOption2 = "DELETE ALL YOUR LOCAL CONFIG AND PLUGINS";
@@ -47434,11 +43404,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
                 true
               );
             } else {
-<<<<<<< HEAD
-              new import_obsidian26.Notice("Aborted clone");
-=======
               new import_obsidian30.Notice("Aborted clone");
->>>>>>> origin/main
               return;
             }
           }
@@ -47451,19 +43417,11 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         if (depth !== "") {
           depthInt = parseInt(depth);
           if (isNaN(depthInt)) {
-<<<<<<< HEAD
-            new import_obsidian26.Notice("Invalid depth. Aborting clone.");
-            return;
-          }
-        }
-        new import_obsidian26.Notice(`Cloning new repo into "${dir}"`);
-=======
             new import_obsidian30.Notice("Invalid depth. Aborting clone.");
             return;
           }
         }
         new import_obsidian30.Notice(`Cloning new repo into "${dir}"`);
->>>>>>> origin/main
         const oldBase = this.settings.basePath;
         const customDir = dir && dir !== ".";
         if (customDir) {
@@ -47476,13 +43434,8 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
           this.saveSettings();
           throw error;
         }
-<<<<<<< HEAD
-        new import_obsidian26.Notice("Cloned new repo.");
-        new import_obsidian26.Notice("Please restart Obsidian");
-=======
         new import_obsidian30.Notice("Cloned new repo.");
         new import_obsidian30.Notice("Please restart Obsidian");
->>>>>>> origin/main
         if (customDir) {
           this.saveSettings();
         }
@@ -47553,13 +43506,17 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
   }) {
     if (!await this.isAllInitialized())
       return false;
-    const hadConflict = this.localStorage.getConflict() === "true";
+    let hadConflict = this.localStorage.getConflict() === "true";
     let changedFiles;
     let status2;
     let unstagedFiles;
     if (this.gitManager instanceof SimpleGit) {
       this.mayDeleteConflictFile();
       status2 = await this.updateCachedStatus();
+      if (status2.conflicted.length == 0) {
+        this.localStorage.setConflict("false");
+        hadConflict = false;
+      }
       if (fromAutoBackup && status2.conflicted.length > 0) {
         this.displayError(
           `Did not commit, because you have conflicts in ${status2.conflicted.length} ${status2.conflicted.length == 1 ? "file" : "files"}. Please resolve them and commit per command.`
@@ -47596,11 +43553,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       let cmtMessage = commitMessage != null ? commitMessage : commitMessage = fromAutoBackup ? this.settings.autoCommitMessage : this.settings.commitMessage;
       if (fromAutoBackup && this.settings.customMessageOnAutoBackup || requestCustomMessage) {
         if (!this.settings.disablePopups && fromAutoBackup) {
-<<<<<<< HEAD
-          new import_obsidian26.Notice(
-=======
           new import_obsidian30.Notice(
->>>>>>> origin/main
             "Auto backup: Please enter a custom commit message. Leave empty to abort"
           );
         }
@@ -47620,14 +43573,15 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         committedFiles = await this.gitManager.commit(cmtMessage);
       } else {
         committedFiles = await this.gitManager.commitAll({
-          // A type error occurs here because `this.settings.autoCommitMessage` is possibly undefined.
-          // However, since `this.settings.autoCommitMessage` is always set to string in `this.migrateSettings`,
-          // `undefined` is never passed here. Therefore, temporarily ignore this error.
-          // @ts-ignore
           message: cmtMessage,
           status: status2,
           unstagedFiles
         });
+      }
+      if (this.gitManager instanceof SimpleGit) {
+        if ((await this.updateCachedStatus()).conflicted.length == 0) {
+          this.localStorage.setConflict("false");
+        }
       }
       let roughly = false;
       if (committedFiles === void 0) {
@@ -47655,11 +43609,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
           const file = this.app.vault.getAbstractFileByPath(
             f.vault_path
           );
-<<<<<<< HEAD
-          if (file instanceof import_obsidian26.TFile) {
-=======
           if (file instanceof import_obsidian30.TFile) {
->>>>>>> origin/main
             return file.stat.size >= 1e8;
           }
           return false;
@@ -47735,11 +43685,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     );
     if (file) {
       this.app.workspace.iterateAllLeaves((leaf) => {
-<<<<<<< HEAD
-        if (leaf.view instanceof import_obsidian26.MarkdownView && leaf.view.file.path == file.path) {
-=======
         if (leaf.view instanceof import_obsidian30.MarkdownView && leaf.view.file.path == file.path) {
->>>>>>> origin/main
           leaf.detach();
         }
       });
@@ -47840,11 +43786,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
   }
   async remotesAreSet() {
     if (!(await this.gitManager.branchInfo()).tracking) {
-<<<<<<< HEAD
-      new import_obsidian26.Notice("No upstream branch is set. Please select one.");
-=======
       new import_obsidian30.Notice("No upstream branch is set. Please select one.");
->>>>>>> origin/main
       const remoteBranch = await this.selectRemoteBranch();
       if (remoteBranch == void 0) {
         this.displayError("Aborted. No upstream-branch is set!", 1e4);
@@ -47898,11 +43840,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     await this.gitManager.discardAll({
       status: this.cachedStatus
     });
-<<<<<<< HEAD
-    new import_obsidian26.Notice(
-=======
     new import_obsidian30.Notice(
->>>>>>> origin/main
       "All local changes have been discarded. New files remain untouched."
     );
   }
@@ -47921,11 +43859,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
           "modify",
           () => this.autoBackupDebouncer()
         );
-<<<<<<< HEAD
-        this.autoBackupDebouncer = (0, import_obsidian26.debounce)(
-=======
         this.autoBackupDebouncer = (0, import_obsidian30.debounce)(
->>>>>>> origin/main
           () => this.doAutoBackup(),
           time,
           true
@@ -48020,11 +43954,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         "",
         ...conflicted.map((e) => {
           const file = this.app.vault.getAbstractFileByPath(e);
-<<<<<<< HEAD
-          if (file instanceof import_obsidian26.TFile) {
-=======
           if (file instanceof import_obsidian30.TFile) {
->>>>>>> origin/main
             const link = this.app.metadataCache.fileToLinktext(
               file,
               "/"
@@ -48127,30 +44057,18 @@ I strongly recommend to use "Source mode" for viewing the conflicted files. For 
     var _a2;
     (_a2 = this.statusBar) == null ? void 0 : _a2.displayMessage(message.toLowerCase(), timeout);
     if (!this.settings.disablePopups) {
-<<<<<<< HEAD
-      new import_obsidian26.Notice(message, 5 * 1e3);
-=======
       new import_obsidian30.Notice(message, 5 * 1e3);
->>>>>>> origin/main
     }
     console.log(`git obsidian message: ${message}`);
   }
   displayError(message, timeout = 10 * 1e3) {
     var _a2;
     if (message instanceof Errors.UserCanceledError) {
-<<<<<<< HEAD
-      new import_obsidian26.Notice("Aborted");
-      return;
-    }
-    message = message.toString();
-    new import_obsidian26.Notice(message, timeout);
-=======
       new import_obsidian30.Notice("Aborted");
       return;
     }
     message = message.toString();
     new import_obsidian30.Notice(message, timeout);
->>>>>>> origin/main
     console.log(`git obsidian error: ${message}`);
     (_a2 = this.statusBar) == null ? void 0 : _a2.displayMessage(message.toLowerCase(), timeout);
   }
@@ -48174,8 +44092,6 @@ safe-buffer/index.js:
 crc-32/crc32.js:
   (*! crc32.js (C) 2014-present SheetJS -- http://sheetjs.com *)
 
-<<<<<<< HEAD
-=======
 js-sha256/src/sha256.js:
   (**
    * [js-sha256]{@link https://github.com/emn178/js-sha256}
@@ -48186,7 +44102,6 @@ js-sha256/src/sha256.js:
    * @license MIT
    *)
 
->>>>>>> origin/main
 feather-icons/dist/feather.js:
   (*!
     Copyright (c) 2016 Jed Watson.

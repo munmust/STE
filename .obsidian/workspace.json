@@ -1,19 +1,19 @@
 {
   "main": {
-    "id": "2caeea5c2d746e24",
+    "id": "34e46cec41ca60d8",
     "type": "split",
     "children": [
       {
-        "id": "376fa3a3f7908d36",
+        "id": "475dceb02f6d1552",
         "type": "tabs",
         "children": [
           {
-            "id": "8bd9fa8c5f87b752",
+            "id": "53f03ea9f0c6f91a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "javascript/内存/内存.md",
+                "file": "TS/TS基础.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "de7721f849d4694b",
+    "id": "b52383347be477cb",
     "type": "split",
     "children": [
       {
-        "id": "99374b19cfea9215",
+        "id": "d5df573f4d4dc7fe",
         "type": "tabs",
         "children": [
           {
-            "id": "cc3abf5cd8048194",
+            "id": "deba94a106588181",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +43,7 @@
             }
           },
           {
-            "id": "af37d742d1dbc4f5",
+            "id": "b0faad66d5af850e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +58,7 @@
             }
           },
           {
-            "id": "c8d1ff9d8bc856fa",
+            "id": "2c84c4298cfe8627",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,23 +69,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 205.5
   },
   "right": {
-    "id": "89bc55f51c1eea53",
+    "id": "802c76d1d29541e9",
     "type": "split",
     "children": [
       {
-        "id": "1f329b5a34fb44a7",
+        "id": "3a946a4691cc1ad0",
         "type": "tabs",
         "children": [
           {
-            "id": "a42ddbd07b713c4b",
+            "id": "e9548e4205929704",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "javascript/内存/内存.md",
+                "file": "TS/TS基础.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +97,19 @@
             }
           },
           {
-            "id": "ba2d94da79961e87",
+            "id": "2497b6779dbcd520",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "javascript/内存/内存.md",
+                "file": "TS/TS基础.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "467a3f55564c35d1",
+            "id": "61c472cb8719e9c3",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,12 +120,12 @@
             }
           },
           {
-            "id": "50f8e0d9b44ca721",
+            "id": "ec31204f337ee256",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "javascript/内存/内存.md"
+                "file": "TS/TS基础.md"
               }
             }
           }
@@ -146,29 +146,33 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "8bd9fa8c5f87b752",
+  "active": "53f03ea9f0c6f91a",
   "lastOpenFiles": [
-    "javascript/内存/inc-gc.png",
     "javascript/内存/内存.md",
+    "javascript/内存/zclean.png",
+    "javascript/内存/tag-clear.webp",
     "javascript/内存/old-space-bad.png",
+    "javascript/内存/inc-gc.png",
     "javascript/内存/gc_space.png",
-    "readme.md",
-    "conflict-files-obsidian-git.md",
+    "javascript/内存/GCspace.png",
+    "javascript/内存",
+    "javascript",
     "TS/assest/img/typescript_type.png",
     "TS/assest/img",
     "TS/assest/TS类型关系.canvas",
     "TS/assest",
+    "assest/img/typescript_type.png",
+    "assest/TS类型关系.canvas",
+    "assest/img",
+    "assest",
+    "TS/TS类型关系.canvas",
+    "TS/typescript_type.png",
+    "readme.md",
     "TS/TS基础.md",
-    "TS",
-    "javascript/内存/zclean.png",
-    "javascript/内存/tag-clear.webp",
-    "javascript/内存/GCspace.png",
-    "javascript/内存",
-    "Pasted image 20230711232218.png.md",
-    "Pasted image 20230711232218.png",
-    "assests",
-    "2023-06-25.md",
-    "杂",
-    "javascript"
+    "assets/img/philly-magic-garden.jpg.md",
+    "assets/img",
+    "assets",
+    "2023-05-24.md",
+    "TS"
   ]
 }

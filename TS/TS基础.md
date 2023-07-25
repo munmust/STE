@@ -5,7 +5,7 @@
 - 不改变运行时行为
 - 始终与 ESMAScript 语言标准一致 (stage 3语法)
 
-## TS语法
+## 类型
 ### 类型变量定义
 类型变量的方式有三种，分别为 `type`、`interface`、`enum`，他们都相当于 JS 中的 `const`，**一旦定义就不可改变**，三者的区别是：
 
@@ -13,7 +13,7 @@
 - `interface`：可以用来定义函数、对象、类；
 - `type`：使用绝大多数类型，例如普通的值、对象、函数、数组、元组等。
 Ï
-### 类型
+### 类型基础
 **JS 中合法的值，在 TS 类型中同样合法，也就是 _TS 类型的值 = TS 基础类型 + JS 值_，并且可以混用。**
 ![typescript类型关系](typescript_type.png "typescript 类型关系")
 
@@ -65,7 +65,7 @@ function processMyType(obj: MyType): never {
 ######  联合类型中的过滤
 ``` typescript
 type Exclude<T, U> = T extends U ? never : T;
-// 相当于: type A = 'a'
+// 相当于: type A = never | 'a'
 type A = Exclude<'x' | 'a', 'x' | 'y' | 'z'>
 T | never // 结果为T
 T & never // 结果为never
@@ -164,13 +164,39 @@ const d: boolean = c; // ok true是boolean的子类型
 const a: nummber = 1;
 const a: number | string = a;
 ```
-4. `never` 类型是所有类型的子类型
+3. `never` 类型是所有类型的子类型
 ``` typescript
 function foo(): never {
   throw new Error()
 }
 const a: 1 = foo(); // 可以赋值，类型不会报错就证明了 never 类型是 1 的子类型
 ```
+4. 对象判断子类型，需要逐个属性比较**
+``` typescript
+type ButtonProps = {
+  size: 'small' | 'large',
+  type: 'primary' | 'default'
+}
+
+type MyButtonProps = {
+  size: 'small',
+  type: 'primary' | 'default',
+  color: 'red' | 'blue'
+}
+
+type IsSubButton = MyButton extends Button ? true : false; // true
+
+```
+
+
+### 联合类型
+声明多个同名 类型变量 也会被推断为联合类型
+``` typescript
+type A<T> = T extends { a: infer U, b: infer U } ? U : any; 
+type Foo = A<{ a: number, b: string }> // type Foo = string | number
+
+```
+
 
 ### 操作
 #### & 和 | 操作符
@@ -188,4 +214,141 @@ type TB = {
 };
 type TC = IA | TB; // TC类型的变量的键只需包含ab或bc即可，当然也可以abc都有
 type TD = IA & TB; // TD类型的变量的键必需包含abc
+```
+
+#### keyof
+对象属性，可以使用 `keyof` 关键词
+``` typescript
+interface Person {
+    name: string;
+    age: number;
+}
+
+type Keys = keyof Person; // 返回属性的联合联合类型
+```
+
+#### extends
+在TypeScript中，extends既可当作一个动词来扩展已有类型；也可当作一个形容词来对类型进行条件限定（例如用在泛型中）
+**extends前面的参数为联合类型时则会分解（依次遍历所有的子类型进行条件判断）联合类型进行判断。然后将最终的结果组成新的联合类型**
+``` typescript
+type A = {
+    a: number
+}
+interface AB extends A {
+    b: string
+}
+// 与上一种等价
+type TAB = A & {
+    b: string
+}
+
+///// 分解
+
+/**
+ * @example
+ * type A1 = 1
+ */
+type A1 = 'x' extends 'x' ? 1 : 2;
+
+/**
+ * @example
+ * type A2 = 2
+ */
+type A2 = 'x' | 'y' extends 'x' ? 1 : 2;
+
+/**
+ * @example
+ * type A3 = 1 | 2
+ */
+type P<T> = T extends 'x' ? 1 : 2;
+type A3 = P<'x' | 'y'>
+
+
+// 不进行分解
+type P<T> = [T] extends ['x'] ? 1 : 2;
+/**
+ * type A4 = 2;
+ */
+type A4 = P<'x' | 'y'>
+
+
+```
+
+####  infer
+
+infer一定用在extends语句后表示待推断的类型，infer不仅可以作为函数入参出参的推断类型，可以在任意地方成为推断类型，譬如数组、字符串内部；让TypeScript自己推断，并将推断的结果存储到一个临时名字中，并且只能用于extends语句中；
+
+``` typescript
+type Unpacked<T> =
+    T extends (infer U)[] ? U :
+    T extends (...args: any[]) => infer U ? U :
+    T extends Promise<infer U> ? U :
+    T;
+
+type T0 = Unpacked<string>;  // string
+type T1 = Unpacked<string[]>;  // string
+type T2 = Unpacked<() => string>;  // string
+type T3 = Unpacked<Promise<string>>;  // string
+type T4 = Unpacked<Promise<string>[]>;  // Promise<string>
+type T5 = Unpacked<Unpacked<Promise<string>[]>>;  // string
+```
+
+#### 类型谓词is
+语法：parameterName is TypeparameterName
+判断 parameterName 是否是 Type 类型。类型谓词执行结果将会匹配 boolean 类型
+is 关键字用在函数的返回值上，用来表示对于函数返回值的类型保护
+``` typescript
+interface TA {
+  a: number
+}
+
+interface TB {
+  b: number;
+}
+
+function cookTest(val: TA | TB) {
+  if (val.a) { // error: Property 'a' does not exist on type 'TA | TB'.
+  }
+}
+
+function getA(params: TA | TB): params is TA {
+  return "a" in params;
+}
+
+function cookTest(val: TA | TB) {
+  const a = getA(val) ? val.a : ''; // 安全
+}
+```
+
+#### 修饰符的加减
+
+**精确控制**添加或者移除映射属性的 "?" 修饰符和 readonly 修饰符
+```typescript
+type T0<T> = { -readonly [P in keyof T]-?: T[P] }; 
+type T1<T> = { +readonly [P in keyof T]+?: T[P] };
+// - "+" 修饰符，为映射属性**添加** "?" 修饰符或者 readonly
+// "-" 修饰符，为映射属性**移除** "?" 修饰符或者 readonly
+//  "+" 或者 "-" 修饰符**必须应用**在 "?" 修饰符或者 readonly **之前**
+// 对于 "+" 修饰符， 明确的添加与省略它的作用是相同的，所以通常都省略。 例如 "+readonly" 等同于 "readonly"
+```
+
+#### interface、type关键字
+
+interface
+- 表达功能更强大，不局限于object/class/function
+- 要扩展已有type需要创建新type，不可以重名
+- 支持更复杂的类型操作基本上所有用interface表达的类型都有其等价的type表达。但在实践的过程中，也发现了一种类型只能用interface表达，无法用type表达，那就是往函数上挂载属性
+- 同名interface自动聚合，也可以和已有的同名class聚合，适合做polyfill
+- 自身只能表示object/class/function的类型 公共api应该尽量用interface/class，方便使用者自行扩展
+对外抛出的接口定义约束用的interface，内部的类型都尽量用的type
+
+#### 环境
+
+当前作用域下可以访问某个变量，但这个变量并不由开发者控制。例如通过Script标签直接引入的第三方库CDN、一些宿主环境的API等。这个时候可以利用TS的环境声明功能，来告诉TS当前作用域可以访问这些变量，以获得类型提醒
+
+declare和三斜线指令可以一次性引入整个类型声明文件
+``` typescript
+/// <reference path="../typings/xxxxx.d.ts" />
+declare const NOT = true;    // 编译后此行消失 
+const isNOT = NOT ? false : true; 
 ```
