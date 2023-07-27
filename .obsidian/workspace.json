@@ -146,8 +146,12 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "53f03ea9f0c6f91a",
+  "active": "deba94a106588181",
   "lastOpenFiles": [
+    "react/source",
+    "react",
+    "未命名.md",
+    "TS/TS基础.md",
     "javascript/内存/内存.md",
     "javascript/内存/zclean.png",
     "javascript/内存/tag-clear.webp",
@@ -168,7 +172,6 @@
     "TS/TS类型关系.canvas",
     "TS/typescript_type.png",
     "readme.md",
-    "TS/TS基础.md",
     "assets/img/philly-magic-garden.jpg.md",
     "assets/img",
     "assets",
