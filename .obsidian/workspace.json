@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "650ccd5399ca7047",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.3.7"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,7 +157,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "deba94a106588181",
+  "active": "650ccd5399ca7047",
   "lastOpenFiles": [
     "TS/TS基础.md",
     "react/source/未命名.md",
