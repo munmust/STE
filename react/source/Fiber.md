@@ -13,58 +13,58 @@ function FiberNode(
 	this.tag = tag;
 	// 组件props上的key
 	this.key = key;
-// ReactElement.type 组件的dom类型， 比如`div, p`
-this.elementType = null;
-//func或者class
-this.type = null;
-// 在浏览器环境对应dom节点
-this.stateNode = null;
-// Fiber
-// 指向父节点
-this.return = null;
-// 指向子节点
-this.child = null;
-// 指向兄弟节点
-this.sibling = null;
-// 第几个
-this.index = 0;
-// ref
-this.ref = null;
-this.refCleanup = null;
-// 新的props
-this.pendingProps = pendingProps;
-// 上一次渲染完成的props
-this.memoizedProps = null;
-// 组件产生的update信息队列
-this.updateQueue = null;
-// 上一次渲染完成的state
-this.memoizedState = null;
-// 依赖项
-this.dependencies = null;
-this.mode = mode;
-// Effects
-// 需要执行的副作用，比如增删改查
-this.flags = NoFlags;
-this.subtreeFlags = NoFlags; // 当前Fiber的子节点是否存在的flag（flag是需要变动）
-this.deletions = null; // 待删除的子节点，render阶段diff算法如果检测到Fiber的子节点应该被删除就会保存到这里
-// 优先级相关
-this.lanes = NoLanes;
-this.childLanes = NoLanes;
-//current和workInProgress的指针
-this.alternate = null;
-if (enableProfilerTimer) {
-this.actualDuration = Number.NaN;
-this.actualStartTime = Number.NaN;
-this.selfBaseDuration = Number.NaN;
-this.treeBaseDuration = Number.NaN;
-// It's okay to replace the initial doubles with smis after initialization.
-// This won't trigger the performance cliff mentioned above,
-// and it simplifies other profiler code (including DevTools).
-this.actualDuration = 0;
-this.actualStartTime = -1;
-this.selfBaseDuration = 0;
-this.treeBaseDuration = 0;
-}
+	// ReactElement.type 组件的dom类型， 比如`div, p`
+	this.elementType = null;
+	//func或者class
+	this.type = null;
+	// 在浏览器环境对应dom节点
+	this.stateNode = null;
+	// Fiber
+	// 指向父节点
+	this.return = null;
+	// 指向子节点
+	this.child = null;
+	// 指向兄弟节点
+	this.sibling = null;
+	// 第几个
+	this.index = 0;
+	// ref
+	this.ref = null;
+	this.refCleanup = null;
+	// 新的props
+	this.pendingProps = pendingProps;
+	// 上一次渲染完成的props
+	this.memoizedProps = null;
+	// 组件产生的update信息队列
+	this.updateQueue = null;
+	// 上一次渲染完成的state
+	this.memoizedState = null;
+	// 依赖项
+	this.dependencies = null;
+	this.mode = mode;
+	// Effects
+	// 需要执行的副作用，比如增删改查
+	this.flags = NoFlags;
+	this.subtreeFlags = NoFlags; // 当前Fiber的子节点是否存在的flag（flag是需要变动）
+	this.deletions = null; // 待删除的子节点，render阶段diff算法如果检测到Fiber的子节点应该被删除就会保存到这里
+	// 优先级相关
+	this.lanes = NoLanes;
+	this.childLanes = NoLanes;
+	//current和workInProgress的指针
+	this.alternate = null;
+	if (enableProfilerTimer) {
+		this.actualDuration = Number.NaN;
+		this.actualStartTime = Number.NaN;
+		this.selfBaseDuration = Number.NaN;
+		this.treeBaseDuration = Number.NaN;
+		// It's okay to replace the initial doubles with smis after initialization.
+		// This won't trigger the performance cliff mentioned above,
+		// and it simplifies other profiler code (including DevTools).
+		this.actualDuration = 0;
+		this.actualStartTime = -1;
+		this.selfBaseDuration = 0;
+		this.treeBaseDuration = 0;
+	}
 }
 ```
 
