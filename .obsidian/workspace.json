@@ -1,39 +1,48 @@
 {
   "main": {
-    "id": "34e46cec41ca60d8",
+    "id": "2caeea5c2d746e24",
     "type": "split",
     "children": [
       {
-        "id": "0f8162998d6e72c3",
+        "id": "a67ace8d67b6a043",
         "type": "tabs",
         "children": [
           {
-            "id": "1997f5c0cef21b03",
+            "id": "9a9835ca17cf1786",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "react/source/Fiber.md",
+                "file": "node/I O操作.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "cf1c89dce1c68851",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "b52383347be477cb",
+    "id": "de7721f849d4694b",
     "type": "split",
     "children": [
       {
-        "id": "d5df573f4d4dc7fe",
+        "id": "99374b19cfea9215",
         "type": "tabs",
         "children": [
           {
-            "id": "deba94a106588181",
+            "id": "cc3abf5cd8048194",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +52,7 @@
             }
           },
           {
-            "id": "b0faad66d5af850e",
+            "id": "af37d742d1dbc4f5",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +67,7 @@
             }
           },
           {
-            "id": "2c84c4298cfe8627",
+            "id": "c8d1ff9d8bc856fa",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,23 +78,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 205.5
+    "width": 300
   },
   "right": {
-    "id": "802c76d1d29541e9",
+    "id": "89bc55f51c1eea53",
     "type": "split",
     "children": [
       {
-        "id": "3a946a4691cc1ad0",
+        "id": "1f329b5a34fb44a7",
         "type": "tabs",
         "children": [
           {
-            "id": "e9548e4205929704",
+            "id": "a42ddbd07b713c4b",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "react/source/Fiber.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +105,18 @@
             }
           },
           {
-            "id": "2497b6779dbcd520",
+            "id": "ba2d94da79961e87",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "react/source/Fiber.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "61c472cb8719e9c3",
+            "id": "467a3f55564c35d1",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,13 +127,11 @@
             }
           },
           {
-            "id": "ec31204f337ee256",
+            "id": "50f8e0d9b44ca721",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "react/source/Fiber.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,42 +151,42 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "1997f5c0cef21b03",
+  "active": "cf1c89dce1c68851",
   "lastOpenFiles": [
-    "rust.md",
-    "books/重构.md",
-    "books",
-    "assests",
-    "TS/source.md",
-    "react/source/img/未命名.canvas",
-    "react/source/img/fiberEffect.webp",
-    "未命名 1.canvas",
     "react/source/Fiber.md",
-    "react/source/img/fiberTree.jpg",
-    "javascript/内存/内存.md",
-    "react/source/img/workInProgress.webp",
-    "react/source/img/fiberTree.image",
-    "react/source/img/未确认 305442.crdownload",
-    "react/source/img",
-    "TS/TS基础.md",
+    "books/重构.md",
+    "node/assets/Pasted image 20230924152609.png",
+    "node/assets/Pasted image 20230924163032.png",
+    "node/assets/Pasted image 20230924150822.png",
+    "node/assets/Pasted image 20230924150756.png",
+    "rust/rust.md",
+    "node/模块系统.md",
+    "node/code/commondjs.js",
+    "node/code",
+    "node/I O操作.md",
     "未命名",
+    "node/assets",
+    "TS/source.md",
+    "TS/TS基础.md",
+    "node",
+    "react/source/img/未命名.canvas",
+    "react/source/img/workInProgress.webp",
+    "react/source/img/fiberTree.jpg",
+    "react/source/img/fiberTree.image",
+    "react/source/img/fiberEffect.webp",
+    "react/source/img",
     "react/source",
+    "rust.md",
+    "rust",
     "react",
-    "未命名.md",
-    "javascript/内存/zclean.png",
-    "javascript/内存/tag-clear.webp",
-    "javascript/内存/old-space-bad.png",
+    "javascript/内存/内存.md",
     "javascript/内存/inc-gc.png",
+    "javascript/内存/old-space-bad.png",
     "javascript/内存/gc_space.png",
-    "javascript/内存/GCspace.png",
-    "javascript/内存",
-    "javascript",
-    "TS/assest/img/typescript_type.png",
-    "TS/assest/TS类型关系.canvas",
-    "assest/TS类型关系.canvas",
-    "TS/TS类型关系.canvas",
     "readme.md",
-    "assets/img/philly-magic-garden.jpg.md",
-    "2023-05-24.md"
+    "conflict-files-obsidian-git.md",
+    "TS/assest/TS类型关系.canvas",
+    "Pasted image 20230711232218.png.md",
+    "2023-06-25.md"
   ]
 }
