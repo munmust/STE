@@ -42,9 +42,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c4f29bb2b0a724f5",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.16"
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -171,7 +181,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cc3abf5cd8048194",
+  "active": "c4f29bb2b0a724f5",
   "lastOpenFiles": [
     "readme.md",
     "TS/TS基础.md",
