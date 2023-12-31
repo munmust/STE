@@ -1,3 +1,24 @@
+### 作用
+- **工作单元 任务分解** ：Fiber最重要的功能就是作为工作单元，保存原生节点或者组件节点对应信息（包括优先级），这些节点通过指针的形似形成Fiber树
+- **增量渲染**：通过jsx对象和current Fiber的对比，生成最小的差异补丁，应用到真实节点上
+- **根据优先级暂停、继续、排列优先级**：Fiber节点上保存了优先级，能通过不同节点优先级的对比，达到任务的暂停、继续、排列优先级等能力，也为上层实现批量更新、Suspense提供了基础
+- **保存状态：**因为Fiber能保存状态和更新的信息，所以就能实现函数组件的状态更新，也就是hooks
+- ReactElement：react元素，createElement返回值
+- React Component：开发者定义组件
+- FiberNode：Fiber的节点
+``` javascript
+// React Component
+const App = () =>{
+	return <div>app</div>
+}
+
+// ReactElement
+const app= <App />
+
+// app对应FiberNode 
+React.createRoot(rootNode).render(app)
+
+```
 ## Fiber 节点
 ``` Typescript
 function FiberNode(
@@ -31,9 +52,9 @@ function FiberNode(
 	// ref
 	this.ref = null;
 	this.refCleanup = null;
-	// 新的props
+	// 新的props 一般在渲染开始时，作为新的Props出现
 	this.pendingProps = pendingProps;
-	// 上一次渲染完成的props
+	// 上一次渲染完成的props 会在整个渲染流程结尾部分被更新，存储FiberNode的props。
 	this.memoizedProps = null;
 	// 组件产生的update信息队列
 	this.updateQueue = null;
@@ -44,13 +65,14 @@ function FiberNode(
 	this.mode = mode;
 	// Effects
 	// 需要执行的副作用，比如增删改查
-	this.flags = NoFlags;
+	this.flags = NoFlags; 
 	this.subtreeFlags = NoFlags; // 当前Fiber的子节点是否存在的flag（flag是需要变动）
 	this.deletions = null; // 待删除的子节点，render阶段diff算法如果检测到Fiber的子节点应该被删除就会保存到这里
 	// 优先级相关
-	this.lanes = NoLanes;
-	this.childLanes = NoLanes;
-	//current和workInProgress的指针
+	this.lanes = NoLanes; // 表示当前节点是否需要更新
+	this.childLanes = NoLanes; // 表示当前节点的子节点是否需要更新
+	//current和workInProgress的指针，树中节点相互关联的属性
+	//可以用于判断是否需要更新还是创建，有值表示更新，反之则需要创建
 	this.alternate = null;
 	if (enableProfilerTimer) {
 		this.actualDuration = Number.NaN;
@@ -95,7 +117,41 @@ function App() {
 ```
 对于生成的Fiber树结果
 ![[fiberTree.jpg]]
+### 双缓存
+**内存中构建并直接替换**
 
+屏幕上显示内容对应的`Fiber树`称为`current Fiber树`，正在内存中构建的`Fiber树`称为`workInProgress Fiber树`
+`current Fiber树`中的`Fiber节点`被称为`current fiber`，`workInProgress Fiber树`中的`Fiber节点`被称为`workInProgress fiber`，他们通过`alternate`属性连接
+`React`应用的根节点通过使`current`指针在不同`Fiber树`的`rootFiber`间切换来完成`current Fiber`树指向的切换
+即当`workInProgress Fiber树`构建完成交给`Renderer`渲染在页面上后，应用根节点的`current`指针指向`workInProgress Fiber树`，此时`workInProgress Fiber树`就变为`current Fiber树`。
+每次状态更新都会产生新的`workInProgress Fiber树`，通过`current`与`workInProgress`的替换，完成`DOM`更新
+
+#### mount
+整个应用的首次渲染，首次进入页面时
+某个组件的首次渲染（隐藏变为可见）
+1 创建fiberRootNode（只有应用首次渲染执行）
+2 创建tag为3的FiberNode，代表HostRootFiber（某个组件的首次渲染无改操作）
+3 从HostRootFiber开始，以DFS的顺序生成FiberNode
+4 在遍历过程中，为fiberNode标记代表不同副作用的flags，以便后续在render中使用
+1，ReactDom.createRoot 指向Current Fiber Tree的根节点，当前只有一个HostRootFiber（rootFiber）（首屏渲染时仅有一个根节点的空页面）
+``` html
+<body>
+	<div id="root"></div>
+</body
+```
+![[Pasted image 20231209135641.png]]
+2，mount时，每个React元素根据 DFS的顺序，生成workInProcess FiberNode，并构成workInProgress Tree；workInProgress Tree会复用Current Fiber Tree的同级节点，并且由alternate连接；当workInProgress tree生成完毕后，workInProgress tree 会被传递给renderer，根据过程中标记的“副作用tag”执行对应的操作
+
+![[Pasted image 20231209135741.png]]
+3，当renderer工作完成之后，workInProgress Tree对应当UI已经渲染到了宿主环境，这时FiberRootNode。current指向workInProgress；此时workInProgress变成current Tree；完成了一次双缓存树的切换
+![[Pasted image 20231209140830.png]]
+> FiberRootNode 管理全应用全局：current fiber Tree和wip fiber tree的切换、应用任务过期时间、应用调度信息；全局上下文, 保存 fiber 构建过程中所依赖的全局状态；其大部分实例变量用来存储`fiber 构造循环`过程的各种状态.react 应用内部, 可以根据这些实例变量的值, 控制执行逻辑
+
+> HostRootNode 为应在宿主环境挂载的根节点（rootElement）， react 应用中的第一个 Fiber 对象, 是 Fiber 树的根节点, 节点的类型是`HostRoot`
+
+#### update
+update时会生成一棵新的workInprocess树，最终完成后将fiberRootNode的current 指向workInprocess
+![[Pasted image 20231209141106.png]]![[Pasted image 20231209141127.png]]
 
 
 

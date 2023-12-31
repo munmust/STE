@@ -4,23 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a67ace8d67b6a043",
+        "id": "a0d86dfcdfeea3b3",
         "type": "tabs",
         "children": [
           {
-            "id": "9a9835ca17cf1786",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "node/I O操作.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "cf1c89dce1c68851",
+            "id": "ccad46d4708a4d9c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -30,31 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "5aa68e72d48fcbd5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "books/重构.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c4f29bb2b0a724f5",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.16"
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -120,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "books/重构.md",
+                "file": "rust/所有权.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "books/重构.md",
+                "file": "rust/所有权.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -160,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "books/重构.md"
+                "file": "rust/所有权.md"
               }
             }
           }
@@ -181,24 +146,33 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "c4f29bb2b0a724f5",
+  "active": "ccad46d4708a4d9c",
   "lastOpenFiles": [
+    "Pasted image 20231231172928.png",
+    "Pasted image 20231231170607.png",
+    "rust/rust.md",
+    "rust/trait.md",
+    "rust/所有权.md",
+    "rust/生命周期.md",
+    "rust/类型.md",
+    "react/source/Reconciler/未命名.md",
+    "react/source/Reconciler",
+    "react/source/Fiber.md",
+    "react/source/img/Pasted image 20231209141127.png",
+    "react/source/img/Pasted image 20231209141106.png",
+    "react/source/img/Pasted image 20231209140830.png",
+    "react/source/img/Pasted image 20231209135741.png",
+    "react/source/img/Pasted image 20231209135641.png",
+    "未命名.canvas",
     "readme.md",
     "TS/TS基础.md",
     "TS/source.md",
-    "rust/trait.md",
     "rust/assest",
     "rust/assest/Pasted image 20231015161127.png",
-    "rust/类型.md",
-    "rust/rust.md",
-    "rust/生命周期.md",
-    "rust/所有权.md",
-    "react/source/Fiber.md",
     "books/重构.md",
     "node/assets/Pasted image 20230924152609.png",
     "node/assets/Pasted image 20230924163032.png",
     "node/assets/Pasted image 20230924150822.png",
-    "node/assets/Pasted image 20230924150756.png",
     "node/模块系统.md",
     "node/code/commondjs.js",
     "node/code",
@@ -207,17 +181,11 @@
     "node/assets",
     "node",
     "react/source/img/未命名.canvas",
-    "react/source/img/workInProgress.webp",
-    "react/source/img/fiberTree.jpg",
     "react/source/img/fiberTree.image",
-    "react/source/img/fiberEffect.webp",
     "react/source/img",
     "react/source",
     "rust.md",
-    "rust",
     "javascript/内存/内存.md",
-    "javascript/内存/inc-gc.png",
-    "javascript/内存/old-space-bad.png",
     "conflict-files-obsidian-git.md",
     "TS/assest/TS类型关系.canvas",
     "Pasted image 20230711232218.png.md",
