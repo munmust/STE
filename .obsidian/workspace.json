@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "rust/生命周期.md",
+                "file": "rust/trait.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "rust/生命周期.md",
+                "file": "rust/trait.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "rust/生命周期.md",
+                "file": "rust/trait.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "rust/生命周期.md"
+                "file": "rust/trait.md"
               }
             }
           }
@@ -150,27 +150,27 @@
   "lastOpenFiles": [
     "rust/rust.md",
     "rust/所有权.md",
-    "rust/生命周期.md",
     "rust/类型.md",
     "rust/trait.md",
+    "rust/assest/Pasted image 20231231170607.png",
+    "rust/assest/Pasted image 20231231170607_副本2.png",
+    "rust/assest/Pasted image 20231231170607_副本.png",
+    "rust/assest/Pasted image 20231231172928.png",
+    "rust/assest/Pasted image 20231015161127.png",
+    "rust/生命周期.md",
     "Pasted image 20231231212008.png",
     "TS/TS基础.md",
     "TS/source.md",
     "rust/assest/Pasted image 20231231194952.png",
-    "rust/assest/Pasted image 20231231172928.png",
-    "rust/assest/Pasted image 20231231170607.png",
     "react/source/Reconciler/未命名.md",
     "react/source/Reconciler",
     "react/source/Fiber.md",
     "react/source/img/Pasted image 20231209141127.png",
     "react/source/img/Pasted image 20231209141106.png",
     "react/source/img/Pasted image 20231209140830.png",
-    "react/source/img/Pasted image 20231209135741.png",
-    "react/source/img/Pasted image 20231209135641.png",
     "未命名.canvas",
     "readme.md",
     "rust/assest",
-    "rust/assest/Pasted image 20231015161127.png",
     "books/重构.md",
     "node/模块系统.md",
     "node/code/commondjs.js",
