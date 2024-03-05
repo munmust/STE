@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "rust/trait.md",
+                "file": "readme.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ddbe693e59bee12a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "webpack/webpack.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "rust/trait.md",
+                "file": "webpack/webpack.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "rust/trait.md",
+                "file": "webpack/webpack.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "rust/trait.md"
+                "file": "webpack/webpack.md"
               }
             }
           }
@@ -146,12 +159,15 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ccad46d4708a4d9c",
+  "active": "ddbe693e59bee12a",
   "lastOpenFiles": [
+    "readme.md",
+    "webpack/webpack.md",
+    "webpack",
+    "rust/trait.md",
     "rust/rust.md",
     "rust/所有权.md",
     "rust/类型.md",
-    "rust/trait.md",
     "rust/assest/Pasted image 20231231170607.png",
     "rust/assest/Pasted image 20231231170607_副本2.png",
     "rust/assest/Pasted image 20231231170607_副本.png",
@@ -169,14 +185,12 @@
     "react/source/img/Pasted image 20231209141106.png",
     "react/source/img/Pasted image 20231209140830.png",
     "未命名.canvas",
-    "readme.md",
     "rust/assest",
     "books/重构.md",
     "node/模块系统.md",
     "node/code/commondjs.js",
     "node/code",
     "node/I O操作.md",
-    "未命名",
     "node/assets",
     "node",
     "react/source/img/未命名.canvas",
