@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c0feb5e29e0cc163",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "webpack/tapable.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "webpack/webpack.md",
+                "file": "webpack/tapable.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "webpack/webpack.md",
+                "file": "webpack/tapable.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "webpack/webpack.md"
+                "file": "webpack/tapable.md"
               }
             }
           }
@@ -159,10 +171,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ddbe693e59bee12a",
+  "active": "c0feb5e29e0cc163",
   "lastOpenFiles": [
-    "readme.md",
     "webpack/webpack.md",
+    "webpack/tapable.md",
+    "readme.md",
     "webpack",
     "rust/trait.md",
     "rust/rust.md",
