@@ -66,9 +66,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "bab463c694f504aa",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.11"
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -195,7 +205,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cc3abf5cd8048194",
+  "active": "bab463c694f504aa",
   "lastOpenFiles": [
     "javascript/设计模式/未命名.md",
     "vite/未命名.md",
