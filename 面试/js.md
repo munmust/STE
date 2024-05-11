@@ -75,3 +75,47 @@ diff的判断分成两个部分第一个部分会先进行key的判断，如果k
 
 #### react中的状态管理
 
+##### redux
+redux主要就是传出一个store对象，包含subscribe、getState、applywiddle
+
+subscribe就是一个订阅监听的方法
+
+dispatch 会对传入的type进行reducer的调用，以此得到新的state；并且会去执行监听的方法
+
+applywiddle使用的中间件，是createStore的第三个参数； applywiddle会创建一个store，然后去覆盖其中的dispatch方法，新的dispatch会从右到左去一次执行中间件数组中的中间件，上一个的返回值是下一个的参数
+
+combineReducer 利用Map来保存各个reducer的方法
+
+##### react-redux
+
+ Prodiver 
+ 通过**react** **的** **context** **传递** **subscription** **和** **redux** **中的****store** **,并且建立了一个最顶部根** **Subscription 
+ react-redux 利用的是react-context去实现的，将store放到value中进行透传，并且创建根的subscribe；
+ 
+
+**以链表的形式收集对应的** **listeners** **(每一个****Subscription****) 的****handleChangeWrapper****函数，通过batch来进行一次批处理**
+
+state更改 -> store.subscribe -> 触发 provider 的 Subscription 的 handleChangeWrapper 也就是 notifyNestedSubs -> 通知 listeners.notify() -> 通知每个被 connect 容器组件的更新 -> callback 执行 -> 触发子组件Subscription 的 handleChangeWrapper ->触发子 onstatechange
+
+**1** **react-redux** **中的** **provider** **作用 ，通过** **react** **的** **context** **传递** **subscription** **和** **redux** **中的****store** **,并且建立了一个最顶部根** **Subscription** **。**  
+  
+
+**2** **Subscription** **的作用：起到发布订阅作用，一方面订阅** **connect** **包裹组件的更新函数，一方面通过** **store.subscribe** **统一派发更新。**  
+  
+
+**3** **Subscription** **如果存在这父级的情况，会把自身的更新函数，传递给父级** **Subscription** **来统一订阅。**
+
+**connect的subscribereact 会先执行一次checkForUpdate，防止渲染后，store已经改变了；检查是否派发了当前组件的更新**
+
+**react-redux** **通过** **subscription** **进行层层订阅**
+
+![](https://cdn.nlark.com/yuque/0/2024/png/238125/1715243551741-fefb3763-c5a1-47e6-baaf-2b3301ce2f35.png)
+
+checkForUpdates 通过调用 childPropsSelector来形成新的props,然后判断之前的 prop 和当前新的 prop 是否相等。如果相等，证明没有发生变化,无须更新当前组件，那么通过调用notifyNestedSubs来通知子代容器组件，检查是否需要更新。如果不相等证明订阅的store.state发生变化，那么立即执行触发组件的更新
+
+![](https://cdn.nlark.com/yuque/0/2024/png/238125/1715244095864-0b7a73f7-a97a-400e-942d-a96a0cf7e17b.png)
+
+  
+  
+
+被connect包裹，并且有第一个参数，通过context获取最近的subscribe，然后创建一个新的subscribe，并和父级的subscribe相关联，父的subscribe中也会添加一个订阅，
