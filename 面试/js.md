@@ -60,6 +60,95 @@ js引擎等待任务、执行任务、进入休眠状态切换的无限循环
 异步任务又分为宏任务和微任务；
 同步任务->宏任务->微任务->宏任务
 
+#### 什么是原型
+每一个对象都与另一个对象相关联，那么关联的对象就是原型
+函数或者对象都有一个prototype的属性指向一个对象，这个对象就是原型，原型中有个contructor函数指向这个对对象；当使用这个函数或者对象new 一个新实例的时候，新实例会有个proto的属性指向构造它的对象的原型proto->prototype；原型也是对象也有自己的原型对象，这样一层层的就构成了原形链
+
+#### 如何实现继承
+原型继承 ：直接替换prototype为新的函数；原型修改导致都修改了
+构造器继承：使用call去执行，this指向自己；不能基层原型和方法
+
+#### 执行上下文
+
+#### 防抖节流
+防抖： 一段时间内只执行一次，多次忽略
+节流：一段时间后执行一次，每次有新的就从新计算
+``` javascript
+ const throttled(fn,delay){
+	 let timer;
+	 const sTime=Date.now();
+	 return function(){
+		 let curTime = Date.now();
+		 let remaining = delay - (curTime - sTime);
+		 const that=this;
+		 args=arguments;
+		 clearTimeout(timer)
+		 if(remaining<=0){
+			 dn.apply(that,args);
+			 sTime=Date.now();
+		 }else
+		 {
+		 timer=setTimeout(fn,delay)
+		 }
+	 }
+ }
+ function debounce(fn,delay,immdiate){
+	 let timer=null;
+	 return funciton(){
+		 const that=this;
+		 let args=arguments;
+		 if(timer)clearTimeout(timer);
+		 if(immdiate){
+		  let isNow=!timer;
+		  if(isNow){
+			  fn.apply(that,args)
+		  }
+		  timer=setTimeout(function(){
+			  timer=null
+		  },delay)
+		 }else{
+			 timer=setTimeout(function(){
+				 fn.apply(that,args)
+			 },delay)
+		 }
+	 }
+ }
+```
+#### instanceof
+判断某个构造函数的prototype是否出现在某个实例对象上
+``` javascript
+function instanceof (a,b){
+	if(typeof left !== 'object' || left === null) return false;
+	let proto=Object.getPrototypeof(a);
+	while(true){
+		if(proto===null)return fasle
+		if(a=== b.prototype) return true;
+		proto=Object.getPrototypeOf(proto);
+	}
+}
+```
+
+typeof返回基本类型，instanceof返回布尔值
+typeof对于引用类型判断不行
+instanceof可以判断引用类型，但是不能判断基本类型
+
+#### new
+1，将构造函数通过原型和对象连接起来
+2，将构造函数的this绑定到对象上
+3，判断构造函数的返回值，为对象将会返回结果，否则返回对象
+``` javascript
+function news(Func,...args){
+	const obj={};
+	obj._prop_=Func.prototype;
+	let result=Func.call(obj.args);
+	return result instanceof Object ? result:obj;
+}
+```
+
+#### 函数式编程
+提高代码的无状态性和不变性，无副作用的函数 固定的输入，固定的输出
+不会有超出作用域的变化，例如不会去修改全局的变量或者参数
+
 #### 虚拟dom是什么? 原理? 优缺点?
 react中虚拟DOM其实就是一个个Fiber节点，每个Fiber节点的stateNode又对应页面上真实的DOM节点；一个个的Fiber就构成一棵Fiber树，这个Fiber树就是页面根节点开始的整个页面的内容构成的；利用虚拟DOM在通过react的虚拟DOM的Diff算法以及双缓存机制，可以避免页面中频繁出现DOM的操作，提高响应
 #### react 在虚拟dom的diff上，做了哪些改进使得速度很快?

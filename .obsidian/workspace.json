@@ -121,7 +121,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "面试/js.md",
+                "file": "react/redux.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "面试/js.md",
+                "file": "react/redux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -211,7 +211,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "面试/js.md",
+                "file": "react/redux.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -234,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "面试/js.md"
+                "file": "react/redux.md"
               }
             }
           }
@@ -257,11 +257,12 @@
   },
   "active": "1cd7ad399a3d54dc",
   "lastOpenFiles": [
+    "面试/css.md",
+    "react/redux.md",
+    "面试/js.md",
     "react/自定义Hook/useToggle、useBoolean.md",
     "react/自定义Hook/useAsyncEffect.md",
     "react/自定义Hook",
-    "面试/css.md",
-    "面试/js.md",
     "react/source/Fiber.md",
     "react/未命名.md",
     "webpack/tapable.md",
@@ -304,7 +305,6 @@
     "rust.md",
     "javascript/内存/内存.md",
     "conflict-files-obsidian-git.md",
-    "TS/assest/TS类型关系.canvas",
-    "Pasted image 20230711232218.png.md"
+    "TS/assest/TS类型关系.canvas"
   ]
 }

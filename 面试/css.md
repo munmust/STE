@@ -39,3 +39,18 @@ document.getElementById('box').style.removeProperty('--color')
 display：inline、block、inline-block
 inline： 會依照元素中的內容來決定內容的寬高，不會佔滿容器橫向的剩餘空間，在不超過容器的狀況下，可以與其他元素並列
 block：在不更改 display 的狀態下，會在容器中呈現滿版，並且可以透過 width、height、max-width、max-height 等 CSS 屬性來更改該元素的寬高，帶有 display:block 屬性的元素即便更改了寬度，剩餘的空間依然還是會在網頁上佔有空間，後續的元素並不會因為寬度縮小了，而向上並排
+
+
+# BFC
+块级格式化上下文，**隔离了的独立容器容器内的样式不会影响到外部的元素**
+同一个BFC下外边距会发生折叠，最大的为准
+高度计算会加上float的高度
+区域不会和float重叠
+
+利用它来防止margin塌陷
+清除内部的浮动
+
+绝对定位
+overflow为visible之外的属性
+浮动
+body根元素
