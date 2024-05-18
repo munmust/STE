@@ -23,3 +23,29 @@ applyMiddleware(thunkMiddleware)(createStore)(reducer, initialState)
 
 # React-Redux
 ## Provider
+利用react的Context来实现一个Provider
+创建一个subscribe，接受store以及上层的subscribe
+创建一个context，包括监听，store等信息
+
+在组件useLayoutEffect或者useEffect时，绑定监听的 onStateChange方法为通知监听；添加一个订阅队列；之后会判断当前的store和之前的store是否一致，是否需要触发通知；之后确认销毁时进行监听的清除
+### subscribe
+**trySubscribe**：订阅个数加一，如果不存在监听；判断是否上层的监听器，有的话往上层监听器上添加一个监听，如果没有就在当前的监听列表添加监听器
+**addNestedSub**：添加一个监听，调用trySubscribe；返回取消函数
+`Subscription` 的作用,首先通过 `trySubscribe` 发起订阅模式，如果存在这父级订阅者，就把自己更新函数`handleChangeWrapper`，传递给父级订阅者，然后父级由 `addNestedSub` 方法将此时的回调函数（更新函数）添加到当前的 `listeners` 中 。如果没有父级元素(`Provider`的情况)，则将此回调函数放在`store.subscribe`中，`handleChangeWrapper` 函数中`onStateChange`，就是 `Provider` 中 `Subscription` 的 `notifyNestedSubs` 方法，而 `notifyNestedSubs` 方法会通知`listens` 的 `notify` 方法来触发更新。子代`Subscription`会把更新自身`handleChangeWrapper`传递给`parentSub`，来统一通知`connect`组件更新
+
+`state`更改 -> `store.subscribe` -> 触发 `provider` 的 `Subscription` 的 `handleChangeWrapper` 也就是 `notifyNestedSubs` -> 通知 `listeners.notify()` -> 通知每个被 `connect` 容器组件的更新 -> `callback` 执行 -> 触发子组件`Subscription` 的 handleChangeWrapper ->触发子 `onstatechange`
+## connect
+
+**mapStateToProps**：组件依赖`redux`的 `state`,映射到业务组件的 `props`中，`state`改变触发,业务组件`props`改变，触发业务组件更新视图
+**mapDispatchToProps**：将 `redux` 中的`dispatch` 方法，映射到，业务组件的`props`中
+**mergeProps**：自定义的合并规则
+* stateProps , state 映射到 props 中的内容
+* dispatchProps， dispatch 映射到 props 中的内容。
+* ownProps 组件本身的 props
+
+返回一个**wrapWithConnect** 
+新的**ConnectFunction**中，会先判断得到props，store等，然后在store上创建一个subscription订阅，和通知函数，然后得到一个新的contextValue ,把父级的 subscription 换成自己的 subscription
+；会缓存部分变量方便下次修改的时候进行对比；如果存在会新去触发一次通知；
+- 合并child的props
+- 创建一个 `subscription` ,并且和上一层`provider`的`subscription`建立起关联，`this.parentSub = contextValue.subscription`。然后分离出 `subscription` 和 `notifyNestedSubs`，把父级的 `subscription` 换成自己的 `subscription`，用于通过 `Provider` 传递新的 `context` 》〉》〉》〉》〉`connect`自己控制自己的更新，并且多个上下级 `connect`不收到影响。所以一方面通过`useMemo`来限制**业务组件不必要的更新**,另一方面来通过`forceComponentUpdateDispatch`来更新 `HOC` 函数，产生`actualChildProps`,`actualChildProps` 改变 ,`useMemo`执行，触发组件渲染
+- 
