@@ -59,3 +59,13 @@ context得到最近的subscription，然后创建一个subscribe和父级的subs
 store改变会触发根的store.subscribe，触发发布；然后会执行checkForUpdate方法。checkForUpdate会判断该组件组合后的props是否发生改变，改变就会更新组件；之后去notifyNextsubs通知subscript的listenser检查更新，层层checkForUpdate下去，完成更新流程
 
 # redux-Thunk
+普通的通过传递store的dispatch可以实现；但是封装成方法后 它不是一个action creator，返回也不是action creator；异步和同步易搞混
+可以让我们和普通action一样去定义
+thunk会传入dispatch和getState支持读取store的值
+
+# redux-saga
+利用genrator的方式依次执行
+![[Pasted image 20240519201924.png]]
+
+- 通过sagaMiddleware来将所有的generator初始化为iterator并执行；
+- 每个saga在yield都会返回一个Effect给runEffect处理，runEffect会根据effect的类型调用不同的函数处理
