@@ -48,4 +48,14 @@ applyMiddleware(thunkMiddleware)(createStore)(reducer, initialState)
 ；会缓存部分变量方便下次修改的时候进行对比；如果存在会新去触发一次通知；
 - 合并child的props
 - 创建一个 `subscription` ,并且和上一层`provider`的`subscription`建立起关联，`this.parentSub = contextValue.subscription`。然后分离出 `subscription` 和 `notifyNestedSubs`，把父级的 `subscription` 换成自己的 `subscription`，用于通过 `Provider` 传递新的 `context` 》〉》〉》〉》〉`connect`自己控制自己的更新，并且多个上下级 `connect`不收到影响。所以一方面通过`useMemo`来限制**业务组件不必要的更新**,另一方面来通过`forceComponentUpdateDispatch`来更新 `HOC` 函数，产生`actualChildProps`,`actualChildProps` 改变 ,`useMemo`执行，触发组件渲染
-- 
+- checkForUpdate会作为onstateChange；如果store中的state发生改变，那么在组件订阅了state后，相关联的state改变会触发当前最爱你的onStateChange，合并得到新的props；subscrition.try Subscribe把订阅函数onStatechange绑定给父级subscription，进行层层订阅；
+> 在provider中的useEffect中会取出store最新值和老值进行对比，触发是否需要进行发布； 发布后通知子subscribe的change方法，进行执行
+![[Pasted image 20240519153729.png]]
+![[Pasted image 20240519154833.png]]
+
+#### 整个订阅流程
+context得到最近的subscription，然后创建一个subscribe和父级的subscription建立联系；初始化之后会先执行一次checkForUpdate的方法，通过trySubscrible和this.parentSub.addNextedSub加入到父级的subscription的listener中；
+#### 更新流程
+store改变会触发根的store.subscribe，触发发布；然后会执行checkForUpdate方法。checkForUpdate会判断该组件组合后的props是否发生改变，改变就会更新组件；之后去notifyNextsubs通知subscript的listenser检查更新，层层checkForUpdate下去，完成更新流程
+
+# redux-Thunk
