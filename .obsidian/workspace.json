@@ -13,13 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "react/redux.md",
+                "file": "面试/js.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "50430c73cd6beaca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "面试/js.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7018203d382d6357",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "面试/react.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "react/redux.md",
+                "file": "面试/react.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "react/redux.md",
+                "file": "面试/react.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "react/redux.md"
+                "file": "面试/react.md"
               }
             }
           }
@@ -146,26 +171,30 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "bd96c0db8d028a03",
+  "active": "7018203d382d6357",
   "lastOpenFiles": [
-    "react/Pasted image 20240519201924.png",
     "react/redux.md",
+    "面试/js.md",
+    "面试/react.md",
+    "react/自定义Hook/useAsyncEffect.md",
+    "react/未命名.md",
+    "面试/JS/JS.md",
+    "面试/JS",
+    "面试/css.md",
+    "未命名.canvas",
+    "react/source/Fiber.md",
+    "react/source/Reconciler/未命名.md",
+    "react/Pasted image 20240519201924.png",
     "react/Pasted image 20240519154833.png",
     "javascript/设计模式/未命名.md",
     "vite/未命名.md",
     "webpack/tapable.md",
-    "react/source/Fiber.md",
-    "react/未命名.md",
-    "面试/css.md",
     "Pasted image 20231231212008.png",
     "react/Pasted image 20240519153729.png",
-    "面试/js.md",
     "react/自定义Hook/useToggle、useBoolean.md",
-    "react/自定义Hook/useAsyncEffect.md",
     "react/自定义Hook",
     "面试",
     "webpack/webpack.md",
-    "react/source/Reconciler/未命名.md",
     "vite",
     "readme.md",
     "javascript/设计模式",
@@ -184,17 +213,14 @@
     "TS/source.md",
     "rust/assest/Pasted image 20231231194952.png",
     "react/source/Reconciler",
-    "未命名.canvas",
     "rust/assest",
     "books/重构.md",
     "node/模块系统.md",
     "node/code/commondjs.js",
     "node/code",
     "node/I O操作.md",
-    "node/assets",
     "react/source/img/未命名.canvas",
     "rust.md",
-    "javascript/内存/内存.md",
     "TS/assest/TS类型关系.canvas"
   ]
 }
