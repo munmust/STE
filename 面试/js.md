@@ -208,3 +208,7 @@ checkForUpdates 通过调用 childPropsSelector来形成新的props,然后判断
   
 
 被connect包裹，并且有第一个参数，通过context获取最近的subscribe，然后创建一个新的subscribe，并和父级的subscribe相关联，父的subscribe中也会添加一个订阅，
+
+
+
+箭头函数和
